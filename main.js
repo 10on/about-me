@@ -5,6 +5,11 @@ const STATUS_LABELS = {
     have: 'есть',
     done: 'готово',
     wip: 'в процессе',
+    v5: 'очень хочу',
+    v4: 'хочу',
+    v3: 'неплохо',
+    v2: 'сойдёт',
+    v1: 'ну может',
 };
 
 async function loadSection(file, containerId) {
@@ -32,13 +37,19 @@ async function loadSection(file, containerId) {
                 ? `<span class="item-status status-${item.status}">${STATUS_LABELS[item.status] ?? item.status}</span>`
                 : '';
 
+            const num = item.desc ? item.desc.match(/^(\S+)/)?.[1] : null;
+            const imgUrl = num ? `https://img.bricklink.com/ItemImage/SN/0/${num}-1.png` : null;
+            const picHtml = imgUrl
+                ? `<button class="item-pic" onclick="openModal('${imgUrl}','${item.name.replace(/'/g,"\\'")}')">тык</button>`
+                : '';
+
             return `
                 <div class="item">
                     <div>
                         <div class="item-name">${nameHtml}</div>
                         ${descHtml}
                     </div>
-                    ${statusHtml}
+                    <div class="item-right">${picHtml}${statusHtml}</div>
                 </div>`;
         }).join('');
 
@@ -48,6 +59,20 @@ async function loadSection(file, containerId) {
         console.error(`[${containerId}]`, err);
     }
 }
+
+function openModal(src, alt) {
+    const m = document.getElementById('img-modal');
+    const img = document.getElementById('img-modal-img');
+    img.src = src;
+    img.alt = alt;
+    m.classList.add('open');
+}
+
+document.getElementById('img-modal').addEventListener('click', function(e) {
+    if (e.target === this || e.target.classList.contains('modal-backdrop')) {
+        this.classList.remove('open');
+    }
+});
 
 loadSection('data/lego.json', 'lego-list');
 loadSection('data/retro.json', 'retro-list');

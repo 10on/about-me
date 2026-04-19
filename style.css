@@ -129,46 +129,67 @@ main {
     margin-bottom: 0 !important;
 }
 
-.facts {
+.bio {
     margin: 1.75rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.fact-group {
-    display: grid;
-    grid-template-columns: 90px 1fr;
-    gap: 0.75rem;
-    padding: 0.65rem 0;
-    border-bottom: 1px solid var(--border);
-    align-items: baseline;
+.bio p {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 560px;
 }
 
-.fact-group:first-child {
-    border-top: 1px solid var(--border);
-}
-
-.fact-label {
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding-top: 0.1rem;
-}
-
-.fact-body {
-    font-size: 0.92rem;
-    line-height: 1.55;
-}
-
-.fact-body a {
-    color: var(--accent);
+.bio a {
+    color: var(--text);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.15s;
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.15s, color 0.15s;
 }
 
-.fact-body a:hover {
+.bio a:hover {
     border-color: var(--accent);
+    color: var(--accent);
+}
+
+.timeline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0;
+    margin: 0.25rem 0 0.5rem;
+}
+
+.tl-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+}
+
+.tl-city {
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.tl-year {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+}
+
+.tl-current .tl-city {
+    color: var(--accent);
+}
+
+.tl-arrow {
+    color: var(--border);
+    font-size: 1rem;
+    padding: 0 0.35rem;
+    margin-bottom: 1rem;
 }
 
 .wishlist-note {
@@ -199,8 +220,9 @@ main {
 .section-banner {
     background-color: #1E1C19;
     background-size: cover;
-    background-position: center;
-    height: 360px;
+    background-position: center top;
+    background-attachment: fixed;
+    height: 420px;
     display: flex;
     align-items: flex-end;
     position: relative;
@@ -241,6 +263,28 @@ main {
 .section-content {
     padding-top: 2rem;
     padding-bottom: 4rem;
+}
+
+/* ─── Section intro ─── */
+
+.section-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-intro p {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 560px;
+}
+
+.section-wishlist {
+    font-size: 0.9rem !important;
+    color: var(--muted);
 }
 
 /* ─── Items ─── */
@@ -298,6 +342,69 @@ main {
 .status-have { background: #EDFAF3; color: #1A6640; }
 .status-done { background: #EEF2FF; color: #3730A3; }
 .status-wip  { background: #FFFBEA; color: #92610A; }
+.status-v5   { background: #dcfce7; color: #14532d; }
+.status-v4   { background: #ffedd5; color: #9a3412; }
+.status-v3   { background: #fef9c3; color: #854d0e; }
+.status-v2   { background: #dbeafe; color: #1d4ed8; }
+.status-v1   { background: #f0f0f0; color: #555; }
+
+.item-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+    flex-shrink: 0;
+}
+
+.item-pic {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0.15rem 0.4rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.item-pic:hover {
+    color: var(--text);
+    border-color: var(--muted);
+}
+
+#img-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0,0,0,0.85);
+    align-items: center;
+    justify-content: center;
+}
+
+#img-modal.open {
+    display: flex;
+}
+
+.modal-backdrop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    cursor: zoom-out;
+}
+
+#img-modal-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    pointer-events: none;
+}
 
 .empty {
     font-size: 0.9rem;
@@ -326,7 +433,10 @@ footer {
 
     nav { gap: 1rem; }
 
-    .section-banner { height: 260px; }
+    .section-banner {
+        height: 260px;
+        background-attachment: scroll;
+    }
 
     .banner-text h2 { font-size: 1.8rem; }
 
