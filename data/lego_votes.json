@@ -1,0 +1,392 @@
+[
+  {
+    "num": "10270",
+    "name": "Bookshop",
+    "vote": 5,
+    "label": "очень хочу"
+  },
+  {
+    "num": "2879",
+    "name": "Desert Expedition",
+    "vote": 5,
+    "label": "очень хочу"
+  },
+  {
+    "num": "6594",
+    "name": "Gas Transit",
+    "vote": 5,
+    "label": "очень хочу"
+  },
+  {
+    "num": "7740",
+    "name": "Inter-City Passenger Train",
+    "vote": 5,
+    "label": "очень хочу"
+  },
+  {
+    "num": "910009",
+    "name": "Modular LEGO Store",
+    "vote": 5,
+    "label": "очень хочу"
+  },
+  {
+    "num": "6991",
+    "name": "Monorail Transport Base",
+    "vote": 5,
+    "label": "очень хочу"
+  },
+  {
+    "num": "910029",
+    "name": "Mountain Fortress",
+    "vote": 5,
+    "label": "очень хочу"
+  },
+  {
+    "num": "910027",
+    "name": "Mountain View Observatory",
+    "vote": 5,
+    "label": "очень хочу"
+  },
+  {
+    "num": "2949",
+    "name": "RC Dozer",
+    "vote": 5,
+    "label": "очень хочу"
+  },
+  {
+    "num": "5919",
+    "name": "The Valley of the Kings",
+    "vote": 5,
+    "label": "очень хочу"
+  },
+  {
+    "num": "6096",
+    "name": "Bull's Attack",
+    "vote": 4,
+    "label": "хочу"
+  },
+  {
+    "num": "10194",
+    "name": "Emerald Night",
+    "vote": 4,
+    "label": "хочу"
+  },
+  {
+    "num": "10219",
+    "name": "Maersk Container Train",
+    "vote": 4,
+    "label": "хочу"
+  },
+  {
+    "num": "7189",
+    "name": "Mill Village Raid",
+    "vote": 4,
+    "label": "хочу"
+  },
+  {
+    "num": "10002",
+    "name": "Railroad Club Car",
+    "vote": 4,
+    "label": "хочу"
+  },
+  {
+    "num": "7822",
+    "name": "Railway Station",
+    "vote": 4,
+    "label": "хочу"
+  },
+  {
+    "num": "7813",
+    "name": "Shell Tanker Wagon",
+    "vote": 4,
+    "label": "хочу"
+  },
+  {
+    "num": "1090",
+    "name": "Technic Control I",
+    "vote": 4,
+    "label": "хочу"
+  },
+  {
+    "num": "2996",
+    "name": "Adventurers Tomb (The Lost Tomb)",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "3225",
+    "name": "Classic Train",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "9701",
+    "name": "Control Lab Building Set",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "8446",
+    "name": "Crane Truck",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "118",
+    "name": "Electronic Train",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "138",
+    "name": "Electronic Train",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "910043",
+    "name": "Forest Stronghold",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "6990",
+    "name": "Futuron Monorail Transport System",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "10210",
+    "name": "Imperial Flagship",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "6098",
+    "name": "King Leo's Castle",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "5581",
+    "name": "Magic Flash",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "6987",
+    "name": "Message Intercept Base",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "113",
+    "name": "Motorized Train Set",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "10266",
+    "name": "NASA Apollo 11 Lunar Lander",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "5938",
+    "name": "Oasis Ambush",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "21310",
+    "name": "Old Fishing Store",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "10016",
+    "name": "Tanker",
+    "vote": 3,
+    "label": "неплохо"
+  },
+  {
+    "num": "42070",
+    "name": "6x6 All Terrain Tow Truck",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "8868",
+    "name": "Air Tech Claw Rig",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "4080",
+    "name": "Basic Building Set with Train",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "1732",
+    "name": "Crossbow Cart",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "1712",
+    "name": "Crossbow Cart polybag",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "21109",
+    "name": "EXO SUIT",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "6982",
+    "name": "Explorien Starship",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "GLADIATOR",
+    "name": "Gladiator",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "4513",
+    "name": "Grand Central Station",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "21305",
+    "name": "Maze",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "5521",
+    "name": "Sea Jet",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "BL19003",
+    "name": "Skyline Express",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "7315",
+    "name": "Solar Explorer",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "7244",
+    "name": "Speedboat",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "115",
+    "name": "Starter Train Set with Motor",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "111",
+    "name": "Starter Train Set without Motor",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "10128",
+    "name": "Train Level Crossing",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "5590",
+    "name": "Whirl N' Wheel Super Truck",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "2891",
+    "name": "Wizard Trader",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "1736",
+    "name": "Wizard's Cart",
+    "vote": 2,
+    "label": "сойдёт"
+  },
+  {
+    "num": "5561",
+    "name": "Big Foot 4x4",
+    "vote": 1,
+    "label": "ну может"
+  },
+  {
+    "num": "5571",
+    "name": "Giant Truck",
+    "vote": 1,
+    "label": "ну может"
+  },
+  {
+    "num": "42043",
+    "name": "Mercedes-Benz Arocs 3245",
+    "vote": 1,
+    "label": "ну может"
+  },
+  {
+    "num": "7684",
+    "name": "Pig Farm & Tractor",
+    "vote": 1,
+    "label": "ну может"
+  },
+  {
+    "num": "8457",
+    "name": "Power Puller",
+    "vote": 1,
+    "label": "ну может"
+  },
+  {
+    "num": "6951",
+    "name": "Robot Command Center",
+    "vote": 1,
+    "label": "ну может"
+  },
+  {
+    "num": "10020",
+    "name": "Santa Fe Super Chief",
+    "vote": 1,
+    "label": "ну может"
+  },
+  {
+    "num": "BL19007",
+    "name": "Science Tower",
+    "vote": 1,
+    "label": "ну может"
+  },
+  {
+    "num": "8250",
+    "name": "Search Sub",
+    "vote": 1,
+    "label": "ну может"
+  },
+  {
+    "num": "21343",
+    "name": "Viking Village",
+    "vote": 1,
+    "label": "ну может"
+  }
+]

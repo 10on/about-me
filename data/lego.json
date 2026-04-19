@@ -1,13 +1,392 @@
 [
   {
-    "name": "Пример набора который хочу",
-    "desc": "замени на реальные хотелки из своей коллекции",
-    "status": "want"
+    "name": "Viking Village",
+    "desc": "21343 — деревня викингов, Icons, 2023",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=21343-1",
+    "status": "v1"
   },
   {
-    "name": "Пример набора который есть",
-    "desc": "или глянь свою коллекцию на Rebrickable",
-    "status": "have",
-    "url": "https://rebrickable.com/users/10on/lego/"
+    "name": "Modular LEGO Store",
+    "desc": "910009 — фирменный магазин, BL-exclusive, 2023",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=910009-1",
+    "status": "v5"
+  },
+  {
+    "name": "Mountain Fortress",
+    "desc": "910029 — замок на скале, BL-exclusive, 2023",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=910029-1",
+    "status": "v5"
+  },
+  {
+    "name": "Mountain View Observatory",
+    "desc": "910027 — обсерватория в горах, BL-exclusive, 2023",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=910027-1",
+    "status": "v5"
+  },
+  {
+    "name": "Forest Stronghold",
+    "desc": "910043 — лесная крепость, BL-exclusive, 2023",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=910043-1",
+    "status": "v3"
+  },
+  {
+    "name": "Skyline Express",
+    "desc": "BL19003 — монорельс, BL-exclusive, 2023",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=BL19003-1",
+    "status": "v2"
+  },
+  {
+    "name": "Science Tower",
+    "desc": "BL19007 — научная башня, BL-exclusive, 2023",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=BL19007-1",
+    "status": "v1"
+  },
+  {
+    "name": "Bookshop",
+    "desc": "10270 — модульное здание с витриной и читальней, 2020",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=10270-1",
+    "status": "v5"
+  },
+  {
+    "name": "NASA Apollo 11 Lunar Lander",
+    "desc": "10266 — лунный модуль Аполлон-11, Creator Expert, 2019",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=10266-1",
+    "status": "v3"
+  },
+  {
+    "name": "Old Fishing Store",
+    "desc": "21310 — рыбная лавка, Ideas, 2017",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=21310-1",
+    "status": "v3"
+  },
+  {
+    "name": "6x6 All Terrain Tow Truck",
+    "desc": "42070 — полноприводный эвакуатор, Technic, 2017",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=42070-1",
+    "status": "v2"
+  },
+  {
+    "name": "Maze",
+    "desc": "21305 — лабиринт, Ideas, 2016",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=21305-1",
+    "status": "v2"
+  },
+  {
+    "name": "Mercedes-Benz Arocs 3245",
+    "desc": "42043 — строительный грузовик, Technic, 2015",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=42043-1",
+    "status": "v1"
+  },
+  {
+    "name": "EXO SUIT",
+    "desc": "21109 — экзоскелет, Ideas, 2014",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=21109-1",
+    "status": "v2"
+  },
+  {
+    "name": "Maersk Container Train",
+    "desc": "10219 — контейнерный поезд Maersk, Creator Expert, 2011",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=10219-1",
+    "status": "v4"
+  },
+  {
+    "name": "Mill Village Raid",
+    "desc": "7189 — нападение на мельницу, Castle, 2011",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=7189-1",
+    "status": "v4"
+  },
+  {
+    "name": "Imperial Flagship",
+    "desc": "10210 — парусный фрегат Pirates, Creator Expert, 2010",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=10210-1",
+    "status": "v3"
+  },
+  {
+    "name": "Emerald Night",
+    "desc": "10194 — паровоз Creator Expert, 2009",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=10194-1",
+    "status": "v4"
+  },
+  {
+    "name": "Pig Farm & Tractor",
+    "desc": "7684 — свиноферма с трактором, City, 2009",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=7684-1",
+    "status": "v1"
+  },
+  {
+    "name": "Speedboat",
+    "desc": "7244 — скоростная лодка, City, 2005",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=7244-1",
+    "status": "v2"
+  },
+  {
+    "name": "Grand Central Station",
+    "desc": "4513 — центральный вокзал, Trains, 2003",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=4513-1",
+    "status": "v2"
+  },
+  {
+    "name": "Train Level Crossing",
+    "desc": "10128 — железнодорожный переезд, Trains, 2003",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=10128-1",
+    "status": "v2"
+  },
+  {
+    "name": "Santa Fe Super Chief",
+    "desc": "10020 — легендарный поезд Santa Fe, Trains, 2002",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=10020-1",
+    "status": "v1"
+  },
+  {
+    "name": "Railroad Club Car",
+    "desc": "10002 — вагон-клуб, Trains, 2001",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=10002-1",
+    "status": "v4"
+  },
+  {
+    "name": "Classic Train",
+    "desc": "3225 — классический паровоз, Trains, 2001",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=3225-1",
+    "status": "v3"
+  },
+  {
+    "name": "Solar Explorer",
+    "desc": "7315 — солнечный вездеход, Life on Mars, 2001",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=7315-1",
+    "status": "v2"
+  },
+  {
+    "name": "Tanker",
+    "desc": "10016 — нефтяной танкер, Trains, 2001",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=10016-1",
+    "status": "v3"
+  },
+  {
+    "name": "Bull's Attack",
+    "desc": "6096 — рыцарский замок с быком, Ninja, 2000",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=6096-1",
+    "status": "v4"
+  },
+  {
+    "name": "King Leo's Castle",
+    "desc": "6098 — замок короля Лео, Knights' Kingdom, 2000",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=6098-1",
+    "status": "v3"
+  },
+  {
+    "name": "Power Puller",
+    "desc": "8457 — мощный тягач, Technic, 2000",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=8457-1",
+    "status": "v1"
+  },
+  {
+    "name": "RC Dozer",
+    "desc": "2949 — бульдозер с радиоуправлением, Technic, 2000",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=2949-1",
+    "status": "v5"
+  },
+  {
+    "name": "Search Sub",
+    "desc": "8250 — поисковая субмарина, Technic, 2000",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=8250-1",
+    "status": "v1"
+  },
+  {
+    "name": "Desert Expedition",
+    "desc": "2879 — приключенческий внедорожник, Adventurers, 1999",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=2879-1",
+    "status": "v5"
+  },
+  {
+    "name": "Crane Truck",
+    "desc": "8446 — кран-грузовик, Technic, 1999",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=8446-1",
+    "status": "v3"
+  },
+  {
+    "name": "Adventurers Tomb (The Lost Tomb)",
+    "desc": "2996 — гробница фараона, Adventurers, 1998",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=2996-1",
+    "status": "v3"
+  },
+  {
+    "name": "Control Lab Building Set",
+    "desc": "9701 — обучающий набор с датчиками, Dacta, 1998",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=9701-1",
+    "status": "v3"
+  },
+  {
+    "name": "Oasis Ambush",
+    "desc": "5938 — засада у оазиса, Adventurers, 1998",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=5938-1",
+    "status": "v3"
+  },
+  {
+    "name": "The Valley of the Kings",
+    "desc": "5919 — египетская экспедиция, Adventurers, 1998",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=5919-1",
+    "status": "v5"
+  },
+  {
+    "name": "Crossbow Cart",
+    "desc": "1732 — телега с арбалетом, Castle, 1997",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=1732-1",
+    "status": "v2"
+  },
+  {
+    "name": "Crossbow Cart polybag",
+    "desc": "1712 — полибэг с телегой, Castle, 1997",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=1712-1",
+    "status": "v2"
+  },
+  {
+    "name": "Wizard Trader",
+    "desc": "2891 — волшебник-торговец, Castle, 1997",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=2891-1",
+    "status": "v2"
+  },
+  {
+    "name": "Wizard's Cart",
+    "desc": "1736 — тележка волшебника, Castle, 1997",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=1736-1",
+    "status": "v2"
+  },
+  {
+    "name": "Big Foot 4x4",
+    "desc": "5561 — монстр-трак, Model Team, 1996",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=5561-1",
+    "status": "v1"
+  },
+  {
+    "name": "Explorien Starship",
+    "desc": "6982 — звездолёт Explorien, Space, 1996",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=6982-1",
+    "status": "v2"
+  },
+  {
+    "name": "Giant Truck",
+    "desc": "5571 — огромный грузовик, Model Team, 1996",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=5571-1",
+    "status": "v1"
+  },
+  {
+    "name": "Gladiator",
+    "desc": "GLADIATOR — парусник Pirates, 1996",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=GLADIATOR-1",
+    "status": "v2"
+  },
+  {
+    "name": "Sea Jet",
+    "desc": "5521 — скоростной катер, Model Team, 1996",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=5521-1",
+    "status": "v2"
+  },
+  {
+    "name": "Gas Transit",
+    "desc": "6594 — бензовоз, Town, 1995",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=6594-1",
+    "status": "v5"
+  },
+  {
+    "name": "Whirl N' Wheel Super Truck",
+    "desc": "5590 — грузовик с краном, Model Team, 1993",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=5590-1",
+    "status": "v2"
+  },
+  {
+    "name": "Air Tech Claw Rig",
+    "desc": "8868 — пневматический манипулятор, Technic, 1992",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=8868-1",
+    "status": "v2"
+  },
+  {
+    "name": "Basic Building Set with Train",
+    "desc": "4080 — базовый набор с поездом, Basic, 1992",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=4080-1",
+    "status": "v2"
+  },
+  {
+    "name": "Monorail Transport Base",
+    "desc": "6991 — монорельс Futuron с базой, 1990",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=6991-1",
+    "status": "v5"
+  },
+  {
+    "name": "Magic Flash",
+    "desc": "5581 — гоночная машина, Model Team, 1990",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=5581-1",
+    "status": "v3"
+  },
+  {
+    "name": "Technic Control I",
+    "desc": "1090 — программируемый Technic с блоком управления, 1990",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=1090-1",
+    "status": "v4"
+  },
+  {
+    "name": "Message Intercept Base",
+    "desc": "6987 — база перехвата, Space, 1988",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=6987-1",
+    "status": "v3"
+  },
+  {
+    "name": "Futuron Monorail Transport System",
+    "desc": "6990 — монорельс Futuron полный комплект, 1987",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=6990-1",
+    "status": "v3"
+  },
+  {
+    "name": "Robot Command Center",
+    "desc": "6951 — командный центр роботов, Space, 1984",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=6951-1",
+    "status": "v1"
+  },
+  {
+    "name": "Shell Tanker Wagon",
+    "desc": "7813 — цистерна Shell, Trains, 1983",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=7813-1",
+    "status": "v4"
+  },
+  {
+    "name": "Inter-City Passenger Train",
+    "desc": "7740 — электричка с рельсами, Trains, 1980",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=7740-1",
+    "status": "v5"
+  },
+  {
+    "name": "Railway Station",
+    "desc": "7822 — вокзал с перроном, Trains, 1980",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=7822-1",
+    "status": "v4"
+  },
+  {
+    "name": "Electronic Train",
+    "desc": "138 — электрический поезд, Trains, 1971",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=138-1",
+    "status": "v3"
+  },
+  {
+    "name": "Electronic Train",
+    "desc": "118 — электрический поезд, Trains, 1969",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=118-1",
+    "status": "v3"
+  },
+  {
+    "name": "Motorized Train Set",
+    "desc": "113 — моторизованный поезд, Trains, 1966",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=113-1",
+    "status": "v3"
+  },
+  {
+    "name": "Starter Train Set with Motor",
+    "desc": "115 — стартовый поезд с мотором, Trains, 1966",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=115-1",
+    "status": "v2"
+  },
+  {
+    "name": "Starter Train Set without Motor",
+    "desc": "111 — стартовый поезд без мотора, Trains, 1966",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=111-1",
+    "status": "v2"
   }
 ]

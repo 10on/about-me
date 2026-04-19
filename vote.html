@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>лего — голосование</title>
+    <style>
+        :root {
+            --bg: #F7F5F0;
+            --text: #1A1A1A;
+            --muted: #8A8780;
+            --border: #E2DDD6;
+            --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            --mono: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font);
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 1rem 3rem;
+        }
+
+        .top {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .top-title {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+        }
+
+        .top-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .top-controls button {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            padding: 0.25rem 0.6rem;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .top-controls button:hover { background: var(--border); }
+
+        .progress-wrap {
+            width: 100%;
+            max-width: 480px;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-bar {
+            height: 3px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 0.4rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #16a34a;
+            border-radius: 2px;
+            transition: width 0.3s;
+        }
+
+        .progress-label {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 480px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-img-wrap {
+            width: 100%;
+            background: #f0ede8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+        }
+
+        .card-img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .card-no-img {
+            font-size: 0.85rem;
+            color: var(--muted);
+            padding: 3rem;
+        }
+
+        .card-body {
+            padding: 1.25rem 1.25rem 1rem;
+        }
+
+        .card-num {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            color: var(--muted);
+            margin-bottom: 0.3rem;
+        }
+
+        .card-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .current-vote {
+            margin-top: 0.6rem;
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            min-height: 1.2em;
+        }
+
+        .votes {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .vote-btn {
+            flex: 1;
+            padding: 0.7rem 0.25rem 0.5rem;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--muted);
+            transition: all 0.1s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.2rem;
+        }
+
+        .vote-btn:hover { transform: translateY(-2px); border-color: #aaa; color: var(--text); }
+
+        .vote-label {
+            font-size: 0.58rem;
+            font-family: var(--font);
+            font-weight: 400;
+            line-height: 1.2;
+            color: inherit;
+        }
+
+        .vote-btn.active {
+            transform: translateY(-2px);
+        }
+
+        .v1.active { background: #f0f0f0; border-color: #999; color: #444; }
+        .v2.active { background: #dbeafe; border-color: #3b82f6; color: #1d4ed8; }
+        .v3.active { background: #fef9c3; border-color: #ca8a04; color: #854d0e; }
+        .v4.active { background: #ffedd5; border-color: #ea580c; color: #9a3412; }
+        .v5.active { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+
+        .nav-row {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.25rem;
+            gap: 0.75rem;
+        }
+
+        .nav-btn {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            padding: 0.5rem 1.2rem;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        .nav-btn:hover { background: var(--border); }
+        .nav-btn:disabled { opacity: 0.35; cursor: default; }
+
+        .done-screen {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .done-screen h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .done-screen p {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .done-screen button {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            padding: 0.6rem 1.4rem;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 0.3rem;
+        }
+
+        .done-screen button:hover { background: var(--border); }
+    </style>
+</head>
+<body>
+
+<div class="top">
+    <span class="top-title">лего — голосование</span>
+    <div class="top-controls">
+        <button onclick="exportResults()">экспорт</button>
+        <button onclick="if(confirm('Сбросить всё?')){votes={};save();goTo(0);}">сброс</button>
+    </div>
+</div>
+
+<div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+    <div class="progress-label">
+        <span id="prog-text">0 из 65</span>
+        <span id="prog-remain"></span>
+    </div>
+</div>
+
+<div id="main"></div>
+
+<script>
+const LABELS = {
+    1: 'ну может',
+    2: 'сойдёт',
+    3: 'неплохо',
+    4: 'хочу',
+    5: 'очень хочу',
+};
+
+const COLORS = {
+    1: '#999', 2: '#3b82f6', 3: '#ca8a04', 4: '#ea580c', 5: '#16a34a',
+};
+
+const SETS = [
+    { num: '42070',   name: '6x6 All Terrain Tow Truck' },
+    { num: '2996',    name: 'Adventurers Tomb (The Lost Tomb)' },
+    { num: '8868',    name: 'Air Tech Claw Rig' },
+    { num: '4080',    name: 'Basic Building Set with Train' },
+    { num: '5561',    name: 'Big Foot 4x4' },
+    { num: '10270',   name: 'Bookshop' },
+    { num: '6096',    name: "Bull's Attack" },
+    { num: '3225',    name: 'Classic Train' },
+    { num: '9701',    name: 'Control Lab Building Set' },
+    { num: '8446',    name: 'Crane Truck' },
+    { num: '1732',    name: 'Crossbow Cart' },
+    { num: '1712',    name: 'Crossbow Cart polybag' },
+    { num: '2879',    name: 'Desert Expedition' },
+    { num: '118',     name: 'Electronic Train' },
+    { num: '138',     name: 'Electronic Train' },
+    { num: '10194',   name: 'Emerald Night' },
+    { num: '21109',   name: 'EXO SUIT' },
+    { num: '6982',    name: 'Explorien Starship' },
+    { num: '910043',  name: 'Forest Stronghold' },
+    { num: '6990',    name: 'Futuron Monorail Transport System' },
+    { num: '6594',    name: 'Gas Transit' },
+    { num: '5571',    name: 'Giant Truck' },
+    { num: 'GLADIATOR', name: 'Gladiator' },
+    { num: '4513',    name: 'Grand Central Station' },
+    { num: '10210',   name: 'Imperial Flagship' },
+    { num: '7740',    name: 'Inter-City Passenger Train' },
+    { num: '6098',    name: "King Leo's Castle" },
+    { num: '10219',   name: 'Maersk Container Train' },
+    { num: '5581',    name: 'Magic Flash' },
+    { num: '21305',   name: 'Maze' },
+    { num: '42043',   name: 'Mercedes-Benz Arocs 3245' },
+    { num: '6987',    name: 'Message Intercept Base' },
+    { num: '7189',    name: 'Mill Village Raid' },
+    { num: '910009',  name: 'Modular LEGO Store' },
+    { num: '6991',    name: 'Monorail Transport Base' },
+    { num: '113',     name: 'Motorized Train Set' },
+    { num: '910029',  name: 'Mountain Fortress' },
+    { num: '910027',  name: 'Mountain View Observatory' },
+    { num: '10266',   name: 'NASA Apollo 11 Lunar Lander' },
+    { num: '5938',    name: 'Oasis Ambush' },
+    { num: '21310',   name: 'Old Fishing Store' },
+    { num: '7684',    name: 'Pig Farm & Tractor' },
+    { num: '8457',    name: 'Power Puller' },
+    { num: '10002',   name: 'Railroad Club Car' },
+    { num: '7822',    name: 'Railway Station' },
+    { num: '2949',    name: 'RC Dozer' },
+    { num: '6951',    name: 'Robot Command Center' },
+    { num: '10020',   name: 'Santa Fe Super Chief' },
+    { num: 'BL19007', name: 'Science Tower' },
+    { num: '5521',    name: 'Sea Jet' },
+    { num: '8250',    name: 'Search Sub' },
+    { num: '7813',    name: 'Shell Tanker Wagon' },
+    { num: 'BL19003', name: 'Skyline Express' },
+    { num: '7315',    name: 'Solar Explorer' },
+    { num: '7244',    name: 'Speedboat' },
+    { num: '115',     name: 'Starter Train Set with Motor' },
+    { num: '111',     name: 'Starter Train Set without Motor' },
+    { num: '10016',   name: 'Tanker' },
+    { num: '1090',    name: 'Technic Control I' },
+    { num: '5919',    name: 'The Valley of the Kings' },
+    { num: '10128',   name: 'Train Level Crossing' },
+    { num: '21343',   name: 'Viking Village' },
+    { num: '5590',    name: 'Whirl N\' Wheel Super Truck' },
+    { num: '2891',    name: 'Wizard Trader' },
+    { num: '1736',    name: "Wizard's Cart" },
+];
+
+const KEY = 'lego_votes_v2';
+let votes = JSON.parse(localStorage.getItem(KEY) || '{}');
+let idx = 0;
+
+function save() { localStorage.setItem(KEY, JSON.stringify(votes)); }
+
+function imgUrl(num) {
+    return `https://img.bricklink.com/ItemImage/SN/0/${num}-1.png`;
+}
+
+function updateProgress() {
+    const voted = SETS.filter(s => votes[s.num]).length;
+    const pct = SETS.length ? (voted / SETS.length * 100) : 0;
+    document.getElementById('progress').style.width = pct + '%';
+    document.getElementById('prog-text').textContent = `${voted} из ${SETS.length}`;
+    const left = SETS.length - voted;
+    document.getElementById('prog-remain').textContent = left > 0 ? `осталось ${left}` : 'готово!';
+}
+
+function goTo(i) {
+    idx = Math.max(0, Math.min(i, SETS.length));
+    render();
+    updateProgress();
+}
+
+function render() {
+    const el = document.getElementById('main');
+
+    if (idx >= SETS.length) {
+        el.innerHTML = `
+            <div class="done-screen">
+                <h2>всё!</h2>
+                <p>Проголосовал за все ${SETS.length} наборов.</p>
+                <button onclick="exportResults()">скачать результаты</button>
+                <button onclick="goTo(0)">сначала</button>
+            </div>`;
+        return;
+    }
+
+    const set = SETS[idx];
+    const v = votes[set.num] || 0;
+
+    const voteButtons = [1,2,3,4,5].map(n => `
+        <button class="vote-btn v${n}${v === n ? ' active' : ''}" onclick="vote(${n})">
+            ${n}
+            <span class="vote-label">${LABELS[n]}</span>
+        </button>
+    `).join('');
+
+    el.innerHTML = `
+        <div class="card">
+            <div class="card-img-wrap" id="img-wrap">
+                <img class="card-img" src="${imgUrl(set.num)}"
+                    alt="${set.name}"
+                    onerror="document.getElementById('img-wrap').innerHTML='<div class=\\'card-no-img\\'>нет фото на BL</div>'">
+            </div>
+            <div class="card-body">
+                <div class="card-num">#${set.num} &nbsp;·&nbsp; ${idx + 1} / ${SETS.length}</div>
+                <div class="card-name">${set.name}</div>
+                <div class="current-vote" id="cur-vote" style="color:${v ? COLORS[v] : 'transparent'}">
+                    ${v ? `▸ ${LABELS[v]}` : '·'}
+                </div>
+            </div>
+        </div>
+        <div class="votes">${voteButtons}</div>
+        <div class="nav-row">
+            <button class="nav-btn" onclick="goTo(${idx - 1})" ${idx === 0 ? 'disabled' : ''}>← назад</button>
+            <button class="nav-btn" onclick="goTo(${idx + 1})">${idx === SETS.length - 1 ? 'завершить →' : 'пропустить →'}</button>
+        </div>`;
+}
+
+function vote(n) {
+    const set = SETS[idx];
+    votes[set.num] = (votes[set.num] === n) ? 0 : n;
+    save();
+    // auto-advance on new vote
+    if (votes[set.num]) {
+        setTimeout(() => goTo(idx + 1), 280);
+    } else {
+        render();
+    }
+    updateProgress();
+}
+
+function exportResults() {
+    const result = SETS.map(s => ({
+        num: s.num,
+        name: s.name,
+        vote: votes[s.num] || 0,
+        label: LABELS[votes[s.num]] || '—',
+    })).sort((a, b) => b.vote - a.vote);
+
+    const json = JSON.stringify(result, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'lego_votes.json';
+    a.click();
+}
+
+// start from first unvoted
+const firstUnvoted = SETS.findIndex(s => !votes[s.num]);
+goTo(firstUnvoted >= 0 ? firstUnvoted : 0);
+</script>
+</body>
+</html>
