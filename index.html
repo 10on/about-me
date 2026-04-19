@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>дэнчик</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">дэнчик</a>
+        <nav>
+            <a href="#about">обо мне</a>
+            <a href="#lego">лего</a>
+            <a href="#retro">ретро техника</a>
+            <a href="#diy">самоделки</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="about">
+                <h2>обо мне</h2>
+                <div class="about-text">
+                    <p>Всем привет. В какой-то момент я решил завести страничку на которой будет кучка информации обо мне. Ниже очень посредственный список фактов/интересов/полезностей, как бы временный, но вдруг он будет чем-то полезен. По большей части делаю для себя :)</p>
+
+                    <div class="cat-block">
+                        <img src="img/persik.jpg" alt="Персик">
+                        <p class="cat-caption">У меня есть кот — пипец как его люблю. Кота зовут Персик 🍑</p>
+                    </div>
+
+                    <div class="facts">
+                        <div class="fact-group">
+                            <div class="fact-label">работа</div>
+                            <div class="fact-body">Backend-разработчик (PHP). <a href="https://www.linkedin.com/in/d-push/" target="_blank" rel="noopener">LinkedIn</a></div>
+                        </div>
+                        <div class="fact-group">
+                            <div class="fact-label">лего</div>
+                            <div class="fact-body">Коллекционирую старое и новое. <a href="https://rebrickable.com/users/10on/lego/" target="_blank" rel="noopener">Rebrickable</a> · <a href="https://www.youtube.com/@DenchikBricks" target="_blank" rel="noopener">YouTube</a> · <a href="http://t.me/denchik_bricks" target="_blank" rel="noopener">Telegram</a></div>
+                        </div>
+                        <div class="fact-group">
+                            <div class="fact-label">игры</div>
+                            <div class="fact-body">Современное и ретро с середины 80-х. Из последнего — Prey (2017), Factorio, Zelda BotW. Mac M1 · GFN · Steam Deck · Wii</div>
+                        </div>
+                        <div class="fact-group">
+                            <div class="fact-label">музыка</div>
+                            <div class="fact-body">Изредка играю на гитаре. Предпочитаю классику — несколько Yamaha C40 в прошлом</div>
+                        </div>
+                        <div class="fact-group">
+                            <div class="fact-label">книги</div>
+                            <div class="fact-body">Научная фантастика и немного научпоп. Люблю бумагу, но чаще стопка книг просто ждёт</div>
+                        </div>
+                        <div class="fact-group">
+                            <div class="fact-label">велик</div>
+                            <div class="fact-body">SCOTT Aspect 960, в основном по городу</div>
+                        </div>
+                        <div class="fact-group">
+                            <div class="fact-label">откуда</div>
+                            <div class="fact-body">Омск → Калининград → Москва → Подгорица → Белград</div>
+                        </div>
+                        <div class="fact-group">
+                            <div class="fact-label">учёба</div>
+                            <div class="fact-body">ОмГУ — радиофизика (бак.) · медицинская физика (маг.)</div>
+                        </div>
+                    </div>
+
+                    <p class="wishlist-note">Если решили чем-то меня порадовать — загляните в разделы <a href="#lego">лего</a> и <a href="#diy">самоделки</a>, там помечено что хочу. Или <a href="mailto:igoo10on@gmail.com">напишите анонимку</a> :)</p>
+                </div>
+            </section>
+        </div>
+
+        <section id="lego" class="longread-section">
+            <div class="section-banner" style="background-image: url('img/lego-cover.jpg')">
+                <div class="container">
+                    <div class="banner-text">
+                        <h2>лего</h2>
+                        <p>коллекция и хотелки</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container section-content">
+                <div id="lego-list"></div>
+            </div>
+        </section>
+
+        <section id="retro" class="longread-section">
+            <div class="section-banner" style="background-image: url('img/retro-cover.jpg')">
+                <div class="container">
+                    <div class="banner-text">
+                        <h2>ретро техника</h2>
+                        <p>старое железо которое нравится</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container section-content">
+                <div id="retro-list"></div>
+            </div>
+        </section>
+
+        <section id="diy" class="longread-section">
+            <div class="section-banner" style="background-image: url('img/diy-cover.jpg')">
+                <div class="container">
+                    <div class="banner-text">
+                        <h2>самоделки</h2>
+                        <p>что делаю и что хочу сделать</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container section-content">
+                <div id="diy-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>дэнчик — <span id="year"></span></span>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
