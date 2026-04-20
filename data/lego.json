@@ -324,6 +324,12 @@
     "status": "v4"
   },
   {
+    "name": "Black Falcon's Fortress",
+    "desc": "6074 — замок Чёрных Соколов, Castle, 1986",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=6074-1",
+    "status": "v2"
+  },
+  {
     "name": "Message Intercept Base",
     "desc": "6987 — база перехвата, Space, 1988",
     "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=6987-1",
@@ -388,6 +394,30 @@
     "desc": "7867 — фонарные столбы 12V, Trains, 1980",
     "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=7867-1",
     "status": "v3"
+  },
+  {
+    "name": "Black Seas Barracuda (Reissue)",
+    "desc": "10040 — переиздание легендарного пиратского корабля, Pirates, 2002",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=10040-1",
+    "status": "v4"
+  },
+  {
+    "name": "Red Beard Runner",
+    "desc": "6289 — пиратский корабль, Pirates, 1996",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=6289-1",
+    "status": "v3"
+  },
+  {
+    "name": "Skull's Eye Schooner",
+    "desc": "6286 — большой пиратский шхуна, Pirates, 1993",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=6286-1",
+    "status": "v4"
+  },
+  {
+    "name": "Black Seas Barracuda",
+    "desc": "6285 — классический пиратский корабль, Pirates, 1989",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=6285-1",
+    "status": "v5"
   },
   {
     "name": "Electronic Train",
