@@ -360,6 +360,36 @@
     "status": "v4"
   },
   {
+    "name": "Level Crossing Manual",
+    "desc": "7834 — ручной железнодорожный переезд, Trains, 1980",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=7834-1",
+    "status": "v4"
+  },
+  {
+    "name": "Remote Controlled Signal",
+    "desc": "7860 — дистанционный светофор 12V, Trains, 1980",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=7860-1",
+    "status": "v3"
+  },
+  {
+    "name": "Remote Controlled Decoupling",
+    "desc": "7862 — дистанционная расцепка 12V, Trains, 1980",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=7862-1",
+    "status": "v3"
+  },
+  {
+    "name": "Remote Controlled Road Crossing",
+    "desc": "7866 — дистанционный переезд 12V, Trains, 1980",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=7866-1",
+    "status": "v4"
+  },
+  {
+    "name": "Train Light Posts",
+    "desc": "7867 — фонарные столбы 12V, Trains, 1980",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=7867-1",
+    "status": "v3"
+  },
+  {
     "name": "Electronic Train",
     "desc": "138 — электрический поезд, Trains, 1971",
     "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=138-1",
