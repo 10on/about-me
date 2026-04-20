@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>лего-проекты — дэнчик</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .projects-header {
+            padding-top: 3.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .projects-header h2 {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .projects-header p {
+            font-size: 1rem;
+            color: var(--muted);
+            max-width: 480px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 0.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-tab {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            padding: 0.3rem 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: none;
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .filter-tab:hover {
+            color: var(--text);
+            border-color: var(--muted);
+        }
+
+        .filter-tab.active {
+            background: var(--text);
+            color: var(--bg);
+            border-color: var(--text);
+        }
+
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-item {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-item:first-child { padding-top: 0; }
+        .project-item:last-child  { border-bottom: none; padding-bottom: 0; }
+
+        .project-item.hidden { display: none; }
+
+        .project-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .project-pct {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-align: right;
+            white-space: nowrap;
+            min-width: 2.5rem;
+        }
+
+        .project-pct.done {
+            color: #16a34a;
+        }
+
+        .progress-track {
+            width: 140px;
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 2px;
+            background: var(--border);
+            transition: width 0.3s;
+        }
+
+        .progress-fill.in-progress {
+            background: var(--accent);
+        }
+
+        .progress-fill.done {
+            background: #16a34a;
+        }
+
+        .empty-state {
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-style: italic;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 520px) {
+            .progress-track { width: 80px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">дэнчик</a>
+        <nav>
+            <a href="index.html#about">обо мне</a>
+            <a href="lego.html">лего</a>
+            <a href="index.html#retro">ретро техника</a>
+            <a href="index.html#diy">самоделки</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="projects-header">
+                <h2>лего — проекты</h2>
+                <p>Что снимаю, в каком состоянии.</p>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="filter-tab" data-filter="all">все</button>
+                <button class="filter-tab active" data-filter="active">в процессе</button>
+                <button class="filter-tab" data-filter="done">готово</button>
+            </div>
+
+            <div class="projects-list" id="projects-list">
+                <p class="empty-state">загрузка...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <span>дэнчик — <span id="year"></span></span>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        let allProjects = [];
+        let currentFilter = 'active';
+
+        function isDone(p) { return p.progress >= 100; }
+
+        function render() {
+            const list = document.getElementById('projects-list');
+            const items = allProjects.filter(p => {
+                if (currentFilter === 'active') return !isDone(p);
+                if (currentFilter === 'done')   return isDone(p);
+                return true;
+            });
+
+            if (!items.length) {
+                list.innerHTML = '<p class="empty-state">ничего нет</p>';
+                return;
+            }
+
+            list.innerHTML = items.map(p => {
+                const done = isDone(p);
+                const pct  = Math.min(p.progress, 100);
+                const fillClass = done ? 'done' : (pct > 0 ? 'in-progress' : '');
+                const pctClass  = done ? 'done' : '';
+                return `
+                    <div class="project-item">
+                        <div class="project-name">${p.name}</div>
+                        <div class="progress-track">
+                            <div class="progress-fill ${fillClass}" style="width:${pct}%"></div>
+                        </div>
+                        <div class="project-pct ${pctClass}">${done ? '✓' : (pct > 0 ? pct + '%' : '—')}</div>
+                    </div>`;
+            }).join('');
+        }
+
+        document.querySelectorAll('.filter-tab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                render();
+            });
+        });
+
+        fetch('data/lego-projects.json')
+            .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
+            .then(data => {
+                allProjects = data.slice().sort((a, b) => {
+                    const aDone = isDone(a), bDone = isDone(b);
+                    if (aDone !== bDone) return aDone ? 1 : -1;
+                    return b.progress - a.progress;
+                });
+                render();
+            })
+            .catch(() => {
+                document.getElementById('projects-list').innerHTML =
+                    '<p class="empty-state">не удалось загрузить :(</p>';
+            });
+    </script>
+</body>
+</html>
