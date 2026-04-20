@@ -35,7 +35,12 @@
                     <p>В 2025 году съездил на BuWizz Gathering в Словению — соревнование по Lego Technic. Выступил, честно говоря, очень плохо. Но в 2026 хочу снова — если визу дадут :)</p>
                     <p class="section-wishlist">Если хотите меня порадовать — ниже список того что хочу, отмечено «хочу».</p>
                 </div>
-                <div id="lego-list"></div>
+                <div class="sort-controls">
+                    <button class="sort-btn active" data-key="priority">важность</button>
+                    <button class="sort-btn" data-key="year">год</button>
+                    <button class="sort-dir" id="sort-dir" title="направление">↓</button>
+                </div>
+                <div id="lego-wishlist"></div>
                 <a href="projects.html" class="section-link" style="margin-top: 2.5rem; display: inline-block;">прогресс по проектам →</a>
             </div>
         </section>
@@ -51,6 +56,114 @@
         </div>
     </div>
 
+    <style>
+        .sort-controls {
+            display: flex;
+            gap: 0.4rem;
+            margin-bottom: 1.5rem;
+            align-items: center;
+        }
+        .sort-btn {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            padding: 0.3rem 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: none;
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .sort-btn:hover { color: var(--text); border-color: var(--muted); }
+        .sort-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+        .sort-dir {
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            padding: 0.25rem 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: none;
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.15s;
+            line-height: 1;
+        }
+        .sort-dir:hover { color: var(--text); border-color: var(--muted); }
+    </style>
+
     <script src="main.js"></script>
+    <script>
+        const PRIORITY = { v5: 5, v4: 4, v3: 3, v2: 2, v1: 1 };
+
+        let legoData = [];
+        let sortKey = 'priority';
+        let sortAsc = false;
+
+        function getYear(item) {
+            const m = item.desc && item.desc.match(/,\s*(\d{4})$/);
+            return m ? parseInt(m[1]) : 0;
+        }
+
+        function getSortValue(item) {
+            return sortKey === 'year' ? getYear(item) : (PRIORITY[item.status] || 0);
+        }
+
+        function renderList() {
+            const sorted = legoData.slice().sort((a, b) => {
+                const diff = getSortValue(a) - getSortValue(b);
+                return sortAsc ? diff : -diff;
+            });
+
+            const rows = sorted.map(item => {
+                const nameHtml = item.url
+                    ? `<a href="${item.url}" target="_blank" rel="noopener">${item.name}</a>`
+                    : item.name;
+                const descHtml = item.desc ? `<div class="item-desc">${item.desc}</div>` : '';
+                const statusHtml = item.status
+                    ? `<span class="item-status status-${item.status}">${STATUS_LABELS[item.status] ?? item.status}</span>`
+                    : '';
+                const num = item.desc ? item.desc.match(/^(\S+)/)?.[1] : null;
+                const imgUrl = num ? `https://img.bricklink.com/ItemImage/SN/0/${num}-1.png` : null;
+                const picHtml = imgUrl
+                    ? `<button class="item-pic" onclick="openModal('${imgUrl}','${item.name.replace(/'/g,"\\'")}')">тык</button>`
+                    : '';
+                return `<div class="item">
+                    <div><div class="item-name">${nameHtml}</div>${descHtml}</div>
+                    <div class="item-right">${picHtml}${statusHtml}</div>
+                </div>`;
+            }).join('');
+
+            document.getElementById('lego-wishlist').innerHTML = `<div class="items-list">${rows}</div>`;
+        }
+
+        document.querySelectorAll('.sort-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const key = btn.dataset.key;
+                if (sortKey === key) {
+                    sortAsc = !sortAsc;
+                } else {
+                    sortKey = key;
+                    sortAsc = false;
+                    document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                }
+                document.getElementById('sort-dir').textContent = sortAsc ? '↑' : '↓';
+                renderList();
+            });
+        });
+
+        document.getElementById('sort-dir').addEventListener('click', () => {
+            sortAsc = !sortAsc;
+            document.getElementById('sort-dir').textContent = sortAsc ? '↑' : '↓';
+            renderList();
+        });
+
+        fetch('data/lego.json')
+            .then(r => r.ok ? r.json() : Promise.reject())
+            .then(data => { legoData = data; renderList(); })
+            .catch(() => {
+                document.getElementById('lego-wishlist').innerHTML = '<p class="empty">не удалось загрузить :(</p>';
+            });
+    </script>
 </body>
 </html>
