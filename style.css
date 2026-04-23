@@ -265,6 +265,80 @@ main {
     padding-bottom: 4rem;
 }
 
+.section-content > h2 {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+}
+
+/* ─── Games ─── */
+
+.games-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.games-group-label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.game-item {
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--border);
+}
+
+.game-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.game-year {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.game-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.group-photo {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 6px;
+    display: block;
+}
+
+.games-devices-label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
+}
+
 /* ─── Section intro ─── */
 
 .section-intro {
@@ -389,6 +463,48 @@ main {
     border-color: var(--muted);
 }
 
+.item-with-img {
+    align-items: center;
+}
+
+.item-thumb {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    border-radius: 4px;
+    background: #f5f5f5;
+    flex-shrink: 0;
+    cursor: zoom-in;
+}
+
+.item-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-links {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 0.25rem;
+}
+
+.item-link {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0.15rem 0.4rem;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.item-link:hover {
+    color: var(--text);
+    border-color: var(--muted);
+}
+
 #img-modal {
     display: none;
     position: fixed;
@@ -457,5 +573,14 @@ footer {
 
     .fact-group {
         grid-template-columns: 72px 1fr;
+    }
+
+    .item-thumb {
+        width: 54px;
+        height: 54px;
+    }
+
+    .item-links {
+        flex-wrap: wrap;
     }
 }

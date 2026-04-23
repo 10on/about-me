@@ -14,6 +14,7 @@
             <a href="#lego">лего</a>
             <a href="#retro">ретро техника</a>
             <a href="#diy">самоделки</a>
+            <a href="#games">игры</a>
         </nav>
     </header>
 
@@ -80,7 +81,7 @@
         </div>
 
         <section id="lego" class="longread-section">
-            <div class="section-banner" style="background-image: url('img/lego-cover.jpg')">
+            <div class="section-banner" style="background-image: url('img/lego-cover.jpg')" hidden>
                 <div class="container">
                     <div class="banner-text">
                         <h2>лего</h2>
@@ -89,7 +90,8 @@
                 </div>
             </div>
             <div class="container section-content">
-                <div class="section-intro">
+                <h2>лего</h2>
+                <div class="section-intro" hidden>
                     <p>Всё началось с того что я увидел на авито — продают запчасти для биониклов. И вдруг вспомнил, как в детстве терял какие-то детали и думал, что они исчезли навсегда. Своих биониклов я привёз из Омска, пара подружек увидели их и подарили первый Technic. Потом я захотел построить большой движущийся экскаватор — а дальше всё как в тумане.</p>
                     <p>Сейчас больше 300 наборов и килограммы деталей — от современности до второй половины шестидесятых. Сначала был Technic, потом поезда, а потом пришла... полная погружённость вне зависимости от серии и года выпуска :)</p>
                     <p>В какой-то момент захотелось делиться — сначала появились плавающие кораблики, потом желание показывать как это делается. Так появились <a href="https://www.youtube.com/@DenchikBricks" target="_blank" rel="noopener">YouTube</a> и <a href="http://t.me/denchik_bricks" target="_blank" rel="noopener">Telegram</a>. Веду не спеша, но с душой.</p>
@@ -130,7 +132,92 @@
                 </div>
             </div>
             <div class="container section-content">
+                <div class="section-intro">
+                    <p>Всегда тащил домой всякую ерунду с улицы и разбирал всё что попадалось под руку. Дедушкин гараж с чемоданами советских радиодеталей — это было как клад. Первый самодельный усилитель на микросхеме из этих запасов, жучки, простые передатчики, базово покрутил PIC и ATmega — в общем, школьные годы прошли продуктивно.</p>
+                    <p>Потом был большой перерыв — переезды, работа, стартап по доставке. Всё железо осталось где-то позади.</p>
+                    <p>Вернулся к этому уже в Черногории и Сербии. Летом 2022-го влез в 3D-печать: Flyingbear Ghost 5, Kingroon KP-3S, Ender 3 — все активно модифицировал и ковырял. В Черногории был Ender 3 V2 Neo, но он к тому моменту уже порядком устарел, так что пересел на Anycubic Kobra 3 — на нём печатаю сейчас.</p>
+                    <p>3D-печать — чисто хобби, без коммерции. Печатаю разные мелочи для себя: бытовое и развлекательное.</p>
+                    <p>Сейчас всё это выросло в ESP32/Arduino-проекты и умный дом — дух примерно тот же что в детстве: сделать что-нибудь своими руками просто потому что интересно.</p>
+                </div>
                 <div id="diy-list"></div>
+            </div>
+        </section>
+
+        <section id="games" class="longread-section">
+            <div class="section-banner" style="background-image: url('img/games-cover.jpg')">
+                <div class="container">
+                    <div class="banner-text">
+                        <h2>игры</h2>
+                        <p>на чём играю</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container section-content">
+                <div class="section-intro">
+                    <div class="games-group">
+                        <div class="games-group-label">зацепило в последние годы</div>
+                        <div class="game-item">
+                            <div class="game-title">Prey (2017)</div>
+                            <div class="game-desc">Игра про одиночество на космической станции. Нетривиальный сюжет, интересные механики, сильный сеттинг и неплохие моральные вопросы.</div>
+                        </div>
+                        <div class="game-item">
+                            <div class="game-title">Factorio</div>
+                            <div class="game-desc">Строительство завода, автоматизация, захват новых территорий. Провёл в ней 500+ часов. Держите меня от неё подальше.</div>
+                        </div>
+                        <div class="game-item">
+                            <div class="game-title">Zelda: Breath of the Wild</div>
+                            <div class="game-desc">Просто очень качественная игра, приятная и красивая. Тоже не одна сотня часов.</div>
+                        </div>
+                    </div>
+
+                    <div class="games-group">
+                        <div class="games-group-label">ретро — познакомился уже взрослым</div>
+                        <div class="game-item">
+                            <div class="game-title">X-COM: UFO Defense <span class="game-year">1993</span></div>
+                            <div class="game-desc">Оборона от пришельцев. Познакомился в универе, периодически возвращаюсь на несколько вечеров — и снова забрасываю.</div>
+                        </div>
+                        <div class="game-item">
+                            <div class="game-title">The Legend of Zelda <span class="game-year">1986</span></div>
+                            <div class="game-desc">Зашёл неожиданно, уже зная современные части. Удивило насколько продуманными были игры того времени — многие механики дошли до наших дней практически без изменений.</div>
+                        </div>
+                    </div>
+
+                    <div class="games-group">
+                        <div class="games-group-label">sega mega drive — китайская, в корпусе первой playstation</div>
+                        <img src="img/sega.png" alt="Sega Mega Drive Simba S-168" class="group-photo">
+                        <div class="game-item">
+                            <div class="game-title">Urban Strike</div>
+                            <div class="game-desc">Много играл, но в детстве так и не смог пройти.</div>
+                        </div>
+                        <div class="game-item">
+                            <div class="game-title">Rock n' Roll Racing</div>
+                            <div class="game-desc">Гонял много, перепроходил уже во взрослом возрасте.</div>
+                        </div>
+                        <div class="game-item">
+                            <div class="game-title">Operation Europe: Path to Victory</div>
+                            <div class="game-desc">Варгейм, десятки часов. Долго не понимал почему не сохраняется — оказалось, надо было просто вставить батарейку в картридж.</div>
+                        </div>
+                    </div>
+
+                    <div class="games-group">
+                        <div class="games-group-label">из компьютерного детства</div>
+                        <div class="game-item">
+                            <div class="game-title">Gothic 2</div>
+                            <div class="game-desc">Невероятно проработанный мир, который интересно исследовать до сих пор. Возвращаюсь раз в несколько лет.</div>
+                        </div>
+                        <div class="game-item">
+                            <div class="game-title">Rome: Total War</div>
+                            <div class="game-desc">Провёл сотни часов в детстве, и ещё заметное время уже во взрослом возрасте. Одна из любимых игр. Кто вообще не думает о Римской империи?</div>
+                        </div>
+                        <div class="game-item">
+                            <div class="game-title">The Suffering</div>
+                            <div class="game-desc">Игра про ужасы в тюрьме на острове. Запомнилась, возможно, просто потому что была одной из первых на моём личном компьютере.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="games-devices-label">на чём играю</div>
+                <div id="games-list"></div>
             </div>
         </section>
     </main>
