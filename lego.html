@@ -47,8 +47,8 @@
                 </div>
 
                 <div class="sort-controls">
-                    <button class="sort-btn active" data-key="priority">важность</button>
-                    <button class="sort-btn" data-key="year">год</button>
+                    <button class="sort-btn" data-key="priority">важность</button>
+                    <button class="sort-btn active" data-key="year">год</button>
                     <button class="sort-dir" id="sort-dir" title="направление">↓</button>
                 </div>
                 <div id="lego-wishlist"></div>
@@ -123,7 +123,7 @@
         const PRIORITY = { v5: 5, v4: 4, v3: 3, v2: 2, v1: 1 };
 
         let legoData = [];
-        let sortKey = 'priority';
+        let sortKey = 'year';
         let sortAsc = false;
 
         function getYear(item) {
