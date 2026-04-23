@@ -39,11 +39,11 @@
                 <h2>хотелки</h2>
 
                 <div class="legend">
-                    <span class="item-status status-v5">очень хочу</span>
-                    <span class="item-status status-v4">хочу</span>
-                    <span class="item-status status-v3">неплохо</span>
-                    <span class="item-status status-v2">сойдёт</span>
-                    <span class="item-status status-v1">ну может</span>
+                    <span class="item-status status-v5 legend-filter" data-status="v5">очень хочу</span>
+                    <span class="item-status status-v4 legend-filter" data-status="v4">хочу</span>
+                    <span class="item-status status-v3 legend-filter" data-status="v3">неплохо</span>
+                    <span class="item-status status-v2 legend-filter" data-status="v2">сойдёт</span>
+                    <span class="item-status status-v1 legend-filter" data-status="v1">ну может</span>
                 </div>
 
                 <div class="sort-controls">
@@ -107,6 +107,14 @@
             gap: 0.4rem;
             margin-bottom: 1.5rem;
         }
+        .legend-filter {
+            cursor: pointer;
+            user-select: none;
+            transition: opacity 0.15s;
+        }
+        .legend-filter.dimmed {
+            opacity: 0.3;
+        }
 
         .link-favicon {
             width: 12px;
@@ -125,6 +133,7 @@
         let legoData = [];
         let sortKey = 'year';
         let sortAsc = false;
+        let activeFilters = new Set();
 
         function getYear(item) {
             const m = item.desc && item.desc.match(/,\s*(\d{4})$/);
@@ -136,12 +145,16 @@
         }
 
         function renderList() {
-            const sorted = legoData.slice().sort((a, b) => {
+            const visible = activeFilters.size > 0
+                ? legoData.filter(item => activeFilters.has(item.status))
+                : legoData;
+            const sorted = visible.slice().sort((a, b) => {
                 const diff = getSortValue(a) - getSortValue(b);
                 return sortAsc ? diff : -diff;
             });
 
             const rows = sorted.map(item => {
+
                 const nameHtml = item.url
                     ? `<a href="${item.url}" target="_blank" rel="noopener">${item.name}</a>`
                     : item.name;
@@ -205,6 +218,21 @@
             sortAsc = !sortAsc;
             document.getElementById('sort-dir').textContent = sortAsc ? '↑' : '↓';
             renderList();
+        });
+
+        document.querySelectorAll('.legend-filter').forEach(el => {
+            el.addEventListener('click', () => {
+                const s = el.dataset.status;
+                if (activeFilters.has(s)) {
+                    activeFilters.delete(s);
+                } else {
+                    activeFilters.add(s);
+                }
+                document.querySelectorAll('.legend-filter').forEach(f => {
+                    f.classList.toggle('dimmed', activeFilters.size > 0 && !activeFilters.has(f.dataset.status));
+                });
+                renderList();
+            });
         });
 
         fetch('data/lego.json')
