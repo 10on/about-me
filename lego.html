@@ -122,14 +122,35 @@
                 const statusHtml = item.status
                     ? `<span class="item-status status-${item.status}">${STATUS_LABELS[item.status] ?? item.status}</span>`
                     : '';
-                const num = item.desc ? item.desc.match(/^(\S+)/)?.[1] : null;
-                const imgUrl = num ? `https://img.bricklink.com/ItemImage/SN/0/${num}-1.png` : null;
-                const picHtml = imgUrl
-                    ? `<button class="item-pic" onclick="openModal('${imgUrl}','${item.name.replace(/'/g,"\\'")}')">тык</button>`
-                    : '';
+                const num = item.desc?.match(/^(\S+)/)?.[1] ?? null;
+
+                if (num) {
+                    const imgSrc = `img/lego/${num}.jpg`;
+                    const safeName = item.name.replace(/'/g, "\\'");
+                    const blUrl  = item.url ?? '#';
+                    const rbUrl  = `https://rebrickable.com/sets/${num}-1/`;
+                    const ebayUrl = `https://www.ebay.com/sch/i.html?_nkw=lego+${encodeURIComponent(num)}`;
+                    return `<div class="item item-with-img">
+                        <img class="item-thumb" src="${imgSrc}" alt="${item.name}" loading="lazy"
+                             onclick="openModal('${imgSrc}','${safeName}')">
+                        <div class="item-body">
+                            <div class="item-name">${nameHtml}</div>
+                            ${descHtml}
+                        </div>
+                        <div class="item-right">
+                            <div class="item-links">
+                                <a class="item-link" href="${blUrl}" target="_blank" rel="noopener">BL</a>
+                                <a class="item-link" href="${rbUrl}" target="_blank" rel="noopener">RB</a>
+                                <a class="item-link" href="${ebayUrl}" target="_blank" rel="noopener">eBay</a>
+                            </div>
+                            ${statusHtml}
+                        </div>
+                    </div>`;
+                }
+
                 return `<div class="item">
                     <div><div class="item-name">${nameHtml}</div>${descHtml}</div>
-                    <div class="item-right">${picHtml}${statusHtml}</div>
+                    <div class="item-right">${statusHtml}</div>
                 </div>`;
             }).join('');
 
