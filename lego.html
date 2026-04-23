@@ -19,7 +19,7 @@
 
     <main>
         <section class="longread-section">
-            <div class="section-banner" style="background-image: url('img/lego-cover.jpg')">
+            <div class="section-banner" style="background-image: url('img/lego-cover.jpg')" hidden>
                 <div class="container">
                     <div class="banner-text">
                         <h2>лего</h2>
@@ -28,13 +28,24 @@
                 </div>
             </div>
             <div class="container section-content">
-                <div class="section-intro">
+                <div class="section-intro" hidden>
                     <p>Всё началось с того что я увидел на авито — продают запчасти для биониклов. И вдруг вспомнил, как в детстве терял какие-то детали и думал, что они исчезли навсегда. Своих биониклов я привёз из Омска, пара подружек увидели их и подарили первый Technic. Потом я захотел построить большой движущийся экскаватор — а дальше всё как в тумане.</p>
                     <p>Сейчас больше 300 наборов и килограммы деталей — от современности до второй половины шестидесятых. Сначала был Technic, потом поезда, а потом пришла... полная погружённость вне зависимости от серии и года выпуска :)</p>
                     <p>В какой-то момент захотелось делиться — сначала появились плавающие кораблики, потом желание показывать как это делается. Так появились <a href="https://www.youtube.com/@DenchikBricks" target="_blank" rel="noopener">YouTube</a> и <a href="http://t.me/denchik_bricks" target="_blank" rel="noopener">Telegram</a>. Веду не спеша, но с душой.</p>
                     <p>В 2025 году съездил на BuWizz Gathering в Словению — соревнование по Lego Technic. Выступил, честно говоря, очень плохо. Но в 2026 хочу снова — если визу дадут :)</p>
                     <p class="section-wishlist">Если хотите меня порадовать — ниже список того что хочу, отмечено «хочу».</p>
                 </div>
+
+                <h2>хотелки</h2>
+
+                <div class="legend">
+                    <span class="item-status status-v5">очень хочу</span>
+                    <span class="item-status status-v4">хочу</span>
+                    <span class="item-status status-v3">неплохо</span>
+                    <span class="item-status status-v2">сойдёт</span>
+                    <span class="item-status status-v1">ну может</span>
+                </div>
+
                 <div class="sort-controls">
                     <button class="sort-btn active" data-key="priority">важность</button>
                     <button class="sort-btn" data-key="year">год</button>
@@ -89,6 +100,22 @@
             line-height: 1;
         }
         .sort-dir:hover { color: var(--text); border-color: var(--muted); }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .link-favicon {
+            width: 12px;
+            height: 12px;
+            object-fit: contain;
+            vertical-align: middle;
+            margin-right: 3px;
+            opacity: 0.7;
+        }
     </style>
 
     <script src="main.js"></script>
@@ -130,6 +157,7 @@
                     const blUrl  = item.url ?? '#';
                     const rbUrl  = `https://rebrickable.com/sets/${num}-1/`;
                     const ebayUrl = `https://www.ebay.com/sch/i.html?_nkw=lego+${encodeURIComponent(num)}`;
+                    const fav = d => `<img class="link-favicon" src="https://icons.duckduckgo.com/ip3/${d}.ico" alt="" loading="lazy">`;
                     return `<div class="item item-with-img">
                         <img class="item-thumb" src="${imgSrc}" alt="${item.name}" loading="lazy"
                              onclick="openModal('${imgSrc}','${safeName}')">
@@ -139,9 +167,9 @@
                         </div>
                         <div class="item-right">
                             <div class="item-links">
-                                <a class="item-link" href="${blUrl}" target="_blank" rel="noopener">BL</a>
-                                <a class="item-link" href="${rbUrl}" target="_blank" rel="noopener">RB</a>
-                                <a class="item-link" href="${ebayUrl}" target="_blank" rel="noopener">eBay</a>
+                                <a class="item-link" href="${blUrl}" target="_blank" rel="noopener">${fav('bricklink.com')}BL</a>
+                                <a class="item-link" href="${rbUrl}" target="_blank" rel="noopener">${fav('rebrickable.com')}RB</a>
+                                <a class="item-link" href="${ebayUrl}" target="_blank" rel="noopener">${fav('ebay.com')}eBay</a>
                             </div>
                             ${statusHtml}
                         </div>
