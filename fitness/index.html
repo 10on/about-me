@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f0f11" />
+  <meta name="description" content="Твои тренировки — без отмазок." />
+  <title>Качалка 💪</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Replace WORKER_URL before deploying, or set it via env/config -->
+  <script>window.WORKER_URL = "";</script>
+</head>
+<body>
+
+<header class="app-header">
+  <h1>Качалка <span>💪</span></h1>
+  <div class="header-actions">
+    <div class="push-status">
+      <div class="push-dot" id="push-dot"></div>
+      <span id="push-dot-label">Пуши</span>
+    </div>
+    <button class="btn-icon" title="Тест пуша" onclick="testPush()">🔔</button>
+    <button class="btn-primary btn" onclick="openCreate()">+ Добавить</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- Push CTA banner (hidden when subscribed) -->
+  <div id="push-banner" class="hidden">
+    <div>
+      <strong>Подключи уведомления</strong>
+      <p>Получай напоминалки по расписанию — не проебёшь тренировку.</p>
+    </div>
+    <button class="btn-primary btn btn-sm" onclick="subscribeToPush()">Подключить</button>
+  </div>
+
+  <div class="section-header">
+    <h2>Упражнения</h2>
+  </div>
+
+  <div id="exercises-list">
+    <!-- Cards render here -->
+    <div class="empty-state">
+      <div class="emoji">⏳</div>
+      <p>Загружаем…</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- Add/Edit modal -->
+<div class="modal-backdrop hidden" id="modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-header">
+      <h2 id="modal-title">Новое упражнение</h2>
+      <button class="modal-close" onclick="closeModal()" aria-label="Закрыть">×</button>
+    </div>
+
+    <form id="ex-form" class="form-grid">
+      <div class="field">
+        <label for="ex-name">Название *</label>
+        <input id="ex-name" type="text" placeholder="Отжимания, присед, планка…" required />
+      </div>
+
+      <div class="field">
+        <label for="ex-desc">Описание</label>
+        <textarea id="ex-desc" placeholder="Доп. пояснения, варианты выполнения…"></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="ex-sets">Подходы</label>
+          <input id="ex-sets" type="number" min="1" max="99" placeholder="3" />
+        </div>
+        <div class="field">
+          <label for="ex-reps">Повторения</label>
+          <input id="ex-reps" type="number" min="1" max="999" placeholder="15" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="ex-duration">Длительность (минуты)</label>
+        <input id="ex-duration" type="number" min="0.5" max="120" step="0.5" placeholder="5" />
+      </div>
+
+      <div class="field">
+        <label>Дни недели</label>
+        <div class="day-picker" id="day-picker"></div>
+      </div>
+
+      <div class="field">
+        <label for="ex-time">Время напоминания</label>
+        <input id="ex-time" type="time" value="09:00" />
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn" onclick="closeModal()">Отмена</button>
+        <button type="submit" class="btn-primary btn">Сохранить</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Toast container -->
+<div class="toast-container" id="toast-container"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

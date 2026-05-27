@@ -1,0 +1,22 @@
+name = "fitness-worker"
+main = "worker/index.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# KV namespaces — create these in CF dashboard and paste IDs here
+[[kv_namespaces]]
+binding = "FITNESS_KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_YOUR_PREVIEW_KV_NAMESPACE_ID"
+
+# Cron: every day at 07:00 UTC — adjust as needed
+[triggers]
+crons = ["0 7 * * *"]
+
+# Environment variables — set VAPID keys via CF dashboard Secrets
+# VAPID_PRIVATE_KEY_JWK — JSON string of JWK private key
+# VAPID_PUBLIC_KEY     — base64url uncompressed public key (for frontend)
+# VAPID_SUBJECT        — mailto:you@example.com or your site URL
+
+[vars]
+FRONTEND_URL = "https://fitness.your-domain.pages.dev"
