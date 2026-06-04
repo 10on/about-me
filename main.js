@@ -109,6 +109,4 @@ document.getElementById('img-modal').addEventListener('click', function(e) {
     }
 });
 
-loadSection('data/retro.json', 'retro-list');
-loadSection('data/diy.json', 'diy-list');
 loadSection('data/games.json', 'games-list');

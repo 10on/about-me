@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>самоделки — дэнчик</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">дэнчик</a>
+        <nav>
+            <a href="lego.html">лего</a>
+            <a href="retro.html">ретро</a>
+            <a href="diy.html">самоделки</a>
+            <a href="games.html">игры</a>
+            <a href="index.html#links">ссылки</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="longread-section">
+            <div class="section-banner" style="background-image: url('img/diy-cover.png')">
+                <div class="container">
+                    <div class="banner-text">
+                        <h2>самоделки</h2>
+                        <p>что делаю и что хочу сделать</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container section-content">
+                <div class="section-intro">
+                    <p>Всегда тащил домой всякую ерунду с улицы и разбирал всё что попадалось под руку. Дедушкин гараж с чемоданами советских радиодеталей — это было как клад. Первый самодельный усилитель на микросхеме из этих запасов, жучки, простые передатчики, базово покрутил PIC и ATmega — в общем, школьные годы прошли продуктивно.</p>
+                    <p>Потом был большой перерыв — переезды, работа, стартап по доставке. Всё железо осталось где-то позади.</p>
+                    <p>Вернулся к этому уже в Черногории и Сербии. Летом 2022-го влез в 3D-печать: Flyingbear Ghost 5, Kingroon KP-3S, Ender 3 — все активно модифицировал и ковырял. В Черногории был Ender 3 V2 Neo, но он к тому моменту уже порядком устарел, так что пересел на Anycubic Kobra 3 — на нём печатаю сейчас.</p>
+                    <p>Сейчас всё это выросло в ESP32/Arduino-проекты и умный дом — дух примерно тот же что в детстве: сделать что-нибудь своими руками просто потому что интересно.</p>
+                </div>
+                <!-- BUILD:diy -->
+<div class="md-content">
+<h3>3D принтер Anycubic Kobra 3 + ACE</h3>
+<p>Основной рабочий инструмент. Мультиматериальная печать, печатаю разные мелочи для себя.</p>
+<h3>Датчик походов кота в туалет</h3>
+<p>Были выходные и очень хотелось автоматизации — сделал автозапуск пылесоса по факту визита Персика в лоток.</p>
+<h3>Моторизованный слайдер</h3>
+<p>Купил готовый слайдер и приделал к нему управляемый мотор — чтобы снимать видео с плавным движением камеры.</p>
+<h3>Умный дом</h3>
+<p>Микс экосистем. Tuya — основная, постепенно вытесняю облако на локальное. IKEA — Matter и немного Zigbee. Xiaomi потихоньку отходит на второй план. Пылесос Dreame L10S. Всё крутится на NAS с Home Assistant.</p>
+<h3>Разное по готовым проектам</h3>
+<p>Несколько вещей собранных по чужим схемам и инструкциям — для практики и потому что интересно.</p>
+</div>
+<!-- /BUILD:diy -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>дэнчик — <span id="year"></span></span>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

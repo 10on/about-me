@@ -543,6 +543,202 @@ main {
     font-style: italic;
 }
 
+/* ─── Markdown content ─── */
+
+.md-content h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding-top: 0.9rem;
+    margin-top: 0.1rem;
+    border-top: 1px solid var(--border);
+    margin-bottom: 0.25rem;
+}
+
+.md-content h3:first-child {
+    padding-top: 0;
+    border-top: none;
+}
+
+.md-content h4 {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-top: 0.9rem;
+    margin-bottom: 0.4rem;
+}
+
+.md-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.md-content li {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.55;
+    padding-left: 0.9rem;
+    position: relative;
+}
+
+.md-content li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--border);
+}
+
+.md-content hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1.5rem 0 0;
+}
+
+.md-content strong {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.md-content p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 0.6rem;
+}
+
+.md-content a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.md-content a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ─── Section cards (main page hub) ─── */
+
+#sections {
+    margin: 2.5rem 0 3rem;
+}
+
+.sections-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.section-card {
+    position: relative;
+    background-color: #1E1C19;
+    background-size: cover;
+    background-position: center top;
+    height: 130px;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-decoration: none;
+    transition: opacity 0.15s;
+}
+
+.section-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.15) 100%);
+}
+
+.section-card:hover {
+    opacity: 0.85;
+}
+
+.section-card-body {
+    position: relative;
+    z-index: 1;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.section-card-title {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.section-card-sub {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+}
+
+@media (max-width: 520px) {
+    .sections-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ─── Links ─── */
+
+.links-heading {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.links-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.link-item {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.15s;
+}
+
+.link-item:last-child {
+    border-bottom: none;
+}
+
+.link-item:hover .link-name {
+    color: var(--accent);
+}
+
+.link-name {
+    font-family: var(--mono);
+    font-size: 0.88rem;
+    font-weight: 600;
+    min-width: 8rem;
+    flex-shrink: 0;
+    transition: color 0.15s;
+}
+
+.link-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
 /* ─── Footer ─── */
 
 footer {
