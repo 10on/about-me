@@ -14,7 +14,14 @@
       "Bash(python3 *)",
       "Bash(git -C /Users/denispushkarev/whois_denchick status)",
       "Bash(git -C /Users/denispushkarev/whois_denchick log --oneline -3)",
-      "Bash(git *)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8765/)",
+      "Bash(chromium-cli screenshot *)",
+      "Bash(npx playwright *)",
+      "Bash(open http://localhost:8000/index.html)",
+      "Bash(pkill -f \"http.server\")",
+      "Bash(python3 -m http.server 8000 --directory /Users/denis/about-me)",
+      "Bash(open *)",
+      "Bash(git checkout *)"
     ]
   }
 }
