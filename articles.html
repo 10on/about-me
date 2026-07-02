@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>дэнчик</title>
+    <title>статьи — дэнчик</title>
     <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
         </div>
         <nav>
             <a href="notes.html">заметки</a>
-            <a href="articles.html">статьи</a>
+            <a href="articles.html" class="active">статьи</a>
             <a href="lego.html">лего</a>
             <a href="retro.html">ретро</a>
             <a href="diy.html">самоделки</a>
@@ -33,26 +33,12 @@
     </header>
 
     <main>
-        <div class="container" style="padding-top: 1.75rem; padding-bottom: 1rem;">
-            <p style="font-size: clamp(18px, 4.4vw, 19.5px); line-height: 1.6;">Привет. Я <b style="font-weight: 600;">дэнчик</b> — бэкенд-разработчик, который вечерами берётся за паяльник, 3D-принтер и коробку лего. Тут короткие заметки и иногда статьи подлиннее: ретро-железо, самоделки, игры и жизнь между Белградом и всем остальным. Где-то рядом всегда кот <a href="about.html">Персик</a>.</p>
-
-            <div class="feed-heading">
-                <span class="feed-label">// заметки</span>
-                <span class="feed-line"></span>
-                <a href="notes.html" class="feed-more">все →</a>
-            </div>
-            <div id="home-notes"></div>
-
-            <div class="feed-heading">
-                <span class="feed-label">// статьи</span>
-                <span class="feed-line"></span>
-                <a href="articles.html" class="feed-more">архив →</a>
-            </div>
-            <div id="home-articles">
-                <!-- BUILD:articles-home -->
+        <div class="container" style="padding-top: 2.5rem; padding-bottom: 1rem;">
+            <h1 style="font-size: clamp(28px, 6vw, 34px); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.4rem;">Статьи</h1>
+            <p style="font-size: 1rem; color: var(--muted); margin-bottom: 0.5rem;">Когда заметки не хватает — сажусь и разбираю тему целиком.</p>
+            <!-- BUILD:articles-list -->
 <p class="empty">скоро будет...</p>
-<!-- /BUILD:articles-home -->
-            </div>
+<!-- /BUILD:articles-list -->
         </div>
     </main>
 
@@ -78,24 +64,6 @@
             syncThemeLabel();
             try { localStorage.setItem('denchik-theme', next); } catch (e) {}
         });
-
-        fetch('data/notes.json')
-            .then(function (r) { return r.ok ? r.json() : []; })
-            .then(function (notes) {
-                var container = document.getElementById('home-notes');
-                if (!notes.length) {
-                    container.innerHTML = '<p class="empty">скоро будет...</p>';
-                    return;
-                }
-                container.innerHTML = notes.slice(0, 4).map(function (n) {
-                    return '<div class="note-item"><div class="note-meta"><span>' + n.date + '</span><span class="note-tags">' +
-                        n.tags.map(function (t) { return '#' + t; }).join(' ') +
-                        '</span></div><p class="note-text">' + n.text + '</p></div>';
-                }).join('');
-            })
-            .catch(function () {
-                document.getElementById('home-notes').innerHTML = '<p class="empty">не удалось загрузить :(</p>';
-            });
     </script>
 </body>
 </html>

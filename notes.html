@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>дэнчик</title>
+    <title>заметки — дэнчик</title>
     <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <nav>
-            <a href="notes.html">заметки</a>
+            <a href="notes.html" class="active">заметки</a>
             <a href="articles.html">статьи</a>
             <a href="lego.html">лего</a>
             <a href="retro.html">ретро</a>
@@ -33,26 +33,12 @@
     </header>
 
     <main>
-        <div class="container" style="padding-top: 1.75rem; padding-bottom: 1rem;">
-            <p style="font-size: clamp(18px, 4.4vw, 19.5px); line-height: 1.6;">Привет. Я <b style="font-weight: 600;">дэнчик</b> — бэкенд-разработчик, который вечерами берётся за паяльник, 3D-принтер и коробку лего. Тут короткие заметки и иногда статьи подлиннее: ретро-железо, самоделки, игры и жизнь между Белградом и всем остальным. Где-то рядом всегда кот <a href="about.html">Персик</a>.</p>
+        <div class="container" style="padding-top: 2.5rem; padding-bottom: 1rem;">
+            <h1 style="font-size: clamp(28px, 6vw, 34px); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.4rem;">Заметки</h1>
+            <p style="font-size: 1rem; color: var(--muted); margin-bottom: 1.1rem;">Короткое и по делу — что попало под руку за неделю. Фильтруй по тегу.</p>
 
-            <div class="feed-heading">
-                <span class="feed-label">// заметки</span>
-                <span class="feed-line"></span>
-                <a href="notes.html" class="feed-more">все →</a>
-            </div>
-            <div id="home-notes"></div>
-
-            <div class="feed-heading">
-                <span class="feed-label">// статьи</span>
-                <span class="feed-line"></span>
-                <a href="articles.html" class="feed-more">архив →</a>
-            </div>
-            <div id="home-articles">
-                <!-- BUILD:articles-home -->
-<p class="empty">скоро будет...</p>
-<!-- /BUILD:articles-home -->
-            </div>
+            <div class="tag-chips" id="tag-chips"></div>
+            <div id="notes-list"></div>
         </div>
     </main>
 
@@ -79,22 +65,47 @@
             try { localStorage.setItem('denchik-theme', next); } catch (e) {}
         });
 
+        var allNotes = [];
+        var activeTag = 'all';
+
+        function renderChips() {
+            var tags = Array.from(new Set(allNotes.flatMap(function (n) { return n.tags; })));
+            var defs = [{ label: 'все', value: 'all' }].concat(tags.map(function (t) { return { label: t, value: t }; }));
+            document.getElementById('tag-chips').innerHTML = defs.map(function (d) {
+                return '<button class="tag-chip' + (d.value === activeTag ? ' active' : '') + '" data-tag="' + d.value + '">' + d.label + '</button>';
+            }).join('');
+            document.querySelectorAll('.tag-chip').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    activeTag = btn.dataset.tag;
+                    renderChips();
+                    renderNotes();
+                });
+            });
+        }
+
+        function renderNotes() {
+            var filtered = activeTag === 'all' ? allNotes : allNotes.filter(function (n) { return n.tags.includes(activeTag); });
+            var container = document.getElementById('notes-list');
+            if (!filtered.length) {
+                container.innerHTML = '<p class="empty">скоро будет...</p>';
+                return;
+            }
+            container.innerHTML = filtered.map(function (n) {
+                return '<div class="note-item"><div class="note-meta"><span>' + n.date + '</span><span class="note-tags">' +
+                    n.tags.map(function (t) { return '#' + t; }).join(' ') +
+                    '</span></div><p class="note-text">' + n.text + '</p></div>';
+            }).join('');
+        }
+
         fetch('data/notes.json')
             .then(function (r) { return r.ok ? r.json() : []; })
             .then(function (notes) {
-                var container = document.getElementById('home-notes');
-                if (!notes.length) {
-                    container.innerHTML = '<p class="empty">скоро будет...</p>';
-                    return;
-                }
-                container.innerHTML = notes.slice(0, 4).map(function (n) {
-                    return '<div class="note-item"><div class="note-meta"><span>' + n.date + '</span><span class="note-tags">' +
-                        n.tags.map(function (t) { return '#' + t; }).join(' ') +
-                        '</span></div><p class="note-text">' + n.text + '</p></div>';
-                }).join('');
+                allNotes = notes;
+                renderChips();
+                renderNotes();
             })
             .catch(function () {
-                document.getElementById('home-notes').innerHTML = '<p class="empty">не удалось загрузить :(</p>';
+                document.getElementById('notes-list').innerHTML = '<p class="empty">не удалось загрузить :(</p>';
             });
     </script>
 </body>

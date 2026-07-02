@@ -4,17 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>самоделки — дэнчик</title>
+    <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">дэнчик</a>
+        <div class="header-top">
+            <div>
+                <a href="index.html" class="logo">дэнчик</a>
+                <div class="tagline">бэкенд · лего · ретро · самоделки</div>
+            </div>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" title="тема">☾</button>
+            </div>
+        </div>
         <nav>
+            <a href="notes.html">заметки</a>
+            <a href="articles.html">статьи</a>
             <a href="lego.html">лего</a>
             <a href="retro.html">ретро</a>
-            <a href="diy.html">самоделки</a>
+            <a href="diy.html" class="active">самоделки</a>
             <a href="games.html">игры</a>
-            <a href="index.html#links">ссылки</a>
+            <a href="about.html">обо мне</a>
         </nav>
     </header>
 
@@ -29,6 +43,18 @@
                 </div>
             </div>
             <div class="container section-content">
+                <div class="topic-highlights">
+                    <div class="topic-highlight">3D-печать: Anycubic Kobra 3</div>
+                    <div class="topic-highlight">Умный дом на локалке: Tuya, IKEA, Home Assistant</div>
+                    <div class="topic-highlight">ESP32/Arduino — самоделки для дома и кота</div>
+                    <div class="topic-highlight">От усилителей в детстве до умных датчиков сейчас</div>
+                </div>
+                <div class="feed-heading" style="margin-top: 0;">
+                    <span class="feed-label">// заметки по теме</span>
+                    <span class="feed-line"></span>
+                </div>
+                <div id="topic-notes" style="margin-bottom: 2rem;"></div>
+
                 <div class="section-intro">
                     <p>Всегда тащил домой всякую ерунду с улицы и разбирал всё что попадалось под руку. Дедушкин гараж с чемоданами советских радиодеталей — это было как клад. Первый самодельный усилитель на микросхеме из этих запасов, жучки, простые передатчики, базово покрутил PIC и ATmega — в общем, школьные годы прошли продуктивно.</p>
                     <p>Потом был большой перерыв — переезды, работа, стартап по доставке. Всё железо осталось где-то позади.</p>
@@ -54,9 +80,43 @@
     </main>
 
     <footer>
-        <span>дэнчик — <span id="year"></span></span>
+        <div class="footer-links">
+            <a href="https://www.youtube.com/@DenchikBricks" target="_blank" rel="noopener">youtube</a>
+            <a href="http://t.me/denchik_bricks" target="_blank" rel="noopener">telegram</a>
+            <a href="https://rebrickable.com/users/10on/lego/" target="_blank" rel="noopener">rebrickable</a>
+            <a href="https://www.linkedin.com/in/d-push/" target="_blank" rel="noopener">linkedin</a>
+            <a href="mailto:igoo10on@gmail.com">почта</a>
+        </div>
+        <div class="footer-meta">дэнчик — <span id="year"></span> · сделано руками · без облака и трекеров</div>
     </footer>
 
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        var themeBtn = document.getElementById('theme-toggle');
+        function syncThemeLabel() { themeBtn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀︎' : '☾'; }
+        syncThemeLabel();
+        themeBtn.addEventListener('click', function () {
+            var next = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : 'dark';
+            if (next) document.documentElement.setAttribute('data-theme', next); else document.documentElement.removeAttribute('data-theme');
+            syncThemeLabel();
+            try { localStorage.setItem('denchik-theme', next); } catch (e) {}
+        });
+
+        fetch('data/notes.json')
+            .then(function (r) { return r.ok ? r.json() : []; })
+            .then(function (notes) {
+                var filtered = notes.filter(function (n) { return n.tags.includes('diy'); });
+                var el = document.getElementById('topic-notes');
+                if (!filtered.length) { el.innerHTML = '<p class="empty">скоро будет...</p>'; return; }
+                el.innerHTML = filtered.map(function (n) {
+                    return '<div class="note-item"><div class="note-meta"><span>' + n.date + '</span><span class="note-tags">' +
+                        n.tags.map(function (t) { return '#' + t; }).join(' ') +
+                        '</span></div><p class="note-text">' + n.text + '</p></div>';
+                }).join('');
+            })
+            .catch(function () {
+                document.getElementById('topic-notes').innerHTML = '<p class="empty">не удалось загрузить :(</p>';
+            });
+    </script>
 </body>
 </html>

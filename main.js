@@ -1,5 +1,17 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const themeBtn = document.getElementById('theme-toggle');
+function syncThemeLabel() {
+    themeBtn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀︎' : '☾';
+}
+syncThemeLabel();
+themeBtn.addEventListener('click', function () {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : 'dark';
+    if (next) document.documentElement.setAttribute('data-theme', next); else document.documentElement.removeAttribute('data-theme');
+    syncThemeLabel();
+    try { localStorage.setItem('denchik-theme', next); } catch (e) {}
+});
+
 const STATUS_LABELS = {
     want: 'хочу',
     have: 'есть',
