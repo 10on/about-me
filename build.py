@@ -5,6 +5,7 @@ pages, plus injects list/preview blocks into articles.html and index.html.
 Usage: python3 build.py
 """
 import html
+import json
 import re
 import sys
 from pathlib import Path
@@ -19,6 +20,8 @@ ROOT = Path(__file__).parent
 CONTENT = ROOT / 'content'
 ARTICLES_SRC = CONTENT / 'articles'
 ARTICLES_OUT = ROOT / 'articles'
+NOTES_SRC = CONTENT / 'notes'
+NOTES_OUT = ROOT / 'data' / 'notes.json'
 
 SITE_URL = 'https://10on.github.io/about-me'
 STATIC_PAGES = [
@@ -171,6 +174,37 @@ def render_article_page(md, article):
     print(f"  built: articles/{article['slug']}.html")
 
 
+def load_notes():
+    """Read content/notes/*.md, newest first (filenames prefixed YYYY-MM-DD-slug.md)."""
+    if not NOTES_SRC.exists():
+        return []
+    notes = []
+    for path in sorted(NOTES_SRC.glob('*.md'), reverse=True):
+        meta, body = parse_front_matter(path.read_text(encoding='utf-8'))
+        tags = [t.strip() for t in meta.get('tags', '').split(',') if t.strip()]
+        notes.append({'date': meta.get('date', ''), 'tags': tags, 'body': body.strip()})
+    return notes
+
+
+def render_note_text(md, body):
+    """Markdown body → flat HTML string (paragraphs joined with <br><br> instead of <p>),
+    since notes.json feeds a single innerHTML string per note, not a full block layout."""
+    md.reset()
+    rendered = md.convert(body).strip()
+    rendered = re.sub(r'^<p>', '', rendered)
+    rendered = re.sub(r'</p>$', '', rendered)
+    return rendered.replace('</p>\n<p>', '<br><br>')
+
+
+def generate_notes_json(md, notes):
+    data = [
+        {'date': n['date'], 'tags': n['tags'], 'text': render_note_text(md, n['body'])}
+        for n in notes
+    ]
+    NOTES_OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    print('  built: data/notes.json')
+
+
 def render_card(article, prefix=''):
     tag_text = ' '.join(f'#{t}' for t in article['tags'])
     return (
@@ -234,6 +268,9 @@ def main():
     articles = load_articles()
     for article in articles:
         render_article_page(md, article)
+
+    notes = load_notes()
+    generate_notes_json(md, notes)
 
     articles_html = ROOT / 'articles.html'
     if articles_html.exists():
