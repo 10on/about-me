@@ -1,10 +1,5 @@
 [
   {
-    "name": "Микрокассеты для Epson HX-20",
-    "desc": "родной формат накопителя — без них не запустить",
-    "status": "v5"
-  },
-  {
     "name": "IBM SelectaDock II или III",
     "desc": "порт-репликатор для ThinkPad 770X",
     "status": "v4"
