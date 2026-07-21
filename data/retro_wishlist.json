@@ -30,5 +30,45 @@
     "url": "https://en.wikipedia.org/wiki/IBM_PC_Convertible",
     "img": "img/retro/ibm-pc-convertible.jpg",
     "status": "v4"
+  },
+  {
+    "name": "Compaq Portable I или II",
+    "desc": "хочу именно версию на ЭЛТ-трубке",
+    "url": "https://en.wikipedia.org/wiki/Compaq_Portable",
+    "img": "img/retro/compaq-portable.jpg",
+    "status": "v4"
+  },
+  {
+    "name": "Toshiba T1000",
+    "desc": "пощупать и попользоваться",
+    "url": "https://en.wikipedia.org/wiki/Toshiba_T1000",
+    "img": "img/retro/toshiba-t1000.jpg",
+    "status": "v3"
+  },
+  {
+    "name": "Toshiba T1200",
+    "desc": "пощупать и попользоваться",
+    "url": "https://en.wikipedia.org/wiki/Toshiba_T1200",
+    "img": "img/retro/toshiba-t1200.jpg",
+    "status": "v3"
+  },
+  {
+    "name": "Epson PX-8",
+    "desc": "бесполезно, но прикольно",
+    "url": "https://en.wikipedia.org/wiki/Epson_PX-8_Geneva",
+    "img": "img/retro/epson-px8.jpg",
+    "status": "v2"
+  },
+  {
+    "name": "GRiD Compass",
+    "desc": "чисто ради истории — редкий, нужна удача",
+    "url": "https://en.wikipedia.org/wiki/Grid_Compass",
+    "img": "img/retro/grid-compass.jpg",
+    "status": "v3"
+  },
+  {
+    "name": "Небольшой CRT/VGA монитор",
+    "desc": "10-15 дюймов, можно чёрно-белый",
+    "status": "v4"
   }
 ]
