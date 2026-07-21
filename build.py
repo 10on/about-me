@@ -4,6 +4,7 @@ Also converts content/articles/*.md (with front-matter) into standalone articles
 pages, plus injects list/preview blocks into articles.html and index.html.
 Usage: python3 build.py
 """
+import html
 import re
 import sys
 from pathlib import Path
@@ -19,6 +20,12 @@ CONTENT = ROOT / 'content'
 ARTICLES_SRC = CONTENT / 'articles'
 ARTICLES_OUT = ROOT / 'articles'
 
+SITE_URL = 'https://10on.github.io/about-me'
+STATIC_PAGES = [
+    '', 'notes.html', 'articles.html', 'about.html',
+    'lego.html', 'retro.html', 'diy.html', 'games.html', 'projects.html',
+]
+
 # slug → target html file, content injected as a single markdown block
 # wrapper class defaults to 'md-content'; override per-slug when the page needs different styling
 TARGETS = {
@@ -33,6 +40,16 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} — дэнчик</title>
+    <meta name="description" content="{description}">
+    <link rel="canonical" href="{url}">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="дэнчик">
+    <meta property="og:title" content="{title} — дэнчик">
+    <meta property="og:description" content="{description}">
+    <meta property="og:url" content="{url}">
+    <meta property="og:image" content="https://10on.github.io/about-me/img/persik.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://10on.github.io/about-me/img/persik.jpg">
     <script>try{{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,13 +159,15 @@ def render_article_page(md, article):
     md.reset()
     body_html = md.convert(article['body'])
     tag_text = ' '.join(f'#{t}' for t in article['tags'])
-    html = ARTICLE_TEMPLATE.format(
+    page_html = ARTICLE_TEMPLATE.format(
         title=article['title'], tag_text=tag_text, date=article['date'],
         read=article['read'], body=body_html,
+        description=html.escape(article['excerpt'], quote=True),
+        url=f"{SITE_URL}/articles/{article['slug']}.html",
     )
     ARTICLES_OUT.mkdir(exist_ok=True)
     out_path = ARTICLES_OUT / f"{article['slug']}.html"
-    out_path.write_text(html, encoding='utf-8')
+    out_path.write_text(page_html, encoding='utf-8')
     print(f"  built: articles/{article['slug']}.html")
 
 
@@ -175,6 +194,22 @@ def inject(target, slug, block):
     else:
         target.write_text(html, encoding='utf-8')
         print(f'  built: {slug} → {target.name}')
+
+
+def generate_sitemap(articles):
+    urls = [f'{SITE_URL}/{page}' for page in STATIC_PAGES]
+    urls += [f"{SITE_URL}/articles/{a['slug']}.html" for a in articles]
+    body = '\n'.join(
+        f'  <url><loc>{u}</loc></url>' for u in urls
+    )
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f'{body}\n'
+        '</urlset>\n'
+    )
+    (ROOT / 'sitemap.xml').write_text(xml, encoding='utf-8')
+    print('  built: sitemap.xml')
 
 
 def main():
@@ -210,6 +245,8 @@ def main():
         preview = articles[:3]
         block = ''.join(render_card(a) for a in preview) if preview else '<p class="empty">скоро будет...</p>'
         inject(index_html, 'articles-home', block)
+
+    generate_sitemap(articles)
 
     print('done.')
 
