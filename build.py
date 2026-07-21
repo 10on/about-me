@@ -44,7 +44,7 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
         <div class="header-top">
             <div>
                 <a href="../index.html" class="logo">дэнчик</a>
-                <div class="tagline">бэкенд · лего · ретро · самоделки</div>
+                <div class="tagline">лего · ретро · самоделки · разработка</div>
             </div>
             <div class="header-actions">
                 <button id="theme-toggle" class="theme-toggle" title="тема">☾</button>
