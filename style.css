@@ -385,6 +385,13 @@ main {
     display: block;
 }
 
+.photo-credit {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 0.3rem;
+}
+
 .games-devices-label {
     font-family: var(--mono);
     font-size: 0.68rem;
