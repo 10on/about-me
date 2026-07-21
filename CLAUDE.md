@@ -29,7 +29,7 @@ Blog-style site, one real HTML page per view (no client-side router):
 - `style.css` — all styles, CSS custom properties in `:root`, dark theme via `[data-theme="dark"]`
 - `main.js` — shared by `index.html`/`lego.html` only (theme toggle, `STATUS_LABELS`, photo modal); other pages duplicate a small inline theme-toggle/footer-year script instead
 - `data/*.json` — content for lego, lego-projects, games, notes (`notes.json` starts empty — fill it in as you write notes)
-- `content/*.md` + `build.py` — markdown → static HTML. `content/retro.md`/`content/diy.md` inject into `<!-- BUILD:slug -->` markers on `retro.html`/`diy.html`. `content/articles/*.md` (filename `YYYY-MM-DD-slug.md`, with a front-matter block: `title`, `tags`, `date`, `read`, `excerpt`) generate `articles/<slug>.html` and the list/preview blocks on `articles.html`/`index.html`. Run `python3 build.py` after editing content (requires `pip3 install markdown`).
+- `content/*.md` + `build.py` — markdown → static HTML. `content/retro.md`/`content/diy.md`/`content/about.md` inject into `<!-- BUILD:slug -->` markers on `retro.html`/`diy.html`/`about.html` (`TARGETS` dict in `build.py`, optional per-slug wrapper CSS class — `about` uses `bio-content` instead of the default `md-content`). `content/articles/*.md` (filename `YYYY-MM-DD-slug.md`, with a front-matter block: `title`, `tags`, `date`, `read`, `excerpt`) generate `articles/<slug>.html` and the list/preview blocks on `articles.html`/`index.html`. Run `python3 build.py` after editing content (requires `pip3 install markdown`) — GitHub Pages runs this automatically (see below), Cloudflare Pages does not.
 
 ## Adding content
 
@@ -46,13 +46,12 @@ Blog-style site, one real HTML page per view (no client-side router):
 }
 ```
 
-## Deploying to Cloudflare Pages
+## Deploying
 
-Connect the repo in Cloudflare Pages dashboard:
-- Build command: _(leave empty)_
-- Output directory: `/` (root)
+Two hosts, both auto-deploy on push to `master`:
 
-Every push to `master` deploys automatically. Run `python3 build.py` locally and commit the generated HTML before pushing — there's no build step on Cloudflare.
+- **GitHub Pages** — `.github/workflows/pages.yml` runs on every push: installs `markdown`, runs `python3 build.py`, uploads the repo root as the Pages artifact. Enable once in repo Settings → Pages → Source: "GitHub Actions". No local build step needed for this host.
+- **Cloudflare Pages** — connected via the dashboard, no build command (output directory `/`), so it serves whatever HTML is committed as-is. Run `python3 build.py` locally and commit the generated HTML before pushing if you want Cloudflare's copy to reflect the latest content.
 
 ## Design tokens
 
