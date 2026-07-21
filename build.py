@@ -20,9 +20,11 @@ ARTICLES_SRC = CONTENT / 'articles'
 ARTICLES_OUT = ROOT / 'articles'
 
 # slug → target html file, content injected as a single markdown block
+# wrapper class defaults to 'md-content'; override per-slug when the page needs different styling
 TARGETS = {
-    'retro': ROOT / 'retro.html',
-    'diy':   ROOT / 'diy.html',
+    'retro': {'target': ROOT / 'retro.html'},
+    'diy':   {'target': ROOT / 'diy.html'},
+    'about': {'target': ROOT / 'about.html', 'class': 'bio-content'},
 }
 
 ARTICLE_TEMPLATE = """<!DOCTYPE html>
@@ -80,7 +82,7 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
             <a href="https://www.linkedin.com/in/d-push/" target="_blank" rel="noopener">linkedin</a>
             <a href="mailto:igoo10on@gmail.com">почта</a>
         </div>
-        <div class="footer-meta">дэнчик — <span id="year"></span> · сделано руками · без облака и трекеров</div>
+        <div class="footer-meta">дэнчик — <span id="year"></span></div>
     </footer>
 
     <script>
@@ -178,7 +180,9 @@ def inject(target, slug, block):
 def main():
     md = markdown.Markdown()
 
-    for slug, target in TARGETS.items():
+    for slug, cfg in TARGETS.items():
+        target = cfg['target']
+        wrapper_class = cfg.get('class', 'md-content')
         src = CONTENT / f'{slug}.md'
         if not src.exists():
             print(f'  skip: content/{slug}.md not found')
@@ -189,7 +193,7 @@ def main():
 
         md.reset()
         rendered = md.convert(src.read_text(encoding='utf-8'))
-        block = f'<div class="md-content">\n{rendered}\n</div>'
+        block = f'<div class="{wrapper_class}">\n{rendered}\n</div>'
         inject(target, slug, block)
 
     articles = load_articles()
