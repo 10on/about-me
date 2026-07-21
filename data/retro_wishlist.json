@@ -70,5 +70,30 @@
     "name": "Небольшой CRT/VGA монитор",
     "desc": "10-15 дюймов, можно чёрно-белый",
     "status": "v4"
+  },
+  {
+    "name": "3inONEder для Toshiba portables",
+    "desc": "ISA-плата расширения для Toshiba T3200SX и похожих",
+    "url": "https://conventionalmemories.com/wiki_cm/3inONEder_for_Toshiba_portables",
+    "img": "img/retro/3inoneder.png",
+    "status": "v5"
+  },
+  {
+    "name": "IBM Palm Top PC 110",
+    "desc": "японский палмтоп IBM/Ricoh",
+    "url": "https://en.wikipedia.org/wiki/IBM_Palm_Top_PC_110",
+    "img": "img/retro/ibm-pc110.jpg",
+    "status": "v3"
+  },
+  {
+    "name": "Casio FX-890P / Z-1 / Z-1GR",
+    "desc": "программируемые калькуляторы-карманники Casio",
+    "status": "v4"
+  },
+  {
+    "name": "Sharp PC-3000 / PC-3100",
+    "desc": "карманные компьютеры Sharp",
+    "url": "https://en.wikipedia.org/wiki/Sharp_PC-3000",
+    "status": "v3"
   }
 ]
