@@ -194,7 +194,27 @@
         <div class="footer-meta">дэнчик — <span id="year"></span></div>
     </footer>
 
+    <div id="img-modal">
+        <div class="modal-backdrop">
+            <img id="img-modal-img" src="" alt="">
+        </div>
+    </div>
+
     <script>
+        function openModal(src, alt) {
+            var m = document.getElementById('img-modal');
+            var img = document.getElementById('img-modal-img');
+            img.src = src;
+            img.alt = alt;
+            m.classList.add('open');
+        }
+
+        document.getElementById('img-modal').addEventListener('click', function (e) {
+            if (e.target === this || e.target.classList.contains('modal-backdrop')) {
+                this.classList.remove('open');
+            }
+        });
+
         var STATUS_LABELS = { v5: 'очень хочу', v4: 'хочу', v3: 'неплохо', v2: 'сойдёт', v1: 'ну может' };
         var PRIORITY = { v5: 5, v4: 4, v3: 3, v2: 2, v1: 1 };
         var retroWishlistData = [];
@@ -208,11 +228,23 @@
                 return (PRIORITY[b.status] || 0) - (PRIORITY[a.status] || 0);
             });
             var rows = sorted.map(function (item) {
+                var nameHtml = item.url
+                    ? '<a href="' + item.url + '" target="_blank" rel="noopener">' + item.name + '</a>'
+                    : item.name;
                 var descHtml = item.desc ? '<div class="item-desc">' + item.desc + '</div>' : '';
                 var statusHtml = item.status
                     ? '<span class="item-status status-' + item.status + '">' + (STATUS_LABELS[item.status] || item.status) + '</span>'
                     : '';
-                return '<div class="item"><div><div class="item-name">' + item.name + '</div>' + descHtml + '</div>' +
+                var thumbHtml = '';
+                if (item.img) {
+                    var safeName = item.name.replace(/'/g, "\\'");
+                    thumbHtml = '<div class="item-thumb-wrap">' +
+                        '<img class="item-thumb" src="' + item.img + '" alt="' + item.name + '" loading="lazy" onclick="openModal(\'' + item.img + '\',\'' + safeName + '\')">' +
+                        (item.credit ? '<p class="photo-credit">' + item.credit + '</p>' : '') +
+                        '</div>';
+                }
+                return '<div class="item' + (item.img ? ' item-with-img' : '') + '">' + thumbHtml +
+                    '<div class="item-body"><div class="item-name">' + nameHtml + '</div>' + descHtml + '</div>' +
                     '<div class="item-right">' + statusHtml + '</div></div>';
             }).join('');
             document.getElementById('retro-wishlist').innerHTML = '<div class="items-list">' + rows + '</div>';

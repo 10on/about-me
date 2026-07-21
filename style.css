@@ -531,6 +531,20 @@ main {
     align-items: center;
 }
 
+.item-thumb-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.item-thumb-wrap .photo-credit {
+    margin-top: 0;
+    text-align: center;
+    max-width: 72px;
+}
+
 .item-thumb {
     width: 72px;
     height: 72px;

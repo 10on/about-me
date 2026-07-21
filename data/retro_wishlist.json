@@ -2,6 +2,9 @@
   {
     "name": "IBM SelectaDock II или III",
     "desc": "порт-репликатор для ThinkPad 770X",
+    "url": "https://thinkwiki.de/SelectaDock_III",
+    "img": "img/retro/selectadock-iii.png",
+    "credit": "фото: thinkwiki.de",
     "status": "v4"
   },
   {
