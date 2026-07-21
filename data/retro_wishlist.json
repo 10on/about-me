@@ -28,6 +28,7 @@
     "name": "IBM PC Convertible",
     "desc": "прикольный, но сравнительно бесполезный",
     "url": "https://en.wikipedia.org/wiki/IBM_PC_Convertible",
-    "status": "v1"
+    "img": "img/retro/ibm-pc-convertible.jpg",
+    "status": "v4"
   }
 ]
