@@ -101,65 +101,6 @@
         </div>
     </div>
 
-    <style>
-        .sort-controls {
-            display: flex;
-            gap: 0.4rem;
-            margin-bottom: 1.5rem;
-            align-items: center;
-        }
-        .sort-btn {
-            font-family: var(--mono);
-            font-size: 0.72rem;
-            padding: 0.3rem 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            background: none;
-            color: var(--muted);
-            cursor: pointer;
-            transition: all 0.15s;
-        }
-        .sort-btn:hover { color: var(--text); border-color: var(--muted); }
-        .sort-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
-        .sort-dir {
-            font-family: var(--mono);
-            font-size: 0.85rem;
-            padding: 0.25rem 0.5rem;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            background: none;
-            color: var(--muted);
-            cursor: pointer;
-            transition: all 0.15s;
-            line-height: 1;
-        }
-        .sort-dir:hover { color: var(--text); border-color: var(--muted); }
-
-        .legend {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-bottom: 1.5rem;
-        }
-        .legend-filter {
-            cursor: pointer;
-            user-select: none;
-            transition: opacity 0.15s;
-        }
-        .legend-filter.dimmed {
-            opacity: 0.3;
-        }
-
-        .link-favicon {
-            width: 12px;
-            height: 12px;
-            object-fit: contain;
-            vertical-align: middle;
-            margin-right: 3px;
-            opacity: 0.7;
-        }
-    </style>
-
     <script src="main.js"></script>
     <script>
         const PRIORITY = { v5: 5, v4: 4, v3: 3, v2: 2, v1: 1 };

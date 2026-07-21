@@ -55,6 +55,18 @@
                 </div>
                 <div id="topic-notes" style="margin-bottom: 2rem;"></div>
 
+                <h2>хотелки</h2>
+
+                <div class="legend">
+                    <span class="item-status status-v5 legend-filter" data-status="v5">очень хочу</span>
+                    <span class="item-status status-v4 legend-filter" data-status="v4">хочу</span>
+                    <span class="item-status status-v3 legend-filter" data-status="v3">неплохо</span>
+                    <span class="item-status status-v2 legend-filter" data-status="v2">сойдёт</span>
+                    <span class="item-status status-v1 legend-filter" data-status="v1">ну может</span>
+                </div>
+
+                <div id="retro-wishlist" style="margin-bottom: 2.5rem;"></div>
+
                 <div class="section-intro">
                     <p>Компьютер у меня дома появился сравнительно поздно — в 2006 году. Наверное, никто просто не понимал зачем он может быть нужен. Так что железки из 80-х и 90-х я собираю исключительно из интереса — те времена я не застал, но почему-то очень хочется ковыряться во всём этом, трогать технологии эпохи бурного развития.</p>
                 </div>
@@ -183,6 +195,47 @@
     </footer>
 
     <script>
+        var STATUS_LABELS = { v5: 'очень хочу', v4: 'хочу', v3: 'неплохо', v2: 'сойдёт', v1: 'ну может' };
+        var PRIORITY = { v5: 5, v4: 4, v3: 3, v2: 2, v1: 1 };
+        var retroWishlistData = [];
+        var activeFilters = new Set();
+
+        function renderRetroWishlist() {
+            var visible = activeFilters.size > 0
+                ? retroWishlistData.filter(function (item) { return activeFilters.has(item.status); })
+                : retroWishlistData;
+            var sorted = visible.slice().sort(function (a, b) {
+                return (PRIORITY[b.status] || 0) - (PRIORITY[a.status] || 0);
+            });
+            var rows = sorted.map(function (item) {
+                var descHtml = item.desc ? '<div class="item-desc">' + item.desc + '</div>' : '';
+                var statusHtml = item.status
+                    ? '<span class="item-status status-' + item.status + '">' + (STATUS_LABELS[item.status] || item.status) + '</span>'
+                    : '';
+                return '<div class="item"><div><div class="item-name">' + item.name + '</div>' + descHtml + '</div>' +
+                    '<div class="item-right">' + statusHtml + '</div></div>';
+            }).join('');
+            document.getElementById('retro-wishlist').innerHTML = '<div class="items-list">' + rows + '</div>';
+        }
+
+        document.querySelectorAll('.legend-filter').forEach(function (el) {
+            el.addEventListener('click', function () {
+                var s = el.dataset.status;
+                if (activeFilters.has(s)) { activeFilters.delete(s); } else { activeFilters.add(s); }
+                document.querySelectorAll('.legend-filter').forEach(function (f) {
+                    f.classList.toggle('dimmed', activeFilters.size > 0 && !activeFilters.has(f.dataset.status));
+                });
+                renderRetroWishlist();
+            });
+        });
+
+        fetch('data/retro_wishlist.json')
+            .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+            .then(function (data) { retroWishlistData = data; renderRetroWishlist(); })
+            .catch(function () {
+                document.getElementById('retro-wishlist').innerHTML = '<p class="empty">не удалось загрузить :(</p>';
+            });
+
         document.getElementById('year').textContent = new Date().getFullYear();
         var themeBtn = document.getElementById('theme-toggle');
         function syncThemeLabel() { themeBtn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀︎' : '☾'; }
