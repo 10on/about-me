@@ -23,5 +23,11 @@
     "name": "Сканер штрих-кодов для Epson HX-20",
     "desc": "долгосрочная периферия",
     "status": "v1"
+  },
+  {
+    "name": "IBM PC Convertible",
+    "desc": "прикольный, но сравнительно бесполезный",
+    "url": "https://en.wikipedia.org/wiki/IBM_PC_Convertible",
+    "status": "v1"
   }
 ]
