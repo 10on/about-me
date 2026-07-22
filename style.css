@@ -97,6 +97,24 @@ header {
     line-height: 1;
 }
 
+.lang-switch {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 0.3rem 0.55rem;
+    line-height: 1;
+    text-decoration: none;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.lang-switch:hover {
+    color: var(--text);
+    border-color: var(--muted);
+}
+
 nav {
     display: flex;
     gap: 0.75rem 1.25rem;

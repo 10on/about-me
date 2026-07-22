@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>заметки — дэнчик</title>
-    <meta name="description" content="Короткие заметки дэнчика: лего, ретро-техника, самоделки, игры и разработка — что попало под руку за неделю.">
-    <link rel="canonical" href="https://10on.github.io/about-me/notes.html">
+    <title>notes — Denchik</title>
+    <meta name="description" content="Denchik's short notes: LEGO, retro tech, DIY, games, and dev — whatever came up over the week.">
+    <link rel="canonical" href="https://10on.github.io/about-me/en/notes.html">
     <link rel="alternate" hreflang="ru" href="https://10on.github.io/about-me/notes.html">
     <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/notes.html">
     <link rel="alternate" hreflang="x-default" href="https://10on.github.io/about-me/notes.html">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="дэнчик">
-    <meta property="og:title" content="заметки — дэнчик">
-    <meta property="og:description" content="Короткие заметки дэнчика: лего, ретро-техника, самоделки, игры и разработка — что попало под руку за неделю.">
-    <meta property="og:url" content="https://10on.github.io/about-me/notes.html">
+    <meta property="og:site_name" content="Denchik">
+    <meta property="og:title" content="notes — Denchik">
+    <meta property="og:description" content="Denchik's short notes: LEGO, retro tech, DIY, games, and dev — whatever came up over the week.">
+    <meta property="og:url" content="https://10on.github.io/about-me/en/notes.html">
     <meta property="og:image" content="https://10on.github.io/about-me/img/persik.jpg">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/persik.jpg">
@@ -21,35 +21,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
         <div class="header-top">
             <div>
-                <a href="index.html" class="logo">дэнчик</a>
-                <div class="tagline">лего · ретро · самоделки · разработка</div>
+                <a href="index.html" class="logo">Denchik</a>
+                <div class="tagline">lego · retro · DIY · dev</div>
             </div>
             <div class="header-actions">
-                <a href="en/notes.html" class="lang-switch" title="English version">EN</a>
-                <button id="theme-toggle" class="theme-toggle" title="тема">☾</button>
+                <a href="../notes.html" class="lang-switch" title="Russian version">RU</a>
+                <button id="theme-toggle" class="theme-toggle" title="theme">☾</button>
             </div>
         </div>
         <nav>
-            <a href="notes.html" class="active">заметки</a>
-            <a href="articles.html">статьи</a>
-            <a href="lego.html">лего</a>
-            <a href="retro.html">ретро</a>
-            <a href="diy.html">самоделки</a>
-            <a href="games.html">игры</a>
-            <a href="about.html">обо мне</a>
+            <a href="notes.html" class="active">notes</a>
+            <a href="articles.html">articles</a>
+            <a href="lego.html">lego</a>
+            <a href="retro.html">retro</a>
+            <a href="diy.html">DIY</a>
+            <a href="games.html">games</a>
+            <a href="about.html">about</a>
         </nav>
     </header>
 
     <main>
         <div class="container" style="padding-top: 2.5rem; padding-bottom: 1rem;">
-            <h1 style="font-size: clamp(28px, 6vw, 34px); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.4rem;">Заметки</h1>
-            <p style="font-size: 1rem; color: var(--muted); margin-bottom: 1.1rem;">Короткое и по делу — что попало под руку за неделю. Фильтруй по тегу.</p>
+            <h1 style="font-size: clamp(28px, 6vw, 34px); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.4rem;">Notes</h1>
+            <p style="font-size: 1rem; color: var(--muted); margin-bottom: 1.1rem;">Short and to the point — whatever came up over the week. Filter by tag.</p>
 
             <div class="tag-chips" id="tag-chips"></div>
             <div id="notes-list"></div>
@@ -62,9 +62,9 @@
             <a href="http://t.me/denchik_bricks" target="_blank" rel="noopener">telegram</a>
             <a href="https://rebrickable.com/users/10on/lego/" target="_blank" rel="noopener">rebrickable</a>
             <a href="https://www.linkedin.com/in/d-push/" target="_blank" rel="noopener">linkedin</a>
-            <a href="mailto:igoo10on@gmail.com">почта</a>
+            <a href="mailto:igoo10on@gmail.com">email</a>
         </div>
-        <div class="footer-meta">дэнчик — <span id="year"></span></div>
+        <div class="footer-meta">Denchik — <span id="year"></span></div>
     </footer>
 
     <script>
@@ -84,7 +84,7 @@
 
         function renderChips() {
             var tags = Array.from(new Set(allNotes.flatMap(function (n) { return n.tags; })));
-            var defs = [{ label: 'все', value: 'all' }].concat(tags.map(function (t) { return { label: t, value: t }; }));
+            var defs = [{ label: 'all', value: 'all' }].concat(tags.map(function (t) { return { label: t, value: t }; }));
             document.getElementById('tag-chips').innerHTML = defs.map(function (d) {
                 return '<button class="tag-chip' + (d.value === activeTag ? ' active' : '') + '" data-tag="' + d.value + '">' + d.label + '</button>';
             }).join('');
@@ -101,7 +101,7 @@
             var filtered = activeTag === 'all' ? allNotes : allNotes.filter(function (n) { return n.tags.includes(activeTag); });
             var container = document.getElementById('notes-list');
             if (!filtered.length) {
-                container.innerHTML = '<p class="empty">скоро будет...</p>';
+                container.innerHTML = '<p class="empty">coming soon...</p>';
                 return;
             }
             container.innerHTML = filtered.map(function (n) {
@@ -119,7 +119,7 @@
                 renderNotes();
             })
             .catch(function () {
-                document.getElementById('notes-list').innerHTML = '<p class="empty">не удалось загрузить :(</p>';
+                document.getElementById('notes-list').innerHTML = '<p class="empty">failed to load :(</p>';
             });
     </script>
 </body>

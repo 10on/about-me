@@ -1,0 +1,99 @@
+[
+  {
+    "name": "IBM SelectaDock II or III",
+    "desc": "port replicator for the ThinkPad 770X",
+    "url": "https://thinkwiki.de/SelectaDock_III",
+    "img": "../img/retro/selectadock-iii.png",
+    "status": "v4"
+  },
+  {
+    "name": "Donor laptop for the ThinkPad 770X case",
+    "desc": "source of blanking plates and missing plastic parts",
+    "img": "../img/retro/thinkpad-770x-donor.png",
+    "status": "v3"
+  },
+  {
+    "name": "Acoustic modem for the Epson HX-20",
+    "desc": "long-term peripheral",
+    "url": "https://www.ebay.com/itm/358452190036",
+    "img": "../img/retro/epson-cx20.png",
+    "status": "v2"
+  },
+  {
+    "name": "Barcode scanner for the Epson HX-20",
+    "desc": "long-term peripheral",
+    "status": "v1"
+  },
+  {
+    "name": "IBM PC Convertible",
+    "desc": "cool, but fairly useless",
+    "url": "https://en.wikipedia.org/wiki/IBM_PC_Convertible",
+    "img": "../img/retro/ibm-pc-convertible.jpg",
+    "status": "v4"
+  },
+  {
+    "name": "Compaq Portable I or II",
+    "desc": "specifically want the CRT-tube version",
+    "url": "https://en.wikipedia.org/wiki/Compaq_Portable",
+    "img": "../img/retro/compaq-portable.jpg",
+    "status": "v4"
+  },
+  {
+    "name": "Toshiba T1000",
+    "desc": "get my hands on it and try it out",
+    "url": "https://en.wikipedia.org/wiki/Toshiba_T1000",
+    "img": "../img/retro/toshiba-t1000.jpg",
+    "status": "v3"
+  },
+  {
+    "name": "Toshiba T1200",
+    "desc": "get my hands on it and try it out",
+    "url": "https://en.wikipedia.org/wiki/Toshiba_T1200",
+    "img": "../img/retro/toshiba-t1200.jpg",
+    "status": "v3"
+  },
+  {
+    "name": "Epson PX-8",
+    "desc": "useless, but cool",
+    "url": "https://en.wikipedia.org/wiki/Epson_PX-8_Geneva",
+    "img": "../img/retro/epson-px8.jpg",
+    "status": "v3"
+  },
+  {
+    "name": "GRiD Compass",
+    "desc": "purely for the history — rare, needs luck",
+    "url": "https://en.wikipedia.org/wiki/Grid_Compass",
+    "img": "../img/retro/grid-compass.jpg",
+    "status": "v3"
+  },
+  {
+    "name": "Small CRT/VGA monitor",
+    "desc": "10-15 inches, black-and-white is fine",
+    "status": "v4"
+  },
+  {
+    "name": "3inONEder for Toshiba portables",
+    "desc": "ISA expansion board for the Toshiba T3200SX and similar models",
+    "url": "https://conventionalmemories.com/wiki_cm/3inONEder_for_Toshiba_portables",
+    "img": "../img/retro/3inoneder.png",
+    "status": "v5"
+  },
+  {
+    "name": "IBM Palm Top PC 110",
+    "desc": "Japanese IBM/Ricoh palmtop",
+    "url": "https://en.wikipedia.org/wiki/IBM_Palm_Top_PC_110",
+    "img": "../img/retro/ibm-pc110.jpg",
+    "status": "v3"
+  },
+  {
+    "name": "Casio FX-890P / Z-1 / Z-1GR",
+    "desc": "programmable Casio pocket calculators",
+    "status": "v4"
+  },
+  {
+    "name": "Sharp PC-3000 / PC-3100",
+    "desc": "Sharp pocket computers",
+    "url": "https://en.wikipedia.org/wiki/Sharp_PC-3000",
+    "status": "v3"
+  }
+]

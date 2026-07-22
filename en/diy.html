@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY — Denchik</title>
+    <meta name="description" content="Denchik's DIY projects: electronics, Arduino, 3D printing, and a homemade smart home.">
+    <link rel="canonical" href="https://10on.github.io/about-me/en/diy.html">
+    <link rel="alternate" hreflang="ru" href="https://10on.github.io/about-me/diy.html">
+    <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/diy.html">
+    <link rel="alternate" hreflang="x-default" href="https://10on.github.io/about-me/diy.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Denchik">
+    <meta property="og:title" content="DIY — Denchik">
+    <meta property="og:description" content="Denchik's DIY projects: electronics, Arduino, 3D printing, and a homemade smart home.">
+    <meta property="og:url" content="https://10on.github.io/about-me/en/diy.html">
+    <meta property="og:image" content="https://10on.github.io/about-me/img/diy-cover.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://10on.github.io/about-me/img/diy-cover.png">
+    <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="page-diy">
+    <header>
+        <div class="header-top">
+            <div>
+                <a href="index.html" class="logo">Denchik</a>
+                <div class="tagline">lego · retro · DIY · dev</div>
+            </div>
+            <div class="header-actions">
+                <a href="../diy.html" class="lang-switch" title="Russian version">RU</a>
+                <button id="theme-toggle" class="theme-toggle" title="theme">☾</button>
+            </div>
+        </div>
+        <nav>
+            <a href="notes.html">notes</a>
+            <a href="articles.html">articles</a>
+            <a href="lego.html">lego</a>
+            <a href="retro.html">retro</a>
+            <a href="diy.html" class="active">DIY</a>
+            <a href="games.html">games</a>
+            <a href="about.html">about</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="longread-section">
+            <div class="section-banner" style="background-image: url('../img/diy-cover.png')">
+                <div class="container">
+                    <div class="banner-text">
+                        <h2>DIY</h2>
+                        <p>what I'm making and what I want to make</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container section-content">
+                <div class="topic-highlights">
+                    <div class="topic-highlight">3D printing: Anycubic Kobra 3</div>
+                    <div class="topic-highlight">Local-first smart home: Tuya, IKEA, Home Assistant</div>
+                    <div class="topic-highlight">ESP32/Arduino — DIY projects for the home and the cat</div>
+                    <div class="topic-highlight">From childhood amplifiers to smart sensors today</div>
+                </div>
+                <div class="feed-heading" style="margin-top: 0;">
+                    <span class="feed-label">// notes on this topic</span>
+                    <span class="feed-line"></span>
+                </div>
+                <div id="topic-notes" style="margin-bottom: 2rem;"></div>
+
+                <div class="section-intro">
+                    <p>The urge to build or take something apart has always been with me. From an early age I'd drag random junk home from the street and take apart anything I could get my hands on. My grandfather's garage, with shelves of mysterious equipment, toolboxes, and suitcases of Soviet electronic parts, always felt like a treasure trove to me.</p>
+                    <p>As a little kid I tinkered a bit with wood. As a teenager I got into amplifiers, simple transmitters, and textbook circuits. There wasn't really a grand goal — I just loved the feeling that, with a handful of components, some chemistry, and a soldering iron, I could hear my own voice coming out of a radio in the next room. By university I'd gotten into microcontrollers — Arduino hadn't taken over everything yet, so I mostly copied other people's projects and played around with Atmel and PIC.</p>
+                    <p>Then there was a long break — adult work, moving between cities. All the hardware stuff got left behind. I came back to it in a small way in 2022 — a few of us tried building delivery rovers.</p>
+                    <p>That same project is where I tried 3D printing. Learned to knock out simple engineering models in Fusion 360, and to fix and upgrade the printers themselves. About five printers have passed through my hands so far, with a sixth on the way.</p>
+                    <p>These days I occasionally mess around with ESP32 and Arduino — you should find a list of projects below, and maybe even some notes about them :)</p>
+                </div>
+                <!-- BUILD:diy -->
+<div class="md-content">
+<h3>3D printer: Anycubic Kobra 3 + ACE</h3>
+<p>My main workhorse. Multi-material printing, I print all kinds of small things for myself.</p>
+<h3>Cat litter box visit sensor</h3>
+<p>It was a weekend and I really wanted some automation — built an auto-trigger for the vacuum cleaner whenever Persik visits the litter box.</p>
+<h3>Motorized camera slider</h3>
+<p>Bought a ready-made slider and attached a controllable motor to it — for smooth camera-movement shots.</p>
+<h3>Smart home</h3>
+<p>A mix of ecosystems. Tuya is the main one, gradually pushing the cloud out in favor of local control. IKEA — Matter and a bit of Zigbee. Xiaomi is slowly fading into the background. A Dreame L10S vacuum. Everything runs on a NAS with Home Assistant.</p>
+<h3>Odds and ends from other people's projects</h3>
+<p>A few things built from other people's schematics and instructions — for practice, and because they're interesting.</p>
+</div>
+<!-- /BUILD:diy -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.youtube.com/@DenchikBricks" target="_blank" rel="noopener">youtube</a>
+            <a href="http://t.me/denchik_bricks" target="_blank" rel="noopener">telegram</a>
+            <a href="https://rebrickable.com/users/10on/lego/" target="_blank" rel="noopener">rebrickable</a>
+            <a href="https://www.linkedin.com/in/d-push/" target="_blank" rel="noopener">linkedin</a>
+            <a href="mailto:igoo10on@gmail.com">email</a>
+        </div>
+        <div class="footer-meta">Denchik — <span id="year"></span></div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        var themeBtn = document.getElementById('theme-toggle');
+        function syncThemeLabel() { themeBtn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀︎' : '☾'; }
+        syncThemeLabel();
+        themeBtn.addEventListener('click', function () {
+            var next = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : 'dark';
+            if (next) document.documentElement.setAttribute('data-theme', next); else document.documentElement.removeAttribute('data-theme');
+            syncThemeLabel();
+            try { localStorage.setItem('denchik-theme', next); } catch (e) {}
+        });
+
+        fetch('data/notes.json')
+            .then(function (r) { return r.ok ? r.json() : []; })
+            .then(function (notes) {
+                var filtered = notes.filter(function (n) { return n.tags.includes('diy'); });
+                var el = document.getElementById('topic-notes');
+                if (!filtered.length) { el.innerHTML = '<p class="empty">coming soon...</p>'; return; }
+                el.innerHTML = filtered.map(function (n) {
+                    return '<div class="note-item"><div class="note-meta"><span>' + n.date + '</span><span class="note-tags">' +
+                        n.tags.map(function (t) { return '#' + t; }).join(' ') +
+                        '</span></div><p class="note-text">' + n.text + '</p></div>';
+                }).join('');
+            })
+            .catch(function () {
+                document.getElementById('topic-notes').innerHTML = '<p class="empty">failed to load :(</p>';
+            });
+    </script>
+</body>
+</html>
