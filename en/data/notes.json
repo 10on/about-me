@@ -1,5 +1,26 @@
 [
   {
+    "date": "06.08.2026",
+    "tags": [
+      "slider"
+    ],
+    "text": "Continued working on the slider, got to the buttons. Thought that would be it, but ended up doing a lot more than expected — though I'm not too happy with the quality of some of the work.<br><br><img alt=\"PCB with two tactile buttons\" src=\"img/notes/slider-button-plate.png\" /><br><br><img alt=\"Buttons and limit switch mounted into the front panel\" src=\"img/notes/slider-buttons-mount.png\" /><br><br>Wired up the encoder and all the buttons, flashed a test screen — everything responds: the encoder turns, the limit switches trigger.<br><br><img alt=\"Assembled top panel with the screen in Input test mode\" src=\"img/notes/slider-input-test.png\" /><br><br>Besides the buttons, I made a battery compartment — fit the cells in so nothing shorts out and they take up as little space as possible.<br><br><img alt=\"Battery compartment with three cells in hand\" src=\"img/notes/slider-battery-holder.png\" /><br><br>Bolted on a simple BMS board that was previously used in another project — figure it'll do for now.<br><br><img alt=\"BMS board and wiring inside the enclosure\" src=\"img/notes/slider-bms.png\" /><br><br>The assembly is a bit messy in places: some wires too short, some too long, and, as you can see, I'm making heavy use of hot glue. I could've made neat mounts for everything, but didn't feel like fussing over it — some things are easier to figure out in place.<br><br>Overall, a good chunk of the work is done. What's left is fitting a few modules and the motor, which will probably be tricky — some components need to be pulled off the old breadboard."
+  },
+  {
+    "date": "04.08.2026",
+    "tags": [
+      "slider"
+    ],
+    "text": "Got back to working on the slider. Printed the enclosure and heat-set brass inserts into it.<br><br><img alt=\"Pressing threaded inserts on a drill press\" src=\"img/notes/slider-inserts.png\" /><br><br>Glued in the screen.<br><br><img alt=\"Assembled front panel with the screen: ESP32 OK\" src=\"img/notes/slider-front.png\" /><br><br><img alt=\"Wiring to the screen inside the enclosure\" src=\"img/notes/slider-inside.png\" /><br><br>Now I'm on the buttons — for some reason I kept putting off working through this part, but I guess it's time."
+  },
+  {
+    "date": "04.08.2026",
+    "tags": [
+      "3d-printing"
+    ],
+    "text": "Bought myself a new printer — Anycubic Kobra S1 Combo. Went back to where I started: CoreXY kinematics, where the bed only moves up and down and the head travels above it. My first printer had the same mechanics — a Flying Bear Ghost 5. After that it was bed-slingers of various kinds.<br><br><img alt=\"Anycubic Kobra S1 with the ACE unit on top\" src=\"img/notes/kobra-s1.png\" /><br><br>So far I like everything: compared to the old printer it's quieter and takes up less space on the desk. The old one was pretty loud — overnight I'd either not leave a print running, or, if I really wanted to, set a reduced speed. And now I don't have to worry about the cat sticking its nose into hot parts.<br><br>The old printer's motherboard apparently died. Decided not to sink money and time into repairing it — printing matters more to me right now than digging through its guts.<br><br>Got back to a couple of projects that had been stalled without a printer."
+  },
+  {
     "date": "22.07.2026",
     "tags": [
       "meta"
