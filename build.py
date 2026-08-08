@@ -244,9 +244,14 @@ def render_note_text(md, body):
     return rendered.replace('</p>\n<p>', '<br><br>')
 
 
-def generate_notes_json(md, notes, out_path):
+def generate_notes_json(md, notes, out_path, lang):
+    prefix = '../' if lang == 'en' else ''
     data = [
-        {'date': n['date'], 'tags': n['tags'], 'text': render_note_text(md, n['body'])}
+        {
+            'date': n['date'],
+            'tags': n['tags'],
+            'text': render_note_text(md, n['body']).replace('src="img/', f'src="{prefix}img/'),
+        }
         for n in notes
     ]
     out_path.parent.mkdir(exist_ok=True)
@@ -328,7 +333,7 @@ def main():
 
         notes = load_notes(lang)
         notes_out = LANG_DIRS[lang] / 'data' / 'notes.json'
-        generate_notes_json(md, notes, notes_out)
+        generate_notes_json(md, notes, notes_out, lang)
 
         articles_html = LANG_DIRS[lang] / 'articles.html'
         empty_text = '<p class="empty">скоро будет...</p>' if lang == 'ru' else '<p class="empty">coming soon...</p>'
