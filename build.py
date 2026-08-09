@@ -76,17 +76,27 @@ def article_template(lang):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href=\"""" + site_root + """favicon.svg">
+    <link rel="icon" href=\"""" + site_root + """favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href=\"""" + site_root + """apple-touch-icon.png">
     <title>{{title}} — """ + BRAND[lang] + """</title>
     <meta name="description" content="{{description}}">
     <link rel="canonical" href="{{url}}">
     <meta property="og:type" content="article">
+    <meta property="og:locale" content=\"""" + ('ru_RU' if lang == 'ru' else 'en_US') + """\">
+    <meta property="og:locale:alternate" content=\"""" + ('en_US' if lang == 'ru' else 'ru_RU') + """\">
     <meta property="og:site_name" content=\"""" + BRAND[lang] + """\">
     <meta property="og:title" content="{{title}} — """ + BRAND[lang] + """">
     <meta property="og:description" content="{{description}}">
     <meta property="og:url" content="{{url}}">
     <meta property="og:image" content="https://10on.github.io/about-me/img/persik.jpg">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="882">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/persik.jpg">
+    <script type="application/ld+json">
+{{json_ld}}
+    </script>
     <script>try{{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -158,6 +168,15 @@ def article_template(lang):
 """.format(lang=lang)
 
 
+def to_iso_date(date_str):
+    """Convert a 'DD.MM.YYYY' front-matter date to ISO 8601 'YYYY-MM-DD' (schema.org/sitemap need ISO)."""
+    m = re.match(r'^(\d{2})\.(\d{2})\.(\d{4})$', date_str)
+    if not m:
+        return date_str
+    day, month, year = m.groups()
+    return f'{year}-{month}-{day}'
+
+
 def parse_front_matter(text):
     """Split leading `---\\nkey: value\\n---` block from the markdown body."""
     m = re.match(r'^---\s*\n(.*?)\n---\s*\n(.*)$', text, re.DOTALL)
@@ -209,16 +228,34 @@ def load_articles(lang):
     return articles
 
 
+def article_json_ld(article, lang, url):
+    data = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        'headline': article['title'],
+        'description': article['excerpt'],
+        'datePublished': to_iso_date(article['date']),
+        'inLanguage': lang,
+        'url': url,
+        'image': 'https://10on.github.io/about-me/img/persik.jpg',
+        'author': {'@type': 'Person', 'name': 'Денис Пушкарёв', 'url': f'{SITE_URL}/about.html'},
+        'mainEntityOfPage': {'@type': 'WebPage', '@id': url},
+    }
+    return json.dumps(data, ensure_ascii=False, indent=2)
+
+
 def render_article_page(md, article, lang, template):
     md.reset()
     body_html = md.convert(article['body'])
     tag_text = ' '.join(f'#{t}' for t in article['tags'])
     lang_root = SITE_URL if lang == 'ru' else f'{SITE_URL}/en'
+    url = f"{lang_root}/articles/{article['slug']}.html"
     page_html = template.format(
         title=article['title'], tag_text=tag_text, date=article['date'],
         read=article['read'], body=body_html,
         description=html.escape(article['excerpt'], quote=True),
-        url=f"{lang_root}/articles/{article['slug']}.html",
+        url=url,
+        json_ld=article_json_ld(article, lang, url),
     )
     out_dir = LANG_DIRS[lang] / 'articles'
     out_dir.mkdir(exist_ok=True)
@@ -307,14 +344,37 @@ def inject(target, slug, block):
         print(f'  built: {slug} → {target.name}')
 
 
-def generate_sitemap(articles_by_lang):
+def generate_sitemap(articles_by_lang, notes_by_lang):
     urls = [f'{SITE_URL}/{page}' for page in STATIC_PAGES]
     urls += [f"{SITE_URL}/articles/{a['slug']}.html" for a in articles_by_lang['ru']]
     urls += [f'{SITE_URL}/en/{page}' for page in STATIC_PAGES]
     urls += [f"{SITE_URL}/en/articles/{a['slug']}.html" for a in articles_by_lang['en']]
-    body = '\n'.join(
-        f'  <url><loc>{u}</loc></url>' for u in urls
-    )
+
+    # lastmod: known precisely for articles (front-matter date) and for the list/home pages
+    # that surface them (notes.html/articles.html/index.html use the newest item's date).
+    # Other static pages have no reliable date source, so they're left without a lastmod.
+    lastmod = {}
+    for lang in ('ru', 'en'):
+        lang_root = SITE_URL if lang == 'ru' else f'{SITE_URL}/en'
+        articles = articles_by_lang.get(lang, [])
+        notes = notes_by_lang.get(lang, [])
+        latest_article = to_iso_date(articles[0]['date']) if articles else None
+        latest_note = to_iso_date(notes[0]['date']) if notes else None
+        for a in articles:
+            lastmod[f"{lang_root}/articles/{a['slug']}.html"] = to_iso_date(a['date'])
+        if latest_article:
+            lastmod[f'{lang_root}/articles.html'] = latest_article
+        if latest_note:
+            lastmod[f'{lang_root}/notes.html'] = latest_note
+        home_dates = [d for d in (latest_article, latest_note) if d]
+        if home_dates:
+            lastmod[f'{lang_root}/'] = max(home_dates)
+
+    def render_url(u):
+        d = lastmod.get(u)
+        return f'  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>' if d else f'  <url><loc>{u}</loc></url>'
+
+    body = '\n'.join(render_url(u) for u in urls)
     xml = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -328,6 +388,7 @@ def generate_sitemap(articles_by_lang):
 def main():
     md = markdown.Markdown()
     articles_by_lang = {}
+    notes_by_lang = {}
 
     for lang in ('ru', 'en'):
         for slug, cfg in TARGETS[lang].items():
@@ -354,6 +415,7 @@ def main():
             render_article_page(md, article, lang, template)
 
         notes = load_notes(lang)
+        notes_by_lang[lang] = notes
         notes_out = LANG_DIRS[lang] / 'data' / 'notes.json'
         generate_notes_json(md, notes, notes_out, lang)
 
@@ -369,7 +431,7 @@ def main():
             block = ''.join(render_card(a, lang) for a in preview) if preview else empty_text
             inject(index_html, 'articles-home', block)
 
-    generate_sitemap(articles_by_lang)
+    generate_sitemap(articles_by_lang, notes_by_lang)
 
     print('done.')
 

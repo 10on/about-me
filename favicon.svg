@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .bg { fill: #C25A3A; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #E58A63; }
+    }
+  </style>
+  <rect class="bg" width="64" height="64" rx="14"/>
+  <text x="32" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="600" fill="#F8F8F4" text-anchor="middle">Д</text>
+</svg>
