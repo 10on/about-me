@@ -10,9 +10,9 @@ Found another PD trigger in my stash. Unlike the one I had before, this one is m
 
 Today, once I'd assembled almost everything, the screen suddenly stopped working. Had to take it all apart again. That's the disassembled state with the extra modules you see in the photos.
 
-![Slider disassembled, top view, power board and modules visible](img/notes/slider-power-disassembled-top.jpg)
+![Slider disassembled, top view, power board and modules visible](img/notes/slider-power-disassembled-top.webp)
 
-![Slider disassembled, side view, wiring and modules](img/notes/slider-power-disassembled-side.jpg)
+![Slider disassembled, side view, wiring and modules](img/notes/slider-power-disassembled-side.webp)
 
 The screen turned out to be a dumb problem: a couple of pins had come loose, a solder joint had cracked. Not too surprising given how much I was shoving wires around while stuffing everything in.
 

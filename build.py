@@ -20,8 +20,9 @@ from pathlib import Path
 
 try:
     import markdown
+    from PIL import Image
 except ImportError:
-    print("Run: pip3 install markdown", file=sys.stderr)
+    print("Run: pip3 install markdown pillow", file=sys.stderr)
     sys.exit(1)
 
 ROOT = Path(__file__).parent
@@ -89,7 +90,9 @@ def article_template(lang):
     <script>try{{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href=\"""" + site_root + """style.css">
 </head>
 <body>
@@ -234,6 +237,24 @@ def load_notes(lang):
     return notes
 
 
+def add_img_dimensions(rendered):
+    """Inject width/height (read from the actual file) and loading=lazy into <img> tags,
+    so the browser can reserve layout space before the image loads (avoids CLS)."""
+    def repl(m):
+        tag = m.group(0)
+        src_m = re.search(r'src="([^"]+)"', tag)
+        if not src_m:
+            return tag
+        try:
+            with Image.open(ROOT / src_m.group(1)) as im:
+                w, h = im.size
+        except (OSError, FileNotFoundError):
+            return tag
+        attrs = f' width="{w}" height="{h}" loading="lazy"'
+        return re.sub(r'\s*/?>$', attrs + ' />', tag)
+    return re.sub(r'<img\b[^>]*>', repl, rendered)
+
+
 def render_note_text(md, body):
     """Markdown body → flat HTML string (paragraphs joined with <br><br> instead of <p>),
     since notes.json feeds a single innerHTML string per note, not a full block layout."""
@@ -241,7 +262,8 @@ def render_note_text(md, body):
     rendered = md.convert(body).strip()
     rendered = re.sub(r'^<p>', '', rendered)
     rendered = re.sub(r'</p>$', '', rendered)
-    return rendered.replace('</p>\n<p>', '<br><br>')
+    rendered = rendered.replace('</p>\n<p>', '<br><br>')
+    return add_img_dimensions(rendered)
 
 
 def generate_notes_json(md, notes, out_path, lang):
