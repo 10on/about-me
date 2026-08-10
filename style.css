@@ -814,6 +814,7 @@ main {
 .note-item {
     padding: 1.05rem 0;
     border-bottom: 1px solid var(--border);
+    scroll-margin-top: 1rem;
 }
 
 .note-meta {
@@ -829,6 +830,39 @@ main {
 
 .note-meta .note-tags {
     color: var(--accent);
+}
+
+.note-meta-right {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.note-share {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.15s;
+}
+
+.note-share:hover,
+.note-share.copied {
+    color: var(--accent);
+}
+
+@keyframes note-flash {
+    from { background: color-mix(in srgb, var(--accent) 16%, transparent); }
+    to { background: transparent; }
+}
+
+.note-item.note-highlight {
+    animation: note-flash 1.6s ease-out;
+    border-radius: 8px;
 }
 
 .note-text {

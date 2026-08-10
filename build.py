@@ -45,8 +45,10 @@ NAV_LABELS = {
 BRAND = {'ru': 'дэнчик', 'en': 'Denchik'}
 TAGLINE = {'ru': 'лего · ретро · самоделки · разработка', 'en': 'lego · retro · DIY · dev'}
 STRINGS = {
-    'ru': {'theme_title': 'тема', 'email': 'почта', 'all_articles': '← все статьи', 'read_more': 'читать →'},
-    'en': {'theme_title': 'theme', 'email': 'email', 'all_articles': '← all articles', 'read_more': 'read →'},
+    'ru': {'theme_title': 'тема', 'email': 'почта', 'all_articles': '← все статьи', 'read_more': 'читать →',
+           'open_note': 'Открыть заметку →'},
+    'en': {'theme_title': 'theme', 'email': 'email', 'all_articles': '← all articles', 'read_more': 'read →',
+           'open_note': 'Open note →'},
 }
 
 # slug → per-language target html file, content injected as a single markdown block.
@@ -71,7 +73,7 @@ def article_template(lang):
     site_root = '../' if lang == 'ru' else '../../'
     nav = NAV_LABELS[lang]
     s = STRINGS[lang]
-    return """<!DOCTYPE html>
+    template = """<!DOCTYPE html>
 <html lang="{lang}">
 <head>
     <meta charset="UTF-8">
@@ -165,7 +167,114 @@ def article_template(lang):
     </script>
 </body>
 </html>
-""".format(lang=lang)
+"""
+    return template.format(lang=lang)
+
+
+def note_share_template(lang):
+    """Lightweight standalone page for a single note: exists only so a shared link to
+    notes/<id>.html carries per-note OG/Twitter tags (title/description/image) for link
+    unfurlers like Telegram, which don't run JS and can't see a #fragment. It immediately
+    redirects a real visitor into notes.html#note-<id> (scrolled to the note in context)."""
+    site_root = '../' if lang == 'ru' else '../../'
+    brand = BRAND[lang]
+    open_note = STRINGS[lang]['open_note']
+    template = """<!DOCTYPE html>
+<html lang="{lang}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href=\"""" + site_root + """favicon.svg">
+    <link rel="icon" href=\"""" + site_root + """favicon.ico" sizes="any">
+    <title>{{title}} — """ + brand + """</title>
+    <meta name="description" content="{{description}}">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="{{canonical}}">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content=\"""" + brand + """\">
+    <meta property="og:title" content="{{title}} — """ + brand + """">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:url" content="{{canonical}}">
+    <meta property="og:image" content="{{image}}">
+    <meta property="og:image:width" content="{{image_width}}">
+    <meta property="og:image:height" content="{{image_height}}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{image}}">
+    <meta http-equiv="refresh" content="0; url={{redirect}}">
+    <link rel="stylesheet" href=\"""" + site_root + """style.css">
+</head>
+<body>
+    <div class="container" style="padding-top: 2.5rem;">
+        <p class="note-text">{{description}}</p>
+        <p><a href="{{redirect}}">""" + open_note + """</a></p>
+    </div>
+    <script>location.replace({{redirect_js}});</script>
+</body>
+</html>
+"""
+    return template.format(lang=lang)
+
+
+def strip_note_html(rendered):
+    """Flatten a rendered note's HTML (paragraphs joined by <br><br>, may contain <img>)
+    down to plain text, for use in a meta description / og:title."""
+    text = re.sub(r'<br\s*/?>', ' ', rendered)
+    text = re.sub(r'<[^>]+>', '', text)
+    text = html.unescape(text)
+    return re.sub(r'\s+', ' ', text).strip()
+
+
+def truncate_text(text, length):
+    if len(text) <= length:
+        return text
+    cut = text[:length].rsplit(' ', 1)[0]
+    return cut.rstrip(',.;:—-') + '…'
+
+
+def first_image_src(rendered):
+    m = re.search(r'<img[^>]+src="([^"]+)"', rendered)
+    return m.group(1) if m else None
+
+
+def image_dimensions(rel_path):
+    try:
+        with Image.open(ROOT / rel_path) as im:
+            return im.size
+    except (OSError, FileNotFoundError):
+        return None
+
+
+def render_note_share_page(note, lang, template):
+    lang_root = SITE_URL if lang == 'ru' else f'{SITE_URL}/en'
+    canonical = f"{lang_root}/notes/{note['id']}.html"
+    redirect = f"../notes.html#note-{note['id']}"
+    text = strip_note_html(note['rendered'])
+    title = truncate_text(text, 70)
+    description = truncate_text(text, 160)
+
+    img_src = first_image_src(note['rendered'])
+    if img_src:
+        image = f'{SITE_URL}/{img_src}'
+        dims = image_dimensions(img_src) or (1000, 882)
+    else:
+        image = f'{SITE_URL}/img/persik.jpg'
+        dims = (1000, 882)
+
+    page_html = template.format(
+        title=html.escape(title, quote=True),
+        description=html.escape(description, quote=True),
+        canonical=canonical,
+        image=image,
+        image_width=dims[0],
+        image_height=dims[1],
+        redirect=redirect,
+        redirect_js=json.dumps(redirect),
+    )
+    out_dir = LANG_DIRS[lang] / 'notes'
+    out_dir.mkdir(exist_ok=True)
+    out_path = out_dir / f"{note['id']}.html"
+    out_path.write_text(page_html, encoding='utf-8')
+    print(f"  built: {'en/' if lang == 'en' else ''}notes/{note['id']}.html")
 
 
 def to_iso_date(date_str):
@@ -265,12 +374,18 @@ def render_article_page(md, article, lang, template):
 
 
 def load_notes(lang):
-    """Read content/notes/*.md for `lang`, newest first (filenames YYYY-MM-DD-slug[.en].md)."""
+    """Read content/notes/*.md for `lang`, newest first (filenames YYYY-MM-DD-slug[.en].md).
+    `id` (the slug) is stable across ru/en for the same note and is used to link/scroll/share it."""
     notes = []
     for path in lang_files(NOTES_SRC, lang):
         meta, body = parse_front_matter(path.read_text(encoding='utf-8'))
         tags = [t.strip() for t in meta.get('tags', '').split(',') if t.strip()]
-        notes.append({'date': meta.get('date', ''), 'tags': tags, 'body': body.strip()})
+        notes.append({
+            'id': slug_from_path(path, lang),
+            'date': meta.get('date', ''),
+            'tags': tags,
+            'body': body.strip(),
+        })
     return notes
 
 
@@ -303,13 +418,15 @@ def render_note_text(md, body):
     return add_img_dimensions(rendered)
 
 
-def generate_notes_json(md, notes, out_path, lang):
+def generate_notes_json(notes, out_path, lang):
+    """Expects each note to already carry a `rendered` field (see render_note_text)."""
     prefix = '../' if lang == 'en' else ''
     data = [
         {
+            'id': n['id'],
             'date': n['date'],
             'tags': n['tags'],
-            'text': render_note_text(md, n['body']).replace('src="img/', f'src="{prefix}img/'),
+            'text': n['rendered'].replace('src="img/', f'src="{prefix}img/'),
         }
         for n in notes
     ]
@@ -415,9 +532,15 @@ def main():
             render_article_page(md, article, lang, template)
 
         notes = load_notes(lang)
+        for n in notes:
+            n['rendered'] = render_note_text(md, n['body'])
         notes_by_lang[lang] = notes
         notes_out = LANG_DIRS[lang] / 'data' / 'notes.json'
-        generate_notes_json(md, notes, notes_out, lang)
+        generate_notes_json(notes, notes_out, lang)
+
+        note_template = note_share_template(lang)
+        for n in notes:
+            render_note_share_page(n, lang, note_template)
 
         articles_html = LANG_DIRS[lang] / 'articles.html'
         empty_text = '<p class="empty">скоро будет...</p>' if lang == 'ru' else '<p class="empty">coming soon...</p>'

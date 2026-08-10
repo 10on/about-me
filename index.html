@@ -119,6 +119,22 @@
             try { localStorage.setItem('denchik-theme', next); } catch (e) {}
         });
 
+        var SHARE_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>';
+
+        document.getElementById('home-notes').addEventListener('click', function (e) {
+            var btn = e.target.closest('.note-share');
+            if (!btn) return;
+            var url = new URL(btn.dataset.url, location.href).href;
+            if (navigator.share) {
+                navigator.share({ url: url }).catch(function () {});
+            } else if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(function () {
+                    btn.classList.add('copied');
+                    setTimeout(function () { btn.classList.remove('copied'); }, 1500);
+                });
+            }
+        });
+
         fetch('data/notes.json')
             .then(function (r) { return r.ok ? r.json() : []; })
             .then(function (notes) {
@@ -128,9 +144,9 @@
                     return;
                 }
                 container.innerHTML = notes.slice(0, 4).map(function (n) {
-                    return '<div class="note-item"><div class="note-meta"><span>' + n.date + '</span><span class="note-tags">' +
+                    return '<div class="note-item" id="note-' + n.id + '"><div class="note-meta"><span>' + n.date + '</span><span class="note-meta-right"><span class="note-tags">' +
                         n.tags.map(function (t) { return '#' + t; }).join(' ') +
-                        '</span></div><p class="note-text">' + n.text + '</p></div>';
+                        '</span><button class="note-share" data-url="notes/' + n.id + '.html" title="Поделиться" aria-label="Поделиться">' + SHARE_ICON + '</button></span></div><p class="note-text">' + n.text + '</p></div>';
                 }).join('');
             })
             .catch(function () {
