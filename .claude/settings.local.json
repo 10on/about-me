@@ -85,7 +85,8 @@
       "Bash(identify \"/home/denis/.claude/uploads/3f994f41-16d8-413f-8a1d-da546f6cc2ce/2ba5bf1d-IMG_7750.JPG\")",
       "Bash(command -v cwebp)",
       "Bash(echo \"exit:$?\")",
-      "Bash(mkdir -p img/wishlist && python3 -c \" *)"
+      "Bash(mkdir -p img/wishlist && python3 -c \" *)",
+      "Bash(awk '/\\\\[data-theme=\"dark\"\\\\]/{p=1} p' style.css)"
     ]
   }
 }
