@@ -50,5 +50,14 @@
       { "url": "https://www.ozon.ru/product/dremel-225-36-dyuymovyy-gibkiy-val-udlinitel-vala-vrashchayushchiysya-shlifovalnyy-instrument-2469651681", "label": "ozon.ru" },
       { "url": "https://www.gama-alati.rs/dremel-fleksibilna-osovina-sajla-225-26150225ja.html", "label": "gama-alati.rs" }
     ]
+  },
+  {
+    "title": "Broadlink RM4 Mini Universal IR",
+    "tags": ["apartment"],
+    "img": "../img/wishlist/broadlink-rm4-mini.webp",
+    "links": [
+      { "url": "https://www.amazon.de/-/en/gp/product/B07ZSG9Y67", "label": "amazon.de" },
+      { "url": "https://www.aliexpress.com/item/1005008269663852.html", "label": "aliexpress" }
+    ]
   }
 ]
