@@ -13,5 +13,14 @@
     "links": [
       { "url": "https://www.ikea.com/rs/sr/customer-service/payment-options/gift-cards/", "label": "подарочные карты IKEA" }
     ]
+  },
+  {
+    "title": "Подарочная карта в Белую ворону",
+    "desc": "На любые деньги",
+    "tags": ["книги"],
+    "img": "img/wishlist/belaya-vorona-giftcard.webp",
+    "links": [
+      { "url": "https://belavrana.com/products/giftcard", "label": "подарочная карта Белая ворона" }
+    ]
   }
 ]

@@ -13,5 +13,14 @@
     "links": [
       { "url": "https://www.ikea.com/rs/sr/customer-service/payment-options/gift-cards/", "label": "IKEA gift cards" }
     ]
+  },
+  {
+    "title": "Belaya Vorona gift card",
+    "desc": "Any amount",
+    "tags": ["books"],
+    "img": "../img/wishlist/belaya-vorona-giftcard.webp",
+    "links": [
+      { "url": "https://belavrana.com/products/giftcard", "label": "Belaya Vorona gift card" }
+    ]
   }
 ]
