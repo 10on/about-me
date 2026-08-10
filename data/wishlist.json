@@ -22,5 +22,14 @@
     "links": [
       { "url": "https://belavrana.com/products/giftcard", "label": "подарочная карта Белая ворона" }
     ]
+  },
+  {
+    "title": "Мини-ЧПУ станочек",
+    "desc": "Не прям сильно хочу, но поигрался бы",
+    "tags": ["самоделки"],
+    "img": "img/wishlist/mini-cnc.webp",
+    "links": [
+      { "url": "https://www.amazon.de/-/en/gp/product/B09NRC2P2W", "label": "amazon.de" }
+    ]
   }
 ]

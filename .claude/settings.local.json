@@ -86,7 +86,8 @@
       "Bash(command -v cwebp)",
       "Bash(echo \"exit:$?\")",
       "Bash(mkdir -p img/wishlist && python3 -c \" *)",
-      "Bash(awk '/\\\\[data-theme=\"dark\"\\\\]/{p=1} p' style.css)"
+      "Bash(awk '/\\\\[data-theme=\"dark\"\\\\]/{p=1} p' style.css)",
+      "WebFetch(domain:www.amazon.de)"
     ]
   }
 }
