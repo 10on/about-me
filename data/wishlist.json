@@ -59,5 +59,13 @@
       { "url": "https://www.amazon.de/-/en/gp/product/B07ZSG9Y67", "label": "amazon.de" },
       { "url": "https://www.aliexpress.com/item/1005008269663852.html", "label": "aliexpress" }
     ]
+  },
+  {
+    "title": "Лазилка для кота под потолок",
+    "tags": ["квартира"],
+    "img": "img/wishlist/cat-tree-ceiling.webp",
+    "links": [
+      { "url": "https://www.amazon.de/gp/product/B09Q3CNHSQ", "label": "amazon.de" }
+    ]
   }
 ]
