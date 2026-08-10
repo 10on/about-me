@@ -424,5 +424,11 @@
     "desc": "111 — стартовый поезд без мотора, Trains, 1966",
     "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=111-1",
     "status": "v2"
+  },
+  {
+    "name": "Mindstorms EV3",
+    "desc": "31313 — робототехнический конструктор, Mindstorms, 2013",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=31313-1",
+    "status": "v4"
   }
 ]
