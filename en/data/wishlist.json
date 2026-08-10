@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Shower towels",
+    "desc": "Something nice",
+    "tags": ["apartment"],
+    "img": "../img/wishlist/towels.webp"
+  },
+  {
+    "title": "IKEA gift card (Serbia)",
+    "desc": "Always find something to spend it on",
+    "tags": ["apartment"],
+    "img": "https://www.ikea.com/ext/ingkadam/m/490e1145b5355a3a/original/GC-CF-IDServices-FY25-Multipleuse-Image-Celebrations-04-4-3.jpg",
+    "links": [
+      { "url": "https://www.ikea.com/rs/sr/customer-service/payment-options/gift-cards/", "label": "IKEA gift cards" }
+    ]
+  }
+]

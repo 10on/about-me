@@ -63,7 +63,29 @@
       "Bash(mkdir -p /tmp/about-me-deploy)",
       "Bash(rsync -a --exclude=.git --exclude=.claude --exclude=.env --exclude=.github /home/denis/projects/code/about-me/ /tmp/about-me-deploy/)",
       "Bash(rm -rf /tmp/about-me-deploy/.wrangler)",
-      "Bash(curl -s https://68289bd0.about-me-d9v.pages.dev/)"
+      "Bash(curl -s https://68289bd0.about-me-d9v.pages.dev/)",
+      "Bash(cp \"/home/denis/.claude/uploads/31dca5b7-c3df-478c-941a-6aebade6a99a/eb1c19b3-FullSizeRender.jpeg\" img/notes/slider-power-disassembled-top.jpg)",
+      "Bash(cp \"/home/denis/.claude/uploads/31dca5b7-c3df-478c-941a-6aebade6a99a/03a0f1fb-FullSizeRender.jpeg\" img/notes/slider-power-disassembled-side.jpg)",
+      "Bash(apt list *)",
+      "Bash(rtk du *)",
+      "Bash(cwebp -version)",
+      "Bash(xargs sed -i -E 's#\\(img/notes/[a-zA-Z0-9._-]+\\)\\\\.\\(png|jpe?g\\)#\\\\1.webp#g')",
+      "Bash(sed -i 's#diy-cover\\\\.png#diy-cover.jpg#g' diy.html en/diy.html)",
+      "Bash(sed -i 's#games-cover\\\\.png#games-cover.jpg#g' games.html en/games.html)",
+      "Bash(pkill -f \"http.server 8299\")",
+      "Bash(fc-list)",
+      "WebFetch(domain:www.ulanzi.com)",
+      "Bash(xargs -I{} stat -c '%Y %n' {})",
+      "Bash(curl -sI \"https://dpush.uk/style.css?cachebust=$\\(date +%s\\)\")",
+      "Bash(curl -s \"https://dpush.uk/style.css?cachebust=$\\(date +%s\\)\")",
+      "Bash(rtk wc *)",
+      "Bash(rtk diff *)",
+      "Bash(echo \"---exit:$?\")",
+      "Bash(find /home/denis/.claude/uploads -newer /home/denis/projects/code/about-me/build.py -mmin -30 2>/dev/null | head -20; echo \"---\"; rtk ls img/ | head -30; echo \"---wishlist related img dirs---\"; rtk find img -iname \"*wishlist*\" -o -iname \"*towel*\" 2>/dev/null)",
+      "Bash(identify \"/home/denis/.claude/uploads/3f994f41-16d8-413f-8a1d-da546f6cc2ce/2ba5bf1d-IMG_7750.JPG\")",
+      "Bash(command -v cwebp)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(mkdir -p img/wishlist && python3 -c \" *)"
     ]
   }
 }

@@ -499,6 +499,13 @@ main {
     margin-top: 0.2rem;
 }
 
+.item-tags {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    margin-top: 0.2rem;
+}
+
 .item-status {
     font-family: var(--mono);
     font-size: 0.7rem;
