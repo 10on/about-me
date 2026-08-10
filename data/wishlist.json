@@ -40,5 +40,15 @@
     "links": [
       { "url": "https://conventionalmemories.com/wiki_cm/3inONEder_for_Toshiba_portables", "label": "wiki" }
     ]
+  },
+  {
+    "title": "Гибкий вал для Dremel",
+    "tags": ["самоделки"],
+    "img": "img/wishlist/dremel-flex-shaft.webp",
+    "links": [
+      { "url": "https://www.amazon.de/-/en/gp/product/B008ETGPOY", "label": "amazon.de" },
+      { "url": "https://www.ozon.ru/product/dremel-225-36-dyuymovyy-gibkiy-val-udlinitel-vala-vrashchayushchiysya-shlifovalnyy-instrument-2469651681", "label": "ozon.ru" },
+      { "url": "https://www.gama-alati.rs/dremel-fleksibilna-osovina-sajla-225-26150225ja.html", "label": "gama-alati.rs" }
+    ]
   }
 ]
