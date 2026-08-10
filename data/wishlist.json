@@ -67,5 +67,14 @@
     "links": [
       { "url": "https://www.amazon.de/gp/product/B09Q3CNHSQ", "label": "amazon.de" }
     ]
+  },
+  {
+    "title": "X-COM UFO Defense PC 3.5 Floppy Big Box",
+    "tags": ["ретро"],
+    "img": "img/wishlist/xcom-ufo-defense-bigbox.webp",
+    "links": [
+      { "url": "https://ebay.io/m/cdEhAu", "label": "ebay #1" },
+      { "url": "https://ebay.io/m/X82NEv", "label": "ebay #2" }
+    ]
   }
 ]
