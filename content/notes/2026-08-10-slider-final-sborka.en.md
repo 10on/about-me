@@ -1,6 +1,6 @@
 ---
 date: 10.08.2026
-tags: slider
+tags: slider, electronics
 ---
 Kept working on the slider today, and overall got it to what's basically a final version.
 

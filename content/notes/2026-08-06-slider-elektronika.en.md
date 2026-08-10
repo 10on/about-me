@@ -1,6 +1,6 @@
 ---
 date: 06.08.2026
-tags: slider
+tags: slider, electronics
 ---
 Continued working on the slider, got to the buttons. Thought that would be it, but ended up doing a lot more than expected — though I'm not too happy with the quality of some of the work.
 

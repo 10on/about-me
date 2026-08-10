@@ -1,6 +1,6 @@
 ---
 date: 09.08.2026
-tags: slider
+tags: slider, electronics
 ---
 Spent the last couple of days slowly working through the electronics, mostly the power side, and this evening tried putting it all together. Glad nothing caught fire, but whether it actually works is still up in the air.
 

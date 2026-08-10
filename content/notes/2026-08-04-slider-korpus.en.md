@@ -1,6 +1,6 @@
 ---
 date: 04.08.2026
-tags: slider
+tags: slider, 3d-printing
 ---
 Got back to working on the slider. Printed the enclosure and heat-set brass inserts into it.
 
