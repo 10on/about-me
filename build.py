@@ -12,6 +12,7 @@ skipped for the en/ build.
 
 Usage: python3 build.py
 """
+import hashlib
 import html
 import json
 import re
@@ -461,6 +462,30 @@ def inject(target, slug, block):
         print(f'  built: {slug} → {target.name}')
 
 
+def file_version(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:8]
+
+
+def apply_asset_versions():
+    """Append ?v=<content-hash> to every style.css/main.js reference across all HTML pages
+    (static and generated), so a Cloudflare edge cache with a long max-age (see _headers)
+    is busted automatically whenever either file's content changes, instead of serving a
+    stale copy for up to its full TTL."""
+    style_version = file_version(ROOT / 'style.css')
+    main_js_version = {'ru': file_version(ROOT / 'main.js'), 'en': file_version(ROOT / 'en' / 'main.js')}
+    style_re = re.compile(r'href="((?:\.\./)*)style\.css(?:\?v=[a-f0-9]+)?"')
+    main_re = re.compile(r'src="main\.js(?:\?v=[a-f0-9]+)?"')
+
+    for html_path in ROOT.rglob('*.html'):
+        lang = 'en' if html_path.is_relative_to(ROOT / 'en') else 'ru'
+        text = html_path.read_text(encoding='utf-8')
+        new_text = style_re.sub(lambda m: f'href="{m.group(1)}style.css?v={style_version}"', text)
+        new_text = main_re.sub(f'src="main.js?v={main_js_version[lang]}"', new_text)
+        if new_text != text:
+            html_path.write_text(new_text, encoding='utf-8')
+            print(f'  versioned: {html_path.relative_to(ROOT)}')
+
+
 def generate_sitemap(articles_by_lang, notes_by_lang):
     urls = [f'{SITE_URL}/{page}' for page in STATIC_PAGES]
     urls += [f"{SITE_URL}/articles/{a['slug']}.html" for a in articles_by_lang['ru']]
@@ -555,6 +580,7 @@ def main():
             inject(index_html, 'articles-home', block)
 
     generate_sitemap(articles_by_lang, notes_by_lang)
+    apply_asset_versions()
 
     print('done.')
 
