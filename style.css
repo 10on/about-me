@@ -875,6 +875,13 @@ main {
     margin-top: 0.5rem;
     font-size: 1.05rem;
     line-height: 1.55;
+    max-height: 21rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.note-text.expanded {
+    max-height: none;
 }
 
 .note-text img {
@@ -883,6 +890,38 @@ main {
     border-radius: 8px;
     display: block;
     margin: 0.75rem 0;
+}
+
+.note-item.has-overflow .note-text:not(.expanded)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3.25rem;
+    background: linear-gradient(to bottom, transparent, var(--bg));
+    pointer-events: none;
+}
+
+.note-expand-btn {
+    display: none;
+    margin-top: 0.6rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.note-expand-btn:hover {
+    text-decoration: underline;
+}
+
+.note-item.has-overflow .note-expand-btn {
+    display: inline-block;
 }
 
 .tag-chips {

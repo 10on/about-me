@@ -87,7 +87,8 @@
       "Bash(echo \"exit:$?\")",
       "Bash(mkdir -p img/wishlist && python3 -c \" *)",
       "Bash(awk '/\\\\[data-theme=\"dark\"\\\\]/{p=1} p' style.css)",
-      "WebFetch(domain:www.amazon.de)"
+      "WebFetch(domain:www.amazon.de)",
+      "Bash(xargs -I{} ls -la {})"
     ]
   }
 }

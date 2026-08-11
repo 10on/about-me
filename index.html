@@ -47,7 +47,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="style.css?v=33a12bae">
+    <link rel="stylesheet" href="style.css?v=03f5f656">
 </head>
 <body>
     <header>
@@ -121,8 +121,26 @@
         });
 
         var SHARE_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>';
+        var EXPAND_LABEL = 'Показать полностью ↓';
+        var COLLAPSE_LABEL = 'Свернуть ↑';
+
+        function markOverflowingNotes(container) {
+            container.querySelectorAll('.note-item').forEach(function (item) {
+                var text = item.querySelector('.note-text');
+                if (text.scrollHeight > text.clientHeight + 2) {
+                    item.classList.add('has-overflow');
+                }
+            });
+        }
 
         document.getElementById('home-notes').addEventListener('click', function (e) {
+            var expandBtn = e.target.closest('.note-expand-btn');
+            if (expandBtn) {
+                var text = expandBtn.closest('.note-item').querySelector('.note-text');
+                var expanded = text.classList.toggle('expanded');
+                expandBtn.textContent = expanded ? COLLAPSE_LABEL : EXPAND_LABEL;
+                return;
+            }
             var btn = e.target.closest('.note-share');
             if (!btn) return;
             var url = new URL(btn.dataset.url, location.href).href;
@@ -147,8 +165,9 @@
                 container.innerHTML = notes.slice(0, 4).map(function (n) {
                     return '<div class="note-item" id="note-' + n.id + '"><div class="note-meta"><span>' + n.date + '</span><span class="note-meta-right"><span class="note-tags">' +
                         n.tags.map(function (t) { return '#' + t; }).join(' ') +
-                        '</span><button class="note-share" data-url="notes/' + n.id + '.html" title="Поделиться" aria-label="Поделиться">' + SHARE_ICON + '</button></span></div><p class="note-text">' + n.text + '</p></div>';
+                        '</span><button class="note-share" data-url="notes/' + n.id + '.html" title="Поделиться" aria-label="Поделиться">' + SHARE_ICON + '</button></span></div><p class="note-text">' + n.text + '</p><button class="note-expand-btn" type="button">' + EXPAND_LABEL + '</button></div>';
                 }).join('');
+                markOverflowingNotes(container);
             })
             .catch(function () {
                 document.getElementById('home-notes').innerHTML = '<p class="empty">не удалось загрузить :(</p>';
