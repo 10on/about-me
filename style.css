@@ -217,14 +217,18 @@ main {
     line-height: 1.7;
 }
 
-.bio-content a {
+.bio-content a,
+.bio-content a:visited,
+.text-link,
+.text-link:visited {
     color: var(--text);
     text-decoration: none;
     border-bottom: 1px solid var(--border);
     transition: border-color 0.15s, color 0.15s;
 }
 
-.bio-content a:hover {
+.bio-content a:hover,
+.text-link:hover {
     border-color: var(--accent);
     color: var(--accent);
 }

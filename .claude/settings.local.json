@@ -91,7 +91,9 @@
       "Bash(xargs -I{} ls -la {})",
       "Bash(node check.js)",
       "Bash(node -e ' *)",
-      "Bash(rtk pip *)"
+      "Bash(rtk pip *)",
+      "Bash(node --check /tmp/idx.js)",
+      "Bash(node --check /tmp/idx_en.js)"
     ]
   }
 }
