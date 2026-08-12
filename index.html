@@ -44,6 +44,7 @@
     <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="fetch" href="data/notes.json" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
@@ -82,7 +83,11 @@
                 <span class="feed-line"></span>
                 <a href="notes.html" class="feed-more">все →</a>
             </div>
-            <div id="home-notes"></div>
+            <div id="home-notes">
+                <!-- BUILD:home-notes -->
+<div class="note-item" id="note-slider-case-v2"><div class="note-meta"><span>12.08.2026</span><span class="note-meta-right"><span class="note-tags">#слайдер #3д-печать #электроника</span><button class="note-share" data-url="notes/slider-case-v2.html" title="Поделиться" aria-label="Поделиться"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></button></span></div><p class="note-text">Несмотря на то, что вчера вечером я уже почти решил сделать в корпусе выпил, добавить накладку со сдвинутыми отверстиями и закрепить её на эпоксидку и винты, сегодня всё-таки решил перемоделировать корпус.<br><br>На это у меня две причины.<br><br>Первая — один мой приятель, глядя на фотографии того, что происходит внутри корпуса, сказал: «Ну, надеюсь, в новом корпусе ты сделаешь хороший кабель-менеджмент».<br><br>Изначально мне было немного пофигу на провода, я просто оставлял под них запас. Но, с другой стороны, сделать всё аккуратнее мне всё-таки хочется. Поэтому я добавил единую панель, на которой постараюсь разместить либо всю, либо большую часть электроники, а всё, что должно быть закреплено непосредственно на корпусе, подключить через разъёмы.<br><br><img alt="Новая панель для электроники с отверстиями под модули и разъёмы" src="img/notes/slider-case-v2-panel.webp" width="1716" height="1242" loading="lazy" /><br><br>Кроме проводов, у меня ещё оставалась хотелка разместить в корпусе больше аккумуляторов. В прошлой версии они показали себя не очень эффективно. Да, там стояло три штуки по 1500 мА·ч, но мотор постоянно жрёт ток на удержание, плюс есть ещё какие-то накладные расходы, и в итоге этого хватает не очень надолго. Особенно если не подзаряжать аккумуляторы перед каждым использованием слайдера.<br><br>Поэтому хотелось поставить ещё три аккумулятора, так как в моей текущей схеме их количество должно быть кратно трём. При прошлой сборке место под пару дополнительных аккумуляторов найти ещё можно было, а вот под три — уже почти невозможно.<br><br>Теперь, когда места в корпусе стало больше, я решил всё-таки попробовать добавить ещё три аккумулятора.<br><br><img alt="Собранная модель нового корпуса целиком" src="img/notes/slider-case-v2-assembly.webp" width="1592" height="1262" loading="lazy" /><br><br><img alt="Раскладка деталей на столе принтера перед печатью" src="img/notes/slider-case-v2-print-layout.webp" width="1560" height="964" loading="lazy" /><br><br>Пока писал пост, понял что забыл включить поддержки, пошёл перезапускать печать :D<br><br><img alt="Принтер Anycubic начинает печать нового корпуса" src="img/notes/slider-printer-start.webp" width="4032" height="2268" loading="lazy" /></p><button class="note-expand-btn" type="button">Показать полностью ↓</button></div>
+<!-- /BUILD:home-notes -->
+            </div>
 
             <div class="feed-heading">
                 <span class="feed-label">// статьи</span>
@@ -154,23 +159,26 @@
             }
         });
 
+        markOverflowingNotes(document.getElementById('home-notes'));
+
         fetch('data/notes.json')
             .then(function (r) { return r.ok ? r.json() : []; })
             .then(function (notes) {
                 var container = document.getElementById('home-notes');
-                if (!notes.length) {
-                    container.innerHTML = '<p class="empty">скоро будет...</p>';
-                    return;
-                }
-                container.innerHTML = notes.slice(0, 4).map(function (n) {
+                var rest = notes.slice(1, 4);
+                if (!rest.length) return;
+                container.insertAdjacentHTML('beforeend', rest.map(function (n) {
                     return '<div class="note-item" id="note-' + n.id + '"><div class="note-meta"><span>' + n.date + '</span><span class="note-meta-right"><span class="note-tags">' +
                         n.tags.map(function (t) { return '#' + t; }).join(' ') +
                         '</span><button class="note-share" data-url="notes/' + n.id + '.html" title="Поделиться" aria-label="Поделиться">' + SHARE_ICON + '</button></span></div><p class="note-text">' + n.text + '</p><button class="note-expand-btn" type="button">' + EXPAND_LABEL + '</button></div>';
-                }).join('');
+                }).join(''));
                 markOverflowingNotes(container);
             })
             .catch(function () {
-                document.getElementById('home-notes').innerHTML = '<p class="empty">не удалось загрузить :(</p>';
+                var container = document.getElementById('home-notes');
+                if (!container.querySelector('.note-item')) {
+                    container.innerHTML = '<p class="empty">не удалось загрузить :(</p>';
+                }
             });
     </script>
 </body>

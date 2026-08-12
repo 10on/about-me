@@ -2,4 +2,15 @@ User-agent: *
 Allow: /
 Disallow: /vote.html
 
+# Explicit allow for AI crawlers (training + answer-engine indexing) — same rules
+# as the wildcard above, listed by name so the intent is deliberate, not incidental.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: CCBot
+User-agent: Amazonbot
+Allow: /
+Disallow: /vote.html
+
 Sitemap: https://10on.github.io/about-me/sitemap.xml

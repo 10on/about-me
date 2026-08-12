@@ -2,6 +2,8 @@
 
 > Personal site of Denis Pushkaryov (дэнчик / Denchik), a backend developer based in Belgrade and author of the DenchikBricks LEGO channel. Short notes and longer articles about LEGO, retro tech, DIY electronics, and games. Bilingual: Russian at the root, English under /en/.
 
+Full text of every page below is available in one file at [llms-full.txt](https://10on.github.io/about-me/llms-full.txt).
+
 ## Pages
 
 - [Notes](https://10on.github.io/about-me/notes.html): short, frequent posts on any topic

@@ -44,6 +44,7 @@
     <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="fetch" href="data/notes.json" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
@@ -82,7 +83,11 @@
                 <span class="feed-line"></span>
                 <a href="notes.html" class="feed-more">all →</a>
             </div>
-            <div id="home-notes"></div>
+            <div id="home-notes">
+                <!-- BUILD:home-notes -->
+<div class="note-item" id="note-slider-case-v2"><div class="note-meta"><span>12.08.2026</span><span class="note-meta-right"><span class="note-tags">#slider #3d-printing #electronics</span><button class="note-share" data-url="notes/slider-case-v2.html" title="Share" aria-label="Share"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></button></span></div><p class="note-text">Even though last night I'd pretty much decided to just cut into the case, bolt on a patch with shifted holes, and seal it with epoxy and screws, today I went ahead and remodeled the whole case anyway.<br><br>Two reasons for that.<br><br>First — a friend of mine, looking at photos of what's going on inside the case, said: "Well, I hope you'll do proper cable management in the new case."<br><br>I honestly didn't care much about the wiring at first, I just left slack for it. But on the other hand, I do want things to look neater. So I added a single panel to mount either all or most of the electronics on, with everything that has to stay mounted directly on the case connected through connectors instead.<br><br><img alt="New electronics panel with cutouts for modules and connectors" src="../img/notes/slider-case-v2-panel.webp" width="1716" height="1242" loading="lazy" /><br><br>Besides the wiring, I also still wanted to fit more batteries into the case. The previous setup wasn't very efficient — yes, it had three 1500 mAh cells, but the motor constantly draws holding current, plus there's some overhead on top of that, so in the end it doesn't last very long, especially if you don't recharge before every use.<br><br>So I wanted to add three more batteries, since in my current wiring scheme the count has to be a multiple of three. In the previous build there was barely room for two extra ones, and fitting three more was basically impossible.<br><br>Now that there's more room in the case, I decided to actually try fitting three more batteries in.<br><br><img alt="Full assembled model of the new case" src="../img/notes/slider-case-v2-assembly.webp" width="1592" height="1262" loading="lazy" /><br><br><img alt="Parts laid out on the printer bed before printing" src="../img/notes/slider-case-v2-print-layout.webp" width="1560" height="964" loading="lazy" /><br><br>While writing this post I realized I forgot to enable supports, so off I go to restart the print :D<br><br><img alt="Anycubic printer starting the new case print" src="../img/notes/slider-printer-start.webp" width="4032" height="2268" loading="lazy" /></p><button class="note-expand-btn" type="button">Show more ↓</button></div>
+<!-- /BUILD:home-notes -->
+            </div>
 
             <div class="feed-heading">
                 <span class="feed-label">// articles</span>
@@ -154,23 +159,26 @@
             }
         });
 
+        markOverflowingNotes(document.getElementById('home-notes'));
+
         fetch('data/notes.json')
             .then(function (r) { return r.ok ? r.json() : []; })
             .then(function (notes) {
                 var container = document.getElementById('home-notes');
-                if (!notes.length) {
-                    container.innerHTML = '<p class="empty">coming soon...</p>';
-                    return;
-                }
-                container.innerHTML = notes.slice(0, 4).map(function (n) {
+                var rest = notes.slice(1, 4);
+                if (!rest.length) return;
+                container.insertAdjacentHTML('beforeend', rest.map(function (n) {
                     return '<div class="note-item" id="note-' + n.id + '"><div class="note-meta"><span>' + n.date + '</span><span class="note-meta-right"><span class="note-tags">' +
                         n.tags.map(function (t) { return '#' + t; }).join(' ') +
                         '</span><button class="note-share" data-url="notes/' + n.id + '.html" title="Share" aria-label="Share">' + SHARE_ICON + '</button></span></div><p class="note-text">' + n.text + '</p><button class="note-expand-btn" type="button">' + EXPAND_LABEL + '</button></div>';
-                }).join('');
+                }).join(''));
                 markOverflowingNotes(container);
             })
             .catch(function () {
-                document.getElementById('home-notes').innerHTML = '<p class="empty">failed to load :(</p>';
+                var container = document.getElementById('home-notes');
+                if (!container.querySelector('.note-item')) {
+                    container.innerHTML = '<p class="empty">failed to load :(</p>';
+                }
             });
     </script>
 </body>
