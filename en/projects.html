@@ -90,7 +90,7 @@
 
         .project-item {
             display: grid;
-            grid-template-columns: 1fr auto auto;
+            grid-template-columns: 1fr auto auto auto;
             align-items: center;
             gap: 1.25rem;
             padding: 0.85rem 0;
@@ -105,6 +105,36 @@
         .project-name {
             font-size: 0.95rem;
             font-weight: 500;
+        }
+
+        .project-status {
+            position: relative;
+            display: inline-flex;
+            font-size: 1rem;
+            line-height: 1;
+            cursor: default;
+        }
+
+        .status-tip {
+            position: absolute;
+            bottom: 130%;
+            right: 0;
+            background: var(--text);
+            color: var(--bg);
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            padding: 0.3rem 0.55rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.15s;
+            z-index: 2;
+        }
+
+        .project-status:hover .status-tip,
+        .project-status.show .status-tip {
+            opacity: 1;
         }
 
         .project-pct {
@@ -225,6 +255,14 @@
         let allProjects = [];
         let currentFilter = 'active';
 
+        const STATUS_LABELS = {
+            released:  { emoji: '🎬', label: 'released' },
+            active:    { emoji: '🛠️', label: 'active work' },
+            stalled:   { emoji: '💤', label: 'stalled' },
+            frozen:    { emoji: '❄️', label: 'frozen' },
+            cancelled: { emoji: '❌', label: 'cancelled' }
+        };
+
         function isDone(p) { return p.progress >= 100; }
 
         function render() {
@@ -245,9 +283,14 @@
                 const pct  = Math.min(p.progress, 100);
                 const fillClass = done ? 'done' : (pct > 0 ? 'in-progress' : '');
                 const pctClass  = done ? 'done' : '';
+                const status = STATUS_LABELS[p.status] || (done ? STATUS_LABELS.released : STATUS_LABELS.active);
                 return `
                     <div class="project-item">
                         <div class="project-name">${p.name}</div>
+                        <span class="project-status" tabindex="0" role="button" aria-label="${status.label}">
+                            <span aria-hidden="true">${status.emoji}</span>
+                            <span class="status-tip">${status.label}</span>
+                        </span>
                         <div class="progress-track">
                             <div class="progress-fill ${fillClass}" style="width:${pct}%"></div>
                         </div>
@@ -263,6 +306,18 @@
                 currentFilter = btn.dataset.filter;
                 render();
             });
+        });
+
+        document.getElementById('projects-list').addEventListener('click', e => {
+            const badge = e.target.closest('.project-status');
+            document.querySelectorAll('.project-status.show').forEach(b => { if (b !== badge) b.classList.remove('show'); });
+            if (badge) {
+                badge.classList.toggle('show');
+                e.stopPropagation();
+            }
+        });
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.project-status.show').forEach(b => b.classList.remove('show'));
         });
 
         fetch('data/lego-projects.json')
