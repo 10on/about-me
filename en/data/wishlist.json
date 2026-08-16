@@ -76,5 +76,12 @@
       { "url": "https://ebay.io/m/cdEhAu", "label": "ebay #1" },
       { "url": "https://ebay.io/m/X82NEv", "label": "ebay #2" }
     ]
+  },
+  {
+    "title": "4K 60Hz HDMI switch",
+    "tags": ["apartment"],
+    "links": [
+      { "url": "https://www.amazon.de/UGREEN-Switcher-Splitter-Selector-Compatible/dp/B09Y14JSFH", "label": "amazon.de" }
+    ]
   }
 ]

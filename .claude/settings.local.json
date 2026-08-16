@@ -93,7 +93,11 @@
       "Bash(node -e ' *)",
       "Bash(rtk pip *)",
       "Bash(node --check /tmp/idx.js)",
-      "Bash(node --check /tmp/idx_en.js)"
+      "Bash(node --check /tmp/idx_en.js)",
+      "Bash(pkill -f \"http.server 8931\")",
+      "WebFetch(domain:hits.sh)",
+      "WebSearch",
+      "Bash(npm --version)"
     ]
   }
 }
