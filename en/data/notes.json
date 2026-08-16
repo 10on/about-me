@@ -1,5 +1,15 @@
 [
   {
+    "id": "slider-battery-new",
+    "date": "16.08.2026",
+    "tags": [
+      "slider",
+      "electronics",
+      "3d-printing"
+    ],
+    "text": "Spending forever fiddling with tiny details, constantly reprinting something. Hoping to wrap it up in a few days.<br><br>In the meantime, I put together a new battery — since I had to increase the clearance anyway, I figured I'd deal with squeezing it in.<br><br><img alt=\"New battery in a 3d-printed holder next to an ESP32 board and an iMAX B6 balance charger\" src=\"../img/notes/slider-battery-new.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" />"
+  },
+  {
     "id": "slider-case-v2",
     "date": "12.08.2026",
     "tags": [
