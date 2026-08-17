@@ -131,7 +131,7 @@ nav a {
     color: var(--muted);
     text-decoration: none;
     padding-bottom: 0.2rem;
-    border-bottom: 2px solid transparent;
+    border-bottom: 2px solid var(--border);
     transition: color 0.15s, border-color 0.15s;
 }
 
@@ -141,6 +141,7 @@ nav a:hover {
 
 nav a.active {
     color: var(--text);
+    font-weight: 700;
     border-color: var(--accent);
 }
 
@@ -807,7 +808,8 @@ main {
 .feed-heading .feed-more {
     font-family: var(--mono);
     font-size: 0.7rem;
-    color: var(--link);
+    font-weight: 700;
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -1012,7 +1014,8 @@ footer {
 
 .footer-links a {
     color: var(--link);
-    text-decoration: none;
+    font-weight: 600;
+    text-decoration: underline;
 }
 
 .footer-meta {
