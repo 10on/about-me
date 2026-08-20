@@ -1,5 +1,5 @@
 ---
-date: 20.08.2026
+date: 19.08.2026
 tags: slider, electronics
 ---
 The slider project was nearing completion. I thought all that was left was to mount the electronics panel and wire up the transistor that switches the load in the circuit — breaking the ground connection between the slider's main electronics and the power source.

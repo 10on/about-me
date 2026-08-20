@@ -1,5 +1,5 @@
 ---
-date: 21.08.2026
+date: 20.08.2026
 tags: slider, electronics
 ---
 I wrote below about frying the slider. The replacement board never showed up, even though I was really waiting for it — so I had to figure out what to do next.
