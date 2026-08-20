@@ -30,7 +30,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="../style.css?v=d7067ab7">
+    <link rel="stylesheet" href="../style.css?v=0a65c70c">
 </head>
 <body>
     <header>
@@ -152,6 +152,7 @@
                     ? '<div class="item-tags">' + item.tags.map(function (t) { return '#' + t; }).join(' ') + '</div>'
                     : '';
                 var descHtml = item.desc ? '<div class="item-desc">' + item.desc + '</div>' : '';
+                var statusHtml = item.status === 'bought' ? '<span class="item-status status-bought">bought</span>' : '';
                 var linksHtml = (item.links && item.links.length)
                     ? '<div class="item-links">' + item.links.map(function (l) {
                         return '<a class="item-link" href="' + l.url + '" target="_blank" rel="noopener">' + favicon(l.url) + l.label + '</a>';
@@ -159,7 +160,7 @@
                     : '';
                 return '<div class="item' + (item.img ? ' item-with-img' : '') + '">' + thumbHtml +
                     '<div class="item-body"><div class="item-name">' + item.title + '</div>' + tagsHtml + descHtml + '</div>' +
-                    (linksHtml ? '<div class="item-right">' + linksHtml + '</div>' : '') +
+                    (statusHtml || linksHtml ? '<div class="item-right">' + statusHtml + linksHtml + '</div>' : '') +
                     '</div>';
             }).join('');
             container.innerHTML = '<div class="items-list">' + rows + '</div>';
