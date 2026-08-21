@@ -1,5 +1,14 @@
 [
   {
+    "id": "slider-vygib-kryshki",
+    "date": "22.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "Assembled, it works, but there's a catch :)<br><br>The lid isn't stiff enough and flexes noticeably, which lets you glimpse the indicator lights inside. And there's no room left inside the case to thicken it. So I'll end up making the lid thicker on the outside instead. Not very pretty, but simple.<br><br><img alt=\"The slider mounted on a tripod head with the electronics case clamped in place: the screen shows the Camera Slider menu, IDLE, 56%\" src=\"../img/notes/slider-mounted-working.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Also still working on the remote, here's where it's at.<br><br><img alt=\"CAD model of the remote's case: an elongated lid with a cutout for the screen and five holes for buttons, next to a perforated back panel\" src=\"../img/notes/remote-case-cad.webp\" width=\"1600\" height=\"1173\" loading=\"lazy\" /><br><br>I'd really like to fit a bigger battery in there, but I'm limited by the power of the built-in charger. And I don't really want to cram in another board. So it looks like for all my ideas I'll have to add a GPIO expander…"
+  },
+  {
     "id": "slider-vsya-elektronika-v-kuche",
     "date": "22.08.2026",
     "tags": [
@@ -7,15 +16,6 @@
       "electronics"
     ],
     "text": "Got all the electronics assembled together. Still not sure how the lid is going to close, but I think I'll figure it out.<br><br><img alt=\"The slider's front panel fully assembled: a screen showing a 73% update progress bar, three indicator lights, two blue buttons, a toggle switch, and an encoder\" src=\"../img/notes/slider-panel-assembled.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" />"
-  },
-  {
-    "id": "slider-kryshka-i-pult-cad",
-    "date": "22.08.2026",
-    "tags": [
-      "slider",
-      "electronics"
-    ],
-    "text": "Assembled, it works, but there's a catch :)<br><br>The lid isn't stiff enough and flexes noticeably, which lets you glimpse the indicator lights inside. And there's no room left inside the case to thicken it. So I'll end up making the lid thicker on the outside instead. Not very pretty, but simple.<br><br><img alt=\"The slider mounted on a tripod head with the electronics case clamped in place: the screen shows the Camera Slider menu, IDLE, 56%\" src=\"../img/notes/slider-mounted-working.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Also still working on the remote, here's where it's at.<br><br><img alt=\"CAD model of the remote's case: an elongated lid with a cutout for the screen and five holes for buttons, next to a perforated back panel\" src=\"../img/notes/remote-case-cad.webp\" width=\"1600\" height=\"1173\" loading=\"lazy\" /><br><br>I'd really like to fit a bigger battery in there, but I'm limited by the power of the built-in charger. And I don't really want to cram in another board. So it looks like for all my ideas I'll have to add a GPIO expander…"
   },
   {
     "id": "slider-remont-i-pult",
