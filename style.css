@@ -115,9 +115,9 @@ nav {
     display: flex;
     gap: 0.75rem 1.25rem;
     flex-wrap: wrap;
-    max-width: 680px;
+    max-width: calc(680px + 3rem);
     margin: 1.1rem auto 0;
-    padding: 0.6rem 0 1.1rem;
+    padding: 0.6rem 1.5rem 1.1rem;
     border-bottom: 3px double var(--border);
     position: sticky;
     top: 0;

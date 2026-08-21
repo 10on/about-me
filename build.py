@@ -119,17 +119,17 @@ def article_template(lang):
                 <button id="theme-toggle" class="theme-toggle" title=\"""" + s['theme_title'] + """\">☾</button>
             </div>
         </div>
-        <nav>
-            <a href="../notes.html">""" + nav['notes'] + """</a>
-            <a href="../articles.html" class="active">""" + nav['articles'] + """</a>
-            <a href="../lego.html">""" + nav['lego'] + """</a>
-            <a href="../retro.html">""" + nav['retro'] + """</a>
-            <a href="../diy.html">""" + nav['diy'] + """</a>
-            <a href="../games.html">""" + nav['games'] + """</a>
-            <a href="../wishlist.html">""" + nav['wishlist'] + """</a>
-            <a href="../about.html">""" + nav['about'] + """</a>
-        </nav>
     </header>
+    <nav>
+        <a href="../notes.html">""" + nav['notes'] + """</a>
+        <a href="../articles.html" class="active">""" + nav['articles'] + """</a>
+        <a href="../lego.html">""" + nav['lego'] + """</a>
+        <a href="../retro.html">""" + nav['retro'] + """</a>
+        <a href="../diy.html">""" + nav['diy'] + """</a>
+        <a href="../games.html">""" + nav['games'] + """</a>
+        <a href="../wishlist.html">""" + nav['wishlist'] + """</a>
+        <a href="../about.html">""" + nav['about'] + """</a>
+    </nav>
 
     <main>
         <div class="container" style="padding-top: 2rem; padding-bottom: 1rem; max-width: 640px;">
