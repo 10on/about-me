@@ -1,5 +1,6 @@
 ---
 date: 22.08.2026
+time: 18:00
 tags: slider, electronics
 ---
 Assembled, it works, but there's a catch :)

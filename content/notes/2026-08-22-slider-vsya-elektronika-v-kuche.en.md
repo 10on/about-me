@@ -1,5 +1,6 @@
 ---
 date: 22.08.2026
+time: 12:00
 tags: slider, electronics
 ---
 Got all the electronics assembled together. Still not sure how the lid is going to close, but I think I'll figure it out.

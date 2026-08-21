@@ -17,6 +17,7 @@ import html
 import json
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
 try:
@@ -377,6 +378,17 @@ def render_article_page(md, article, lang, template):
     print(f"  built: {'en/' if lang == 'en' else ''}articles/{article['slug']}.html")
 
 
+def note_sort_key(meta):
+    """Optional `time: HH:MM` front-matter field is a service-only tiebreaker (never
+    rendered) for notes that share a `date` -- filename order alone doesn't reflect
+    writing order, so without it two same-day notes can come out in the wrong order."""
+    raw = f"{meta.get('date', '')} {meta.get('time', '00:00')}"
+    try:
+        return datetime.strptime(raw, '%d.%m.%Y %H:%M')
+    except ValueError:
+        return datetime.min
+
+
 def load_notes(lang):
     """Read content/notes/*.md for `lang`, newest first (filenames YYYY-MM-DD-slug[.en].md).
     `id` (the slug) is stable across ru/en for the same note and is used to link/scroll/share it."""
@@ -389,7 +401,11 @@ def load_notes(lang):
             'date': meta.get('date', ''),
             'tags': tags,
             'body': body.strip(),
+            '_sort_key': note_sort_key(meta),
         })
+    notes.sort(key=lambda n: n['_sort_key'], reverse=True)
+    for n in notes:
+        del n['_sort_key']
     return notes
 
 
