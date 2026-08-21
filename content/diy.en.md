@@ -1,4 +1,4 @@
-### 3D printer: Anycubic Kobra 3 + ACE
+### 3D printer: Anycubic Kobra S1 Combo
 My main workhorse. Multi-material printing, I print all kinds of small things for myself.
 
 ### Cat litter box visit sensor
