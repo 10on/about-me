@@ -112,17 +112,21 @@ header {
 }
 
 nav {
-    display: flex;
-    gap: 0.75rem 1.25rem;
-    flex-wrap: wrap;
-    max-width: calc(680px + 3rem);
-    margin: 1.1rem auto 0;
-    padding: 0.6rem 1.5rem 1.1rem;
+    margin-top: 1.1rem;
     border-bottom: 3px double var(--border);
     position: sticky;
     top: 0;
     background: var(--bg);
     z-index: 10;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.75rem 1.25rem;
+    flex-wrap: wrap;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0.6rem 1.5rem 1.1rem;
 }
 
 nav a {
@@ -1148,7 +1152,7 @@ body.page-diy {
         padding: 1.1rem 1.25rem 0;
     }
 
-    nav { gap: 0.6rem 0.9rem; }
+    .nav-links { gap: 0.6rem 0.9rem; }
 
     .section-banner {
         height: 260px;

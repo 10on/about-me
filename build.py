@@ -121,14 +121,16 @@ def article_template(lang):
         </div>
     </header>
     <nav>
-        <a href="../notes.html">""" + nav['notes'] + """</a>
-        <a href="../articles.html" class="active">""" + nav['articles'] + """</a>
-        <a href="../lego.html">""" + nav['lego'] + """</a>
-        <a href="../retro.html">""" + nav['retro'] + """</a>
-        <a href="../diy.html">""" + nav['diy'] + """</a>
-        <a href="../games.html">""" + nav['games'] + """</a>
-        <a href="../wishlist.html">""" + nav['wishlist'] + """</a>
-        <a href="../about.html">""" + nav['about'] + """</a>
+        <div class="nav-links">
+            <a href="../notes.html">""" + nav['notes'] + """</a>
+            <a href="../articles.html" class="active">""" + nav['articles'] + """</a>
+            <a href="../lego.html">""" + nav['lego'] + """</a>
+            <a href="../retro.html">""" + nav['retro'] + """</a>
+            <a href="../diy.html">""" + nav['diy'] + """</a>
+            <a href="../games.html">""" + nav['games'] + """</a>
+            <a href="../wishlist.html">""" + nav['wishlist'] + """</a>
+            <a href="../about.html">""" + nav['about'] + """</a>
+        </div>
     </nav>
 
     <main>
