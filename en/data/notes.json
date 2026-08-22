@@ -18,6 +18,15 @@
     "text": "Got all the electronics assembled together. Still not sure how the lid is going to close, but I think I'll figure it out.<br><br><img alt=\"The slider's front panel fully assembled: a screen showing a 73% update progress bar, three indicator lights, two blue buttons, a toggle switch, and an encoder\" src=\"../img/notes/slider-panel-assembled.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" />"
   },
   {
+    "id": "pult-maket",
+    "date": "22.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "Saturday morning I printed a mockup of the remote to figure out where the components should go. Seems to be turning out alright.<br><br><img alt=\"A red 3D-printed remote case mockup held in hand: a Waveshare 1.5inch LCD Module up top, a cross-shaped button layout in the middle, and two batteries with a XIAO board at the bottom\" src=\"../img/notes/pult-maket-komponenty.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" />"
+  },
+  {
     "id": "slider-remont-i-pult",
     "date": "21.08.2026",
     "tags": [
