@@ -1,6 +1,6 @@
 ---
 date: 22.08.2026
-time: 09:00
+time: 19:00
 tags: slider, electronics
 ---
 Saturday morning I printed a mockup of the remote to figure out where the components should go. Seems to be turning out alright.
