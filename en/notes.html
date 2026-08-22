@@ -30,7 +30,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="../style.css?v=acd029b4">
+    <link rel="stylesheet" href="../style.css?v=98012eb4">
 </head>
 <body>
     <header>
@@ -93,9 +93,12 @@
 
         var allNotes = [];
         var activeTag = 'all';
+        var PAGE_SIZE = 8;
+        var visibleCount = PAGE_SIZE;
         var SHARE_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>';
         var EXPAND_LABEL = 'Show more ↓';
         var COLLAPSE_LABEL = 'Show less ↑';
+        var LOAD_MORE_LABEL = 'More notes ↓';
 
         function shareNote(btn) {
             var url = new URL(btn.dataset.url, location.href).href;
@@ -133,6 +136,7 @@
             document.querySelectorAll('.tag-chip').forEach(function (btn) {
                 btn.addEventListener('click', function () {
                     activeTag = btn.dataset.tag;
+                    visibleCount = PAGE_SIZE;
                     renderChips();
                     renderNotes();
                 });
@@ -146,17 +150,23 @@
                 container.innerHTML = '<p class="empty">coming soon...</p>';
                 return;
             }
-            container.innerHTML = filtered.map(function (n) {
+            var visible = filtered.slice(0, visibleCount);
+            container.innerHTML = visible.map(function (n) {
                 return '<div class="note-item" id="note-' + n.id + '"><div class="note-meta"><span>' + n.date + '</span><span class="note-meta-right"><span class="note-tags">' +
                     n.tags.map(function (t) { return '#' + t; }).join(' ') +
                     '</span><button class="note-share" data-url="notes/' + n.id + '.html" title="Share" aria-label="Share">' + SHARE_ICON + '</button></span></div><p class="note-text">' + n.text + '</p><button class="note-expand-btn" type="button">' + EXPAND_LABEL + '</button></div>';
             }).join('');
+            if (filtered.length > visible.length) {
+                container.insertAdjacentHTML('beforeend', '<button id="load-more-btn" class="load-more-btn" type="button">' + LOAD_MORE_LABEL + '</button>');
+            }
             markOverflowingNotes(container);
         }
 
         document.getElementById('notes-list').addEventListener('click', function (e) {
             var expandBtn = e.target.closest('.note-expand-btn');
             if (expandBtn) { toggleExpand(expandBtn); return; }
+            var moreBtn = e.target.closest('#load-more-btn');
+            if (moreBtn) { visibleCount += PAGE_SIZE; renderNotes(); return; }
             var btn = e.target.closest('.note-share');
             if (btn) shareNote(btn);
         });
@@ -165,6 +175,10 @@
             .then(function (r) { return r.ok ? r.json() : []; })
             .then(function (notes) {
                 allNotes = notes;
+                if (location.hash) {
+                    var idx = allNotes.findIndex(function (n) { return '#note-' + n.id === location.hash; });
+                    if (idx !== -1 && idx + 1 > visibleCount) visibleCount = idx + 1;
+                }
                 renderChips();
                 renderNotes();
                 if (location.hash) {
