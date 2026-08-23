@@ -85,5 +85,16 @@
     "links": [
       { "url": "https://www.amazon.de/UGREEN-Switcher-Splitter-Selector-Compatible/dp/B09Y14JSFH", "label": "amazon.de" }
     ]
+  },
+  {
+    "title": "Ulanzi FM01",
+    "desc": "Portable fog machine for video shoots",
+    "tags": ["video"],
+    "img": "../img/wishlist/ulanzi-fm01.webp",
+    "links": [
+      { "url": "https://www.ulanzi.com/products/filmog-ace-portable-fog-machine-r001", "label": "ulanzi.com" },
+      { "url": "https://a.aliexpress.com/_EvdrqX0", "label": "aliexpress" },
+      { "url": "https://ozon.ru/t/QW0AvQe", "label": "ozon.ru" }
+    ]
   }
 ]
