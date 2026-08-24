@@ -1,5 +1,14 @@
 [
   {
+    "id": "slider-pochti-gotov-finalno",
+    "date": "25.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "The slider's been pretty much done for a couple of days now. I'll reprint the power switch; the buttons I'll leave a bit janky for now — replacing them means taking everything apart again.<br><br>The strap mounts need some finishing work. But overall it's usable already.<br><br>Also put some work into the UI design, with a little help from Claude.<br><br><img alt=\"The slider from the side: a Walimex Pro camera mounting plate and the electronics enclosure with the Camera Slider screen, buttons, and an encoder with a QT sticker\" src=\"../img/notes/slider-mount-side.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" />"
+  },
+  {
     "id": "musornaya-zametka",
     "date": "23.08.2026",
     "tags": [
