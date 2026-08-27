@@ -1,5 +1,14 @@
 [
   {
+    "id": "pult-piskchalka-robot",
+    "date": "27.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "Wanted a buzzer in the remote, but standard buzzers turned out to be too thick. Worked around it with a disassembled earphone capsule and a bipolar transistor. Looks like a surreal anthropomorphic robot.<br><br><img alt=\"An earphone capsule soldered together with a transistor and a resistor, standing up among the wires inside the red remote case\" src=\"../img/notes/pult-buzzer-robot-wide.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br><img alt=\"The same homemade &quot;robot&quot; made from an earphone capsule, close up, next to the board and battery\" src=\"../img/notes/pult-buzzer-robot-close.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" />"
+  },
+  {
     "id": "pult-case-iteracii",
     "date": "25.08.2026",
     "tags": [
