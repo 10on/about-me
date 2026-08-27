@@ -1,5 +1,6 @@
 ---
-date: 27.08.2026
+date: 25.08.2026
+time: 10:00
 tags: slider, electronics, 3d-printing
 ---
 A few iterations of the remote's case. It's actually already basically assembled, and getting refined further.
