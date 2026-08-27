@@ -19,6 +19,16 @@
     "text": "A few iterations of the remote's case. It's actually already basically assembled, and getting refined further.<br><br><img alt=\"Four red 3D-printed remote case iterations in a row: a screen cutout, a cross-shaped button layout, and different mounting options for the electronics on the back — the rightmost one already has a board installed\" src=\"../img/notes/pult-case-iterations.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" />"
   },
   {
+    "id": "arca-swiss-krepleniya",
+    "date": "25.08.2026",
+    "tags": [
+      "slider",
+      "diy",
+      "3d-printing"
+    ],
+    "text": "Wrapping up work on the slider, I got to thinking about what it actually stands on. It sits on tripods with the standard budget diamond-shaped quick-release mounts. Turns out those aren't great for anything bulky or heavy — they're fine for light cameras and phone holders, but for a slider that kind of mount is just awkward: taking it off or putting it back on is a whole ordeal.<br><br>I remembered I've been slowly building up a collection of Arca-Swiss-type mounts for my camera gear. They slide in sideways, clamp down easily, and let you quickly adjust the slider's position or pull it off the tripod entirely. I could've ordered a couple of these for $20–30, but figured I could just print them on the 3D printer right here and now — the only catch being a bike ride to the store for the right bolts. And I'd still have had to bodge the store-bought plates onto the tripods somehow anyway.<br><br>Here's what I ended up with.<br><br><img alt=\"Five Arca-Swiss mounts in hand and on tripod heads: a factory one with a plate, a 3D-printed one, an upside-down standard tripod mount, one with heat-set inserts, and a finished plate already mounted\" src=\"../img/notes/arca-swiss-mounts.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Bottom right is the factory Arca-Swiss mount with its plate, and to its left the same type printed on the 3D printer. Above it, upside down, is the standard mount from a cheap tripod. Top right is a mount with heat-set inserts, for screwing onto one already mounted on a tripod. And on the left is the finished plate, already installed."
+  },
+  {
     "id": "slider-pochti-gotov-finalno",
     "date": "25.08.2026",
     "tags": [
@@ -26,16 +36,6 @@
       "electronics"
     ],
     "text": "The slider's been pretty much done for a couple of days now. I'll reprint the power switch; the buttons I'll leave a bit janky for now — replacing them means taking everything apart again.<br><br>The strap mounts need some finishing work. But overall it's usable already.<br><br>Also put some work into the UI design, with a little help from Claude.<br><br><img alt=\"The slider from the side: a Walimex Pro camera mounting plate and the electronics enclosure with the Camera Slider screen, buttons, and an encoder with a QT sticker\" src=\"../img/notes/slider-mount-side.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" />"
-  },
-  {
-    "id": "arca-swiss-krepleniya",
-    "date": "24.08.2026",
-    "tags": [
-      "slider",
-      "diy",
-      "3d-printing"
-    ],
-    "text": "Wrapping up work on the slider, I got to thinking about what it actually stands on. It sits on tripods with the standard budget diamond-shaped quick-release mounts. Turns out those aren't great for anything bulky or heavy — they're fine for light cameras and phone holders, but for a slider that kind of mount is just awkward: taking it off or putting it back on is a whole ordeal.<br><br>I remembered I've been slowly building up a collection of Arca-Swiss-type mounts for my camera gear. They slide in sideways, clamp down easily, and let you quickly adjust the slider's position or pull it off the tripod entirely. I could've ordered a couple of these for $20–30, but figured I could just print them on the 3D printer right here and now — the only catch being a bike ride to the store for the right bolts. And I'd still have had to bodge the store-bought plates onto the tripods somehow anyway.<br><br>Here's what I ended up with.<br><br><img alt=\"Five Arca-Swiss mounts in hand and on tripod heads: a factory one with a plate, a 3D-printed one, an upside-down standard tripod mount, one with heat-set inserts, and a finished plate already mounted\" src=\"../img/notes/arca-swiss-mounts.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Bottom right is the factory Arca-Swiss mount with its plate, and to its left the same type printed on the 3D printer. Above it, upside down, is the standard mount from a cheap tripod. Top right is a mount with heat-set inserts, for screwing onto one already mounted on a tripod. And on the left is the finished plate, already installed."
   },
   {
     "id": "musornaya-zametka",

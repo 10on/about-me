@@ -1,5 +1,6 @@
 ---
-date: 24.08.2026
+date: 25.08.2026
+time: 09:00
 tags: slider, diy, 3d-printing
 ---
 Wrapping up work on the slider, I got to thinking about what it actually stands on. It sits on tripods with the standard budget diamond-shaped quick-release mounts. Turns out those aren't great for anything bulky or heavy — they're fine for light cameras and phone holders, but for a slider that kind of mount is just awkward: taking it off or putting it back on is a whole ordeal.
