@@ -1,5 +1,14 @@
 [
   {
+    "id": "pult-zarabotal",
+    "date": "28.08.2026",
+    "tags": [
+      "слайдер",
+      "электроника"
+    ],
+    "text": "Пульт хоть и собран не без косяков, но работает. Прекрасно рулит слайдером и моей моторной тележкой DL-200 от Neewer.<br><br><img alt=\"Красный корпус пульта с экраном &quot;Slider&quot;, крестообразной раскладкой кнопок и слайдером-тумблером снизу\" src=\"img/notes/pult-front-idle.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" /><br><br><img alt=\"Экран пульта в темноте: режим Slider + Phone, идёт запись 00:13, статус REC, слайдер в состоянии IDLE\" src=\"img/notes/pult-recording-screen.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Работаю над UI и стабильностью. В целом очень кайфанул от возможности запускать движение и съёмку одной кнопкой. Почти как магия ощущается.<br><br><img alt=\"Внутренности пульта в руке: экран, крестообразные кнопки, плата XIAO, две батареи и капсюль-пищалка снизу\" src=\"img/notes/pult-internals-hand.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" /><br><br><img alt=\"Экран пульта с меню из трёх устройств: Slider (OFF), Phone (READY), Dolly (OFF)\" src=\"img/notes/pult-front-menu.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" />"
+  },
+  {
     "id": "pult-piskchalka-robot",
     "date": "27.08.2026",
     "tags": [
