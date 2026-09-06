@@ -1,5 +1,5 @@
 ---
-title: A mini-PC build in the shortage era: the start
+title: A mini-PC build in the shortage era: the beginning
 tags: hardware, mini-pc
 date: 06.09.2026
 read: 8 min
