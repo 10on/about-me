@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="icon" href="../../favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
     <title>A mini-PC build in the shortage era: the start — Denchik</title>
     <meta name="description" content="Building a compact gaming PC out of an office Dell OptiPlex: a trip to a Belgrade e-waste workshop, a Xeon from AliExpress, and an A2000 that officially doesn&#x27;t exist.">
     <link rel="canonical" href="https://10on.github.io/about-me/en/articles/mini-pc-defitsit.html">
@@ -10,18 +13,45 @@
     <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/articles/mini-pc-defitsit.html">
     <link rel="alternate" hreflang="x-default" href="https://10on.github.io/about-me/articles/mini-pc-defitsit.html">
     <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ru_RU">
     <meta property="og:site_name" content="Denchik">
     <meta property="og:title" content="A mini-PC build in the shortage era: the start — Denchik">
     <meta property="og:description" content="Building a compact gaming PC out of an office Dell OptiPlex: a trip to a Belgrade e-waste workshop, a Xeon from AliExpress, and an A2000 that officially doesn&#x27;t exist.">
     <meta property="og:url" content="https://10on.github.io/about-me/en/articles/mini-pc-defitsit.html">
     <meta property="og:image" content="https://10on.github.io/about-me/img/persik.jpg">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="882">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/persik.jpg">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "A mini-PC build in the shortage era: the start",
+  "description": "Building a compact gaming PC out of an office Dell OptiPlex: a trip to a Belgrade e-waste workshop, a Xeon from AliExpress, and an A2000 that officially doesn't exist.",
+  "datePublished": "2026-09-06",
+  "inLanguage": "en",
+  "url": "https://10on.github.io/about-me/en/articles/mini-pc-defitsit.html",
+  "image": "https://10on.github.io/about-me/img/persik.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Денис Пушкарёв",
+    "url": "https://10on.github.io/about-me/about.html"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://10on.github.io/about-me/en/articles/mini-pc-defitsit.html"
+  }
+}
+    </script>
     <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="../../style.css?v=0445f5af">
 </head>
 <body>
     <header>
@@ -35,16 +65,19 @@
                 <button id="theme-toggle" class="theme-toggle" title="theme">☾</button>
             </div>
         </div>
-        <nav>
+    </header>
+    <nav>
+        <div class="nav-links">
             <a href="../notes.html">notes</a>
             <a href="../articles.html" class="active">articles</a>
             <a href="../lego.html">lego</a>
             <a href="../retro.html">retro</a>
             <a href="../diy.html">DIY</a>
             <a href="../games.html">games</a>
+            <a href="../wishlist.html">wishlist</a>
             <a href="../about.html">about</a>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <main>
         <div class="container article-container" style="padding-top: 2rem; padding-bottom: 1rem;">
@@ -210,33 +243,6 @@
             syncThemeLabel();
             try { localStorage.setItem('denchik-theme', next); } catch (e) {}
         });
-
-        var header = document.querySelector('header');
-        var refY = window.scrollY;   // reversal point for the current scroll direction
-        var headerHidden = false;
-        window.addEventListener('scroll', function () {
-            var y = window.scrollY;
-            if (y <= 160) {
-                if (headerHidden) { header.classList.remove('header--hidden'); headerHidden = false; }
-                refY = y;
-                return;
-            }
-            if (headerHidden) {
-                if (y > refY) refY = y;                     // still scrolling down
-                else if (refY - y > 90) {                   // ~90px of sustained scroll-up
-                    header.classList.remove('header--hidden');
-                    headerHidden = false;
-                    refY = y;
-                }
-            } else {
-                if (y < refY) refY = y;                     // still scrolling up
-                else if (y - refY > 12) {                   // small scroll-down hides it
-                    header.classList.add('header--hidden');
-                    headerHidden = true;
-                    refY = y;
-                }
-            }
-        }, { passive: true });
 
         var modal = document.getElementById('img-modal');
         var modalImg = document.getElementById('img-modal-img');

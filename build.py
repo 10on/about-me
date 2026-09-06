@@ -75,33 +75,36 @@ def article_template(lang):
     site_root = '../' if lang == 'ru' else '../../'
     nav = NAV_LABELS[lang]
     s = STRINGS[lang]
-    template = """<!DOCTYPE html>
-<html lang="{lang}">
+    # placeholders are @@TOKEN@@ (filled by render_article_page via str.replace) so the
+    # inline JS below can keep normal { } braces — no str.format escaping headaches.
+    return """<!DOCTYPE html>
+<html lang=\"""" + lang + """\">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href=\"""" + site_root + """favicon.svg">
     <link rel="icon" href=\"""" + site_root + """favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href=\"""" + site_root + """apple-touch-icon.png">
-    <title>{{title}} — """ + BRAND[lang] + """</title>
-    <meta name="description" content="{{description}}">
-    <link rel="canonical" href="{{url}}">
+    <title>@@TITLE@@ — """ + BRAND[lang] + """</title>
+    <meta name="description" content="@@DESCRIPTION@@">
+    <link rel="canonical" href="@@URL@@">
+@@ALTLINKS@@
     <meta property="og:type" content="article">
     <meta property="og:locale" content=\"""" + ('ru_RU' if lang == 'ru' else 'en_US') + """\">
     <meta property="og:locale:alternate" content=\"""" + ('en_US' if lang == 'ru' else 'ru_RU') + """\">
     <meta property="og:site_name" content=\"""" + BRAND[lang] + """\">
-    <meta property="og:title" content="{{title}} — """ + BRAND[lang] + """">
-    <meta property="og:description" content="{{description}}">
-    <meta property="og:url" content="{{url}}">
+    <meta property="og:title" content="@@TITLE@@ — """ + BRAND[lang] + """">
+    <meta property="og:description" content="@@DESCRIPTION@@">
+    <meta property="og:url" content="@@URL@@">
     <meta property="og:image" content="https://10on.github.io/about-me/img/persik.jpg">
     <meta property="og:image:width" content="1000">
     <meta property="og:image:height" content="882">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/persik.jpg">
     <script type="application/ld+json">
-{{json_ld}}
+@@JSON_LD@@
     </script>
-    <script>try{{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}</script>
+    <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
@@ -117,6 +120,7 @@ def article_template(lang):
                 <div class="tagline">""" + TAGLINE[lang] + """</div>
             </div>
             <div class="header-actions">
+@@LANGSWITCH@@
                 <button id="theme-toggle" class="theme-toggle" title=\"""" + s['theme_title'] + """\">☾</button>
             </div>
         </div>
@@ -135,14 +139,14 @@ def article_template(lang):
     </nav>
 
     <main>
-        <div class="container" style="padding-top: 2rem; padding-bottom: 1rem; max-width: 640px;">
+        <div class="container article-container" style="padding-top: 2rem; padding-bottom: 1rem;">
             <a href="../articles.html" class="back-link">""" + s['all_articles'] + """</a>
             <div class="article-header">
-                <span class="article-tag">{{tag_text}}</span><span>{{date}}</span><span>· {{read}}</span>
+                <span class="article-tag">@@TAG_TEXT@@</span><span>@@DATE@@</span><span>· @@READ@@</span>
             </div>
-            <h1 class="article-title">{{title}}</h1>
+            <h1 class="article-title">@@TITLE@@</h1>
             <div class="article-body">
-{{body}}
+@@BODY@@
             </div>
         </div>
     </main>
@@ -158,22 +162,40 @@ def article_template(lang):
         <div class="footer-meta">""" + BRAND[lang] + """ — <span id="year"></span></div>
     </footer>
 
+    <div id="img-modal">
+        <div class="modal-backdrop">
+            <img id="img-modal-img" src="" alt="">
+        </div>
+    </div>
+
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
         var themeBtn = document.getElementById('theme-toggle');
-        function syncThemeLabel() {{ themeBtn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀︎' : '☾'; }}
+        function syncThemeLabel() { themeBtn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀︎' : '☾'; }
         syncThemeLabel();
-        themeBtn.addEventListener('click', function () {{
+        themeBtn.addEventListener('click', function () {
             var next = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : 'dark';
             if (next) document.documentElement.setAttribute('data-theme', next); else document.documentElement.removeAttribute('data-theme');
             syncThemeLabel();
-            try {{ localStorage.setItem('denchik-theme', next); }} catch (e) {{}}
-        }});
+            try { localStorage.setItem('denchik-theme', next); } catch (e) {}
+        });
+
+        var modal = document.getElementById('img-modal');
+        var modalImg = document.getElementById('img-modal-img');
+        function closeModal() { modal.classList.remove('open'); }
+        modal.addEventListener('click', closeModal);
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+        Array.prototype.forEach.call(document.querySelectorAll('.article-body figure img'), function (img) {
+            img.addEventListener('click', function () {
+                modalImg.src = img.currentSrc || img.src;
+                modalImg.alt = img.alt;
+                modal.classList.add('open');
+            });
+        });
     </script>
 </body>
 </html>
 """
-    return template.format(lang=lang)
 
 
 def note_share_template(lang):
@@ -358,19 +380,65 @@ def article_json_ld(article, lang, url):
     return json.dumps(data, ensure_ascii=False, indent=2)
 
 
+IMG_PARA_RE = re.compile(r'<p><img alt="([^"]*)" src="([^"]*)"\s*/?></p>')
+# a link-only paragraph right after an uncaptioned figure becomes its (clickable) caption
+FIGCAP_LINK_RE = re.compile(r'<figure><img([^>]*)></figure>\s*<p>(<a\b[^>]*>[^<]*</a>)</p>')
+
+
+def _img_to_figure(m):
+    alt, src = m.group(1), m.group(2)
+    caption = f'<figcaption>{alt}</figcaption>' if alt else ''
+    return f'<figure><img src="{src}" alt="{alt}">{caption}</figure>'
+
+
+def _article_has_counterpart(slug, lang):
+    """True if the article has a source file in the *other* language."""
+    if lang == 'ru':
+        return any(ARTICLES_SRC.glob(f'*{slug}.en.md'))
+    return any(p for p in ARTICLES_SRC.glob(f'*{slug}.md') if not p.name.endswith('.en.md'))
+
+
 def render_article_page(md, article, lang, template):
     md.reset()
     body_html = md.convert(article['body'])
+    body_html = IMG_PARA_RE.sub(_img_to_figure, body_html)
+    body_html = FIGCAP_LINK_RE.sub(r'<figure><img\1><figcaption>\2</figcaption></figure>', body_html)
     tag_text = ' '.join(f'#{t}' for t in article['tags'])
+    slug = article['slug']
     lang_root = SITE_URL if lang == 'ru' else f'{SITE_URL}/en'
-    url = f"{lang_root}/articles/{article['slug']}.html"
-    page_html = template.format(
-        title=article['title'], tag_text=tag_text, date=article['date'],
-        read=article['read'], body=body_html,
-        description=html.escape(article['excerpt'], quote=True),
-        url=url,
-        json_ld=article_json_ld(article, lang, url),
-    )
+    url = f"{lang_root}/articles/{slug}.html"
+
+    ru_url = f'{SITE_URL}/articles/{slug}.html'
+    en_url = f'{SITE_URL}/en/articles/{slug}.html'
+    has_other = _article_has_counterpart(slug, lang)
+    alt = []
+    if lang == 'ru' or has_other:
+        alt.append(f'    <link rel="alternate" hreflang="ru" href="{ru_url}">')
+    if lang == 'en' or has_other:
+        alt.append(f'    <link rel="alternate" hreflang="en" href="{en_url}">')
+    alt.append(f'    <link rel="alternate" hreflang="x-default" href="{ru_url if (lang == "ru" or has_other) else en_url}">')
+
+    if has_other and lang == 'ru':
+        langswitch = f'                <a href="../en/articles/{slug}.html" class="lang-switch" title="English version">EN</a>'
+    elif has_other and lang == 'en':
+        langswitch = f'                <a href="../../articles/{slug}.html" class="lang-switch" title="Russian version">RU</a>'
+    else:
+        langswitch = ''
+
+    page_html = template
+    for token, value in {
+        '@@TITLE@@': html.escape(article['title'], quote=True),
+        '@@DESCRIPTION@@': html.escape(article['excerpt'], quote=True),
+        '@@URL@@': url,
+        '@@ALTLINKS@@': '\n'.join(alt),
+        '@@LANGSWITCH@@': langswitch,
+        '@@JSON_LD@@': article_json_ld(article, lang, url),
+        '@@TAG_TEXT@@': tag_text,
+        '@@DATE@@': article['date'],
+        '@@READ@@': article['read'],
+        '@@BODY@@': body_html,
+    }.items():
+        page_html = page_html.replace(token, value)
     out_dir = LANG_DIRS[lang] / 'articles'
     out_dir.mkdir(exist_ok=True)
     out_path = out_dir / f"{article['slug']}.html"
@@ -634,7 +702,7 @@ def generate_llms_full_txt(articles, notes):
 
 
 def main():
-    md = markdown.Markdown()
+    md = markdown.Markdown(extensions=['tables'])
     articles_by_lang = {}
     notes_by_lang = {}
 
