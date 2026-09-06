@@ -22,7 +22,7 @@ Ever since I switched to a Mac with Apple silicon, I've wanted to build myself a
 | storage | SATA DOM 16 GB, SSHD 500 GB, IDE DOM 2 GB |
 | slot | 1× PCIe x16, low-profile |
 
-There's also a Chromebox: I flashed a custom BIOS and got Windows onto it, but the hardware turned out too weak even for older Win 10 builds.
+There's also a Chromebox: I flashed a custom BIOS, put in a bigger drive, got Windows onto it — but the hardware turned out too weak even for older Win 10 builds.
 
 ![roughly like this · Machine Type 10H5 · Part Number 10H50003US](../../img/articles/mini-pc-lenovo-tiny.png)
 
