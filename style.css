@@ -1068,6 +1068,30 @@ main {
     margin: 0 0 1.1rem;
 }
 
+.article-body ul,
+.article-body ol {
+    list-style: none;
+    padding: 0;
+    margin: 0.4rem 0 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.article-body li {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.article-body li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--border);
+}
+
 .article-body a,
 .article-body a:visited {
     color: var(--text);
@@ -1144,7 +1168,6 @@ main {
     font-family: var(--mono);
     font-size: 0.78rem;
     font-weight: 700;
-    text-transform: lowercase;
     letter-spacing: 0.02em;
     color: var(--muted);
 }

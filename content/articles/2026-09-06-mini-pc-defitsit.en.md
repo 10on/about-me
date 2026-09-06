@@ -14,9 +14,27 @@ Ever since I switched to a Mac with Apple silicon, I've wanted to build myself a
 
 [HP T610 Plus — a thin client that makes a decent retro box](https://www.parkytowers.me.uk/thin/hp/t610/)
 
+| | HP T610 Plus |
+|---|---|
+| CPU | AMD G-T56N — 2/2, Bobcat, 1.65 GHz, 18 W |
+| GPU | Radeon HD 6320 (integrated) + GT 730 2 GB DDR3 |
+| RAM | 2× DDR3 SO-DIMM, up to 8 GB |
+| storage | SATA DOM 16 GB, SSHD 500 GB, IDE DOM 2 GB |
+| slot | 1× PCIe x16, low-profile |
+
 There's also a Chromebox: I flashed a custom BIOS and got Windows onto it, but the hardware turned out too weak even for older Win 10 builds.
 
 ![roughly like this](../../img/articles/mini-pc-lenovo-tiny.png)
+
+*Machine Type: 10H5, Part Number: 10H50003US*
+
+| | ThinkCentre Chromebox |
+|---|---|
+| CPU | Celeron 3205U — 2/2, Broadwell, 1.5 GHz, 15 W |
+| GPU | Intel HD Graphics (Broadwell) |
+| RAM | 4 GB, single stick |
+| storage | mSATA SSD, 16 → 128 GB |
+| slots | a pair of mPCIe |
 
 Anyway, for the past few years I couldn't shake the idea of building a mini-PC, ideally with a discrete GPU. In the HP T610 I put a GT 730 — the last series with official XP support. But I still haven't actually played anything on it. I should 🙂
 
