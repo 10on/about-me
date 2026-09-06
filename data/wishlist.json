@@ -1,0 +1,100 @@
+[
+  {
+    "title": "Полотенца для душа",
+    "desc": "Какие-нибудь приятные",
+    "tags": ["квартира"],
+    "img": "img/wishlist/towels.webp"
+  },
+  {
+    "title": "Подарочная карта IKEA (Сербия)",
+    "desc": "Всегда найду что взять",
+    "tags": ["квартира"],
+    "img": "https://www.ikea.com/ext/ingkadam/m/490e1145b5355a3a/original/GC-CF-IDServices-FY25-Multipleuse-Image-Celebrations-04-4-3.jpg",
+    "links": [
+      { "url": "https://www.ikea.com/rs/sr/customer-service/payment-options/gift-cards/", "label": "подарочные карты IKEA" }
+    ]
+  },
+  {
+    "title": "Подарочная карта в Белую ворону",
+    "desc": "На любые деньги",
+    "tags": ["книги"],
+    "img": "img/wishlist/belaya-vorona-giftcard.webp",
+    "links": [
+      { "url": "https://belavrana.com/products/giftcard", "label": "подарочная карта Белая ворона" }
+    ]
+  },
+  {
+    "title": "Мини-ЧПУ станочек",
+    "desc": "Не прям сильно хочу, но поигрался бы",
+    "tags": ["самоделки"],
+    "img": "img/wishlist/mini-cnc.webp",
+    "links": [
+      { "url": "https://www.amazon.de/-/en/gp/product/B09NRC2P2W", "label": "amazon.de" }
+    ]
+  },
+  {
+    "title": "3inONEder для Toshiba portables",
+    "desc": "ISA-плата расширения для Toshiba T3200SX и похожих",
+    "tags": ["ретро"],
+    "img": "img/retro/3inoneder.webp",
+    "links": [
+      { "url": "https://conventionalmemories.com/wiki_cm/3inONEder_for_Toshiba_portables", "label": "wiki" }
+    ]
+  },
+  {
+    "title": "Гибкий вал для Dremel",
+    "tags": ["самоделки"],
+    "img": "img/wishlist/dremel-flex-shaft.webp",
+    "links": [
+      { "url": "https://www.amazon.de/-/en/gp/product/B008ETGPOY", "label": "amazon.de" },
+      { "url": "https://www.ozon.ru/product/dremel-225-36-dyuymovyy-gibkiy-val-udlinitel-vala-vrashchayushchiysya-shlifovalnyy-instrument-2469651681", "label": "ozon.ru" },
+      { "url": "https://www.gama-alati.rs/dremel-fleksibilna-osovina-sajla-225-26150225ja.html", "label": "gama-alati.rs" }
+    ]
+  },
+  {
+    "title": "Broadlink RM4 Mini Universal IR",
+    "tags": ["квартира"],
+    "img": "img/wishlist/broadlink-rm4-mini.webp",
+    "links": [
+      { "url": "https://www.amazon.de/-/en/gp/product/B07ZSG9Y67", "label": "amazon.de" },
+      { "url": "https://www.aliexpress.com/item/1005008269663852.html", "label": "aliexpress" }
+    ]
+  },
+  {
+    "title": "Лазилка для кота под потолок",
+    "tags": ["квартира"],
+    "img": "img/wishlist/cat-tree-ceiling.webp",
+    "links": [
+      { "url": "https://www.amazon.de/gp/product/B09Q3CNHSQ", "label": "amazon.de" }
+    ]
+  },
+  {
+    "title": "X-COM UFO Defense PC 3.5 Floppy Big Box",
+    "tags": ["ретро"],
+    "status": "bought",
+    "img": "img/wishlist/xcom-ufo-defense-bigbox.webp",
+    "links": [
+      { "url": "https://ebay.io/m/cdEhAu", "label": "ebay #1" },
+      { "url": "https://ebay.io/m/X82NEv", "label": "ebay #2" }
+    ]
+  },
+  {
+    "title": "4K 60Hz HDMI switch",
+    "tags": ["квартира"],
+    "img": "img/wishlist/hdmi-switch.webp",
+    "links": [
+      { "url": "https://www.amazon.de/UGREEN-Switcher-Splitter-Selector-Compatible/dp/B09Y14JSFH", "label": "amazon.de" }
+    ]
+  },
+  {
+    "title": "Ulanzi FM01",
+    "desc": "Портативный генератор дыма для съёмки",
+    "tags": ["видео"],
+    "img": "img/wishlist/ulanzi-fm01.webp",
+    "links": [
+      { "url": "https://www.ulanzi.com/products/filmog-ace-portable-fog-machine-r001", "label": "ulanzi.com" },
+      { "url": "https://a.aliexpress.com/_EvdrqX0", "label": "aliexpress" },
+      { "url": "https://ozon.ru/t/QW0AvQe", "label": "ozon.ru" }
+    ]
+  }
+]

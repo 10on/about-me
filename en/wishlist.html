@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <title>wishlist — Denchik</title>
+    <meta name="description" content="Denchik's wishlist: things worth hunting down or buying — LEGO, retro tech, DIY tools, and everything else.">
+    <link rel="canonical" href="https://10on.github.io/about-me/en/wishlist.html">
+    <link rel="alternate" hreflang="ru" href="https://10on.github.io/about-me/wishlist.html">
+    <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/wishlist.html">
+    <link rel="alternate" hreflang="x-default" href="https://10on.github.io/about-me/wishlist.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:site_name" content="Denchik">
+    <meta property="og:title" content="wishlist — Denchik">
+    <meta property="og:description" content="Denchik's wishlist: things worth hunting down or buying — LEGO, retro tech, DIY tools, and everything else.">
+    <meta property="og:url" content="https://10on.github.io/about-me/en/wishlist.html">
+    <meta property="og:image" content="https://10on.github.io/about-me/img/persik.jpg">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="882">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://10on.github.io/about-me/img/persik.jpg">
+    <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="../style.css?v=98012eb4">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div>
+                <a href="index.html" class="logo">Denchik</a>
+                <div class="tagline">lego · retro · DIY · dev</div>
+            </div>
+            <div class="header-actions">
+                <a href="../wishlist.html" class="lang-switch" title="Russian version">RU</a>
+                <button id="theme-toggle" class="theme-toggle" title="theme">☾</button>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="notes.html">notes</a>
+            <a href="articles.html">articles</a>
+            <a href="lego.html">lego</a>
+            <a href="retro.html">retro</a>
+            <a href="diy.html">DIY</a>
+            <a href="games.html">games</a>
+            <a href="wishlist.html" class="active">wishlist</a>
+            <a href="about.html">about</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container" style="padding-top: 2.5rem; padding-bottom: 1rem;">
+            <h1 style="font-size: clamp(28px, 6vw, 34px); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.4rem;">Wishlist</h1>
+            <p style="font-size: 1rem; color: var(--muted); margin-bottom: 1.1rem;">Things worth hunting down or buying — not tied to one topic. Filter by tag.</p>
+
+            <div class="tag-chips" id="tag-chips"></div>
+            <div id="wishlist-list"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.youtube.com/@DenchikBricks" target="_blank" rel="noopener">youtube</a>
+            <a href="http://t.me/denchik_bricks" target="_blank" rel="noopener">telegram</a>
+            <a href="https://rebrickable.com/users/10on/lego/" target="_blank" rel="noopener">rebrickable</a>
+            <a href="https://www.linkedin.com/in/d-push/" target="_blank" rel="noopener">linkedin</a>
+            <a href="mailto:igoo10on@gmail.com">email</a>
+        </div>
+        <div class="footer-meta">Denchik — <span id="year"></span></div>
+    </footer>
+
+    <div id="img-modal">
+        <div class="modal-backdrop">
+            <img id="img-modal-img" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        function openModal(src, alt) {
+            var m = document.getElementById('img-modal');
+            var img = document.getElementById('img-modal-img');
+            img.src = src;
+            img.alt = alt;
+            m.classList.add('open');
+        }
+
+        document.getElementById('img-modal').addEventListener('click', function (e) {
+            if (e.target === this || e.target.classList.contains('modal-backdrop')) {
+                this.classList.remove('open');
+            }
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+        var themeBtn = document.getElementById('theme-toggle');
+        function syncThemeLabel() { themeBtn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀︎' : '☾'; }
+        syncThemeLabel();
+        themeBtn.addEventListener('click', function () {
+            var next = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : 'dark';
+            if (next) document.documentElement.setAttribute('data-theme', next); else document.documentElement.removeAttribute('data-theme');
+            syncThemeLabel();
+            try { localStorage.setItem('denchik-theme', next); } catch (e) {}
+        });
+
+        var wishlistData = [];
+        var allTags = [];
+        var activeTag = 'all';
+
+        function favicon(url) {
+            try {
+                var host = new URL(url).hostname.replace(/^www\./, '');
+                return '<img class="link-favicon" src="https://icons.duckduckgo.com/ip3/' + host + '.ico" alt="" loading="lazy">';
+            } catch (e) {
+                return '';
+            }
+        }
+
+        function renderChips() {
+            var defs = [{ label: 'all', value: 'all' }].concat(allTags.map(function (t) { return { label: t, value: t }; }));
+            document.getElementById('tag-chips').innerHTML = defs.map(function (d) {
+                return '<button class="tag-chip' + (d.value === activeTag ? ' active' : '') + '" data-tag="' + d.value + '">' + d.label + '</button>';
+            }).join('');
+            document.querySelectorAll('.tag-chip').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    activeTag = btn.dataset.tag;
+                    renderChips();
+                    renderWishlist();
+                });
+            });
+        }
+
+        function renderWishlist() {
+            var filtered = activeTag === 'all' ? wishlistData : wishlistData.filter(function (i) { return (i.tags || []).includes(activeTag); });
+            var container = document.getElementById('wishlist-list');
+            if (!filtered.length) {
+                container.innerHTML = '<p class="empty">empty for now...</p>';
+                return;
+            }
+            var rows = filtered.map(function (item) {
+                var safeName = item.title.replace(/'/g, "\\'");
+                var thumbHtml = item.img
+                    ? '<img class="item-thumb" src="' + item.img + '" alt="' + item.title + '" loading="lazy" onclick="openModal(\'' + item.img + '\',\'' + safeName + '\')">'
+                    : '';
+                var tagsHtml = (item.tags && item.tags.length)
+                    ? '<div class="item-tags">' + item.tags.map(function (t) { return '#' + t; }).join(' ') + '</div>'
+                    : '';
+                var descHtml = item.desc ? '<div class="item-desc">' + item.desc + '</div>' : '';
+                var statusHtml = item.status === 'bought' ? '<span class="item-status status-bought">bought</span>' : '';
+                var linksHtml = (item.links && item.links.length)
+                    ? '<div class="item-links">' + item.links.map(function (l) {
+                        return '<a class="item-link" href="' + l.url + '" target="_blank" rel="noopener">' + favicon(l.url) + l.label + '</a>';
+                    }).join('') + '</div>'
+                    : '';
+                return '<div class="item' + (item.img ? ' item-with-img' : '') + '">' + thumbHtml +
+                    '<div class="item-body"><div class="item-name">' + item.title + '</div>' + tagsHtml + descHtml + '</div>' +
+                    (statusHtml || linksHtml ? '<div class="item-right">' + statusHtml + linksHtml + '</div>' : '') +
+                    '</div>';
+            }).join('');
+            container.innerHTML = '<div class="items-list">' + rows + '</div>';
+        }
+
+        Promise.all([
+            fetch('data/wishlist.json').then(function (r) { return r.ok ? r.json() : []; }),
+            fetch('data/tags.json').then(function (r) { return r.ok ? r.json() : []; })
+        ]).then(function (results) {
+            wishlistData = results[0];
+            allTags = results[1];
+            renderChips();
+            renderWishlist();
+        }).catch(function () {
+            document.getElementById('wishlist-list').innerHTML = '<p class="empty">failed to load :(</p>';
+        });
+    </script>
+</body>
+</html>

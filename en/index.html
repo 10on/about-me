@@ -3,28 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <title>Denchik</title>
-    <meta name="description" content="Denis Pushkaryov (Denchik) — a backend developer from Belgrade, and the creator of the LEGO channel DenchikBricks. Notes and articles about LEGO, retro tech, DIY, and games.">
+    <meta name="description" content="Denis Pushkarev (Denchik) — a backend developer from Belgrade, and the creator of the LEGO channel DenchikBricks. Notes and articles about LEGO, retro tech, DIY, and games.">
     <link rel="canonical" href="https://10on.github.io/about-me/en/">
     <link rel="alternate" hreflang="ru" href="https://10on.github.io/about-me/">
     <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/">
     <link rel="alternate" hreflang="x-default" href="https://10on.github.io/about-me/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ru_RU">
     <meta property="og:site_name" content="Denchik">
     <meta property="og:title" content="Denchik">
-    <meta property="og:description" content="Denis Pushkaryov (Denchik) — a backend developer from Belgrade, and the creator of the LEGO channel DenchikBricks. Notes and articles about LEGO, retro tech, DIY, and games.">
+    <meta property="og:description" content="Denis Pushkarev (Denchik) — a backend developer from Belgrade, and the creator of the LEGO channel DenchikBricks. Notes and articles about LEGO, retro tech, DIY, and games.">
     <meta property="og:url" content="https://10on.github.io/about-me/en/">
     <meta property="og:image" content="https://10on.github.io/about-me/img/persik.jpg">
     <meta property="og:image:width" content="1000">
     <meta property="og:image:height" content="882">
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/persik.jpg">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Denis Pushkaryov",
-      "alternateName": ["Денис Пушкарёв", "Denchik", "DenchikBricks"],
+      "name": "Denis Pushkarev",
+      "alternateName": ["Денис Пушкарёв", "Denchik", "DenchikBricks", "Denis Pushkaryov"],
       "url": "https://10on.github.io/about-me/",
       "image": "https://10on.github.io/about-me/img/persik.jpg",
       "jobTitle": "Backend Developer",
@@ -39,8 +44,11 @@
     <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="preload" as="fetch" href="data/notes.json" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="../style.css?v=98012eb4">
 </head>
 <body>
     <header>
@@ -54,27 +62,34 @@
                 <button id="theme-toggle" class="theme-toggle" title="theme">☾</button>
             </div>
         </div>
-        <nav>
+    </header>
+    <nav>
+        <div class="nav-links">
             <a href="notes.html">notes</a>
             <a href="articles.html">articles</a>
             <a href="lego.html">lego</a>
             <a href="retro.html">retro</a>
             <a href="diy.html">DIY</a>
             <a href="games.html">games</a>
+            <a href="wishlist.html">wishlist</a>
             <a href="about.html">about</a>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <main>
         <div class="container" style="padding-top: 1.75rem; padding-bottom: 1rem;">
-            <p style="font-size: clamp(18px, 4.4vw, 19.5px); line-height: 1.6;">Hi. I'm <b style="font-weight: 600;">Denchik</b> — a backend developer who spends evenings with a soldering iron, a 3D printer, and a box of LEGO. Here are short notes and, sometimes, longer articles: retro hardware, DIY projects, games, and life between Belgrade and everywhere else. There's always a cat named <a href="about.html">Persik</a> somewhere nearby.</p>
+            <p style="font-size: clamp(18px, 4.4vw, 19.5px); line-height: 1.6;">Hi. I'm <b style="font-weight: 600;">Denchik</b> — a backend developer who spends evenings with a soldering iron, a 3D printer, and a box of LEGO. Here are short notes and, sometimes, longer articles: retro hardware, DIY projects, games, and life between Belgrade and everywhere else. There's always a cat named <a href="about.html" class="text-link">Persik</a> somewhere nearby.</p>
 
             <div class="feed-heading">
                 <span class="feed-label">// notes</span>
                 <span class="feed-line"></span>
                 <a href="notes.html" class="feed-more">all →</a>
             </div>
-            <div id="home-notes"></div>
+            <div id="home-notes">
+                <!-- BUILD:home-notes -->
+<div class="note-item" id="note-pylesos-korroziya-platy"><div class="note-meta"><span>05.09.2026</span><span class="note-meta-right"><span class="note-tags">#diy #electronics</span><button class="note-share" data-url="notes/pylesos-korroziya-platy.html" title="Share" aria-label="Share"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></button></span></div><p class="note-text"><img alt="A disassembled robot vacuum on the desk with the board and motor exposed, a cat peeking inside" src="../img/notes/vacuum-teardown-cat.webp" width="1600" height="900" loading="lazy" /><br><br>For a few days now I've been living with a robot vacuum on my desk. Here's the thing: a few months ago my robot vacuum ran into a surprise left by the cat. Twice, actually. The first time I managed to clean it up more or less, but the second time it got so clogged that I couldn't clean it properly without taking it apart. At some point I disassembled it and cleaned it, but afterward one of the wheels stopped working.<br><br>About a week ago I finally got around to it: took it apart, checked the wheel's ribbon cable, made sure I hadn't kinked it. That was the most obvious suspect, and that's where I stopped last time.<br><br>Also, last time, after partially disassembling one of the motors, I found the pinout and did a quick check of the main signals and power with a multimeter — no oscilloscope. The wheel looked relatively alive; I didn't run detailed tests.<br><br><img alt="Close-up of the wheel motor board's pinout: BK, F/R, PWM, FG, GND, VCC contacts on the XYD-2114F board" src="../img/notes/vacuum-wheel-pinout.webp" width="1600" height="900" loading="lazy" /><br><br>Before digging into the logic analysis, I did a simpler test: swapped the two wheels — and the old wheel worked fine in the other spot. So the fault is somewhere on the board, and I was really hoping the problem was in the wheel itself, since that can be swapped for a ready-made module for a few dozen euros.<br><br>I was wary of the mainboard for two reasons. First, it's a fairly complex assembly. Second, there's no guarantee the fault is actually there — it could be elsewhere, and if I bought a new mainboard I might end up frying that one too. So I had some fairly serious stuff to dig into.<br><br>But once I finally committed and pulled the mainboard, I saw a pretty obvious spot of corrosion and oxidation.<br><br><img alt="Close-up of the robot vacuum's green board with oxidation near one of the chips" src="../img/notes/vacuum-board-corrosion.webp" width="900" height="1600" loading="lazy" /><br><br>Now I'll try to clean all that up and restore the board. Hoping nothing irreversible happened. I do wish I had a proper microscope.</p><button class="note-expand-btn" type="button">Show more ↓</button></div>
+<!-- /BUILD:home-notes -->
+            </div>
 
             <div class="feed-heading">
                 <span class="feed-label">// articles</span>
@@ -83,7 +98,7 @@
             </div>
             <div id="home-articles">
                 <!-- BUILD:articles-home -->
-<div class="article-card"><div class="article-meta"><span class="article-tag">#hardware #mini-pc</span><span>06.09.2026</span><span>· 8 min</span></div><h3><a href="articles/mini-pc-defitsit.html">A mini-PC build in the shortage era: the start</a></h3><p>Building a compact gaming PC out of an office Dell OptiPlex: a trip to a Belgrade e-waste workshop, a Xeon from AliExpress, and an A2000 that officially doesn't exist.</p><a class="article-read-link" href="articles/mini-pc-defitsit.html">read →</a></div>
+<p class="empty">coming soon...</p>
 <!-- /BUILD:articles-home -->
             </div>
         </div>
@@ -112,22 +127,60 @@
             try { localStorage.setItem('denchik-theme', next); } catch (e) {}
         });
 
+        var SHARE_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>';
+        var EXPAND_LABEL = 'Show more ↓';
+        var COLLAPSE_LABEL = 'Show less ↑';
+
+        function markOverflowingNotes(container) {
+            container.querySelectorAll('.note-item').forEach(function (item) {
+                var text = item.querySelector('.note-text');
+                if (text.scrollHeight > text.clientHeight + 2) {
+                    item.classList.add('has-overflow');
+                }
+            });
+        }
+
+        document.getElementById('home-notes').addEventListener('click', function (e) {
+            var expandBtn = e.target.closest('.note-expand-btn');
+            if (expandBtn) {
+                var text = expandBtn.closest('.note-item').querySelector('.note-text');
+                var expanded = text.classList.toggle('expanded');
+                expandBtn.textContent = expanded ? COLLAPSE_LABEL : EXPAND_LABEL;
+                return;
+            }
+            var btn = e.target.closest('.note-share');
+            if (!btn) return;
+            var url = new URL(btn.dataset.url, location.href).href;
+            if (navigator.share) {
+                navigator.share({ url: url }).catch(function () {});
+            } else if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(function () {
+                    btn.classList.add('copied');
+                    setTimeout(function () { btn.classList.remove('copied'); }, 1500);
+                });
+            }
+        });
+
+        markOverflowingNotes(document.getElementById('home-notes'));
+
         fetch('data/notes.json')
             .then(function (r) { return r.ok ? r.json() : []; })
             .then(function (notes) {
                 var container = document.getElementById('home-notes');
-                if (!notes.length) {
-                    container.innerHTML = '<p class="empty">coming soon...</p>';
-                    return;
-                }
-                container.innerHTML = notes.slice(0, 4).map(function (n) {
-                    return '<div class="note-item"><div class="note-meta"><span>' + n.date + '</span><span class="note-tags">' +
+                var rest = notes.slice(1, 4);
+                if (!rest.length) return;
+                container.insertAdjacentHTML('beforeend', rest.map(function (n) {
+                    return '<div class="note-item" id="note-' + n.id + '"><div class="note-meta"><span>' + n.date + '</span><span class="note-meta-right"><span class="note-tags">' +
                         n.tags.map(function (t) { return '#' + t; }).join(' ') +
-                        '</span></div><p class="note-text">' + n.text + '</p></div>';
-                }).join('');
+                        '</span><button class="note-share" data-url="notes/' + n.id + '.html" title="Share" aria-label="Share">' + SHARE_ICON + '</button></span></div><p class="note-text">' + n.text + '</p><button class="note-expand-btn" type="button">' + EXPAND_LABEL + '</button></div>';
+                }).join(''));
+                markOverflowingNotes(container);
             })
             .catch(function () {
-                document.getElementById('home-notes').innerHTML = '<p class="empty">failed to load :(</p>';
+                var container = document.getElementById('home-notes');
+                if (!container.querySelector('.note-item')) {
+                    container.innerHTML = '<p class="empty">failed to load :(</p>';
+                }
             });
     </script>
 </body>

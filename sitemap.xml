@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://10on.github.io/about-me/</loc></url>
-  <url><loc>https://10on.github.io/about-me/notes.html</loc></url>
+  <url><loc>https://10on.github.io/about-me/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://10on.github.io/about-me/notes.html</loc><lastmod>2026-09-05</lastmod></url>
   <url><loc>https://10on.github.io/about-me/articles.html</loc></url>
   <url><loc>https://10on.github.io/about-me/about.html</loc></url>
   <url><loc>https://10on.github.io/about-me/lego.html</loc></url>
@@ -9,9 +9,9 @@
   <url><loc>https://10on.github.io/about-me/diy.html</loc></url>
   <url><loc>https://10on.github.io/about-me/games.html</loc></url>
   <url><loc>https://10on.github.io/about-me/projects.html</loc></url>
-  <url><loc>https://10on.github.io/about-me/articles/mini-pc-defitsit.html</loc></url>
-  <url><loc>https://10on.github.io/about-me/en/</loc></url>
-  <url><loc>https://10on.github.io/about-me/en/notes.html</loc></url>
+  <url><loc>https://10on.github.io/about-me/wishlist.html</loc></url>
+  <url><loc>https://10on.github.io/about-me/en/</loc><lastmod>2026-09-05</lastmod></url>
+  <url><loc>https://10on.github.io/about-me/en/notes.html</loc><lastmod>2026-09-05</lastmod></url>
   <url><loc>https://10on.github.io/about-me/en/articles.html</loc></url>
   <url><loc>https://10on.github.io/about-me/en/about.html</loc></url>
   <url><loc>https://10on.github.io/about-me/en/lego.html</loc></url>
@@ -19,5 +19,5 @@
   <url><loc>https://10on.github.io/about-me/en/diy.html</loc></url>
   <url><loc>https://10on.github.io/about-me/en/games.html</loc></url>
   <url><loc>https://10on.github.io/about-me/en/projects.html</loc></url>
-  <url><loc>https://10on.github.io/about-me/en/articles/mini-pc-defitsit.html</loc></url>
+  <url><loc>https://10on.github.io/about-me/en/wishlist.html</loc></url>
 </urlset>

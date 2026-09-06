@@ -87,7 +87,7 @@
     "name": "Emerald Night",
     "desc": "10194 — паровоз Creator Expert, 2009",
     "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=10194-1",
-    "status": "v4"
+    "status": "have"
   },
   {
     "name": "Pig Farm & Tractor",
@@ -183,7 +183,7 @@
     "name": "Crane Truck",
     "desc": "8446 — кран-грузовик, Technic, 1999",
     "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=8446-1",
-    "status": "v3"
+    "status": "have"
   },
   {
     "name": "Adventurers Tomb (The Lost Tomb)",
@@ -424,5 +424,11 @@
     "desc": "111 — стартовый поезд без мотора, Trains, 1966",
     "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=111-1",
     "status": "v2"
+  },
+  {
+    "name": "Mindstorms EV3",
+    "desc": "31313 — робототехнический конструктор, Mindstorms, 2013",
+    "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=31313-1",
+    "status": "v4"
   }
 ]

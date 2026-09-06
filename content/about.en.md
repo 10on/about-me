@@ -1,4 +1,4 @@
-Figured I'd put together the basics of my lore here.
+My name is Denis Pushkarev (also spelled Pushkaryov) — friends and the internet just call me Denchik. Figured I'd put together the basics of my lore here.
 
 I consider Omsk my hometown.
 

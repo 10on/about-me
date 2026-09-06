@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - run: pip install markdown
+      - run: pip install markdown pillow
       - run: python3 build.py
       - uses: actions/upload-pages-artifact@v3
         with:

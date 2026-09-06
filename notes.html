@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <title>заметки — дэнчик</title>
     <meta name="description" content="Короткие заметки дэнчика: лего, ретро-техника, самоделки, игры и разработка — что попало под руку за неделю.">
     <link rel="canonical" href="https://10on.github.io/about-me/notes.html">
@@ -10,18 +13,24 @@
     <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/notes.html">
     <link rel="alternate" hreflang="x-default" href="https://10on.github.io/about-me/notes.html">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:site_name" content="дэнчик">
     <meta property="og:title" content="заметки — дэнчик">
     <meta property="og:description" content="Короткие заметки дэнчика: лего, ретро-техника, самоделки, игры и разработка — что попало под руку за неделю.">
     <meta property="og:url" content="https://10on.github.io/about-me/notes.html">
     <meta property="og:image" content="https://10on.github.io/about-me/img/persik.jpg">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="882">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/persik.jpg">
     <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="style.css?v=98012eb4">
 </head>
 <body>
     <header>
@@ -35,16 +44,19 @@
                 <button id="theme-toggle" class="theme-toggle" title="тема">☾</button>
             </div>
         </div>
-        <nav>
+    </header>
+    <nav>
+        <div class="nav-links">
             <a href="notes.html" class="active">заметки</a>
             <a href="articles.html">статьи</a>
             <a href="lego.html">лего</a>
             <a href="retro.html">ретро</a>
             <a href="diy.html">самоделки</a>
             <a href="games.html">игры</a>
+            <a href="wishlist.html">хотелки</a>
             <a href="about.html">обо мне</a>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <main>
         <div class="container" style="padding-top: 2.5rem; padding-bottom: 1rem;">
@@ -81,6 +93,39 @@
 
         var allNotes = [];
         var activeTag = 'all';
+        var PAGE_SIZE = 8;
+        var visibleCount = PAGE_SIZE;
+        var SHARE_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>';
+        var EXPAND_LABEL = 'Показать полностью ↓';
+        var COLLAPSE_LABEL = 'Свернуть ↑';
+        var LOAD_MORE_LABEL = 'Ещё заметки ↓';
+
+        function shareNote(btn) {
+            var url = new URL(btn.dataset.url, location.href).href;
+            if (navigator.share) {
+                navigator.share({ url: url }).catch(function () {});
+            } else if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(function () {
+                    btn.classList.add('copied');
+                    setTimeout(function () { btn.classList.remove('copied'); }, 1500);
+                });
+            }
+        }
+
+        function markOverflowingNotes(container) {
+            container.querySelectorAll('.note-item').forEach(function (item) {
+                var text = item.querySelector('.note-text');
+                if (text.scrollHeight > text.clientHeight + 2) {
+                    item.classList.add('has-overflow');
+                }
+            });
+        }
+
+        function toggleExpand(btn) {
+            var text = btn.closest('.note-item').querySelector('.note-text');
+            var expanded = text.classList.toggle('expanded');
+            btn.textContent = expanded ? COLLAPSE_LABEL : EXPAND_LABEL;
+        }
 
         function renderChips() {
             var tags = Array.from(new Set(allNotes.flatMap(function (n) { return n.tags; })));
@@ -91,6 +136,7 @@
             document.querySelectorAll('.tag-chip').forEach(function (btn) {
                 btn.addEventListener('click', function () {
                     activeTag = btn.dataset.tag;
+                    visibleCount = PAGE_SIZE;
                     renderChips();
                     renderNotes();
                 });
@@ -104,19 +150,47 @@
                 container.innerHTML = '<p class="empty">скоро будет...</p>';
                 return;
             }
-            container.innerHTML = filtered.map(function (n) {
-                return '<div class="note-item"><div class="note-meta"><span>' + n.date + '</span><span class="note-tags">' +
+            var visible = filtered.slice(0, visibleCount);
+            container.innerHTML = visible.map(function (n) {
+                return '<div class="note-item" id="note-' + n.id + '"><div class="note-meta"><span>' + n.date + '</span><span class="note-meta-right"><span class="note-tags">' +
                     n.tags.map(function (t) { return '#' + t; }).join(' ') +
-                    '</span></div><p class="note-text">' + n.text + '</p></div>';
+                    '</span><button class="note-share" data-url="notes/' + n.id + '.html" title="Поделиться" aria-label="Поделиться">' + SHARE_ICON + '</button></span></div><p class="note-text">' + n.text + '</p><button class="note-expand-btn" type="button">' + EXPAND_LABEL + '</button></div>';
             }).join('');
+            if (filtered.length > visible.length) {
+                container.insertAdjacentHTML('beforeend', '<button id="load-more-btn" class="load-more-btn" type="button">' + LOAD_MORE_LABEL + '</button>');
+            }
+            markOverflowingNotes(container);
         }
+
+        document.getElementById('notes-list').addEventListener('click', function (e) {
+            var expandBtn = e.target.closest('.note-expand-btn');
+            if (expandBtn) { toggleExpand(expandBtn); return; }
+            var moreBtn = e.target.closest('#load-more-btn');
+            if (moreBtn) { visibleCount += PAGE_SIZE; renderNotes(); return; }
+            var btn = e.target.closest('.note-share');
+            if (btn) shareNote(btn);
+        });
 
         fetch('data/notes.json')
             .then(function (r) { return r.ok ? r.json() : []; })
             .then(function (notes) {
                 allNotes = notes;
+                if (location.hash) {
+                    var idx = allNotes.findIndex(function (n) { return '#note-' + n.id === location.hash; });
+                    if (idx !== -1 && idx + 1 > visibleCount) visibleCount = idx + 1;
+                }
                 renderChips();
                 renderNotes();
+                if (location.hash) {
+                    var el = document.querySelector(location.hash);
+                    if (el) {
+                        var expandBtn = el.querySelector('.note-expand-btn');
+                        if (expandBtn) toggleExpand(expandBtn);
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        el.classList.add('note-highlight');
+                        setTimeout(function () { el.classList.remove('note-highlight'); }, 1600);
+                    }
+                }
             })
             .catch(function () {
                 document.getElementById('notes-list').innerHTML = '<p class="empty">не удалось загрузить :(</p>';

@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <title>лего — дэнчик</title>
     <meta name="description" content="Коллекция LEGO дэнчика: 300+ наборов от 60-х до наших дней, хотелки, YouTube и Telegram про лего.">
     <link rel="canonical" href="https://10on.github.io/about-me/lego.html">
@@ -10,18 +13,24 @@
     <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/lego.html">
     <link rel="alternate" hreflang="x-default" href="https://10on.github.io/about-me/lego.html">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:site_name" content="дэнчик">
     <meta property="og:title" content="лего — дэнчик">
     <meta property="og:description" content="Коллекция LEGO дэнчика: 300+ наборов от 60-х до наших дней, хотелки, YouTube и Telegram про лего.">
     <meta property="og:url" content="https://10on.github.io/about-me/lego.html">
     <meta property="og:image" content="https://10on.github.io/about-me/img/lego-cover.jpg">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="1161">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/lego-cover.jpg">
     <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="style.css?v=98012eb4">
 </head>
 <body class="page-lego">
     <header>
@@ -35,16 +44,19 @@
                 <button id="theme-toggle" class="theme-toggle" title="тема">☾</button>
             </div>
         </div>
-        <nav>
+    </header>
+    <nav>
+        <div class="nav-links">
             <a href="notes.html">заметки</a>
             <a href="articles.html">статьи</a>
             <a href="lego.html" class="active">лего</a>
             <a href="retro.html">ретро</a>
             <a href="diy.html">самоделки</a>
             <a href="games.html">игры</a>
+            <a href="wishlist.html">хотелки</a>
             <a href="about.html">обо мне</a>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <main>
         <section class="longread-section">
@@ -115,7 +127,7 @@
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="main.js?v=d4120cdb"></script>
     <script>
         const PRIORITY = { v5: 5, v4: 4, v3: 3, v2: 2, v1: 1 };
 
@@ -154,7 +166,7 @@
                 const num = item.desc?.match(/^(\S+)/)?.[1] ?? null;
 
                 if (num) {
-                    const imgSrc = `img/lego/${num}.jpg`;
+                    const imgSrc = `img/lego/${num}.webp`;
                     const safeName = item.name.replace(/'/g, "\\'");
                     const blUrl  = item.url ?? '#';
                     const rbUrl  = `https://rebrickable.com/sets/${num}-1/`;

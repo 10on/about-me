@@ -1,5 +1,216 @@
 [
   {
+    "id": "pylesos-korroziya-platy",
+    "date": "05.09.2026",
+    "tags": [
+      "diy",
+      "electronics"
+    ],
+    "text": "<img alt=\"A disassembled robot vacuum on the desk with the board and motor exposed, a cat peeking inside\" src=\"../img/notes/vacuum-teardown-cat.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>For a few days now I've been living with a robot vacuum on my desk. Here's the thing: a few months ago my robot vacuum ran into a surprise left by the cat. Twice, actually. The first time I managed to clean it up more or less, but the second time it got so clogged that I couldn't clean it properly without taking it apart. At some point I disassembled it and cleaned it, but afterward one of the wheels stopped working.<br><br>About a week ago I finally got around to it: took it apart, checked the wheel's ribbon cable, made sure I hadn't kinked it. That was the most obvious suspect, and that's where I stopped last time.<br><br>Also, last time, after partially disassembling one of the motors, I found the pinout and did a quick check of the main signals and power with a multimeter — no oscilloscope. The wheel looked relatively alive; I didn't run detailed tests.<br><br><img alt=\"Close-up of the wheel motor board's pinout: BK, F/R, PWM, FG, GND, VCC contacts on the XYD-2114F board\" src=\"../img/notes/vacuum-wheel-pinout.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Before digging into the logic analysis, I did a simpler test: swapped the two wheels — and the old wheel worked fine in the other spot. So the fault is somewhere on the board, and I was really hoping the problem was in the wheel itself, since that can be swapped for a ready-made module for a few dozen euros.<br><br>I was wary of the mainboard for two reasons. First, it's a fairly complex assembly. Second, there's no guarantee the fault is actually there — it could be elsewhere, and if I bought a new mainboard I might end up frying that one too. So I had some fairly serious stuff to dig into.<br><br>But once I finally committed and pulled the mainboard, I saw a pretty obvious spot of corrosion and oxidation.<br><br><img alt=\"Close-up of the robot vacuum's green board with oxidation near one of the chips\" src=\"../img/notes/vacuum-board-corrosion.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" /><br><br>Now I'll try to clean all that up and restore the board. Hoping nothing irreversible happened. I do wish I had a proper microscope."
+  },
+  {
+    "id": "stolik-predmetki-bt",
+    "date": "28.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "Practically overnight, within a single day, I managed to mod a cheap Chinese product-photography turntable — now it can be controlled by my remote. The turntable looks roughly like this:<br><br><img alt=\"Screenshot of an AliExpress product page: a black rotating platform with R/L, SR, ASA buttons and a USB-C port\" src=\"../img/notes/turntable-aliexpress.webp\" width=\"735\" height=\"1600\" loading=\"lazy\" /><br><br>At first I planned to replace the entire guts except the motor, while keeping the control panel. But in the evening I realized I could burn a ton of time fitting new internals to the existing panel. Decided to figure out the board instead — an unmarked controller chip was running the whole thing. Here it is under the probe.<br><br><img alt=\"The turntable's green board on a helping-hands stand, a multimeter probe touching an unmarked chip\" src=\"../img/notes/turntable-probe-chip.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Also, the device already had a lot of what I wanted to add to the project anyway: a charging circuit, a boost converter, an 18650 battery bay.<br><br>Here's what I ended up with. I'll clearly keep refining it, but it's already usable. Looks the same from the outside, just controlled over Bluetooth now.<br><br><img alt=\"Inside the turntable from above: a stepper motor in its mount, a green control board, colorful wires, and the battery bay\" src=\"../img/notes/turntable-internals.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" />"
+  },
+  {
+    "id": "pult-zarabotal",
+    "date": "28.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "The remote's assembled, not without its quirks, but it works. Drives the slider and my Neewer DL-200 motorized dolly beautifully.<br><br><img alt=\"The red remote case with a &quot;Slider&quot; screen, a cross-shaped button layout, and a slider switch at the bottom\" src=\"../img/notes/pult-front-idle.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" /><br><br><img alt=\"The remote's screen in the dark: Slider + Phone mode, recording at 00:13, REC status, slider in IDLE state\" src=\"../img/notes/pult-recording-screen.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Working on the UI and stability now. Overall I got a real kick out of being able to start motion and recording with one button. Feels almost like magic.<br><br><img alt=\"The remote's insides in hand: screen, cross-shaped buttons, XIAO board, two batteries, and the buzzer capsule at the bottom\" src=\"../img/notes/pult-internals-hand.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" /><br><br><img alt=\"The remote's screen showing a menu of three devices: Slider (OFF), Phone (READY), Dolly (OFF)\" src=\"../img/notes/pult-front-menu.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" />"
+  },
+  {
+    "id": "pult-piskchalka-robot",
+    "date": "27.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "Wanted a buzzer in the remote, but standard buzzers turned out to be too thick. Worked around it with a disassembled earphone capsule and a bipolar transistor. Looks like a surreal anthropomorphic robot.<br><br><img alt=\"An earphone capsule soldered together with a transistor and a resistor, standing up among the wires inside the red remote case\" src=\"../img/notes/pult-buzzer-robot-wide.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br><img alt=\"The same homemade &quot;robot&quot; made from an earphone capsule, close up, next to the board and battery\" src=\"../img/notes/pult-buzzer-robot-close.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" />"
+  },
+  {
+    "id": "pult-case-iteracii",
+    "date": "25.08.2026",
+    "tags": [
+      "slider",
+      "electronics",
+      "3d-printing"
+    ],
+    "text": "A few iterations of the remote's case. It's actually already basically assembled, and getting refined further.<br><br><img alt=\"Four red 3D-printed remote case iterations in a row: a screen cutout, a cross-shaped button layout, and different mounting options for the electronics on the back — the rightmost one already has a board installed\" src=\"../img/notes/pult-case-iterations.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" />"
+  },
+  {
+    "id": "arca-swiss-krepleniya",
+    "date": "25.08.2026",
+    "tags": [
+      "slider",
+      "diy",
+      "3d-printing"
+    ],
+    "text": "Wrapping up work on the slider, I got to thinking about what it actually stands on. It sits on tripods with the standard budget diamond-shaped quick-release mounts. Turns out those aren't great for anything bulky or heavy — they're fine for light cameras and phone holders, but for a slider that kind of mount is just awkward: taking it off or putting it back on is a whole ordeal.<br><br>I remembered I've been slowly building up a collection of Arca-Swiss-type mounts for my camera gear. They slide in sideways, clamp down easily, and let you quickly adjust the slider's position or pull it off the tripod entirely. I could've ordered a couple of these for $20–30, but figured I could just print them on the 3D printer right here and now — the only catch being a bike ride to the store for the right bolts. And I'd still have had to bodge the store-bought plates onto the tripods somehow anyway.<br><br>Here's what I ended up with.<br><br><img alt=\"Five Arca-Swiss mounts in hand and on tripod heads: a factory one with a plate, a 3D-printed one, an upside-down standard tripod mount, one with heat-set inserts, and a finished plate already mounted\" src=\"../img/notes/arca-swiss-mounts.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Bottom right is the factory Arca-Swiss mount with its plate, and to its left the same type printed on the 3D printer. Above it, upside down, is the standard mount from a cheap tripod. Top right is a mount with heat-set inserts, for screwing onto one already mounted on a tripod. And on the left is the finished plate, already installed."
+  },
+  {
+    "id": "slider-pochti-gotov-finalno",
+    "date": "25.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "The slider's been pretty much done for a couple of days now. I'll reprint the power switch; the buttons I'll leave a bit janky for now — replacing them means taking everything apart again.<br><br>The strap mounts need some finishing work. But overall it's usable already.<br><br>Also put some work into the UI design, with a little help from Claude.<br><br><img alt=\"The slider from the side: a Walimex Pro camera mounting plate and the electronics enclosure with the Camera Slider screen, buttons, and an encoder with a QT sticker\" src=\"../img/notes/slider-mount-side.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" />"
+  },
+  {
+    "id": "musornaya-zametka",
+    "date": "23.08.2026",
+    "tags": [
+      "diy",
+      "3d-printing"
+    ],
+    "text": "A trash note.<br><br>Not every complex project is worth posting about. I'd been suffering with a broken trash bin lid for ages. The whole lid rested on a millimeter of plastic in a couple of spots when it opened. At some point the mounts broke. The neighborhood raccoon started climbing in occasionally.<br><br><img alt=\"Close-up of the broken trash bin lid mount: a black 3D-printed insert with an M5 bolt and nut in the corner of the hinge\" src=\"../img/notes/trash-bin-lid-mount.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Quickly measured it up and printed a couple of inserts. Bodged it together with M5 bolts. Should hold for another year.<br><br><img alt=\"Two screws on the edge of the black bin lid, with a curious cat peeking into frame\" src=\"../img/notes/trash-bin-lid-cat.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" />"
+  },
+  {
+    "id": "pult-maket",
+    "date": "22.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "Saturday morning I printed a mockup of the remote to figure out where the components should go. Seems to be turning out alright.<br><br><img alt=\"A red 3D-printed remote case mockup held in hand: a Waveshare 1.5inch LCD Module up top, a cross-shaped button layout in the middle, and two batteries with a XIAO board at the bottom\" src=\"../img/notes/pult-maket-komponenty.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" />"
+  },
+  {
+    "id": "slider-vygib-kryshki",
+    "date": "22.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "Assembled, it works, but there's a catch :)<br><br>The lid isn't stiff enough and flexes noticeably, which lets you glimpse the indicator lights inside. And there's no room left inside the case to thicken it. So I'll end up making the lid thicker on the outside instead. Not very pretty, but simple.<br><br><img alt=\"The slider mounted on a tripod head with the electronics case clamped in place: the screen shows the Camera Slider menu, IDLE, 56%\" src=\"../img/notes/slider-mounted-working.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Also still working on the remote, here's where it's at.<br><br><img alt=\"CAD model of the remote's case: an elongated lid with a cutout for the screen and five holes for buttons, next to a perforated back panel\" src=\"../img/notes/remote-case-cad.webp\" width=\"1600\" height=\"1173\" loading=\"lazy\" /><br><br>I'd really like to fit a bigger battery in there, but I'm limited by the power of the built-in charger. And I don't really want to cram in another board. So it looks like for all my ideas I'll have to add a GPIO expander…"
+  },
+  {
+    "id": "slider-vsya-elektronika-v-kuche",
+    "date": "22.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "Got all the electronics assembled together. Still not sure how the lid is going to close, but I think I'll figure it out.<br><br><img alt=\"The slider's front panel fully assembled: a screen showing a 73% update progress bar, three indicator lights, two blue buttons, a toggle switch, and an encoder\" src=\"../img/notes/slider-panel-assembled.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" />"
+  },
+  {
+    "id": "slider-remont-i-pult",
+    "date": "21.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "Today the replacement components arrived. The ESP32 board fit the existing footprint perfectly. I did have to desolder the pin header, but I've done that before with the previous board, so it wasn't a big deal.<br><br>Stayed up late again, but got everything soldered back into place, and sorted out some of the wire lengths while I was at it. But once I assembled everything, the screen didn't light up. I figured I'd lost a connection somewhere, so I had to take apart everything I'd already rebuilt inside the case. And right at the very end of taking it apart, I realized I'd simply forgotten to connect the pin that controls the screen's backlight.<br><br>Once I connected it, everything worked. I haven't run a full test yet, but at the very least the screen lights up, and the buttons and encoder respond. Really all that's left is to check that the motor spins and the sensors work.<br><br><img alt=\"The slider's electronics disassembled inside the case next to the battery pack on the Creality 42-3 motor\" src=\"../img/notes/slider-repaired-open.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>I also found that I still had one GPIO pin free, and decided to hang a buzzer off it. I've got a few ideas for what it could be useful for while shooting. And besides that, a buzzer lets you add sound effects for various situations — a light click when turning the encoder, for example. A small thing, but a nice one.<br><br>So tomorrow I need to add a power switch and wire up the speaker. And then the case can finally be closed :)<br><br>Also, very briefly, basically as a background task, I did a bit of work on the remote. Mostly I just reprinted a slightly modified layout to arrange the buttons nicely.<br><br>In the end I decided not to make any pushers for the buttons, and instead just leave what's there exposed, to speed up development of this device.<br><br><img alt=\"A cross-shaped layout of five button modules on a red 3D-printed panel, no caps yet\" src=\"../img/notes/remote-dpad-switches.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" /><br><br><img alt=\"The same panel with black round caps on the buttons\" src=\"../img/notes/remote-dpad-caps.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" />"
+  },
+  {
+    "id": "xiao-esp32-remote",
+    "date": "20.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "I wrote below about frying the slider. The replacement board never showed up, even though I was really waiting for it — so I had to figure out what to do next.<br><br>I didn't want to start a big new project or switch direction entirely (going back to LEGO, say, which I'm not quite ready for). Then I remembered an unfinished project — a companion not just to the slider, but to shooting in general.<br><br>The idea was a single remote to control everything on set: lights, motorized dollies, and the cameras themselves (i.e. phones). I've dropped the lights part — I rarely need to fire it in sync with a shot. But starting a dolly or slider together with the recording, and stopping everything with one button, is genuinely useful.<br><br>Also, controlling the slider by hand is just awkward: every touch shows up on camera, especially in macro shots, where you want the camera to start moving smoothly on its own.<br><br>I already had a XIAO ESP32 set aside for this project — a tiny module whose main advantage is out-of-the-box battery support, no extra boards needed. So a small compact device gets both USB and battery power for free. Not a lot of pins, but should be enough for buttons and a screen.<br><br>Speaking of the screen — while restocking components to replace the fried ones, I remembered I'd bought this <a href=\"https://www.waveshare.com/1.5inch-lcd-module.htm\">Waveshare display</a> about six months ago, and it seemed like a good fit for this project.<br><br>Tested it with a sample sketch — looks great.<br><br><img alt=\"The Waveshare screen held in hand showing color test bars, connected by a ribbon cable to wires on the table\" src=\"../img/notes/xiao-screen-test.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" /><br><br>And a couple of bonus photos from the Waveshare page — what the module actually is: 1.5\", 240×280, IPS, 262K colors, SPI, NV3030B driver.<br><br><img alt=\"Product photo from Waveshare: the screen showing a colorful abstract image on a blue board\" src=\"../img/notes/waveshare-lcd-module.webp\" width=\"1206\" height=\"1066\" loading=\"lazy\" /><br><br><img alt=\"Demo screenshot from Waveshare: the screen showing time, date, a heartbeat graph, battery charge and pulse\" src=\"../img/notes/waveshare-lcd-demo.webp\" width=\"960\" height=\"660\" loading=\"lazy\" />"
+  },
+  {
+    "id": "slider-sgorela-elektronika",
+    "date": "19.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "The slider project was nearing completion. I thought all that was left was to mount the electronics panel and wire up the transistor that switches the load in the circuit — breaking the ground connection between the slider's main electronics and the power source.<br><br><img alt=\"The slider's board mounted in the case: the Creality 42-3 stepper motor next to the electronics board\" src=\"../img/notes/slider-panel-mounted.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Turns out not quite, and the slider gave up the ghost. I fried pretty much all of the electronics.<br><br>I never fully figured out the cause, but the most likely culprit is one of the connectors — the only one I hadn't covered with heat-shrink. Most likely it shorted out there, and high voltage ended up on the 3.3V rail.<br><br><img alt=\"The slider board from the side, a tangle of wires next to brass inserts and tools laid out on the table\" src=\"../img/notes/slider-panel-side.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>The ESP32-WROOM and the accelerometer definitely died. That's all I've been able to confirm so far. I got lucky that the screen wasn't connected at the time, so it survived. The INA226 seems to have survived too, but I'll probably replace it just to be safe.<br><br><img alt=\"Close-up of the ADXL345 accelerometer board among the wires on the back panel of the case\" src=\"../img/notes/slider-adxl-board.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>On the bright side, the motor driver survived, so at least I won't have to pull it out. Everything else is getting replaced.<br><br>The step-down converter probably survived too, but I'm eyeing it with suspicion as well and thinking about swapping it out anyway. It probably has reverse-voltage protection.<br><br>Unfortunately, I couldn't find the exact same ESP32 board. But if I'm reading the markings right, I found a slightly older revision of the same board, and it should match up in footprint and pin count. So I'm waiting for it to arrive any day now, and then I'll be able to continue.<br><br>Also, to cut down on the number of wires and reduce the odds of breaking something else with my clumsy hands, I ordered a ready-made MOSFET switch board. That way I won't have to build it all around a bare transistor, and the circuit gets a bit more compact.<br><br>Here's a screenshot of the order:<br><br><img alt=\"Screenshot of the parts order: ESP32, a 3.3V converter, a GY-291 ADXL345 accelerometer, a piezo buzzer, IRF4905PBF and AOD4184 MOSFETs, a TC29548A, shipping — total 3270 dinars\" src=\"../img/notes/slider-order-parts.webp\" width=\"1090\" height=\"427\" loading=\"lazy\" />"
+  },
+  {
+    "id": "slider-pochti-gotovo",
+    "date": "17.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "Stayed up late, but I think it's almost done. Haven't tested anything yet. The wiring job looks like it was inspired by Soviet-era equipment :)<br><br><img alt=\"Slider electronics laid out on a cutting mat: the case with its board, the battery, and the ESP32 board with wiring\" src=\"../img/notes/slider-assembly-desk.webp\" width=\"5712\" height=\"3213\" loading=\"lazy\" />"
+  },
+  {
+    "id": "slider-battery-new",
+    "date": "16.08.2026",
+    "tags": [
+      "slider",
+      "electronics",
+      "3d-printing"
+    ],
+    "text": "Spending forever fiddling with tiny details, constantly reprinting something. Hoping to wrap it up in a few days.<br><br>In the meantime, I put together a new battery — since I had to increase the clearance anyway, I figured I'd deal with squeezing it in.<br><br><img alt=\"New battery in a 3d-printed holder next to an ESP32 board and an iMAX B6 balance charger\" src=\"../img/notes/slider-battery-new.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" />"
+  },
+  {
+    "id": "slider-case-v2",
+    "date": "12.08.2026",
+    "tags": [
+      "slider",
+      "3d-printing",
+      "electronics"
+    ],
+    "text": "Even though last night I'd pretty much decided to just cut into the case, bolt on a patch with shifted holes, and seal it with epoxy and screws, today I went ahead and remodeled the whole case anyway.<br><br>Two reasons for that.<br><br>First — a friend of mine, looking at photos of what's going on inside the case, said: \"Well, I hope you'll do proper cable management in the new case.\"<br><br>I honestly didn't care much about the wiring at first, I just left slack for it. But on the other hand, I do want things to look neater. So I added a single panel to mount either all or most of the electronics on, with everything that has to stay mounted directly on the case connected through connectors instead.<br><br><img alt=\"New electronics panel with cutouts for modules and connectors\" src=\"../img/notes/slider-case-v2-panel.webp\" width=\"1716\" height=\"1242\" loading=\"lazy\" /><br><br>Besides the wiring, I also still wanted to fit more batteries into the case. The previous setup wasn't very efficient — yes, it had three 1500 mAh cells, but the motor constantly draws holding current, plus there's some overhead on top of that, so in the end it doesn't last very long, especially if you don't recharge before every use.<br><br>So I wanted to add three more batteries, since in my current wiring scheme the count has to be a multiple of three. In the previous build there was barely room for two extra ones, and fitting three more was basically impossible.<br><br>Now that there's more room in the case, I decided to actually try fitting three more batteries in.<br><br><img alt=\"Full assembled model of the new case\" src=\"../img/notes/slider-case-v2-assembly.webp\" width=\"1592\" height=\"1262\" loading=\"lazy\" /><br><br><img alt=\"Parts laid out on the printer bed before printing\" src=\"../img/notes/slider-case-v2-print-layout.webp\" width=\"1560\" height=\"964\" loading=\"lazy\" /><br><br>While writing this post I realized I forgot to enable supports, so off I go to restart the print :D<br><br><img alt=\"Anycubic printer starting the new case print\" src=\"../img/notes/slider-printer-start.webp\" width=\"4032\" height=\"2268\" loading=\"lazy\" />"
+  },
+  {
+    "id": "slider-korpus-vylet",
+    "date": "11.08.2026",
+    "tags": [
+      "slider",
+      "3d-printing"
+    ],
+    "text": "I figured today's post would be about finishing the slider build. Turned out fate had other plans.<br><br>Finished the enclosure, installed all the components, fixed one broken connection, closed the lid.<br><br><img alt=\"Slider from the side — closed enclosure, USB-C port for flashing\" src=\"../img/notes/slider-final-side.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Hit a firmware bug once and had to open the enclosure back up to reflash over wire. But overall OTA updates now install fine over the air.<br><br><img alt=\"Front panel screen during an OTA firmware update — &quot;Updating&quot;, 9%\" src=\"../img/notes/slider-updating.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" /><br><br>Passed all the basic tests and went to mount everything on the slider, hoping to at least test-fit it today.<br><br><img alt=\"Slider from the side, with the metal quick-release plate and a roller underneath it\" src=\"../img/notes/slider-mount-clip.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>And that's when it turned out I hadn't accounted for the roller clearance: the rollers that wrap the belt around the pulley run straight into the slider carriage's own rollers.<br><br><img alt=\"Close-up: the slider carriage roller pressing into the enclosure's corner right by the mount\" src=\"../img/notes/slider-roller-clash.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>No quick fix in sight so far. I did swap the bulky screws for slimmer ones, but it's still short by a few millimeters for comfortable use.<br><br>I see two possible solutions.<br><br>First — extend the enclosure. For example, cut off part of the old case, glue in and screw down an insert that shifts the case relative to the slider by a few millimeters.<br><br>The second option is more radical — redo the enclosure entirely. Move the stepper motor somewhere else and start figuring out a cleaner layout for everything.<br><br><img alt=\"Top-down view of the open slider enclosure: the pulleys and the stepper motor mount\" src=\"../img/notes/slider-top-open.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>The downside is I'd have to take everything apart again right now — peel off a pile of glue, desolder a pile of wires, and reassemble it all. What I like about this option is I'd get to tidy up the inside of the enclosure; what I don't like is that a full rework would eat up way too much time, and I want a finished slider now.<br><br>There seems to be a middle ground between the two: skip designing a whole new super-enclosure and just add the missing bits to the current one, bump its clearance up a little, and keep working from there.<br><br>The inside will need tidying up regardless, but at least without a full redesign."
+  },
+  {
+    "id": "slider-final-sborka",
+    "date": "10.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "Kept working on the slider today, and overall got it to what's basically a final version.<br><br><img alt=\"Slider held in hand — front panel with screen, buttons, and encoder in Input test mode\" src=\"../img/notes/slider-front-panel.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Toward the end I really let loose: crudely cutting parts with side cutters, carving stuff out with a soldering iron, gluing everything down with hot glue even where mounts were planned, and generally making a mess.<br><br>The main thing is the slider ended up working. Yes, there were a few issues with wires tearing off, but I didn't disassemble anything — just found a way to reach in everywhere and solder something to something. The result looks wild, but I'd like to believe I won't have to take it apart again anytime soon and it'll keep working fine.<br><br><img alt=\"Slider electronics inside the enclosure: a tangle of wires next to the Creality 42-3 motor\" src=\"../img/notes/slider-final-wiring.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Looks like there are even some free pins left on the ESP32, so I could add one of the potential extra devices or some functionality later.<br><br>The motor driver that wasn't working yesterday turned out to actually be damaged, so I replaced it with a new one. But that broken driver unexpectedly came in handy as a parts donor.<br><br>Turns out the INA226 module I'm using has a current limit of about 0.82 A — which wouldn't have worked for measuring current, since under load the slider's electronics draw more than an amp.<br><br>So I went to the electronics store website to pick out a new shunt resistor. Didn't work out, though: they don't carry small SMD shunt resistors, and I didn't want to cram in a big ceramic one.<br><br>Ended up wondering where else in electronics you'd find suitable resistors. One option turned out to be stepper motor drivers, and sure enough, a pair of the right resistors was sitting on that dead driver. Quickly desoldered them, soldered them in parallel with the shunt resistor on the INA226 board, and now I can measure current reasonably accurately.<br><br>I don't need much precision anyway, since I'm only planning to use the current reading to estimate runtime and battery state.<br><br>Now all that's left is closing the lid and mounting everything onto the slider's chassis itself. There's a problem with the lid though: the motor sticks out just slightly, by fractions of a millimeter. Not sure yet whether I'll reprint the lid or just sand down the existing one.<br><br>Reprinting the lid wouldn't take long, but it already has metal heat-set inserts melted into it, so I'd have to pull those out and melt them back in again."
+  },
+  {
+    "id": "slider-pitanie",
+    "date": "09.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "Spent the last couple of days slowly working through the electronics, mostly the power side, and this evening tried putting it all together. Glad nothing caught fire, but whether it actually works is still up in the air.<br><br>First off, yesterday it turned out the old power scheme had stopped working. The MT3608 step-up converter stopped responding to voltage adjustments, and the old Power Delivery trigger stopped responding to voltage settings too. My guess is one of these died and took the other down with it. I finished off the MT3608 myself, and the PD trigger too.<br><br>Found another PD trigger in my stash. Unlike the one I had before, this one is much more compact and easier to fit into the enclosure. Unfortunately it has no fallback to plain 5V — the slider won't charge off a regular USB, it needs Power Delivery. On the other hand, PD chargers are common enough these days, and I've got a PD power bank too, so I don't think that'll be an issue.<br><br>Today, once I'd assembled almost everything, the screen suddenly stopped working. Had to take it all apart again. That's the disassembled state with the extra modules you see in the photos.<br><br><img alt=\"Slider disassembled, top view, power board and modules visible\" src=\"../img/notes/slider-power-disassembled-top.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br><img alt=\"Slider disassembled, side view, wiring and modules\" src=\"../img/notes/slider-power-disassembled-side.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>The screen turned out to be a dumb problem: a couple of pins had come loose, a solder joint had cracked. Not too surprising given how much I was shoving wires around while stuffing everything in.<br><br>The second problem today was a dead TMC2208 stepper motor driver. I accidentally damaged the old driver while desoldering, ripping a few components off the board. Went and grabbed another TMC2208 from my stash that had already been used somewhere before, but it turned out to be dead too. Either that or I actually have a mistake in the schematic. Guess I'll need to grab yet another driver and test on that one to see if it works.<br><br>All in all, there's not a whole lot left."
+  },
+  {
+    "id": "slider-elektronika",
+    "date": "06.08.2026",
+    "tags": [
+      "slider",
+      "electronics"
+    ],
+    "text": "Continued working on the slider, got to the buttons. Thought that would be it, but ended up doing a lot more than expected — though I'm not too happy with the quality of some of the work.<br><br><img alt=\"PCB with two tactile buttons\" src=\"../img/notes/slider-button-plate.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" /><br><br><img alt=\"Buttons and limit switch mounted into the front panel\" src=\"../img/notes/slider-buttons-mount.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Wired up the encoder and all the buttons, flashed a test screen — everything responds: the encoder turns, the limit switches trigger.<br><br><img alt=\"Assembled top panel with the screen in Input test mode\" src=\"../img/notes/slider-input-test.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Besides the buttons, I made a battery compartment — fit the cells in so nothing shorts out and they take up as little space as possible.<br><br><img alt=\"Battery compartment with three cells in hand\" src=\"../img/notes/slider-battery-holder.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Bolted on a simple BMS board that was previously used in another project — figure it'll do for now.<br><br><img alt=\"BMS board and wiring inside the enclosure\" src=\"../img/notes/slider-bms.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>The assembly is a bit messy in places: some wires too short, some too long, and, as you can see, I'm making heavy use of hot glue. I could've made neat mounts for everything, but didn't feel like fussing over it — some things are easier to figure out in place.<br><br>Overall, a good chunk of the work is done. What's left is fitting a few modules and the motor, which will probably be tricky — some components need to be pulled off the old breadboard."
+  },
+  {
+    "id": "slider-korpus",
+    "date": "04.08.2026",
+    "tags": [
+      "slider",
+      "3d-printing"
+    ],
+    "text": "Got back to working on the slider. Printed the enclosure and heat-set brass inserts into it.<br><br><img alt=\"Pressing threaded inserts on a drill press\" src=\"../img/notes/slider-inserts.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" /><br><br>Glued in the screen.<br><br><img alt=\"Assembled front panel with the screen: ESP32 OK\" src=\"../img/notes/slider-front.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br><img alt=\"Wiring to the screen inside the enclosure\" src=\"../img/notes/slider-inside.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" /><br><br>Now I'm on the buttons — for some reason I kept putting off working through this part, but I guess it's time."
+  },
+  {
+    "id": "novyi-printer",
+    "date": "04.08.2026",
+    "tags": [
+      "3d-printing"
+    ],
+    "text": "Bought myself a new printer — Anycubic Kobra S1 Combo. Went back to where I started: CoreXY kinematics, where the bed only moves up and down and the head travels above it. My first printer had the same mechanics — a Flying Bear Ghost 5. After that it was bed-slingers of various kinds.<br><br><img alt=\"Anycubic Kobra S1 with the ACE unit on top\" src=\"../img/notes/kobra-s1.webp\" width=\"900\" height=\"1600\" loading=\"lazy\" /><br><br>So far I like everything: compared to the old printer it's quieter and takes up less space on the desk. The old one was pretty loud — overnight I'd either not leave a print running, or, if I really wanted to, set a reduced speed. And now I don't have to worry about the cat sticking its nose into hot parts.<br><br>The old printer's motherboard apparently died. Decided not to sink money and time into repairing it — printing matters more to me right now than digging through its guts.<br><br>Got back to a couple of projects that had been stalled without a printer."
+  },
+  {
+    "id": "pervaya-zametka",
     "date": "22.07.2026",
     "tags": [
       "meta"

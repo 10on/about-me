@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <title>дэнчик</title>
     <meta name="description" content="Денис Пушкарёв (дэнчик) — бэкенд-разработчик из Белграда, автор lego-канала DenchikBricks. Заметки и статьи про лего, ретро-технику, самоделки и игры.">
     <link rel="canonical" href="https://10on.github.io/about-me/">
@@ -10,6 +13,8 @@
     <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/">
     <link rel="alternate" hreflang="x-default" href="https://10on.github.io/about-me/">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:site_name" content="дэнчик">
     <meta property="og:title" content="дэнчик">
     <meta property="og:description" content="Денис Пушкарёв (дэнчик) — бэкенд-разработчик из Белграда, автор lego-канала DenchikBricks. Заметки и статьи про лего, ретро-технику, самоделки и игры.">
@@ -17,14 +22,14 @@
     <meta property="og:image" content="https://10on.github.io/about-me/img/persik.jpg">
     <meta property="og:image:width" content="1000">
     <meta property="og:image:height" content="882">
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/persik.jpg">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Денис Пушкарёв",
-      "alternateName": ["дэнчик", "Denchik", "DenchikBricks"],
+      "alternateName": ["дэнчик", "Denchik", "DenchikBricks", "Denis Pushkarev", "Denis Pushkaryov"],
       "url": "https://10on.github.io/about-me/",
       "image": "https://10on.github.io/about-me/img/persik.jpg",
       "jobTitle": "Backend Developer",
@@ -39,8 +44,11 @@
     <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="fetch" href="data/notes.json" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="style.css?v=98012eb4">
 </head>
 <body>
     <header>
@@ -54,27 +62,34 @@
                 <button id="theme-toggle" class="theme-toggle" title="тема">☾</button>
             </div>
         </div>
-        <nav>
+    </header>
+    <nav>
+        <div class="nav-links">
             <a href="notes.html">заметки</a>
             <a href="articles.html">статьи</a>
             <a href="lego.html">лего</a>
             <a href="retro.html">ретро</a>
             <a href="diy.html">самоделки</a>
             <a href="games.html">игры</a>
+            <a href="wishlist.html">хотелки</a>
             <a href="about.html">обо мне</a>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <main>
         <div class="container" style="padding-top: 1.75rem; padding-bottom: 1rem;">
-            <p style="font-size: clamp(18px, 4.4vw, 19.5px); line-height: 1.6;">Привет. Я <b style="font-weight: 600;">дэнчик</b> — бэкенд-разработчик, который вечерами берётся за паяльник, 3D-принтер и коробку лего. Тут короткие заметки и иногда статьи подлиннее: ретро-железо, самоделки, игры и жизнь между Белградом и всем остальным. Где-то рядом всегда кот <a href="about.html">Персик</a>.</p>
+            <p style="font-size: clamp(18px, 4.4vw, 19.5px); line-height: 1.6;">Привет. Я <b style="font-weight: 600;">Денис</b> — бэкенд-разработчик, который вечерами берётся за паяльник, 3D-принтер и коробку лего. Тут короткие заметки и иногда статьи подлиннее: ретро-железо, самоделки, игры и жизнь между Белградом и всем остальным. Где-то рядом всегда кот <a href="about.html" class="text-link">Персик</a>.</p>
 
             <div class="feed-heading">
                 <span class="feed-label">// заметки</span>
                 <span class="feed-line"></span>
                 <a href="notes.html" class="feed-more">все →</a>
             </div>
-            <div id="home-notes"></div>
+            <div id="home-notes">
+                <!-- BUILD:home-notes -->
+<div class="note-item" id="note-pylesos-korroziya-platy"><div class="note-meta"><span>05.09.2026</span><span class="note-meta-right"><span class="note-tags">#самоделки #электроника</span><button class="note-share" data-url="notes/pylesos-korroziya-platy.html" title="Поделиться" aria-label="Поделиться"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></button></span></div><p class="note-text"><img alt="Разобранный робот-пылесос на столе с открытой платой и мотором, рядом кот заглядывает внутрь" src="img/notes/vacuum-teardown-cat.webp" width="1600" height="900" loading="lazy" /><br><br>Уже несколько дней я живу с роботом-пылесосом на столе. Дело в том, что несколько месяцев назад мой робот-пылесос подорвался на сюрпризе от котика. И это произошло дважды. Сначала всё удалось отмыть более-менее, а во второй раз всё забилось так, что отмыть без разборки не получилось. В какой-то момент я его разобрал, почистил, но после этого перестало работать одно из колёс.<br><br>Около недели назад я наконец до него добрался: разобрал, проверил шлейф колеса, убедился, что не перегнул его. Это была самая очевидная неисправность, и на этом я тогда остановился.<br><br>Ещё в прошлый раз, немного разобрав один из моторов, я нашёл распиновку, бегло проверил основные сигналы и питание мультиметром — без осциллографа. Колесо выглядело относительно живым, подробных тестов я не делал.<br><br><img alt="Распиновка платы колёсного мотора крупным планом: контакты BK, F/R, PWM, FG, GND, VCC на плате XYD-2114F" src="img/notes/vacuum-wheel-pinout.webp" width="1600" height="900" loading="lazy" /><br><br>До того как лезть в анализ логики, сделал более простой тест: поменял два колеса местами — и старое колесо заработало на новом месте. Получается, неисправность где-то на плате, а я очень надеялся, что дело в самом колесе: его можно поменять готовым модулем за несколько десятков евро.<br><br>За материнку я боялся по двум причинам. Во-первых, это довольно сложный узел. Во-вторых, не факт, что поломка именно на ней — она может быть где-то ещё, и тогда, купив новую материнку, я рискую спалить и её. В общем, предстояло разбираться в вещах посерьёзнее.<br><br>Но когда я всё-таки решился и снял материнку, увидел достаточно явный очаг коррозии и окисления.<br><br><img alt="Крупный план зелёной платы робота-пылесоса с окислением возле одной из микросхем" src="img/notes/vacuum-board-corrosion.webp" width="900" height="1600" loading="lazy" /><br><br>Теперь буду пытаться это всё почистить и восстановить плату. Надеюсь, необратимых изменений не произошло. Жалею, что у меня нет полноценного микроскопа.</p><button class="note-expand-btn" type="button">Показать полностью ↓</button></div>
+<!-- /BUILD:home-notes -->
+            </div>
 
             <div class="feed-heading">
                 <span class="feed-label">// статьи</span>
@@ -83,7 +98,7 @@
             </div>
             <div id="home-articles">
                 <!-- BUILD:articles-home -->
-<div class="article-card"><div class="article-meta"><span class="article-tag">#железо #mini-pc</span><span>06.09.2026</span><span>· 8 мин</span></div><h3><a href="articles/mini-pc-defitsit.html">Мини-сборка ПК в эпоху дефицита: начало</a></h3><p>Собираю компактный игровой ПК из офисного Dell OptiPlex: поездка на белградскую свалку техники, Xeon с Али и видеокарта A2000, которой официально не существует.</p><a class="article-read-link" href="articles/mini-pc-defitsit.html">читать →</a></div>
+<p class="empty">скоро будет...</p>
 <!-- /BUILD:articles-home -->
             </div>
         </div>
@@ -112,22 +127,60 @@
             try { localStorage.setItem('denchik-theme', next); } catch (e) {}
         });
 
+        var SHARE_ICON = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>';
+        var EXPAND_LABEL = 'Показать полностью ↓';
+        var COLLAPSE_LABEL = 'Свернуть ↑';
+
+        function markOverflowingNotes(container) {
+            container.querySelectorAll('.note-item').forEach(function (item) {
+                var text = item.querySelector('.note-text');
+                if (text.scrollHeight > text.clientHeight + 2) {
+                    item.classList.add('has-overflow');
+                }
+            });
+        }
+
+        document.getElementById('home-notes').addEventListener('click', function (e) {
+            var expandBtn = e.target.closest('.note-expand-btn');
+            if (expandBtn) {
+                var text = expandBtn.closest('.note-item').querySelector('.note-text');
+                var expanded = text.classList.toggle('expanded');
+                expandBtn.textContent = expanded ? COLLAPSE_LABEL : EXPAND_LABEL;
+                return;
+            }
+            var btn = e.target.closest('.note-share');
+            if (!btn) return;
+            var url = new URL(btn.dataset.url, location.href).href;
+            if (navigator.share) {
+                navigator.share({ url: url }).catch(function () {});
+            } else if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(function () {
+                    btn.classList.add('copied');
+                    setTimeout(function () { btn.classList.remove('copied'); }, 1500);
+                });
+            }
+        });
+
+        markOverflowingNotes(document.getElementById('home-notes'));
+
         fetch('data/notes.json')
             .then(function (r) { return r.ok ? r.json() : []; })
             .then(function (notes) {
                 var container = document.getElementById('home-notes');
-                if (!notes.length) {
-                    container.innerHTML = '<p class="empty">скоро будет...</p>';
-                    return;
-                }
-                container.innerHTML = notes.slice(0, 4).map(function (n) {
-                    return '<div class="note-item"><div class="note-meta"><span>' + n.date + '</span><span class="note-tags">' +
+                var rest = notes.slice(1, 4);
+                if (!rest.length) return;
+                container.insertAdjacentHTML('beforeend', rest.map(function (n) {
+                    return '<div class="note-item" id="note-' + n.id + '"><div class="note-meta"><span>' + n.date + '</span><span class="note-meta-right"><span class="note-tags">' +
                         n.tags.map(function (t) { return '#' + t; }).join(' ') +
-                        '</span></div><p class="note-text">' + n.text + '</p></div>';
-                }).join('');
+                        '</span><button class="note-share" data-url="notes/' + n.id + '.html" title="Поделиться" aria-label="Поделиться">' + SHARE_ICON + '</button></span></div><p class="note-text">' + n.text + '</p><button class="note-expand-btn" type="button">' + EXPAND_LABEL + '</button></div>';
+                }).join(''));
+                markOverflowingNotes(container);
             })
             .catch(function () {
-                document.getElementById('home-notes').innerHTML = '<p class="empty">не удалось загрузить :(</p>';
+                var container = document.getElementById('home-notes');
+                if (!container.querySelector('.note-item')) {
+                    container.innerHTML = '<p class="empty">не удалось загрузить :(</p>';
+                }
             });
     </script>
 </body>

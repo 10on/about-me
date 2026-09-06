@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <title>статьи — дэнчик</title>
     <meta name="description" content="Статьи дэнчика на темы лего, ретро-техники, самоделок и разработки — когда заметки не хватает.">
     <link rel="canonical" href="https://10on.github.io/about-me/articles.html">
@@ -10,18 +13,24 @@
     <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/articles.html">
     <link rel="alternate" hreflang="x-default" href="https://10on.github.io/about-me/articles.html">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:site_name" content="дэнчик">
     <meta property="og:title" content="статьи — дэнчик">
     <meta property="og:description" content="Статьи дэнчика на темы лего, ретро-техники, самоделок и разработки — когда заметки не хватает.">
     <meta property="og:url" content="https://10on.github.io/about-me/articles.html">
     <meta property="og:image" content="https://10on.github.io/about-me/img/persik.jpg">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="882">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/persik.jpg">
     <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="style.css?v=98012eb4">
 </head>
 <body>
     <header>
@@ -35,23 +44,26 @@
                 <button id="theme-toggle" class="theme-toggle" title="тема">☾</button>
             </div>
         </div>
-        <nav>
+    </header>
+    <nav>
+        <div class="nav-links">
             <a href="notes.html">заметки</a>
             <a href="articles.html" class="active">статьи</a>
             <a href="lego.html">лего</a>
             <a href="retro.html">ретро</a>
             <a href="diy.html">самоделки</a>
             <a href="games.html">игры</a>
+            <a href="wishlist.html">хотелки</a>
             <a href="about.html">обо мне</a>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <main>
         <div class="container" style="padding-top: 2.5rem; padding-bottom: 1rem;">
             <h1 style="font-size: clamp(28px, 6vw, 34px); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.4rem;">Статьи</h1>
             <p style="font-size: 1rem; color: var(--muted); margin-bottom: 0.5rem;">Когда заметки не хватает — сажусь и разбираю тему целиком.</p>
             <!-- BUILD:articles-list -->
-<div class="article-card"><div class="article-meta"><span class="article-tag">#железо #mini-pc</span><span>06.09.2026</span><span>· 8 мин</span></div><h3><a href="articles/mini-pc-defitsit.html">Мини-сборка ПК в эпоху дефицита: начало</a></h3><p>Собираю компактный игровой ПК из офисного Dell OptiPlex: поездка на белградскую свалку техники, Xeon с Али и видеокарта A2000, которой официально не существует.</p><a class="article-read-link" href="articles/mini-pc-defitsit.html">читать →</a></div>
+<p class="empty">скоро будет...</p>
 <!-- /BUILD:articles-list -->
         </div>
     </main>

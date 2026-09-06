@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <title>лего-проекты — дэнчик</title>
     <meta name="description" content="Прогресс лего-проектов дэнчика: что в работе, что готово, что в планах.">
     <link rel="canonical" href="https://10on.github.io/about-me/projects.html">
@@ -10,18 +13,24 @@
     <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/projects.html">
     <link rel="alternate" hreflang="x-default" href="https://10on.github.io/about-me/projects.html">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:site_name" content="дэнчик">
     <meta property="og:title" content="лего-проекты — дэнчик">
     <meta property="og:description" content="Прогресс лего-проектов дэнчика: что в работе, что готово, что в планах.">
     <meta property="og:url" content="https://10on.github.io/about-me/projects.html">
     <meta property="og:image" content="https://10on.github.io/about-me/img/lego-cover.jpg">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="1161">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/lego-cover.jpg">
     <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="style.css?v=98012eb4">
     <style>
         .projects-header {
             padding-top: 3.5rem;
@@ -81,7 +90,7 @@
 
         .project-item {
             display: grid;
-            grid-template-columns: 1fr auto auto;
+            grid-template-columns: 1fr auto auto auto;
             align-items: center;
             gap: 1.25rem;
             padding: 0.85rem 0;
@@ -96,6 +105,36 @@
         .project-name {
             font-size: 0.95rem;
             font-weight: 500;
+        }
+
+        .project-status {
+            position: relative;
+            display: inline-flex;
+            font-size: 1rem;
+            line-height: 1;
+            cursor: default;
+        }
+
+        .status-tip {
+            position: absolute;
+            bottom: 130%;
+            right: 0;
+            background: var(--text);
+            color: var(--bg);
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            padding: 0.3rem 0.55rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.15s;
+            z-index: 2;
+        }
+
+        .project-status:hover .status-tip,
+        .project-status.show .status-tip {
+            opacity: 1;
         }
 
         .project-pct {
@@ -159,16 +198,19 @@
                 <button id="theme-toggle" class="theme-toggle" title="тема">☾</button>
             </div>
         </div>
-        <nav>
+    </header>
+    <nav>
+        <div class="nav-links">
             <a href="notes.html">заметки</a>
             <a href="articles.html">статьи</a>
             <a href="lego.html" class="active">лего</a>
             <a href="retro.html">ретро</a>
             <a href="diy.html">самоделки</a>
             <a href="games.html">игры</a>
+            <a href="wishlist.html">хотелки</a>
             <a href="about.html">обо мне</a>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <main>
         <div class="container">
@@ -215,6 +257,14 @@
         let allProjects = [];
         let currentFilter = 'active';
 
+        const STATUS_LABELS = {
+            released:  { emoji: '🎬', label: 'выпущен' },
+            active:    { emoji: '🛠️', label: 'активная работа' },
+            stalled:   { emoji: '💤', label: 'простаивает' },
+            frozen:    { emoji: '❄️', label: 'заморожен' },
+            cancelled: { emoji: '❌', label: 'отменён' }
+        };
+
         function isDone(p) { return p.progress >= 100; }
 
         function render() {
@@ -235,9 +285,14 @@
                 const pct  = Math.min(p.progress, 100);
                 const fillClass = done ? 'done' : (pct > 0 ? 'in-progress' : '');
                 const pctClass  = done ? 'done' : '';
+                const status = STATUS_LABELS[p.status] || (done ? STATUS_LABELS.released : STATUS_LABELS.active);
                 return `
                     <div class="project-item">
                         <div class="project-name">${p.name}</div>
+                        <span class="project-status" tabindex="0" role="button" aria-label="${status.label}">
+                            <span aria-hidden="true">${status.emoji}</span>
+                            <span class="status-tip">${status.label}</span>
+                        </span>
                         <div class="progress-track">
                             <div class="progress-fill ${fillClass}" style="width:${pct}%"></div>
                         </div>
@@ -253,6 +308,18 @@
                 currentFilter = btn.dataset.filter;
                 render();
             });
+        });
+
+        document.getElementById('projects-list').addEventListener('click', e => {
+            const badge = e.target.closest('.project-status');
+            document.querySelectorAll('.project-status.show').forEach(b => { if (b !== badge) b.classList.remove('show'); });
+            if (badge) {
+                badge.classList.toggle('show');
+                e.stopPropagation();
+            }
+        });
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.project-status.show').forEach(b => b.classList.remove('show'));
         });
 
         fetch('data/lego-projects.json')
