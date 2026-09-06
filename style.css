@@ -1068,6 +1068,19 @@ main {
     margin: 0 0 1.1rem;
 }
 
+.article-body a,
+.article-body a:visited {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.article-body a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
 .article-body h2 {
     font-family: var(--mono);
     font-size: 0.8rem;
@@ -1100,6 +1113,11 @@ main {
     line-height: 1.45;
     color: var(--muted);
     margin-top: 0.5rem;
+}
+
+.article-body figcaption a,
+.article-body figcaption a:visited {
+    color: var(--muted);
 }
 
 .article-body table {
