@@ -16,7 +16,7 @@ Ever since I switched to a Mac with Apple silicon, I've wanted to build myself a
 
 There's also a Chromebox: I flashed a custom BIOS and got Windows onto it, but the hardware turned out too weak even for older Win 10 builds.
 
-![](../../img/articles/mini-pc-lenovo-tiny.png)
+![roughly like this](../../img/articles/mini-pc-lenovo-tiny.png)
 
 Anyway, for the past few years I couldn't shake the idea of building a mini-PC, ideally with a discrete GPU. In the HP T610 I put a GT 730 — the last series with official XP support. But I still haven't actually played anything on it. I should 🙂
 
@@ -93,7 +93,7 @@ All up from AliExpress: the graphics card, the CPU, a memory kit, and an M.2 →
 
 **PPS.** One last thing: the ideal mini build, in my mind, has always been something based on the Lenovo M920q.
 
-![roughly like this](../../img/articles/mini-pc-m920q.png)
+![](../../img/articles/mini-pc-m920q.png)
 
 A mini-PC with two DDR4 slots, NVMe, and a PCIe slot you can use, via a riser, to run a full-size graphics card — the same A2000 or another single-slot card. It's basically the same bodge as mine, just more compact: people 3D-print brackets, lay the card "one floor up" above the case, and rig an external PSU for it. [Here's an M920q + RX 6400 build, for instance](https://www.reddit.com/r/sffpc/comments/1628znv/another_lenovo_tiny_m920q_rx_6400_build/) — that's roughly the look I'm heading for, just on an SFF case.
 
