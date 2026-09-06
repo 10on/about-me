@@ -24,9 +24,7 @@ Ever since I switched to a Mac with Apple silicon, I've wanted to build myself a
 
 There's also a Chromebox: I flashed a custom BIOS and got Windows onto it, but the hardware turned out too weak even for older Win 10 builds.
 
-![roughly like this](../../img/articles/mini-pc-lenovo-tiny.png)
-
-*Machine Type: 10H5, Part Number: 10H50003US*
+![roughly like this · Machine Type 10H5 · Part Number 10H50003US](../../img/articles/mini-pc-lenovo-tiny.png)
 
 | | ThinkCentre Chromebox |
 |---|---|
@@ -137,8 +135,8 @@ With my build I'm hoping to just barely clear 300, though I originally figured 2
 | Dell OptiPlex SFF | €30 | LGA1150, 4× DDR3, PCIe x16 + x4 |
 | Core i7-4790K | €50 | 4 cores / 8 threads, 4.0–4.4 GHz |
 | DDR3L 2×8 GB | €50 | 16 GB |
-| RTX A2000 8 GB | €145 | 8 GB, 1 slot, no extra power |
+| RTX A2000 8 GB | €145 | 8 GB, 1 slot, no extra power · Ampere: 2560 CUDA, 2nd-gen RT, DLSS 3.5 |
 | M.2 → PCIe adapter | €5 | for NVMe |
-| NVMe 512 GB | from my stash | — |
+| NVMe 512 GB | — | from my stash |
 
 Anyway — I meant to write a short note about the plans and the trip. It turned into a mini-article. Something like that.

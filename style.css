@@ -827,9 +827,16 @@ main {
 }
 
 .note-item {
-    padding: 1.05rem 0;
-    border-bottom: 1px solid var(--border);
+    padding: 1.6rem 0 0;
+    margin-top: 1.6rem;
+    border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
     scroll-margin-top: 1rem;
+}
+
+.note-item:first-child {
+    padding-top: 0.4rem;
+    margin-top: 0.4rem;
+    border-top: none;
 }
 
 .note-meta {
@@ -1145,23 +1152,23 @@ main {
 }
 
 .article-body table {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     border-collapse: collapse;
-    margin: 1.6rem 0;
+    margin: 1.8rem auto;
     font-size: 0.95rem;
 }
 
 .article-body th,
 .article-body td {
     text-align: left;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0.9rem;
     border-bottom: 1px solid var(--border);
     vertical-align: top;
 }
 
-.article-body th:first-child,
 .article-body td:first-child {
-    padding-left: 0;
+    white-space: nowrap;
 }
 
 .article-body th {
