@@ -1,5 +1,14 @@
 [
   {
+    "id": "hp-t610-win98-xp",
+    "date": "14.09.2026",
+    "tags": [
+      "retro",
+      "diy"
+    ],
+    "text": "<img alt=\"Monitor screen showing the Windows XP boot logo, with the disassembled HP T610 thin client below\" src=\"../img/notes/t610-xp-boot.webp\" width=\"1125\" height=\"1999\" loading=\"lazy\" /><br><br>Early last week I tinkered with installing OSes on my HP T610. Both had their quirks, especially Windows 98. But everything ended up working — on XP even all the drivers were found automatically, including the Wi-Fi dongle.<br><br><img alt=\"A &quot;System Properties&quot; window showing Windows 98 SE on top of the disassembled HP T610, with an AOC monitor next to it (work Slack on the laptop on the right is blurred out)\" src=\"../img/notes/t610-win98-monitor.webp\" width=\"1999\" height=\"1125\" loading=\"lazy\" /><br><br>Windows 7 is next — I expect the fewest problems there.<br><br>Also, a monitor arrived, as you can probably tell from the photos."
+  },
+  {
     "id": "pylesos-korroziya-platy",
     "date": "05.09.2026",
     "tags": [
