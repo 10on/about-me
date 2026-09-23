@@ -30,7 +30,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="style.css?v=af0c7f6e">
+    <link rel="stylesheet" href="style.css?v=140738ae">
 </head>
 <body class="page-diy">
     <header>
@@ -138,12 +138,13 @@
                 el.innerHTML = filtered.map(function (n) {
                     return '<div class="note-item"><div class="note-meta"><span>' + n.date + '</span><span class="note-tags">' +
                         n.tags.map(function (t) { return '#' + t; }).join(' ') +
-                        '</span></div><p class="note-text">' + n.text + '</p></div>';
+                        '</span></div><p class="note-text">' + n.text + '</p><a class="note-comments-link" href="notes/' + n.id + '.html#comments">Комментарии</a></div>';
                 }).join('');
             })
             .catch(function () {
                 document.getElementById('topic-notes').innerHTML = '<p class="empty">не удалось загрузить :(</p>';
             });
     </script>
+    <script src="reactions.js?v=e0adcf83"></script>
 </body>
 </html>

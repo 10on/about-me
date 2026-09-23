@@ -9,6 +9,7 @@
     <meta name="description" content="Spent the last couple of days slowly working through the electronics, mostly the power side, and this evening tried putting it all together. Glad nothing…">
     <meta name="robots" content="noindex">
     <link rel="canonical" href="https://10on.github.io/about-me/en/notes/slider-pitanie.html">
+    <link rel="alternate" hreflang="ru" href="https://10on.github.io/about-me/notes/slider-pitanie.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Denchik">
     <meta property="og:title" content="Spent the last couple of days slowly working through the electronics… — Denchik">
@@ -19,14 +20,30 @@
     <meta property="og:image:height" content="900">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/notes/slider-power-disassembled-top.webp">
-    <meta http-equiv="refresh" content="0; url=../notes.html#note-slider-pitanie">
-    <link rel="stylesheet" href="../../style.css?v=af0c7f6e">
+    <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="stylesheet" href="../../style.css?v=140738ae">
 </head>
 <body>
-    <div class="container" style="padding-top: 2.5rem;">
-        <p class="note-text">Spent the last couple of days slowly working through the electronics, mostly the power side, and this evening tried putting it all together. Glad nothing…</p>
-        <p><a href="../notes.html#note-slider-pitanie">Open note →</a></p>
-    </div>
-    <script>location.replace("../notes.html#note-slider-pitanie");</script>
+    <header>
+        <div class="header-top">
+            <a href="../../index.html" class="logo">Denchik</a>
+            <div class="header-actions"><a class="lang-switch" href="../../notes/slider-pitanie.html" title="RU">RU</a><button id="theme-toggle" class="theme-toggle" title="theme">☾</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container note-page">
+            <a class="back-link" href="../notes.html#note-slider-pitanie">← all notes</a>
+            <div class="note-meta"><span>09.08.2026</span><span class="note-tags">#slider #electronics</span></div>
+            <div class="note-text expanded">Spent the last couple of days slowly working through the electronics, mostly the power side, and this evening tried putting it all together. Glad nothing caught fire, but whether it actually works is still up in the air.<br><br>First off, yesterday it turned out the old power scheme had stopped working. The MT3608 step-up converter stopped responding to voltage adjustments, and the old Power Delivery trigger stopped responding to voltage settings too. My guess is one of these died and took the other down with it. I finished off the MT3608 myself, and the PD trigger too.<br><br>Found another PD trigger in my stash. Unlike the one I had before, this one is much more compact and easier to fit into the enclosure. Unfortunately it has no fallback to plain 5V — the slider won't charge off a regular USB, it needs Power Delivery. On the other hand, PD chargers are common enough these days, and I've got a PD power bank too, so I don't think that'll be an issue.<br><br>Today, once I'd assembled almost everything, the screen suddenly stopped working. Had to take it all apart again. That's the disassembled state with the extra modules you see in the photos.<br><br><img alt="Slider disassembled, top view, power board and modules visible" src="../../img/notes/slider-power-disassembled-top.webp" width="1600" height="900" loading="lazy" /><br><br><img alt="Slider disassembled, side view, wiring and modules" src="../../img/notes/slider-power-disassembled-side.webp" width="1600" height="900" loading="lazy" /><br><br>The screen turned out to be a dumb problem: a couple of pins had come loose, a solder joint had cracked. Not too surprising given how much I was shoving wires around while stuffing everything in.<br><br>The second problem today was a dead TMC2208 stepper motor driver. I accidentally damaged the old driver while desoldering, ripping a few components off the board. Went and grabbed another TMC2208 from my stash that had already been used somewhere before, but it turned out to be dead too. Either that or I actually have a mistake in the schematic. Guess I'll need to grab yet another driver and test on that one to see if it works.<br><br>All in all, there's not a whole lot left.</div>
+            <section id="comments" class="comments-section" data-giscus-term="note:slider-pitanie" hidden>
+                <h2>Comments</h2>
+                <div class="giscus"></div>
+            </section>
+        </div>
+    </main>
+    <footer><div class="footer-meta">Denchik — <span id="year"></span></div></footer>
+    <div id="img-modal"><div class="modal-backdrop"><img id="img-modal-img" src="" alt=""></div></div>
+    <script src="../../main.js?v=d4120cdb"></script>
+    <script src="../../comments.js"></script>
 </body>
 </html>

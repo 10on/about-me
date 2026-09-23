@@ -48,7 +48,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="../style.css?v=af0c7f6e">
+    <link rel="stylesheet" href="../style.css?v=140738ae">
 </head>
 <body>
     <header>
@@ -87,7 +87,7 @@
             </div>
             <div id="home-notes">
                 <!-- BUILD:home-notes -->
-<div class="note-item" id="note-dacta-control-logo-disketka"><div class="note-meta"><span>18.09.2026</span><span class="note-meta-right"><span class="note-tags">#lego #retro</span><button class="note-share" data-url="notes/dacta-control-logo-disketka.html" title="Share" aria-label="Share"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></button></span></div><p class="note-text"><img alt="A LEGO Dacta Control Logo floppy disk for the BBC Micro, from 1988, scanned on an office scanner" src="../img/notes/dacta-control-logo-disk.webp" width="1400" height="1396" loading="lazy" /><br><br>Made some progress hunting down rare dacta stuff — a passion at the intersection of lego and retro electronics. Dug up this floppy from the eighties on eBay — a LEGO Control Logo disk. It's a floppy for the British <a href="https://en.wikipedia.org/wiki/BBC_Micro">BBC Micro</a> computer.<br><br>There aren't many good photos of floppies from that era online, so I stuck this one in an office scanner =)</p><button class="note-expand-btn" type="button">Show more ↓</button></div>
+<div class="note-item" id="note-dacta-control-logo-disketka"><div class="note-meta"><span>18.09.2026</span><span class="note-meta-right"><span class="note-tags">#lego #retro</span><button class="note-share" data-url="notes/dacta-control-logo-disketka.html" title="Share" aria-label="Share"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></button></span></div><p class="note-text"><img alt="A LEGO Dacta Control Logo floppy disk for the BBC Micro, from 1988, scanned on an office scanner" src="../img/notes/dacta-control-logo-disk.webp" width="1400" height="1396" loading="lazy" /><br><br>Made some progress hunting down rare dacta stuff — a passion at the intersection of lego and retro electronics. Dug up this floppy from the eighties on eBay — a LEGO Control Logo disk. It's a floppy for the British <a href="https://en.wikipedia.org/wiki/BBC_Micro">BBC Micro</a> computer.<br><br>There aren't many good photos of floppies from that era online, so I stuck this one in an office scanner =)</p><button class="note-expand-btn" type="button">Show more ↓</button><a class="note-comments-link" href="notes/dacta-control-logo-disketka.html#comments">Comments</a></div>
 <!-- /BUILD:home-notes -->
             </div>
 
@@ -172,7 +172,7 @@
                 container.insertAdjacentHTML('beforeend', rest.map(function (n) {
                     return '<div class="note-item" id="note-' + n.id + '"><div class="note-meta"><span>' + n.date + '</span><span class="note-meta-right"><span class="note-tags">' +
                         n.tags.map(function (t) { return '#' + t; }).join(' ') +
-                        '</span><button class="note-share" data-url="notes/' + n.id + '.html" title="Share" aria-label="Share">' + SHARE_ICON + '</button></span></div><p class="note-text">' + n.text + '</p><button class="note-expand-btn" type="button">' + EXPAND_LABEL + '</button></div>';
+                        '</span><button class="note-share" data-url="notes/' + n.id + '.html" title="Share" aria-label="Share">' + SHARE_ICON + '</button></span></div><p class="note-text">' + n.text + '</p><button class="note-expand-btn" type="button">' + EXPAND_LABEL + '</button><a class="note-comments-link" href="notes/' + n.id + '.html#comments">Comments</a></div>';
                 }).join(''));
                 markOverflowingNotes(container);
             })
@@ -183,5 +183,6 @@
                 }
             });
     </script>
+    <script src="../reactions.js?v=e0adcf83"></script>
 </body>
 </html>

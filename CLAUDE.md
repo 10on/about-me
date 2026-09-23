@@ -58,11 +58,17 @@ The site has a full English mirror under `en/` (e.g. `en/index.html`, `en/lego.h
 - Every page (both languages) carries three `hreflang` alternate links (`ru`, `en`, `x-default`) pointing at each other, plus a `.lang-switch` header link (`EN`/`RU`) toggling between the two trees. JSON-LD `alternateName` intentionally keeps the Cyrillic name as an alias on English pages.
 - `build.py` constants involved: `NAV_LABELS`, `BRAND`, `TAGLINE`, `STRINGS` (per-language UI strings), `TARGETS` (per-language build targets), `LANG_DIRS` (`{'ru': ROOT, 'en': ROOT / 'en'}`).
 
+## Comments
+
+`comments.js` embeds giscus on standalone `notes/<slug>.html` and `articles/<slug>.html` pages, using the `Announcements` category in `10on/about-me`. The discussions use stable `note:<slug>` and `article:<slug>` terms; Russian and English versions share one thread. Standalone note pages now contain the full note instead of redirecting to the feed. GitHub Discussions must stay enabled and the giscus GitHub App must have access to the repository. Edit `build.py` and rebuild to change generated pages.
+
+`reactions.js` adds read-only reaction counts to note/article cards in both language feeds. It reads `data/reactions.json`, a shared static snapshot of GitHub Discussion reaction totals. Existing discussions link directly to GitHub so readers can react there; items without discussions link to the page's Giscus block, where the first reaction creates a discussion. `.github/workflows/pages.yml` refreshes the snapshot with `scripts/update_reactions.py` on pushes and every six hours; scheduled/manual runs commit changed snapshots so Cloudflare Pages can serve them too. Locally the snapshot remains `{}` until a token-backed refresh. Never expose `GITHUB_TOKEN` to browser code.
+
 ## Deploying
 
 Two hosts, both auto-deploy on push to `master`:
 
-- **GitHub Pages** — `.github/workflows/pages.yml` runs on every push: installs `markdown`, runs `python3 build.py`, uploads the repo root as the Pages artifact. Enable once in repo Settings → Pages → Source: "GitHub Actions". No local build step needed for this host.
+- **GitHub Pages** — `.github/workflows/pages.yml` runs on every push and every six hours: installs `markdown` and `pillow`, refreshes reaction counts, runs `python3 build.py`, uploads the repo root as the Pages artifact. Enable once in repo Settings → Pages → Source: "GitHub Actions". No local build step needed for this host.
 - **Cloudflare Pages** — connected via the dashboard, no build command (output directory `/`), so it serves whatever HTML is committed as-is. Run `python3 build.py` locally and commit the generated HTML before pushing if you want Cloudflare's copy to reflect the latest content. `_headers` sets long `Cache-Control` lifetimes for `img/*`, `style.css`, `main.js` (Cloudflare Pages' [`_headers` convention](https://developers.cloudflare.com/pages/configuration/headers/)); GitHub Pages ignores this file. Because those lifetimes are long, `build.py`'s last step (`apply_asset_versions`) rewrites every `style.css`/`main.js` reference across all HTML pages to `...css?v=<content-hash>` (`main.js` versioned separately for `main.js` vs `en/main.js`, since they differ) — a content change gets a new URL and busts the CDN/browser cache immediately instead of waiting out the `_headers` TTL. It's idempotent and runs automatically on every `python3 build.py`, no manual step needed.
 
 ## SEO

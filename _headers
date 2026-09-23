@@ -6,3 +6,9 @@
 
 /main.js
   Cache-Control: public, max-age=604800
+
+/reactions.js
+  Cache-Control: public, max-age=604800
+
+/data/reactions.json
+  Cache-Control: public, max-age=300

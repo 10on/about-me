@@ -30,7 +30,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="../style.css?v=af0c7f6e">
+    <link rel="stylesheet" href="../style.css?v=140738ae">
 </head>
 <body>
     <header>
@@ -154,7 +154,7 @@
             container.innerHTML = visible.map(function (n) {
                 return '<div class="note-item" id="note-' + n.id + '"><div class="note-meta"><span>' + n.date + '</span><span class="note-meta-right"><span class="note-tags">' +
                     n.tags.map(function (t) { return '#' + t; }).join(' ') +
-                    '</span><button class="note-share" data-url="notes/' + n.id + '.html" title="Share" aria-label="Share">' + SHARE_ICON + '</button></span></div><p class="note-text">' + n.text + '</p><button class="note-expand-btn" type="button">' + EXPAND_LABEL + '</button></div>';
+                    '</span><button class="note-share" data-url="notes/' + n.id + '.html" title="Share" aria-label="Share">' + SHARE_ICON + '</button></span></div><p class="note-text">' + n.text + '</p><button class="note-expand-btn" type="button">' + EXPAND_LABEL + '</button><a class="note-comments-link" href="notes/' + n.id + '.html#comments">Comments</a></div>';
             }).join('');
             if (filtered.length > visible.length) {
                 container.insertAdjacentHTML('beforeend', '<button id="load-more-btn" class="load-more-btn" type="button">' + LOAD_MORE_LABEL + '</button>');
@@ -196,5 +196,6 @@
                 document.getElementById('notes-list').innerHTML = '<p class="empty">failed to load :(</p>';
             });
     </script>
+    <script src="../reactions.js?v=e0adcf83"></script>
 </body>
 </html>

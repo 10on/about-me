@@ -9,6 +9,7 @@
     <meta name="description" content="Сегодня продолжал работу над слайдером и в целом получилось сделать уже практически финальную версию. Под конец я, конечно, совсем разошёлся: стал грубо резать…">
     <meta name="robots" content="noindex">
     <link rel="canonical" href="https://10on.github.io/about-me/notes/slider-final-sborka.html">
+    <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/notes/slider-final-sborka.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="дэнчик">
     <meta property="og:title" content="Сегодня продолжал работу над слайдером и в целом получилось сделать… — дэнчик">
@@ -19,14 +20,30 @@
     <meta property="og:image:height" content="900">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/notes/slider-front-panel.webp">
-    <meta http-equiv="refresh" content="0; url=../notes.html#note-slider-final-sborka">
-    <link rel="stylesheet" href="../style.css?v=af0c7f6e">
+    <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="stylesheet" href="../style.css?v=140738ae">
 </head>
 <body>
-    <div class="container" style="padding-top: 2.5rem;">
-        <p class="note-text">Сегодня продолжал работу над слайдером и в целом получилось сделать уже практически финальную версию. Под конец я, конечно, совсем разошёлся: стал грубо резать…</p>
-        <p><a href="../notes.html#note-slider-final-sborka">Открыть заметку →</a></p>
-    </div>
-    <script>location.replace("../notes.html#note-slider-final-sborka");</script>
+    <header>
+        <div class="header-top">
+            <a href="../index.html" class="logo">дэнчик</a>
+            <div class="header-actions"><a class="lang-switch" href="../en/notes/slider-final-sborka.html" title="EN">EN</a><button id="theme-toggle" class="theme-toggle" title="тема">☾</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container note-page">
+            <a class="back-link" href="../notes.html#note-slider-final-sborka">← все заметки</a>
+            <div class="note-meta"><span>10.08.2026</span><span class="note-tags">#слайдер #электроника</span></div>
+            <div class="note-text expanded">Сегодня продолжал работу над слайдером и в целом получилось сделать уже практически финальную версию.<br><br><img alt="Слайдер в руке — передняя панель с экраном, кнопками и энкодером в режиме Input test" src="../img/notes/slider-front-panel.webp" width="1600" height="900" loading="lazy" /><br><br>Под конец я, конечно, совсем разошёлся: стал грубо резать детали кусачками, вырезать что-то паяльником, лепить всё на термосопли, хотя были предусмотрены крепления, и заниматься прочим непотребством.<br><br>Самое главное, что в итоге слайдер заработал. Да, было несколько проблем в виде оборвавшихся проводов, но я не стал ничего разбирать — нашёл, как везде залезть и что-то куда-то припаять. Картина получается, конечно, дикая, но хочется верить, что разбирать всё это в ближайшее время мне не придётся и всё будет работать хорошо.<br><br><img alt="Электроника слайдера в корпусе: клубок проводов рядом с мотором Creality 42-3" src="../img/notes/slider-final-wiring.webp" width="1600" height="900" loading="lazy" /><br><br>Вроде бы даже остались свободные пины на ESP32, и можно будет добавить что-то из потенциальных устройств или какого-либо функционала.<br><br>Драйвер мотора, который вчера не работал, всё-таки был повреждён, поэтому я заменил его на новый. Но внезапно этот драйвер пригодился ещё и как донор запчастей.<br><br>Дело в том, что модуль INA226 внезапно для меня оказался с пределом по току примерно 0,82 ампера. Я не смог бы измерять ток, потому что под нагрузкой вся электроника слайдера потребляет больше ампера.<br><br>Соответственно, пошёл я на сайт радиомагазина, чтобы подобрать новый резистор для шунта. Но сделать этого не удалось, так как на сайте нет маленьких шунтовых SMD-резисторов, а пихать здоровый керамический резистор мне не хотелось.<br><br>В итоге задался вопросом, где вообще в технике бывают подходящие резисторы. Одним из вариантов оказались драйверы шаговых моторов, и как раз пара нужных резисторов нашлась на драйвере, который не работает. Я их быстренько выпаял, запаял параллельно с резистором-шунтом на плате INA226, и теперь могу относительно точно измерять ток.<br><br>Большая точность мне и не нужна, потому что с помощью измерения тока я планирую всего лишь оценивать время работы и состояние батареи.<br><br>Ну а теперь остаётся закрыть крышку и установить всё это уже на само шасси слайдера. С крышкой есть проблема: моторчик немного выступает, буквально на доли миллиметра. Пока не знаю, буду ли я перепечатывать крышку или просто сточу существующую.<br><br>Перепечатать крышку вроде бы недолго, но в неё уже вплавлены металлические втулки, и тогда их придётся доставать и вплавлять заново.</div>
+            <section id="comments" class="comments-section" data-giscus-term="note:slider-final-sborka" hidden>
+                <h2>Комментарии</h2>
+                <div class="giscus"></div>
+            </section>
+        </div>
+    </main>
+    <footer><div class="footer-meta">дэнчик — <span id="year"></span></div></footer>
+    <div id="img-modal"><div class="modal-backdrop"><img id="img-modal-img" src="" alt=""></div></div>
+    <script src="../main.js?v=d4120cdb"></script>
+    <script src="../comments.js"></script>
 </body>
 </html>

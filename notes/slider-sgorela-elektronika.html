@@ -9,6 +9,7 @@
     <meta name="description" content="Проект слайдера близился к завершению. Мне казалось, что осталось только закрепить панель с электроникой и подключить транзистор, который управляет нагрузкой в…">
     <meta name="robots" content="noindex">
     <link rel="canonical" href="https://10on.github.io/about-me/notes/slider-sgorela-elektronika.html">
+    <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/notes/slider-sgorela-elektronika.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="дэнчик">
     <meta property="og:title" content="Проект слайдера близился к завершению. Мне казалось, что осталось… — дэнчик">
@@ -19,14 +20,30 @@
     <meta property="og:image:height" content="900">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/notes/slider-panel-mounted.webp">
-    <meta http-equiv="refresh" content="0; url=../notes.html#note-slider-sgorela-elektronika">
-    <link rel="stylesheet" href="../style.css?v=af0c7f6e">
+    <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="stylesheet" href="../style.css?v=140738ae">
 </head>
 <body>
-    <div class="container" style="padding-top: 2.5rem;">
-        <p class="note-text">Проект слайдера близился к завершению. Мне казалось, что осталось только закрепить панель с электроникой и подключить транзистор, который управляет нагрузкой в…</p>
-        <p><a href="../notes.html#note-slider-sgorela-elektronika">Открыть заметку →</a></p>
-    </div>
-    <script>location.replace("../notes.html#note-slider-sgorela-elektronika");</script>
+    <header>
+        <div class="header-top">
+            <a href="../index.html" class="logo">дэнчик</a>
+            <div class="header-actions"><a class="lang-switch" href="../en/notes/slider-sgorela-elektronika.html" title="EN">EN</a><button id="theme-toggle" class="theme-toggle" title="тема">☾</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container note-page">
+            <a class="back-link" href="../notes.html#note-slider-sgorela-elektronika">← все заметки</a>
+            <div class="note-meta"><span>19.08.2026</span><span class="note-tags">#слайдер #электроника</span></div>
+            <div class="note-text expanded">Проект слайдера близился к завершению. Мне казалось, что осталось только закрепить панель с электроникой и подключить транзистор, который управляет нагрузкой в схеме — размыкает землю между основной электроникой слайдера и источником питания.<br><br><img alt="Смонтированная плата слайдера в корпусе: шаговый мотор Creality 42-3 и электроника на плате рядом" src="../img/notes/slider-panel-mounted.webp" width="1600" height="900" loading="lazy" /><br><br>Но не тут-то было, и слайдер приказал долго жить. Я пожёг практически всю электронику.<br><br>До конца я так и не понял, в чём была причина, но самый вероятный кандидат — один из разъёмов, единственный, который не был закрыт термоусадкой. Скорее всего, там произошло замыкание, и высокое напряжение попало на шину 3,3 В.<br><br><img alt="Плата слайдера сбоку с клубком проводов, рядом лежат латунные вставки и инструменты" src="../img/notes/slider-panel-side.webp" width="1600" height="900" loading="lazy" /><br><br>Точно умерли ESP32-WROOM и акселерометр. Пока что это всё, что удалось определить. Мне повезло, что в этот момент не был подключён экран, поэтому он остался целым. INA226 вроде бы тоже уцелел, но я, скорее всего, заменю его от греха подальше.<br><br><img alt="Плата акселерометра ADXL345 крупным планом среди проводов на задней стенке корпуса" src="../img/notes/slider-adxl-board.webp" width="1600" height="900" loading="lazy" /><br><br>Из приятного — выжил драйвер мотора, так что его хотя бы не придётся вытаскивать. Ну а всё остальное — под замену.<br><br>Также, скорее всего, уцелел преобразователь, но на него я тоже немного косо смотрю и думаю, не поменять ли его заодно. Скорее всего, у него есть защита от обратного напряжения.<br><br>К сожалению, точно такой же платы ESP32 я не нашёл. Но, если я правильно понял маркировку, нашлась чуть более старая ревизия той же платы, и вроде бы она должна подойти по посадочным местам и количеству пинов. Так что жду её со дня на день и после этого смогу продолжить работу.<br><br>Также, чтобы уменьшить количество проводов и снизить вероятность что-нибудь снова сломать своими кривыми руками, я заказал готовую платку ключа на полевом транзисторе. Так не придётся городить всё на отдельном транзисторе, и схема станет ещё немного компактнее.<br><br>Вот общий скрин заказа:<br><br><img alt="Скрин заказа запчастей: ESP32, преобразователь 3.3В, акселерометр GY-291 ADXL345, пьезопищалка, MOSFET-транзисторы IRF4905PBF и AOD4184, TC29548A, доставка — итого 3270 динаров" src="../img/notes/slider-order-parts.webp" width="1090" height="427" loading="lazy" /></div>
+            <section id="comments" class="comments-section" data-giscus-term="note:slider-sgorela-elektronika" hidden>
+                <h2>Комментарии</h2>
+                <div class="giscus"></div>
+            </section>
+        </div>
+    </main>
+    <footer><div class="footer-meta">дэнчик — <span id="year"></span></div></footer>
+    <div id="img-modal"><div class="modal-backdrop"><img id="img-modal-img" src="" alt=""></div></div>
+    <script src="../main.js?v=d4120cdb"></script>
+    <script src="../comments.js"></script>
 </body>
 </html>

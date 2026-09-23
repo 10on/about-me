@@ -48,9 +48,9 @@ BRAND = {'ru': 'дэнчик', 'en': 'Denchik'}
 TAGLINE = {'ru': 'лего · ретро · самоделки · разработка', 'en': 'lego · retro · DIY · dev'}
 STRINGS = {
     'ru': {'theme_title': 'тема', 'email': 'почта', 'all_articles': '← все статьи', 'read_more': 'читать →',
-           'open_note': 'Открыть заметку →'},
+           'open_note': '← все заметки'},
     'en': {'theme_title': 'theme', 'email': 'email', 'all_articles': '← all articles', 'read_more': 'read →',
-           'open_note': 'Open note →'},
+           'open_note': '← all notes'},
 }
 
 # slug → per-language target html file, content injected as a single markdown block.
@@ -148,6 +148,10 @@ def article_template(lang):
             <div class="article-body">
 @@BODY@@
             </div>
+            <section id="comments" class="comments-section" data-giscus-term="@@COMMENTS_TERM@@" hidden>
+                <h2>""" + ('Comments' if lang == 'en' else 'Комментарии') + """</h2>
+                <div class="giscus"></div>
+            </section>
         </div>
     </main>
 
@@ -193,16 +197,14 @@ def article_template(lang):
             });
         });
     </script>
+    <script src=\"""" + site_root + """comments.js"></script>
 </body>
 </html>
 """
 
 
 def note_share_template(lang):
-    """Lightweight standalone page for a single note: exists only so a shared link to
-    notes/<id>.html carries per-note OG/Twitter tags (title/description/image) for link
-    unfurlers like Telegram, which don't run JS and can't see a #fragment. It immediately
-    redirects a real visitor into notes.html#note-<id> (scrolled to the note in context)."""
+    """Standalone note page with share metadata and its own discussion."""
     site_root = '../' if lang == 'ru' else '../../'
     brand = BRAND[lang]
     open_note = STRINGS[lang]['open_note']
@@ -213,33 +215,50 @@ def note_share_template(lang):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href=\"""" + site_root + """favicon.svg">
     <link rel="icon" href=\"""" + site_root + """favicon.ico" sizes="any">
-    <title>{{title}} — """ + brand + """</title>
-    <meta name="description" content="{{description}}">
+    <title>{title} — """ + brand + """</title>
+    <meta name="description" content="{description}">
     <meta name="robots" content="noindex">
-    <link rel="canonical" href="{{canonical}}">
+    <link rel="canonical" href="{canonical}">
+{altlink}
     <meta property="og:type" content="article">
     <meta property="og:site_name" content=\"""" + brand + """\">
-    <meta property="og:title" content="{{title}} — """ + brand + """">
-    <meta property="og:description" content="{{description}}">
-    <meta property="og:url" content="{{canonical}}">
-    <meta property="og:image" content="{{image}}">
-    <meta property="og:image:width" content="{{image_width}}">
-    <meta property="og:image:height" content="{{image_height}}">
+    <meta property="og:title" content="{title} — """ + brand + """">
+    <meta property="og:description" content="{description}">
+    <meta property="og:url" content="{canonical}">
+    <meta property="og:image" content="{image}">
+    <meta property="og:image:width" content="{image_width}">
+    <meta property="og:image:height" content="{image_height}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="{{image}}">
-    <meta http-equiv="refresh" content="0; url={{redirect}}">
+    <meta name="twitter:image" content="{image}">
+    <script>try{{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}</script>
     <link rel="stylesheet" href=\"""" + site_root + """style.css">
 </head>
 <body>
-    <div class="container" style="padding-top: 2.5rem;">
-        <p class="note-text">{{description}}</p>
-        <p><a href="{{redirect}}">""" + open_note + """</a></p>
-    </div>
-    <script>location.replace({{redirect_js}});</script>
+    <header>
+        <div class="header-top">
+            <a href=\"""" + site_root + """index.html" class="logo">""" + brand + """</a>
+            <div class="header-actions">{langswitch}<button id="theme-toggle" class="theme-toggle" title=""" + ('"theme"' if lang == 'en' else '"тема"') + """>☾</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container note-page">
+            <a class="back-link" href="{back_url}">""" + open_note + """</a>
+            <div class="note-meta"><span>{date}</span><span class="note-tags">{tags}</span></div>
+            <div class="note-text expanded">{body}</div>
+            <section id="comments" class="comments-section" data-giscus-term="{term}" hidden>
+                <h2>""" + ('Comments' if lang == 'en' else 'Комментарии') + """</h2>
+                <div class="giscus"></div>
+            </section>
+        </div>
+    </main>
+    <footer><div class="footer-meta">""" + brand + """ — <span id="year"></span></div></footer>
+    <div id="img-modal"><div class="modal-backdrop"><img id="img-modal-img" src="" alt=""></div></div>
+    <script src=\"""" + site_root + """main.js?v={main_js_version}"></script>
+    <script src=\"""" + site_root + """comments.js"></script>
 </body>
 </html>
 """
-    return template.format(lang=lang)
+    return template
 
 
 def strip_note_html(rendered):
@@ -274,7 +293,15 @@ def image_dimensions(rel_path):
 def render_note_share_page(note, lang, template):
     lang_root = SITE_URL if lang == 'ru' else f'{SITE_URL}/en'
     canonical = f"{lang_root}/notes/{note['id']}.html"
-    redirect = f"../notes.html#note-{note['id']}"
+    back_url = f"../notes.html#note-{note['id']}"
+    other_lang = 'en' if lang == 'ru' else 'ru'
+    other_name = note['source'][:-3] + '.en.md' if lang == 'ru' else note['source'].replace('.en.md', '.md')
+    other_src = NOTES_SRC / other_name
+    has_other = other_src.exists()
+    other_url = f"{SITE_URL}{'/en' if other_lang == 'en' else ''}/notes/{note['id']}.html"
+    other_path = f"{'../en' if lang == 'ru' else '../..'}/notes/{note['id']}.html"
+    altlink = f'    <link rel="alternate" hreflang="{other_lang}" href="{other_url}">' if has_other else ''
+    langswitch = f'<a class="lang-switch" href="{other_path}" title="{other_lang.upper()}">{other_lang.upper()}</a>' if has_other else ''
     text = strip_note_html(note['rendered'])
     title = truncate_text(text, 70)
     description = truncate_text(text, 160)
@@ -288,14 +315,21 @@ def render_note_share_page(note, lang, template):
         dims = (1000, 882)
 
     page_html = template.format(
+        lang=lang,
         title=html.escape(title, quote=True),
         description=html.escape(description, quote=True),
         canonical=canonical,
+        altlink=altlink,
+        langswitch=langswitch,
         image=image,
         image_width=dims[0],
         image_height=dims[1],
-        redirect=redirect,
-        redirect_js=json.dumps(redirect),
+        back_url=back_url,
+        date=html.escape(note['date']),
+        tags=html.escape(' '.join(f'#{tag}' for tag in note['tags'])),
+        body=note['rendered'].replace('src="img/', f'src="{"../" if lang == "ru" else "../../"}img/'),
+        term=html.escape(f"note:{note['id']}", quote=True),
+        main_js_version=file_version(ROOT / 'main.js'),
     )
     out_dir = LANG_DIRS[lang] / 'notes'
     out_dir.mkdir(exist_ok=True)
@@ -437,6 +471,7 @@ def render_article_page(md, article, lang, template):
         '@@DATE@@': article['date'],
         '@@READ@@': article['read'],
         '@@BODY@@': body_html,
+        '@@COMMENTS_TERM@@': html.escape(f'article:{slug}', quote=True),
     }.items():
         page_html = page_html.replace(token, value)
     out_dir = LANG_DIRS[lang] / 'articles'
@@ -466,6 +501,7 @@ def load_notes(lang):
         tags = [t.strip() for t in meta.get('tags', '').split(',') if t.strip()]
         notes.append({
             'id': slug_from_path(path, lang),
+            'source': path.name,
             'date': meta.get('date', ''),
             'tags': tags,
             'body': body.strip(),
@@ -535,6 +571,7 @@ def render_home_note_card(note, lang):
     into index.html at build time instead of only appearing after data/notes.json loads
     (avoids a render-blocking fetch on the LCP path and the layout shift from it)."""
     share_label = 'Поделиться' if lang == 'ru' else 'Share'
+    comments_label = 'Комментарии' if lang == 'ru' else 'Comments'
     expand_label = 'Показать полностью ↓' if lang == 'ru' else 'Show more ↓'
     prefix = '../' if lang == 'en' else ''
     text = note['rendered'].replace('src="img/', f'src="{prefix}img/')
@@ -545,7 +582,8 @@ def render_home_note_card(note, lang):
         f'<button class="note-share" data-url="notes/{note["id"]}.html" title="{share_label}" '
         f'aria-label="{share_label}">{NOTE_SHARE_ICON}</button></span></div>'
         f'<p class="note-text">{text}</p>'
-        f'<button class="note-expand-btn" type="button">{expand_label}</button></div>'
+        f'<button class="note-expand-btn" type="button">{expand_label}</button>'
+        f'<a class="note-comments-link" href="notes/{note["id"]}.html#comments">{comments_label}</a></div>'
     )
 
 
@@ -607,20 +645,23 @@ def file_version(path):
 
 
 def apply_asset_versions():
-    """Append ?v=<content-hash> to every style.css/main.js reference across all HTML pages
+    """Append ?v=<content-hash> to static asset references across all HTML pages
     (static and generated), so a Cloudflare edge cache with a long max-age (see _headers)
     is busted automatically whenever either file's content changes, instead of serving a
     stale copy for up to its full TTL."""
     style_version = file_version(ROOT / 'style.css')
     main_js_version = {'ru': file_version(ROOT / 'main.js'), 'en': file_version(ROOT / 'en' / 'main.js')}
+    reactions_version = file_version(ROOT / 'reactions.js')
     style_re = re.compile(r'href="((?:\.\./)*)style\.css(?:\?v=[a-f0-9]+)?"')
     main_re = re.compile(r'src="main\.js(?:\?v=[a-f0-9]+)?"')
+    reactions_re = re.compile(r'src="((?:\.\./)*)reactions\.js(?:\?v=[a-f0-9]+)?"')
 
     for html_path in ROOT.rglob('*.html'):
         lang = 'en' if html_path.is_relative_to(ROOT / 'en') else 'ru'
         text = html_path.read_text(encoding='utf-8')
         new_text = style_re.sub(lambda m: f'href="{m.group(1)}style.css?v={style_version}"', text)
         new_text = main_re.sub(f'src="main.js?v={main_js_version[lang]}"', new_text)
+        new_text = reactions_re.sub(lambda m: f'src="{m.group(1)}reactions.js?v={reactions_version}"', new_text)
         if new_text != text:
             html_path.write_text(new_text, encoding='utf-8')
             print(f'  versioned: {html_path.relative_to(ROOT)}')

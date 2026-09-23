@@ -9,6 +9,7 @@
     <meta name="description" content="The slider project was nearing completion. I thought all that was left was to mount the electronics panel and wire up the transistor that switches the load in…">
     <meta name="robots" content="noindex">
     <link rel="canonical" href="https://10on.github.io/about-me/en/notes/slider-sgorela-elektronika.html">
+    <link rel="alternate" hreflang="ru" href="https://10on.github.io/about-me/notes/slider-sgorela-elektronika.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Denchik">
     <meta property="og:title" content="The slider project was nearing completion. I thought all that was… — Denchik">
@@ -19,14 +20,30 @@
     <meta property="og:image:height" content="900">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://10on.github.io/about-me/img/notes/slider-panel-mounted.webp">
-    <meta http-equiv="refresh" content="0; url=../notes.html#note-slider-sgorela-elektronika">
-    <link rel="stylesheet" href="../../style.css?v=af0c7f6e">
+    <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="stylesheet" href="../../style.css?v=140738ae">
 </head>
 <body>
-    <div class="container" style="padding-top: 2.5rem;">
-        <p class="note-text">The slider project was nearing completion. I thought all that was left was to mount the electronics panel and wire up the transistor that switches the load in…</p>
-        <p><a href="../notes.html#note-slider-sgorela-elektronika">Open note →</a></p>
-    </div>
-    <script>location.replace("../notes.html#note-slider-sgorela-elektronika");</script>
+    <header>
+        <div class="header-top">
+            <a href="../../index.html" class="logo">Denchik</a>
+            <div class="header-actions"><a class="lang-switch" href="../../notes/slider-sgorela-elektronika.html" title="RU">RU</a><button id="theme-toggle" class="theme-toggle" title="theme">☾</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container note-page">
+            <a class="back-link" href="../notes.html#note-slider-sgorela-elektronika">← all notes</a>
+            <div class="note-meta"><span>19.08.2026</span><span class="note-tags">#slider #electronics</span></div>
+            <div class="note-text expanded">The slider project was nearing completion. I thought all that was left was to mount the electronics panel and wire up the transistor that switches the load in the circuit — breaking the ground connection between the slider's main electronics and the power source.<br><br><img alt="The slider's board mounted in the case: the Creality 42-3 stepper motor next to the electronics board" src="../../img/notes/slider-panel-mounted.webp" width="1600" height="900" loading="lazy" /><br><br>Turns out not quite, and the slider gave up the ghost. I fried pretty much all of the electronics.<br><br>I never fully figured out the cause, but the most likely culprit is one of the connectors — the only one I hadn't covered with heat-shrink. Most likely it shorted out there, and high voltage ended up on the 3.3V rail.<br><br><img alt="The slider board from the side, a tangle of wires next to brass inserts and tools laid out on the table" src="../../img/notes/slider-panel-side.webp" width="1600" height="900" loading="lazy" /><br><br>The ESP32-WROOM and the accelerometer definitely died. That's all I've been able to confirm so far. I got lucky that the screen wasn't connected at the time, so it survived. The INA226 seems to have survived too, but I'll probably replace it just to be safe.<br><br><img alt="Close-up of the ADXL345 accelerometer board among the wires on the back panel of the case" src="../../img/notes/slider-adxl-board.webp" width="1600" height="900" loading="lazy" /><br><br>On the bright side, the motor driver survived, so at least I won't have to pull it out. Everything else is getting replaced.<br><br>The step-down converter probably survived too, but I'm eyeing it with suspicion as well and thinking about swapping it out anyway. It probably has reverse-voltage protection.<br><br>Unfortunately, I couldn't find the exact same ESP32 board. But if I'm reading the markings right, I found a slightly older revision of the same board, and it should match up in footprint and pin count. So I'm waiting for it to arrive any day now, and then I'll be able to continue.<br><br>Also, to cut down on the number of wires and reduce the odds of breaking something else with my clumsy hands, I ordered a ready-made MOSFET switch board. That way I won't have to build it all around a bare transistor, and the circuit gets a bit more compact.<br><br>Here's a screenshot of the order:<br><br><img alt="Screenshot of the parts order: ESP32, a 3.3V converter, a GY-291 ADXL345 accelerometer, a piezo buzzer, IRF4905PBF and AOD4184 MOSFETs, a TC29548A, shipping — total 3270 dinars" src="../../img/notes/slider-order-parts.webp" width="1090" height="427" loading="lazy" /></div>
+            <section id="comments" class="comments-section" data-giscus-term="note:slider-sgorela-elektronika" hidden>
+                <h2>Comments</h2>
+                <div class="giscus"></div>
+            </section>
+        </div>
+    </main>
+    <footer><div class="footer-meta">Denchik — <span id="year"></span></div></footer>
+    <div id="img-modal"><div class="modal-backdrop"><img id="img-modal-img" src="" alt=""></div></div>
+    <script src="../../main.js?v=d4120cdb"></script>
+    <script src="../../comments.js"></script>
 </body>
 </html>

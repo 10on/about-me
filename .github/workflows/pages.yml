@@ -4,11 +4,8 @@ on:
   push:
     branches: [master]
   workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+  schedule:
+    - cron: '17 */6 * * *'
 
 concurrency:
   group: pages
@@ -17,12 +14,30 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      discussions: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
       - run: pip install markdown pillow
+      - name: Refresh reaction counters
+        continue-on-error: ${{ github.event_name == 'push' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/update_reactions.py
+      - name: Publish reaction snapshot
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: |
+          if ! git diff --quiet -- data/reactions.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/reactions.json
+            git commit -m "Update reaction counters"
+            git push
+          fi
       - run: python3 build.py
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -31,6 +46,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
