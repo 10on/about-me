@@ -827,6 +827,10 @@ main {
 }
 
 .note-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    column-gap: 0.8rem;
+    align-items: baseline;
     padding: 1.6rem 0 0;
     margin-top: 1.6rem;
     border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
@@ -838,6 +842,13 @@ main {
     margin-top: 0.4rem;
     border-top: none;
 }
+
+.note-item > .note-meta,
+.note-item > .note-text {
+    grid-column: 1 / -1;
+}
+
+.note-item > .note-expand-btn { grid-column: 1; justify-self: start; }
 
 .note-meta {
     display: flex;
@@ -962,7 +973,6 @@ main {
 }
 
 .note-comments-link:hover { text-decoration: underline; }
-.note-item.has-overflow .note-comments-link { margin-left: 0.8rem; }
 
 .reaction-link {
     display: inline-block;
@@ -975,7 +985,17 @@ main {
 
 .reaction-link:hover { text-decoration: underline; }
 .reaction-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.note-item.has-overflow .reaction-link + .note-comments-link { margin-left: 0; }
+
+.note-item > .reaction-link {
+    grid-column: 2;
+    justify-self: end;
+    margin-right: 0;
+}
+
+.note-item > .note-comments-link {
+    grid-column: 3;
+    justify-self: end;
+}
 
 .note-page { padding-top: 2.5rem; padding-bottom: 2rem; }
 .note-page .note-text { max-height: none; }
@@ -1324,6 +1344,8 @@ body.page-diy {
 /* ─── Mobile ─── */
 
 @media (max-width: 520px) {
+    .note-item.has-overflow > .note-expand-btn { grid-column: 1 / -1; }
+
     header {
         padding: 1.1rem 1.25rem 0;
     }

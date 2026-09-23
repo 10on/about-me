@@ -1,5 +1,14 @@
 [
   {
+    "id": "hp-t610-mpcie-adapter",
+    "date": "23.09.2026",
+    "tags": [
+      "ретро",
+      "самоделки"
+    ],
+    "text": "<img alt=\"Переходник mPCIe в SATA/NVMe на плате HP T610\" src=\"img/notes/t610-mpcie-adapter.webp\" width=\"908\" height=\"575\" loading=\"lazy\" /><br><br>На днях привезли переходник из mPCIe в SATA/NVMe. Я, конечно, подозревал, что он может не войти в мой HP T610, но до конца надеялся, что таки войдёт. Увы и ах. Нужно было сразу заказывать переходник со шлейфом."
+  },
+  {
     "id": "dacta-control-logo-disketka",
     "date": "18.09.2026",
     "tags": [
