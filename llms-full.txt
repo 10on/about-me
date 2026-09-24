@@ -197,7 +197,7 @@ Dell OptiPlex 9020 SFF, чипсет Q87, Core i3-4150 (i7-4770k в пути).
 
 Думаю ладно, посмотрим ТТХ планок софтом. Вяснилось, что у всех четырёх одинаковый серийник, так что остальным данным в SPD не то чтобы можно доверять. Но от того интерес разобраться, что именно отваливается и почему был только выше.
 
-![CPU-Z: SPD одной из китайских планок](../img/articles/optiplex-cpuz-spd.png)
+![](../img/articles/optiplex-cpuz-spd.png)
 
 [Пример чтения SPD в Thaiphoon Burner (txt)](../files/articles/optiplex-spd-thaiphoon.txt)
 

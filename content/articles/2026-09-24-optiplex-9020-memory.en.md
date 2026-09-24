@@ -16,7 +16,7 @@ As planned, I bought [cheap no-name DDR3 on AliExpress](https://www.aliexpress.c
 
 Fine, I thought, let's look at the stick specs in software. It turned out all four have the same serial number, so the rest of the SPD data isn't exactly trustworthy either. But that only made me more curious to figure out what exactly fails and why.
 
-![CPU-Z: SPD of one of the Chinese sticks](../../img/articles/optiplex-cpuz-spd.png)
+![](../../img/articles/optiplex-cpuz-spd.png)
 
 [Sample SPD readout from Thaiphoon Burner (txt)](../../files/articles/optiplex-spd-thaiphoon.txt)
 
