@@ -12,11 +12,11 @@ Dell OptiPlex 9020 SFF, Q87 chipset, Core i3-4150 (an i7-4770k is on its way).
 
 As planned, I bought [cheap no-name DDR3 on AliExpress](https://www.aliexpress.com/item/1005007108545241.html): 4×8 GB DDR3-1600 dual-rank. On the stock Dell BIOS with four sticks the system either hung on an endless black screen or gave a long beep and rebooted. My first thought was that I'd been sold obvious junk — a dead stick — or that one of my slots was dead. But I quickly shuffled sticks and slots around and found that the system boots fine with any three sticks in any slots. Three 8GB sticks is the maximum it boots with.
 
-![](../../img/articles/optiplex-ram-ldyn-vs-hynix.jpg)
+![Top: the Chinese stick from AliExpress. Bottom: the SK hynix the PC came with](../../img/articles/optiplex-ram-ldyn-vs-hynix.jpg)
 
 Fine, I thought, let's look at the stick specs in software. It turned out all four have the same serial number, so the rest of the SPD data isn't exactly trustworthy either. But that only made me more curious to figure out what exactly fails and why.
 
-![](../../img/articles/optiplex-cpuz-spd.png)
+![CPU-Z: SPD of one of the Chinese sticks](../../img/articles/optiplex-cpuz-spd.png)
 
 [Sample SPD readout from Thaiphoon Burner (txt)](../../files/articles/optiplex-spd-thaiphoon.txt)
 
@@ -24,11 +24,11 @@ Fine, I thought, let's look at the stick specs in software. It turned out all fo
 
 First I learned that SPD can be reflashed — for example, to cap the frequency or timings and give the system a chance to start in a gentler mode. After all, 32gb is the ceiling for Haswell, and this is no overclocker's board. Whichever way you look at it, it's an office workstation, and a proprietary one at that — which, by the way, means you can't just change the memory frequency in the BIOS, let alone flash the SPD chip on the RAM.
 
-![](../../img/articles/optiplex-ram-macro-spd.jpg)
+![Memory chips and, next to them, the small SPD chip — that I2C EEPROM](../../img/articles/optiplex-ram-macro-spd.jpg)
 
 At some point I wondered whether there might be some BIOS hacks — after all, there's a patch for booting from NVMe drives. At first I dismissed the idea. But when I did search, I found out about libreboot. It's an open-source replacement for the stock BIOS: it boots faster, its memory init is open source, and it has a few other goodies. Including disabling some proprietary Intel junk. And my Dell is on the supported list. I built the firmware, set the service mode jumper — and flashed it. Libreboot 26.01rev1, based on coreboot with native raminit for Haswell — if that means anything to you.
 
-![](../../img/articles/optiplex-service-mode-jumper.jpg)
+![A jumper wire on the SERVICE_MODE pins](../../img/articles/optiplex-service-mode-jumper.jpg)
 
 Alas, the different memory init made no difference. With three sticks the system boots without problems. Add the fourth — raminit fails and the machine won't start. So the problem isn't just the stock BIOS: coreboot, with its more detailed log, showed exactly where things break. And yes, there are logs — you can read them on the built-in COM port. All you need is a good old null-modem cable and a second computer with a serial port. A USB adapter plus an M1 Mac did the job just fine. 115200 8N1 -> read the logs.
 
@@ -81,7 +81,7 @@ Next I rearranged everything: swapped sticks around, moved a 4 GB single-rank st
 
 The other bytes wander by ±8 ticks from run to run. But B5 is identical every time, down to the tick. Too stable to be random.
 
-![](../../img/articles/optiplex-dimm-slots.jpg)
+![Memory slots on the board](../../img/articles/optiplex-dimm-slots.jpg)
 
 So it's not a particular stick, not an oxidized slot and not an overloaded channel — I lightened the neighbor, changed the other channel, and B5 didn't care. The remaining suspects:
 
