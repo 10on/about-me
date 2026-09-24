@@ -327,7 +327,8 @@ def render_note_share_page(note, lang, template):
         back_url=back_url,
         date=html.escape(note['date']),
         tags=html.escape(' '.join(f'#{tag}' for tag in note['tags'])),
-        body=note['rendered'].replace('src="img/', f'src="{"../" if lang == "ru" else "../../"}img/'),
+        body=note['rendered'].replace('src="img/', f'src="{"../" if lang == "ru" else "../../"}img/')
+                             .replace('href="articles/', 'href="../articles/'),
         term=html.escape(f"note:{note['id']}", quote=True),
         main_js_version=file_version(ROOT / 'main.js'),
     )

@@ -1,5 +1,14 @@
 [
   {
+    "id": "optiplex-pamyat",
+    "date": "24.09.2026",
+    "tags": [
+      "железо",
+      "mini-pc"
+    ],
+    "text": "Я тут фоном пытаюсь собрать свой ddr3 компьютер. Графика и процессор пока не приехали, но вот память дошла очень быстро. И с ней оказалось все не так просто. Накатал <a href=\"articles/optiplex-9020-memory.html\">статейку</a> о своих мытарствах.<br><br><img alt=\"Планки памяти: китайская LDYN 8 ГБ и SK hynix 4 ГБ\" src=\"img/notes/optiplex-ram.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" />"
+  },
+  {
     "id": "wire-spools",
     "date": "24.09.2026",
     "tags": [

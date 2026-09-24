@@ -1,5 +1,14 @@
 [
   {
+    "id": "optiplex-pamyat",
+    "date": "24.09.2026",
+    "tags": [
+      "hardware",
+      "mini-pc"
+    ],
+    "text": "I've been slowly putting together my DDR3 computer in the background. The graphics card and CPU haven't arrived yet, but the memory showed up really fast. And it turned out to be not so simple. I wrote up an <a href=\"articles/optiplex-9020-memory.html\">article</a> about my ordeal.<br><br><img alt=\"Memory sticks: a Chinese LDYN 8 GB and an SK hynix 4 GB\" src=\"../img/notes/optiplex-ram.webp\" width=\"1280\" height=\"720\" loading=\"lazy\" />"
+  },
+  {
     "id": "wire-spools",
     "date": "24.09.2026",
     "tags": [

@@ -1,0 +1,390 @@
+[NOTE ]  coreboot-26.01rev1 Mon Sep 21 21:28:52 UTC 2026 x86_32 romstage starting (log level: 7)...
+[DEBUG]  Disabling Watchdog reboot... done.
+[DEBUG]  SMBus controller enabled
+[DEBUG]  Setting up static northbridge registers... done.
+[DEBUG]  Started PEG10 link training.
+[DEBUG]  Initializing IGD...
+[DEBUG]  Back from haswell_early_initialization()
+[DEBUG]  CPU id(306c3) ucode:00000028 Intel(R) Core(TM) i3-4150 CPU @ 3.50GHz
+[DEBUG]  AES supported, TXT NOT supported, VT supported
+[DEBUG]  PCH type: Q87, device id: 8c4e, rev id 5
+[DEBUG]  Starting native platform initialisation
+[INFO ]  Intel ME early init
+[INFO ]  Intel ME firmware is ready
+[DEBUG]  ME: Checking whether CPU was replaced... not replaced
+[DEBUG]  HSIO lane owner: 0x04
+[DEBUG]  SATA port enables: 0x3f
+[DEBUG]  USB2 port 0 => disabled
+[DEBUG]  USB2 port 1 => disabled
+[DEBUG]  USB2 port 2 => mapped to OC pin 1
+[DEBUG]  USB2 port 3 => mapped to OC pin 2
+[DEBUG]  USB2 port 4 => mapped to OC pin 3
+[DEBUG]  USB2 port 5 => mapped to OC pin 3
+[DEBUG]  USB2 port 6 => mapped to OC pin 0
+[DEBUG]  USB2 port 7 => mapped to OC pin 0
+[DEBUG]  USB2 port 8 => mapped to OC pin 4
+[DEBUG]  USB2 port 9 => mapped to OC pin 4
+[DEBUG]  USB2 port 10 => mapped to OC pin 5
+[DEBUG]  USB2 port 11 => mapped to OC pin 5
+[DEBUG]  USB2 port 12 => mapped to OC pin 6
+[DEBUG]  USB2 port 13 => Invalid OC pin 7 for USB2 port 13
+
+[DEBUG]  USB3 port 0 => mapped to OC pin 6
+[DEBUG]  USB3 port 1 => mapped to OC pin 7
+[DEBUG]  USB3 port 2 => disabled
+[DEBUG]  USB3 port 3 => disabled
+[DEBUG]  USB3 port 4 => mapped to OC pin 1
+[DEBUG]  USB3 port 5 => mapped to OC pin 2
+
+[DEBUG]  Retraining DMI at Gen2 speeds...
+[DEBUG]  DMI: Running at Gen1 x4
+[DEBUG]  DMI: Running at Gen1 x4
+[INFO ]  DMI: Running at Gen2 x4
+[DEBUG]  Programming SA  DMI VC/TC mappings...
+[DEBUG]  Programming PCH DMI VC/TC mappings...
+[DEBUG]  Waiting for PCH DMI VC negotiation... done!
+[DEBUG]  Waiting for SA  DMI VC negotiation... done!
+[DEBUG]  FMAP: area RW_MRC_CACHE found @ 400000 (65536 bytes)
+[INFO ]  Using cached memory parameters
+[DEBUG]  MPLL busy... done in 16 us
+[DEBUG]  MPLL frequency is set to: 666 MHz (period: 1501501 femtoseconds)
+[DEBUG]  Quadrature clock period: 750 picoseconds
+[DEBUG]  ME: Requested 0MB UMA
+[DEBUG]  Waiting for mc_init_done acknowledgement... DONE!
+[DEBUG]  memcfg DDR3 clock 1333 MHz
+[DEBUG]  memcfg channel assignment: A: 0, B  1, C  2
+[DEBUG]  memcfg channel[0] config (00662020):
+[DEBUG]     ECC inactive
+[DEBUG]     enhanced interleave mode on
+[DEBUG]     rank interleave on
+[DEBUG]     DIMMA 8192 MB width x8 or x32 dual rank, selected
+[DEBUG]     DIMMB 8192 MB width x8 or x32 dual rank
+[DEBUG]  memcfg channel[1] config (00662020):
+[DEBUG]     ECC inactive
+[DEBUG]     enhanced interleave mode on
+[DEBUG]     rank interleave on
+[DEBUG]     DIMMA 8192 MB width x8 or x32 dual rank, selected
+[DEBUG]     DIMMB 8192 MB width x8 or x32 dual rank
+[DEBUG]  ME: Requested 0MB UMA
+[DEBUG]  ME: FW Partition Table      : OK
+[DEBUG]  ME: Bringup Loader Failure  : NO
+[DEBUG]  ME: Firmware Init Complete  : NO
+[DEBUG]  ME: Manufacturing Mode      : YES
+[DEBUG]  ME: Boot Options Present    : NO
+[DEBUG]  ME: Update In Progress      : NO
+[DEBUG]  ME: Current Working State   : Initializing
+[DEBUG]  ME: Current Operation State : Bring up
+[DEBUG]  ME: Current Operation Mode  : Debug
+[DEBUG]  ME: Error Code              : No Error
+[DEBUG]  ME: Progress Phase          : BUP Phase
+[DEBUG]  ME: Power Management Event  : Clean Moff->Mx wake
+[DEBUG]  ME: Progress Phase State    : 0x4d
+[DEBUG]  CBMEM:
+[DEBUG]  IMD: root @ 0x7f7ff000 254 entries.
+[DEBUG]  IMD: root @ 0x7f7fec00 62 entries.
+[DEBUG]  Starting cbfs_boot_device
+[DEBUG]  FMAP: area RW_MRC_CACHE found @ 400000 (65536 bytes)
+[DEBUG]  MRC: Checking cached data update for 'RW_MRC_CACHE'.
+[DEBUG]  flash size 0x2800000 bytes
+[INFO ]  SF: Detected 00 0000 with sector size 0x1000, total 0x2800000
+[ERROR]  SF size 0x2800000 does not correspond to CONFIG_ROM_SIZE 0xc00000!!
+[DEBUG]  MRC: 'RW_MRC_CACHE' does not need update.
+[DEBUG]  SMM Memory Map
+[DEBUG]  SMRAM       : 0x7f800000 0x800000
+[DEBUG]   Subregion 0: 0x7f800000 0x300000
+[DEBUG]   Subregion 1: 0x7fb00000 0x100000
+[DEBUG]   Subregion 2: 0x7fc00000 0x400000
+[DEBUG]  Starting cbfs_boot_device
+[INFO ]  CBFS: Found 'fallback/postcar' @0x4a2c0 size 0x5aa8 in mcache @0xff7e1064
+[DEBUG]  Loading module at 0x7f7ce000 with entry 0x7f7ce031. filesize: 0x5748 memsize: 0xba70
+[DEBUG]  Processing 200 relocs. Offset value of 0x7d7ce000
+[DEBUG]  BS: romstage times (exec / console): total (unknown) / 468 ms
+
+
+[NOTE ]  coreboot-26.01rev1 Mon Sep 21 21:28:52 UTC 2026 x86_32 postcar starting (log level: 7)...
+[DEBUG]  Starting cbfs_boot_device
+[INFO ]  CBFS: Found 'fallback/ramstage' @0x29040 size 0x1d510 in mcache @0x7f7dd0ec
+[DEBUG]  Loading module at 0x7f684000 with entry 0x7f684000. filesize: 0x39400 memsize: 0x1485f0
+[DEBUG]  Processing 4135 relocs. Offset value of 0x7b684000
+[DEBUG]  BS: postcar times (exec / console): total (unknown) / 37 ms
+
+
+[NOTE ]  coreboot-26.01rev1 Mon Sep 21 21:28:52 UTC 2026 x86_32 ramstage starting (log level: 7)...
+[DEBUG]  Normal boot
+[INFO ]  Enumerating buses...
+[DEBUG]  Root Device scanning...
+[DEBUG]  CPU_CLUSTER: 0 enabled
+[DEBUG]  DOMAIN: 00000000 enabled
+[DEBUG]  DOMAIN: 00000000 scanning...
+[DEBUG]  PCI: pci_scan_bus for segment group 00 bus 00
+[DEBUG]  PCI: 00:00:00.0 [8086/0c00] enabled
+[DEBUG]  PCI: 00:00:01.0 [8086/0c01] enabled
+[DEBUG]  PCI: 00:00:02.0 [8086/041e] enabled
+[DEBUG]  PCI: 00:00:03.0 [8086/0c0c] enabled
+[DEBUG]  PCI: 00:00:14.0 [8086/8c31] enabled
+[DEBUG]  PCI: 00:00:16.0 [8086/8c3a] enabled
+[DEBUG]  PCI: 00:00:16.1: Disabling device
+[DEBUG]  PCI: 00:00:16.2: Disabling device
+[INFO ]  PCI: Static device PCI: 00:00:16.3 not found, disabling it.
+[DEBUG]  PCI: 00:00:19.0 [8086/153a] enabled
+[DEBUG]  PCI: 00:00:1a.0 [8086/8c2d] enabled
+[DEBUG]  PCI: 00:00:1b.0 [8086/8c20] enabled
+[DEBUG]  PCI: 00:00:1c.0 [8086/8c10] disabled
+[DEBUG]  PCI: 00:00:1c.1 [8086/8c12] disabled
+[DEBUG]  PCI: 00:00:1c.2 [8086/8c14] disabled
+[DEBUG]  PCI: 00:00:1c.3 [8086/8c16] disabled
+[DEBUG]  Adjusted number of PCIe root ports to 5 as per strpfusecfg2
+[DEBUG]  PCIe Root Port 5 ASPM is disabled
+[DEBUG]  PCI: 00:00:1c.0: Disabling device
+[DEBUG]  PCI: 00:00:1c.1: Disabling device
+[DEBUG]  PCI: 00:00:1c.2: Disabling device
+[DEBUG]  PCI: 00:00:1c.3: Disabling device
+[DEBUG]  PCH: PCIe map 1c.4 -> 1c.0
+[DEBUG]  PCH: PCIe map 1c.0 -> 1c.1
+[DEBUG]  PCH: PCIe map 1c.1 -> 1c.2
+[DEBUG]  PCH: PCIe map 1c.2 -> 1c.3
+[DEBUG]  PCH: PCIe map 1c.3 -> 1c.4
+[DEBUG]  PCI: 00:00:1c.0 [8086/8c18] enabled
+[DEBUG]  PCI: 00:00:1d.0 [8086/8c26] enabled
+[DEBUG]  PCI: 00:00:1f.0 [8086/8c4e] enabled
+[DEBUG]  PCI: 00:00:1f.2 [8086/8c00] enabled
+[DEBUG]  PCI: 00:00:1f.3 [8086/8c22] enabled
+[DEBUG]  PCI: 00:00:1f.5: Disabling device
+[DEBUG]  PCI: 00:00:1f.5 [8086/8c08] disabled
+[DEBUG]  PCI: 00:00:1f.6: Disabling device
+[WARN ]  PCI: Leftover static devices:
+[WARN ]  PCI: 00:00:16.1
+[WARN ]  PCI: 00:00:16.2
+[WARN ]  PCI: 00:00:16.3
+[WARN ]  PCI: 00:00:1c.5
+[WARN ]  PCI: 00:00:1c.6
+[WARN ]  PCI: 00:00:1c.7
+[WARN ]  PCI: 00:00:1f.6
+[WARN ]  PCI: Check your devicetree.cb.
+[DEBUG]  PCI: 00:00:01.0 scanning...
+[DEBUG]  PCI: pci_scan_bus for segment group 00 bus 01
+[INFO ]  PCI: 00:00:01.0: Setting Max_Payload_Size to 256 for devices under this root port
+[DEBUG]  scan_bus: bus PCI: 00:00:01.0 finished in 14 msecs
+[DEBUG]  PCI: 00:00:1c.0 scanning...
+[DEBUG]  PCI: pci_scan_bus for segment group 00 bus 02
+[INFO ]  PCI: 00:00:1c.0: Setting Max_Payload_Size to 128 for devices under this root port
+[DEBUG]  scan_bus: bus PCI: 00:00:1c.0 finished in 14 msecs
+[DEBUG]  PCI: 00:00:1f.0 scanning...
+[DEBUG]  PNP: 002e.0 enabled
+[DEBUG]  PNP: 002e.1 enabled
+[DEBUG]  PNP: 002e.7 enabled
+[DEBUG]  PNP: 002e.8 disabled
+[DEBUG]  PNP: 002e.c enabled
+[DEBUG]  PNP: 002e.a enabled
+[DEBUG]  PNP: 002e.b disabled
+[DEBUG]  PNP: 002e.11 disabled
+[INFO ]  Found TPM 1.2 ST33ZP24 (0x0000) by ST Microelectronics (0x104a)
+[DEBUG]  PNP: 0c31.0 enabled
+[DEBUG]  scan_bus: bus PCI: 00:00:1f.0 finished in 37 msecs
+[DEBUG]  PCI: 00:00:1f.3 scanning...
+[DEBUG]  scan_bus: bus PCI: 00:00:1f.3 finished in 0 msecs
+[DEBUG]  scan_bus: bus DOMAIN: 00000000 finished in 303 msecs
+[DEBUG]  scan_bus: bus Root Device finished in 320 msecs
+[INFO ]  done
+[DEBUG]  BS: BS_DEV_ENUMERATE run times (exec / console): 1 / 335 ms
+[DEBUG]  found VGA at PCI: 00:00:02.0
+[DEBUG]  Setting up VGA for PCI: 00:00:02.0
+[DEBUG]  Setting PCI_BRIDGE_CTL_VGA for bridge DOMAIN: 00000000
+[DEBUG]  Setting PCI_BRIDGE_CTL_VGA for bridge Root Device
+[INFO ]  Allocating resources...
+[INFO ]  Reading resources...
+[DEBUG]  mc_add_fixed_mmio_resources: Adding MCHBAR @ 48 0xfed10000-0xfed17fff.
+[DEBUG]  mc_add_fixed_mmio_resources: Adding DMIBAR @ 68 0xfed18000-0xfed18fff.
+[DEBUG]  mc_add_fixed_mmio_resources: Adding EPBAR @ 40 0xfed19000-0xfed19fff.
+[DEBUG]  mc_add_fixed_mmio_resources: Adding GDXCBAR @ 5420 0xfed84000-0xfed84fff.
+[DEBUG]  mc_add_fixed_mmio_resources: Adding EDRAMBAR @ 5408 0xfed80000-0xfed83fff.
+[DEBUG]  Adding PCIe enhanced config space BAR 0xf0000000-0xf4000000.
+[DEBUG]  MC MAP: TOM: 0x800000000
+[DEBUG]  MC MAP: TOUUD: 0x87be00000
+[DEBUG]  MC MAP: MESEG_BASE: 0x7ffff00000
+[DEBUG]  MC MAP: MESEG_LIMIT: 0xfffff
+[DEBUG]  MC MAP: REMAP_BASE: 0x800000000
+[DEBUG]  MC MAP: REMAP_LIMIT: 0x87bdfffff
+[DEBUG]  MC MAP: TOLUD: 0x84200000
+[DEBUG]  MC MAP: BGSM: 0x80000000
+[DEBUG]  MC MAP: BDSM: 0x80200000
+[DEBUG]  MC MAP: TSEGMB: 0x7f800000
+[DEBUG]  MC MAP: GGC: 0x211
+[DEBUG]  MC MAP: DPR: 0x7f800001
+[INFO ]  Available memory above 4GB: 30654M
+[INFO ]  Done reading resources.
+[INFO ]  === Resource allocator: DOMAIN: 00000000 - Pass 1 (relative placement) ===
+[INFO ]  === Resource allocator: DOMAIN: 00000000 - Pass 2 (allocating resources) ===
+[DEBUG]  DOMAIN: 00000000 io: base: 0 size: 0 align: 0 gran: 0 limit: ffff
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:1f.0 00 base 00000000 limit 00000fff io (fixed)
+[DEBUG]   avoid_fixed_resources: PNP: 002e.0 60 base 00000a00 limit 00000a0f io (fixed)
+[DEBUG]   avoid_fixed_resources: PNP: 002e.1 60 base 00000060 limit 00000060 io (fixed)
+[DEBUG]   avoid_fixed_resources: PNP: 002e.7 60 base 000003f8 limit 000003ff io (fixed)
+[DEBUG]   avoid_fixed_resources: PNP: 002e.c 60 base 0000002e limit 0000002f io (fixed)
+[DEBUG]   avoid_fixed_resources: PNP: 002e.a 60 base 00000a40 limit 00000a7f io (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:1f.3 20 base 00000400 limit 0000041f io (fixed)
+[INFO ]   DOMAIN: 00000000: Resource ranges:
+[INFO ]   * Base: 1000, Size: f000, Tag: 100
+[DEBUG]    PCI: 00:00:02.0 20 *  [0xffc0 - 0xffff] limit: ffff io
+[DEBUG]    PCI: 00:00:19.0 18 *  [0xffa0 - 0xffbf] limit: ffbf io
+[DEBUG]    PCI: 00:00:1f.2 20 *  [0xff80 - 0xff9f] limit: ff9f io
+[DEBUG]    PCI: 00:00:1f.2 10 *  [0xff78 - 0xff7f] limit: ff7f io
+[DEBUG]    PCI: 00:00:1f.2 18 *  [0xff70 - 0xff77] limit: ff77 io
+[DEBUG]    PCI: 00:00:1f.2 14 *  [0xff6c - 0xff6f] limit: ff6f io
+[DEBUG]    PCI: 00:00:1f.2 1c *  [0xff68 - 0xff6b] limit: ff6b io
+[DEBUG]  DOMAIN: 00000000 io: base: 0 size: 0 align: 0 gran: 0 limit: ffff done
+[DEBUG]  DOMAIN: 00000000 mem: base: 7f800000 size: 0 align: 0 gran: 0 limit: efffffff
+[DEBUG]  DOMAIN: 00000000 mem: base: 100000000 size: 0 align: 0 gran: 0 limit: 7fffffffff
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:00.0 48 base fed10000 limit fed17fff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:00.0 68 base fed18000 limit fed18fff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:00.0 40 base fed19000 limit fed19fff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:00.0 5420 base fed84000 limit fed84fff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:00.0 5408 base fed80000 limit fed83fff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:00.0 60 base f0000000 limit f3ffffff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:00.0 00 base 00000000 limit 0009ffff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:00.0 01 base 000a0000 limit 000bffff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:00.0 02 base 000c0000 limit 000fffff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:00.0 03 base 00100000 limit 7f7fffff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:00.0 04 base 7f800000 limit 7fffffff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:00.0 05 base 80000000 limit 841fffff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:00.0 06 base 100000000 limit 87bdfffff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PCI: 00:00:1f.0 31fe base fec00000 limit ffffffff mem (fixed)
+[DEBUG]   avoid_fixed_resources: PNP: 0c31.0 00 base fed40000 limit fed44fff mem (fixed)
+[INFO ]   DOMAIN: 00000000: Resource ranges:
+[INFO ]   * Base: 84200000, Size: 6be00000, Tag: 200
+[INFO ]   * Base: 87be00000, Size: 7784200000, Tag: 200
+[DEBUG]    PCI: 00:00:02.0 18 *  [0xe0000000 - 0xefffffff] limit: efffffff prefmem
+[DEBUG]    PCI: 00:00:02.0 10 *  [0xdfc00000 - 0xdfffffff] limit: dfffffff mem
+[DEBUG]    PCI: 00:00:19.0 10 *  [0xdfbe0000 - 0xdfbfffff] limit: dfbfffff mem
+[DEBUG]    PCI: 00:00:14.0 10 *  [0xdfbd0000 - 0xdfbdffff] limit: dfbdffff mem
+[DEBUG]    PCI: 00:00:03.0 10 *  [0xdfbcc000 - 0xdfbcffff] limit: dfbcffff mem
+[DEBUG]    PCI: 00:00:1b.0 10 *  [0xdfbc8000 - 0xdfbcbfff] limit: dfbcbfff mem
+[DEBUG]    PCI: 00:00:19.0 14 *  [0xdfbc7000 - 0xdfbc7fff] limit: dfbc7fff mem
+[DEBUG]    PCI: 00:00:1f.2 24 *  [0xdfbc6000 - 0xdfbc67ff] limit: dfbc67ff mem
+[DEBUG]    PCI: 00:00:1a.0 10 *  [0xdfbc5000 - 0xdfbc53ff] limit: dfbc53ff mem
+[DEBUG]    PCI: 00:00:1d.0 10 *  [0xdfbc4000 - 0xdfbc43ff] limit: dfbc43ff mem
+[DEBUG]    PCI: 00:00:1f.3 10 *  [0xdfbc3000 - 0xdfbc30ff] limit: dfbc30ff mem
+[DEBUG]    PCI: 00:00:16.0 10 *  [0xdfbc2000 - 0xdfbc200f] limit: dfbc200f mem
+[DEBUG]  DOMAIN: 00000000 mem: base: 7f800000 size: 0 align: 0 gran: 0 limit: efffffff done
+[DEBUG]  DOMAIN: 00000000 mem: base: 100000000 size: 0 align: 0 gran: 0 limit: 7fffffffff done
+[INFO ]  === Resource allocator: DOMAIN: 00000000 - resource allocation complete ===
+[DEBUG]  PCI: 00:00:01.0 1c <- [0x000000000000ffff - 0x000000000000fffe] size 0x00000000 gran 0x0c seg 00 bus 01 io
+[DEBUG]  PCI: 00:00:01.0 24 <- [0xffffffffffffffff - 0xfffffffffffffffe] size 0x00000000 gran 0x14 seg 00 bus 01 prefmem
+[DEBUG]  PCI: 00:00:01.0 20 <- [0x00000000ffffffff - 0x00000000fffffffe] size 0x00000000 gran 0x14 seg 00 bus 01 mem
+[DEBUG]  PCI: 00:00:02.0 10 <- [0x00000000dfc00000 - 0x00000000dfffffff] size 0x00400000 gran 0x16 mem64
+[DEBUG]  PCI: 00:00:02.0 18 <- [0x00000000e0000000 - 0x00000000efffffff] size 0x10000000 gran 0x1c prefmem64
+[DEBUG]  PCI: 00:00:02.0 20 <- [0x000000000000ffc0 - 0x000000000000ffff] size 0x00000040 gran 0x06 io
+[DEBUG]  PCI: 00:00:03.0 10 <- [0x00000000dfbcc000 - 0x00000000dfbcffff] size 0x00004000 gran 0x0e mem64
+[DEBUG]  PCI: 00:00:14.0 10 <- [0x00000000dfbd0000 - 0x00000000dfbdffff] size 0x00010000 gran 0x10 mem64
+[DEBUG]  PCI: 00:00:16.0 10 <- [0x00000000dfbc2000 - 0x00000000dfbc200f] size 0x00000010 gran 0x04 mem64
+[DEBUG]  PCI: 00:00:19.0 10 <- [0x00000000dfbe0000 - 0x00000000dfbfffff] size 0x00020000 gran 0x11 mem
+[DEBUG]  PCI: 00:00:19.0 14 <- [0x00000000dfbc7000 - 0x00000000dfbc7fff] size 0x00001000 gran 0x0c mem
+[DEBUG]  PCI: 00:00:19.0 18 <- [0x000000000000ffa0 - 0x000000000000ffbf] size 0x00000020 gran 0x05 io
+[DEBUG]  PCI: 00:00:1a.0 10 <- [0x00000000dfbc5000 - 0x00000000dfbc53ff] size 0x00000400 gran 0x0a mem
+[DEBUG]  PCI: 00:00:1b.0 10 <- [0x00000000dfbc8000 - 0x00000000dfbcbfff] size 0x00004000 gran 0x0e mem64
+[DEBUG]  PCI: 00:00:1c.0 1c <- [0x000000000000ffff - 0x000000000000fffe] size 0x00000000 gran 0x0c seg 00 bus 02 io
+[DEBUG]  PCI: 00:00:1c.0 24 <- [0xffffffffffffffff - 0xfffffffffffffffe] size 0x00000000 gran 0x14 seg 00 bus 02 prefmem
+[DEBUG]  PCI: 00:00:1c.0 20 <- [0x00000000ffffffff - 0x00000000fffffffe] size 0x00000000 gran 0x14 seg 00 bus 02 mem
+[DEBUG]  PCI: 00:00:1d.0 10 <- [0x00000000dfbc4000 - 0x00000000dfbc43ff] size 0x00000400 gran 0x0a mem
+[DEBUG]  PCI: 00:00:1f.2 10 <- [0x000000000000ff78 - 0x000000000000ff7f] size 0x00000008 gran 0x03 io
+[DEBUG]  PCI: 00:00:1f.2 14 <- [0x000000000000ff6c - 0x000000000000ff6f] size 0x00000004 gran 0x02 io
+[DEBUG]  PCI: 00:00:1f.2 18 <- [0x000000000000ff70 - 0x000000000000ff77] size 0x00000008 gran 0x03 io
+[DEBUG]  PCI: 00:00:1f.2 1c <- [0x000000000000ff68 - 0x000000000000ff6b] size 0x00000004 gran 0x02 io
+[DEBUG]  PCI: 00:00:1f.2 20 <- [0x000000000000ff80 - 0x000000000000ff9f] size 0x00000020 gran 0x05 io
+[DEBUG]  PCI: 00:00:1f.2 24 <- [0x00000000dfbc6000 - 0x00000000dfbc67ff] size 0x00000800 gran 0x0b mem
+[DEBUG]  PCI: 00:00:1f.3 10 <- [0x00000000dfbc3000 - 0x00000000dfbc30ff] size 0x00000100 gran 0x08 mem64
+[INFO ]  Done setting resources.
+[INFO ]  Done allocating resources.
+[DEBUG]  BS: BS_DEV_RESOURCES run times (exec / console): 2 / 813 ms
+[INFO ]  Enabling resources...
+[DEBUG]  PCI: 00:00:00.0 subsystem <- 1028/05a5
+[DEBUG]  PCI: 00:00:00.0 cmd <- 06
+[DEBUG]  PCI: 00:00:01.0 bridge ctrl <- 0013
+[DEBUG]  PCI: 00:00:01.0 subsystem <- 1028/05a5
+[DEBUG]  PCI: 00:00:01.0 cmd <- 00
+[DEBUG]  PCI: 00:00:02.0 subsystem <- 1028/05a5
+[DEBUG]  PCI: 00:00:02.0 cmd <- 03
+[DEBUG]  PCI: 00:00:03.0 subsystem <- 1028/05a5
+[DEBUG]  PCI: 00:00:03.0 cmd <- 02
+[DEBUG]  PCI: 00:00:14.0 subsystem <- 1028/05a5
+[DEBUG]  PCI: 00:00:14.0 cmd <- 102
+[DEBUG]  PCI: 00:00:16.0 subsystem <- 1028/05a5
+[DEBUG]  PCI: 00:00:16.0 cmd <- 02
+[DEBUG]  PCI: 00:00:19.0 subsystem <- 1028/05a4
+[DEBUG]  PCI: 00:00:19.0 cmd <- 103
+[DEBUG]  PCI: 00:00:1a.0 subsystem <- 1028/05a5
+[DEBUG]  PCI: 00:00:1a.0 cmd <- 106
+[DEBUG]  PCI: 00:00:1b.0 subsystem <- 1028/05a5
+[DEBUG]  PCI: 00:00:1b.0 cmd <- 102
+[DEBUG]  PCI: 00:00:1c.0 bridge ctrl <- 0013
+[DEBUG]  PCI: 00:00:1c.0 subsystem <- 1028/05a5
+[DEBUG]  PCI: 00:00:1c.0 cmd <- 00
+[DEBUG]  PCI: 00:00:1d.0 subsystem <- 1028/05a5
+[DEBUG]  PCI: 00:00:1d.0 cmd <- 106
+[DEBUG]  PCI: 00:00:1f.0 subsystem <- 1028/05a5
+[DEBUG]  PCI: 00:00:1f.0 cmd <- 107
+[DEBUG]  PCI: 00:00:1f.2 subsystem <- 1028/05a5
+[DEBUG]  PCI: 00:00:1f.2 cmd <- 103
+[DEBUG]  PCI: 00:00:1f.3 subsystem <- 1028/05a5
+[DEBUG]  PCI: 00:00:1f.3 cmd <- 103
+[INFO ]  done.
+[DEBUG]  BS: BS_DEV_ENABLE run times (exec / console): 0 / 138 ms
+[INFO ]  Initializing devices...
+[DEBUG]  CPU_CLUSTER: 0 init
+[INFO ]  LAPIC 0x0 in XAPIC mode.
+[DEBUG]  MTRR: Physical address space:
+[DEBUG]  0x0000000000000000 - 0x000000000009ffff size 0x000a0000 type 6
+[DEBUG]  0x00000000000a0000 - 0x00000000000bffff size 0x00020000 type 0
+[DEBUG]  0x00000000000c0000 - 0x000000007fffffff size 0x7ff40000 type 6
+[DEBUG]  0x0000000080000000 - 0x00000000dfffffff size 0x60000000 type 0
+[DEBUG]  0x00000000e0000000 - 0x00000000efffffff size 0x10000000 type 1
+[DEBUG]  0x00000000f0000000 - 0x00000000ffffffff size 0x10000000 type 0
+[DEBUG]  0x0000000100000000 - 0x000000087bdfffff size 0x77be00000 type 6
+[DEBUG]  apic_id 0x0: MTRR: Fixed MSR 0x250 0x0606060606060606
+[DEBUG]  apic_id 0x0: MTRR: Fixed MSR 0x258 0x0606060606060606
+[DEBUG]  apic_id 0x0: MTRR: Fixed MSR 0x259 0x0000000000000000
+[DEBUG]  apic_id 0x0: MTRR: Fixed MSR 0x268 0x0606060606060606
+[DEBUG]  apic_id 0x0: MTRR: Fixed MSR 0x269 0x0606060606060606
+[DEBUG]  apic_id 0x0: MTRR: Fixed MSR 0x26a 0x0606060606060606
+[DEBUG]  apic_id 0x0: MTRR: Fixed MSR 0x26b 0x0606060606060606
+[DEBUG]  apic_id 0x0: MTRR: Fixed MSR 0x26c 0x0606060606060606
+[DEBUG]  apic_id 0x0: MTRR: Fixed MSR 0x26d 0x0606060606060606
+[DEBUG]  apic_id 0x0: MTRR: Fixed MSR 0x26e 0x0606060606060606
+[DEBUG]  apic_id 0x0: MTRR: Fixed MSR 0x26f 0x0606060606060606
+[DEBUG]  apic_id 0x0 setup mtrr for CPU physical address size: 39 bits
+[DEBUG]  MTRR: default type WB/UC MTRR counts: 4/6.
+[DEBUG]  MTRR: WB selected as default type.
+[DEBUG]  MTRR: 0 base 0x0000000080000000 mask 0x0000007fc0000000 type 0
+[DEBUG]  MTRR: 1 base 0x00000000c0000000 mask 0x0000007fe0000000 type 0
+[DEBUG]  MTRR: 2 base 0x00000000e0000000 mask 0x0000007ff0000000 type 1
+[DEBUG]  MTRR: 3 base 0x00000000f0000000 mask 0x0000007ff0000000 type 0
+
+[DEBUG]  MTRR check
+[DEBUG]  Fixed MTRRs   : Enabled
+[DEBUG]  Variable MTRRs: Enabled
+
+[DEBUG]  Initializing VR config.
+[DEBUG]  CPU has 2 cores, 4 threads enabled.
+[DEBUG]  Setting up SMI for CPU
+[INFO ]  Will perform SMM setup.
+[DEBUG]  microcode: sig=0x306c3 pf=0x2 revision=0x28
+[DEBUG]  Starting cbfs_boot_device
+[INFO ]  CBFS: Found 'cpu_microcode_blob.bin' @0x80 size 0xf800 in mcache @0x7f7dd02c
+[INFO ]  CPU: Intel(R) Core(TM) i3-4150 CPU @ 3.50GHz.
+[INFO ]  LAPIC 0x0 in XAPIC mode.
+[DEBUG]  CPU: APIC: 00 enabled
+[DEBUG]  CPU: APIC: 01 enabled
+[DEBUG]  CPU: APIC: 02 enabled
+[DEBUG]  CPU: APIC: 03 enabled
+[DEBUG]  Loading module at 0x00030000 with entry 0x00030000. filesize: 0x178 memsize: 0x178
+[DEBUG]  Processing 16 relocs. Offset value of 0x00030000
+[DEBUG]  Attempting to start 3 APs
+[DEBUG]  Waiting for 10ms after sending INIT.
+[����߿����>v �US������� �
+
+[NOTE ]  coreboot-26.01rev1 Mon Sep 21 21:28:52 UTC 2026 x86_32 bootblock starting (log level: 7)...
+[DEBUG]  Starting cbfs_boot_device
+[INFO ]  CBFS: Found 'fallback/romstage' @0xf980 size 0x19660 in mcache @0xff7e0e8c
+[DEBUG]  BS: bootblock times (exec / console): total (unknown) / 22 ms
+
+

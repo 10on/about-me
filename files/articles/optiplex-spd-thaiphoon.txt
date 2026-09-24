@@ -1,0 +1,53 @@
+Prepared by Thaiphoon Burner Super Blaster
+-------------------------------------------------------------
+                         MEMORY MODULE
+-------------------------------------------------------------
+Manufacturer              : Undefined
+Series                    : Not determined
+Part Number               : CT8GJL2025071509
+Serial Number             : C91D651Eh
+JEDEC DIMM Label          : 8GB 2Rx8 PC3L-12800U-11-11-B1
+Architecture              : DDR3 SDRAM UDIMM
+Speed Grade               : DDR3-1600K
+Capacity                  : 8 GB (16 components)
+Organization              : 1024M x64 (2 ranks)
+Register Manufacturer     : N/A
+Register Model            : N/A
+Manufacturing Date        : June 1-5 / Week 23, 2026
+Manufacturing Location    : Unknown: 00h
+Revision / Raw Card       : 0000h / B1 (6 layers)
+-------------------------------------------------------------
+                        DRAM COMPONENTS
+-------------------------------------------------------------
+Manufacturer              : Undefined
+Part Number               : Not determined
+Package                   : Standard Monolithic 78-ball FBGA
+Die Density / Count       : 4 Gb  / 1 die
+Composition               : 512Mb x8 (64Mb x8 x 8 banks)
+Input Clock Frequency     : 800 MHz (1,250 ns)
+Minimum Timing Delays     : 11-11-11-28-39
+Read Latencies Supported  : 11T, 10T, 9T, 8T, 7T, 6T, 5T
+Supply Voltage            : 1,50 V / 1,35 V
+XMP Enthusiast            : Not programmed
+XMP Extreme               : Not programmed
+SPD Revision              : 1.1 / November 2010
+XMP Revision              : Undefined
+-------------------------------------------------------------
+                         RAW SPD DUMP
+-------------------------------------------------------------
+000  92 11 0B 02 04 21 02 09 03 11 01 08 0A 00 FE 00
+010  69 78 69 30 69 11 18 81 20 08 3C 3C 00 F0 83 05
+020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+030  00 00 00 00 00 00 00 00 00 00 00 00 0F 11 21 01
+040  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+050  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+060  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+070  00 00 00 00 00 00 00 00 26 23 C9 1D 65 1E 7C 3F
+080  43 54 38 47 4A 4C 32 30 32 35 30 37 31 35 30 39
+090  00 20 00 00 80 00 00 00 00 00 00 00 00 00 00 00
+0A0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+0B0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+0C0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+0D0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+0E0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+0F0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00

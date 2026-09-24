@@ -1,0 +1,868 @@
+[NOTE ]  coreboot-26.01rev1 Mon Sep 21 21:28:52 UTC 2026 x86_32 romstage starting (log level: 7)...
+[DEBUG]  Disabling Watchdog reboot... done.
+[DEBUG]  SMBus controller enabled
+[DEBUG]  Setting up static northbridge registers... done.
+[DEBUG]  Started PEG10 link training.
+[DEBUG]  Initializing IGD...
+[DEBUG]  Back from haswell_early_initialization()
+[DEBUG]  CPU id(306c3) ucode:00000028 Intel(R) Core(TM) i3-4150 CPU @ 3.50GHz
+[DEBUG]  AES supported, TXT NOT supported, VT supported
+[DEBUG]  PCH type: Q87, device id: 8c4e, rev id 5
+[DEBUG]  Starting native platform initialisation
+[INFO ]  Intel ME early init
+[INFO ]  Intel ME firmware is ready
+[DEBUG]  ME: Checking whether CPU was replaced... not replaced
+[DEBUG]  HSIO lane owner: 0x04
+[DEBUG]  SATA port enables: 0x3f
+[DEBUG]  USB2 port 0 => disabled
+[DEBUG]  USB2 port 1 => disabled
+[DEBUG]  USB2 port 2 => mapped to OC pin 1
+[DEBUG]  USB2 port 3 => mapped to OC pin 2
+[DEBUG]  USB2 port 4 => mapped to OC pin 3
+[DEBUG]  USB2 port 5 => mapped to OC pin 3
+[DEBUG]  USB2 port 6 => mapped to OC pin 0
+[DEBUG]  USB2 port 7 => mapped to OC pin 0
+[DEBUG]  USB2 port 8 => mapped to OC pin 4
+[DEBUG]  USB2 port 9 => mapped to OC pin 4
+[DEBUG]  USB2 port 10 => mapped to OC pin 5
+[DEBUG]  USB2 port 11 => mapped to OC pin 5
+[DEBUG]  USB2 port 12 => mapped to OC pin 6
+[DEBUG]  USB2 port 13 => Invalid OC pin 7 for USB2 port 13
+
+[DEBUG]  USB3 port 0 => mapped to OC pin 6
+[DEBUG]  USB3 port 1 => mapped to OC pin 7
+[DEBUG]  USB3 port 2 => disabled
+[DEBUG]  USB3 port 3 => disabled
+[DEBUG]  USB3 port 4 => mapped to OC pin 1
+[DEBUG]  USB3 port 5 => mapped to OC pin 2
+
+[DEBUG]  Retraining DMI at Gen2 speeds...
+[DEBUG]  DMI: Running at Gen1 x4
+[DEBUG]  DMI: Running at Gen1 x4
+[INFO ]  DMI: Running at Gen2 x4
+[DEBUG]  Programming SA  DMI VC/TC mappings...
+[DEBUG]  Programming PCH DMI VC/TC mappings...
+[DEBUG]  Waiting for PCH DMI VC negotiation... done!
+[DEBUG]  Waiting for SA  DMI VC negotiation... done!
+[DEBUG]  FMAP: area RW_MRC_CACHE found @ 400000 (65536 bytes)
+[INFO ]  Using cached memory parameters
+[WARN ]  Cannot fast boot: DIMMs have changed
+[ERROR]  raminit failed on step RST_NONT
+[DEBUG]  Found compatible clock / CAS settings
+[DEBUG]  Selected DRAM frequency: 666 MHz
+[DEBUG]  Selected CAS latency   : 9T
+[DEBUG]  MPLL busy... done in 10 us
+[DEBUG]  MPLL frequency is set to: 666 MHz (period: 1501501 femtoseconds)
+[DEBUG]  Quadrature clock period: 750 picoseconds
+[DEBUG]  Selected tCK          : 1500 ps
+[DEBUG]  Selected tAA          : 9T
+[DEBUG]  Selected tWR          : 10T
+[DEBUG]  Selected tRCD         : 9T
+[DEBUG]  Selected tRRD         : 4T
+[DEBUG]  Selected tRP          : 9T
+[DEBUG]  Selected tRAS         : 24T
+[DEBUG]  Selected tRC          : 33T
+[DEBUG]  Selected tRFC         : 174T
+[DEBUG]  Selected tWTR         : 5T
+[DEBUG]  Selected tRTP         : 5T
+[DEBUG]  Selected tFAW         : 20T
+[DEBUG]  Selected tCWL         : 7T
+[DEBUG]  Selected tCMD         : 2T
+[DEBUG]  Selected tREFI        : 5194T
+[DEBUG]  Selected tXP          : 4T
+[DEBUG]  ME: Requested 0MB UMA
+[DEBUG]  Stage 1: Vref offset training
+
+
+[DEBUG]  Hi-Lo (XOR):
+[DEBUG]    C0:	0xff	0xff	0xff	0xff	0xff	0xff	0xff	0xff
+[DEBUG]    C1:	0xff	0xff	0xff	0xff	0xff	0xff	0xff	0xff
+
+[DEBUG]  RdVref:
+[DEBUG]    C0:	   1	   1	   0	   1	   0	   0	   1	   1
+[DEBUG]    C1:	   1	  -1	   0	   0	   1	   1	   0	   1
+
+[DEBUG]  Stage 2: Samp offset training
+[DEBUG]  Channel 0                                                                         1                                                                         
+[DEBUG]  Byte    0        1        2        3        4        5        6        7          0        1        2        3        4        5        6        7          
+[DEBUG]  BitSAmp 86456747 45588655 78867877 66757776 8887aa77 98878887 88775867 56567456   66655655 abbbaa89 a7689878 79788a79 57585656 76776777 88878878 77867876   
+[DEBUG]  Rank 0
+[DEBUG]  Steps 1 and 2: Find middle of high region
+[DEBUG]  Update RcvEn timing to be in the center of high region
+[DEBUG]  C0.R0: 	Left	Right	Width	Center
+[DEBUG]     B0: 	280	336	56	308
+[DEBUG]     B1: 	288	344	56	316
+[DEBUG]     B2: 	304	352	48	328
+[DEBUG]     B3: 	312	368	56	340
+[DEBUG]     B4: 	320	376	56	348
+[DEBUG]     B5: 	336	376	40	356
+[DEBUG]     B6: 	344	400	56	372
+[DEBUG]     B7: 	232	288	56	260
+
+[DEBUG]  C1.R0: 	Left	Right	Width	Center
+[DEBUG]     B0: 	320	384	64	352
+[DEBUG]     B1: 	336	392	56	364
+[DEBUG]     B2: 	352	400	48	376
+[DEBUG]     B3: 	232	288	56	260
+[DEBUG]     B4: 	240	296	56	268
+[DEBUG]     B5: 	256	312	56	284
+[DEBUG]     B6: 	272	328	56	300
+[DEBUG]     B7: 	288	352	64	320
+
+[DEBUG]  Step 3: Quarter preamble - Walk backwards
+
+[DEBUG]  C0:  Preamble
+[DEBUG]   B0: 180
+[DEBUG]   B1: 188
+[DEBUG]   B2: 200
+[DEBUG]   B3: 212
+[DEBUG]   B4: 220
+[DEBUG]   B5: 228
+[DEBUG]   B6: 244
+[DEBUG]   B7: 260
+
+[DEBUG]  C1:  Preamble
+[DEBUG]   B0: 224
+[DEBUG]   B1: 236
+[DEBUG]   B2: 248
+[DEBUG]   B3: 260
+[DEBUG]   B4: 268
+[DEBUG]   B5: 284
+[DEBUG]   B6: 300
+[DEBUG]   B7: 320
+
+[DEBUG]  Step 4: Add 1 qclk
+
+[DEBUG]  Step 5: Walk forward to find rising edge
+
+[DEBUG]  Step 6: center on preamble and clean up rank
+[DEBUG]  C0:  Preamble increment
+[DEBUG]   B0: 210      29
+[DEBUG]   B1: 220      31
+[DEBUG]   B2: 236      35
+[DEBUG]   B3: 245      32
+[DEBUG]   B4: 251      30
+[DEBUG]   B5: 267      38
+[DEBUG]   B6: 275      30
+[DEBUG]   B7: 294      33
+
+[DEBUG]  C1:  Preamble increment
+[DEBUG]   B0: 256      31
+[DEBUG]   B1: 272      35
+[DEBUG]   B2: 284      35
+[DEBUG]   B3: 294      33
+[DEBUG]   B4: 306      37
+[DEBUG]   B5: 320      35
+[DEBUG]   B6: 334      33
+[DEBUG]   B7: 354      33
+
+
+[DEBUG]  Rank 1
+[DEBUG]  Steps 1 and 2: Find middle of high region
+[DEBUG]  Update RcvEn timing to be in the center of high region
+[DEBUG]  C0.R1: 	Left	Right	Width	Center
+[DEBUG]     B0: 	280	336	56	308
+[DEBUG]     B1: 	288	344	56	316
+[DEBUG]     B2: 	304	360	56	332
+[DEBUG]     B3: 	312	368	56	340
+[DEBUG]     B4: 	320	368	48	344
+[DEBUG]     B5: 	328	384	56	356
+[DEBUG]     B6: 	232	288	56	260
+[DEBUG]     B7: 	240	296	56	268
+
+[DEBUG]  C1.R1: 	Left	Right	Width	Center
+[DEBUG]     B0: 	344	400	56	372
+[DEBUG]     B1: 	216	280	64	248
+[DEBUG]     B2: 	224	280	56	252
+[DEBUG]     B3: 	232	288	56	260
+[DEBUG]     B4: 	240	296	56	268
+[DEBUG]     B5: 	256	312	56	284
+[DEBUG]     B6: 	280	344	64	312
+[DEBUG]     B7: 	288	344	56	316
+
+[DEBUG]  Step 3: Quarter preamble - Walk backwards
+
+[DEBUG]  C0:  Preamble
+[DEBUG]   B0: 180
+[DEBUG]   B1: 188
+[DEBUG]   B2: 204
+[DEBUG]   B3: 212
+[DEBUG]   B4: 216
+[DEBUG]   B5: 228
+[DEBUG]   B6: 260
+[DEBUG]   B7: 268
+
+[DEBUG]  C1:  Preamble
+[DEBUG]   B0: 244
+[DEBUG]   B1: 248
+[DEBUG]   B2: 252
+[DEBUG]   B3: 260
+[DEBUG]   B4: 268
+[DEBUG]   B5: 284
+[DEBUG]   B6: 312
+[DEBUG]   B7: 316
+
+[DEBUG]  Step 4: Add 1 qclk
+
+[DEBUG]  Step 5: Walk forward to find rising edge
+
+[DEBUG]  Step 6: center on preamble and clean up rank
+[DEBUG]  C0:  Preamble increment
+[DEBUG]   B0: 212      31
+[DEBUG]   B1: 225      36
+[DEBUG]   B2: 238      33
+[DEBUG]   B3: 246      33
+[DEBUG]   B4: 251      34
+[DEBUG]   B5: 262      33
+[DEBUG]   B6: 288      27
+[DEBUG]   B7: 301      32
+
+[DEBUG]  C1:  Preamble increment
+[DEBUG]   B0: 277      32
+[DEBUG]   B1: 282      33
+[DEBUG]   B2: 286      33
+[DEBUG]   B3: 299      38
+[DEBUG]   B4: 307      38
+[DEBUG]   B5: 321      36
+[DEBUG]   B6: 343      30
+[DEBUG]   B7: 347      30
+
+
+[DEBUG]  Rank 2
+[DEBUG]  Steps 1 and 2: Find middle of high region
+[DEBUG]  Update RcvEn timing to be in the center of high region
+[DEBUG]  C0.R2: 	Left	Right	Width	Center
+[DEBUG]     B0: 	288	344	56	316
+[DEBUG]     B1: 	296	352	56	324
+[DEBUG]     B2: 	312	368	56	340
+[DEBUG]     B3: 	328	384	56	356
+[DEBUG]     B4: 	336	392	56	364
+[DEBUG]     B5: 	344	400	56	372
+[DEBUG]     B6: 	224	280	56	252
+[DEBUG]     B7: 	240	296	56	268
+
+[DEBUG]  C1.R2: 	Left	Right	Width	Center
+[DEBUG]     B0: 	336	392	56	364
+[DEBUG]     B1: 	224	280	56	252
+[DEBUG]     B2: 	232	288	56	260
+[DEBUG]     B3: 	240	296	56	268
+[DEBUG]     B4: 	248	304	56	276
+[DEBUG]     B5: 	264	320	56	292
+[DEBUG]     B6: 	288	344	56	316
+[DEBUG]     B7: 	296	352	56	324
+
+[DEBUG]  Step 3: Quarter preamble - Walk backwards
+
+[DEBUG]  C0:  Preamble
+[DEBUG]   B0: 188
+[DEBUG]   B1: 196
+[DEBUG]   B2: 212
+[DEBUG]   B3: 228
+[DEBUG]   B4: 236
+[DEBUG]   B5: 244
+[DEBUG]   B6: 252
+[DEBUG]   B7: 268
+
+[DEBUG]  C1:  Preamble
+[DEBUG]   B0: 236
+[DEBUG]   B1: 252
+[DEBUG]   B2: 260
+[DEBUG]   B3: 268
+[DEBUG]   B4: 276
+[DEBUG]   B5: 292
+[DEBUG]   B6: 316
+[DEBUG]   B7: 324
+
+[DEBUG]  Step 4: Add 1 qclk
+
+[DEBUG]  Step 5: Walk forward to find rising edge
+
+[DEBUG]  Step 6: center on preamble and clean up rank
+[DEBUG]  C0:  Preamble increment
+[DEBUG]   B0: 222      33
+[DEBUG]   B1: 232      35
+[DEBUG]   B2: 242      29
+[DEBUG]   B3: 262      33
+[DEBUG]   B4: 267      30
+[DEBUG]   B5: 277      32
+[DEBUG]   B6: 286      33
+[DEBUG]   B7: 303      34
+
+[DEBUG]  C1:  Preamble increment
+[DEBUG]   B0: 275      38
+[DEBUG]   B1: 284      31
+[DEBUG]   B2: 290      29
+[DEBUG]   B3: 302      33
+[DEBUG]   B4: 314      37
+[DEBUG]   B5: 329      36
+[DEBUG]   B6: 350      33
+[DEBUG]   B7: 357      32
+
+
+[DEBUG]  Rank 3
+[DEBUG]  Steps 1 and 2: Find middle of high region
+[DEBUG]  Update RcvEn timing to be in the center of high region
+[DEBUG]  C0.R3: 	Left	Right	Width	Center
+[DEBUG]     B0: 	288	352	64	320
+[DEBUG]     B1: 	304	360	56	332
+[DEBUG]     B2: 	312	368	56	340
+[DEBUG]     B3: 	320	376	56	348
+[DEBUG]     B4: 	336	384	48	360
+[DEBUG]     B5: 	344	400	56	372
+[DEBUG]     B6: 	224	280	56	252
+[DEBUG]     B7: 	240	296	56	268
+
+[DEBUG]  C1.R3: 	Left	Right	Width	Center
+[DEBUG]     B0: 	336	392	56	364
+[DEBUG]     B1: 	352	400	48	376
+[DEBUG]     B2: 	240	296	56	268
+[DEBUG]     B3: 	248	304	56	276
+[DEBUG]     B4: 	256	304	48	280
+[DEBUG]     B5: 	272	320	48	296
+[DEBUG]     B6: 	280	336	56	308
+[DEBUG]     B7: 	296	352	56	324
+
+[DEBUG]  Step 3: Quarter preamble - Walk backwards
+
+[DEBUG]  C0:  Preamble
+[DEBUG]   B0: 192
+[DEBUG]   B1: 204
+[DEBUG]   B2: 212
+[DEBUG]   B3: 220
+[DEBUG]   B4: 232
+[DEBUG]   B5: 244
+[DEBUG]   B6: 252
+[DEBUG]   B7: 268
+
+[DEBUG]  C1:  Preamble
+[DEBUG]   B0: 236
+[DEBUG]   B1: 248
+[DEBUG]   B2: 268
+[DEBUG]   B3: 276
+[DEBUG]   B4: 280
+[DEBUG]   B5: 296
+[DEBUG]   B6: 308
+[DEBUG]   B7: 324
+
+[DEBUG]  Step 4: Add 1 qclk
+
+[DEBUG]  Step 5: Walk forward to find rising edge
+
+[DEBUG]  Step 6: center on preamble and clean up rank
+[DEBUG]  C0:  Preamble increment
+[DEBUG]   B0: 224      31
+[DEBUG]   B1: 234      29
+[DEBUG]   B2: 246      33
+[DEBUG]   B3: 255      34
+[DEBUG]   B4: 266      33
+[DEBUG]   B5: 277      32
+[DEBUG]   B6: 286      33
+[DEBUG]   B7: 302      33
+
+[DEBUG]  C1:  Preamble increment
+[DEBUG]   B0: 270      33
+[DEBUG]   B1: 284      35
+[DEBUG]   B2: 304      35
+[DEBUG]   B3: 312      35
+[DEBUG]   B4: 318      37
+[DEBUG]   B5: 334      37
+[DEBUG]   B6: 342      33
+[DEBUG]   B7: 362      37
+
+
+[DEBUG]  Step 7: Sync IO latency across all ranks
+
+[DEBUG]  Final Receive Enable and IO latency settings:
+[DEBUG]    C0.R0: IOLAT = 7  rt_iocomp = 23
+[DEBUG]     B0:   274
+[DEBUG]     B1:   284
+[DEBUG]     B2:   300
+[DEBUG]     B3:   309
+[DEBUG]     B4:   315
+[DEBUG]     B5:   331
+[DEBUG]     B6:   339
+[DEBUG]     B7:   358
+
+[DEBUG]    C0.R1: IOLAT = 7  rt_iocomp = 23
+[DEBUG]     B0:   276
+[DEBUG]     B1:   289
+[DEBUG]     B2:   302
+[DEBUG]     B3:   310
+[DEBUG]     B4:   315
+[DEBUG]     B5:   326
+[DEBUG]     B6:   352
+[DEBUG]     B7:   365
+
+[DEBUG]    C0.R2: IOLAT = 7  rt_iocomp = 23
+[DEBUG]     B0:   286
+[DEBUG]     B1:   296
+[DEBUG]     B2:   306
+[DEBUG]     B3:   326
+[DEBUG]     B4:   331
+[DEBUG]     B5:   341
+[DEBUG]     B6:   350
+[DEBUG]     B7:   367
+
+[DEBUG]    C0.R3: IOLAT = 7  rt_iocomp = 23
+[DEBUG]     B0:   288
+[DEBUG]     B1:   298
+[DEBUG]     B2:   310
+[DEBUG]     B3:   319
+[DEBUG]     B4:   330
+[DEBUG]     B5:   341
+[DEBUG]     B6:   350
+[DEBUG]     B7:   366
+
+[DEBUG]    C1.R0: IOLAT = 6  rt_iocomp = 23
+[DEBUG]     B0:   256
+[DEBUG]     B1:   272
+[DEBUG]     B2:   284
+[DEBUG]     B3:   294
+[DEBUG]     B4:   306
+[DEBUG]     B5:   320
+[DEBUG]     B6:   334
+[DEBUG]     B7:   354
+
+[DEBUG]    C1.R1: IOLAT = 6  rt_iocomp = 23
+[DEBUG]     B0:   277
+[DEBUG]     B1:   282
+[DEBUG]     B2:   286
+[DEBUG]     B3:   299
+[DEBUG]     B4:   307
+[DEBUG]     B5:   321
+[DEBUG]     B6:   343
+[DEBUG]     B7:   347
+
+[DEBUG]    C1.R2: IOLAT = 6  rt_iocomp = 23
+[DEBUG]     B0:   275
+[DEBUG]     B1:   284
+[DEBUG]     B2:   290
+[DEBUG]     B3:   302
+[DEBUG]     B4:   314
+[DEBUG]     B5:   329
+[DEBUG]     B6:   350
+[DEBUG]     B7:   357
+
+[DEBUG]    C1.R3: IOLAT = 6  rt_iocomp = 23
+[DEBUG]     B0:   270
+[DEBUG]     B1:   284
+[DEBUG]     B2:   304
+[DEBUG]     B3:   312
+[DEBUG]     B4:   318
+[DEBUG]     B5:   334
+[DEBUG]     B6:   342
+[DEBUG]     B7:   362
+
+[DEBUG]  Rank 0
+[DEBUG]  C0.R0: 	Left	Right	Width	Center	RxDqsPN
+[DEBUG]    B0: 	-11	31	42	10	42
+[DEBUG]    B1: 	-8	31	39	11	43
+[DEBUG]    B2: 	-8	31	39	11	43
+[DEBUG]    B3: 	-11	31	42	10	42
+[DEBUG]    B4: 	-10	31	41	10	42
+[DEBUG]    B5: 	-14	22	36	4	36
+[DEBUG]    B6: 	-13	31	44	9	41
+[DEBUG]    B7: 	-14	31	45	8	40
+
+[DEBUG]  C1.R0: 	Left	Right	Width	Center	RxDqsPN
+[DEBUG]    B0: 	-14	31	45	8	40
+[DEBUG]    B1: 	-14	31	45	8	40
+[DEBUG]    B2: 	-12	31	43	9	41
+[DEBUG]    B3: 	-15	31	46	8	40
+[DEBUG]    B4: 	-15	31	46	8	40
+[DEBUG]    B5: 	-15	31	46	8	40
+[DEBUG]    B6: 	-14	31	45	8	40
+[DEBUG]    B7: 	-15	31	46	8	40
+
+[DEBUG]  Rank 1
+[DEBUG]  C0.R1: 	Left	Right	Width	Center	RxDqsPN
+[DEBUG]    B0: 	-11	31	42	10	42
+[DEBUG]    B1: 	-11	31	42	10	42
+[DEBUG]    B2: 	-8	31	39	11	43
+[DEBUG]    B3: 	-11	31	42	10	42
+[DEBUG]    B4: 	-12	31	43	9	41
+[DEBUG]    B5: 	-10	31	41	10	42
+[DEBUG]    B6: 	-10	31	41	10	42
+[DEBUG]    B7: 	-14	31	45	8	40
+
+[DEBUG]  C1.R1: 	Left	Right	Width	Center	RxDqsPN
+[DEBUG]    B0: 	-13	31	44	9	41
+[DEBUG]    B1: 	-10	31	41	10	42
+[DEBUG]    B2: 	-12	31	43	9	41
+[DEBUG]    B3: 	-16	31	47	7	39
+[DEBUG]    B4: 	-15	31	46	8	40
+[DEBUG]    B5: 	-13	31	44	9	41
+[DEBUG]    B6: 	-10	31	41	10	42
+[DEBUG]    B7: 	-13	31	44	9	41
+
+[DEBUG]  Rank 2
+[DEBUG]  C0.R2: 	Left	Right	Width	Center	RxDqsPN
+[DEBUG]    B0: 	-17	31	48	7	39
+[DEBUG]    B1: 	-18	31	49	6	38
+[DEBUG]    B2: 	-18	31	49	6	38
+[DEBUG]    B3: 	-16	31	47	7	39
+[DEBUG]    B4: 	-18	31	49	6	38
+[DEBUG]    B5: 	-18	31	49	6	38
+[DEBUG]    B6: 	-18	31	49	6	38
+[DEBUG]    B7: 	-17	31	48	7	39
+
+[DEBUG]  C1.R2: 	Left	Right	Width	Center	RxDqsPN
+[DEBUG]    B0: 	-14	31	45	8	40
+[DEBUG]    B1: 	-13	31	44	9	41
+[DEBUG]    B2: 	-11	31	42	10	42
+[DEBUG]    B3: 	-14	31	45	8	40
+[DEBUG]    B4: 	-14	31	45	8	40
+[DEBUG]    B5: 	-15	31	46	8	40
+[DEBUG]    B6: 	-14	31	45	8	40
+[DEBUG]    B7: 	-14	31	45	8	40
+
+[DEBUG]  Rank 3
+[DEBUG]  C0.R3: 	Left	Right	Width	Center	RxDqsPN
+[DEBUG]    B0: 	-16	31	47	7	39
+[DEBUG]    B1: 	-18	31	49	6	38
+[DEBUG]    B2: 	-19	31	50	6	38
+[DEBUG]    B3: 	-18	31	49	6	38
+[DEBUG]    B4: 	-18	31	49	6	38
+[DEBUG]    B5: 	-18	31	49	6	38
+[DEBUG]    B6: 	-17	31	48	7	39
+[DEBUG]    B7: 	-18	31	49	6	38
+
+[DEBUG]  C1.R3: 	Left	Right	Width	Center	RxDqsPN
+[DEBUG]    B0: 	-12	31	43	9	41
+[DEBUG]    B1: 	-14	31	45	8	40
+[DEBUG]    B2: 	-12	31	43	9	41
+[DEBUG]    B3: 	-14	31	45	8	40
+[DEBUG]    B4: 	-12	31	43	9	41
+[DEBUG]    B5: 	-14	31	45	8	40
+[DEBUG]    B6: 	-13	31	44	9	41
+[DEBUG]    B7: 	-16	31	47	7	39
+
+
+[DEBUG]  Rank 0
+
+[DEBUG]  	InitSt	InitEn	CurrSt	CurrEn	LargSt	LargEn
+[DEBUG]  C0
+[DEBUG]     B0:	190	190	198	266	198	266
+[DEBUG]     B1:	190	190	204	264	204	264
+[DEBUG]     B2:	190	190	220	278	220	278
+[DEBUG]     B3:	190	190	246	314	246	314
+[DEBUG]     B4:	192	196	260	324	260	324
+[DEBUG]     B5:	192	216	276	344	276	344
+[DEBUG]     B6:	192	228	286	356	286	356
+[DEBUG]     B7:	192	236	298	364	298	364
+[DEBUG]  C1
+[DEBUG]     B0:	192	250	316	378	316	378
+[DEBUG]     B1:	190	190	204	274	204	274
+[DEBUG]     B2:	190	190	224	292	224	292
+[DEBUG]     B3:	190	190	240	308	240	308
+[DEBUG]     B4:	192	196	256	324	256	324
+[DEBUG]     B5:	192	212	272	340	272	340
+[DEBUG]     B6:	192	214	270	342	270	342
+[DEBUG]     B7:	192	220	280	348	280	348
+
+[DEBUG]  C0.R0:  LftEdge Width
+[DEBUG]    B0:   198	68
+[DEBUG]    B1:   204	60
+[DEBUG]    B2:   220	58
+[DEBUG]    B3:   246	68
+[DEBUG]    B4:   260	64
+[DEBUG]    B5:   276	68
+[DEBUG]    B6:   286	70
+[DEBUG]    B7:   298	66
+
+[DEBUG]  C1.R0:  LftEdge Width
+[DEBUG]    B0:   316	62
+[DEBUG]    B1:   204	70
+[DEBUG]    B2:   224	68
+[DEBUG]    B3:   240	68
+[DEBUG]    B4:   256	68
+[DEBUG]    B5:   272	68
+[DEBUG]    B6:   270	72
+[DEBUG]    B7:   280	68
+
+
+[DEBUG]  Rank 1
+
+[DEBUG]  	InitSt	InitEn	CurrSt	CurrEn	LargSt	LargEn
+[DEBUG]  C0
+[DEBUG]     B0:	190	190	204	272	204	272
+[DEBUG]     B1:	190	190	214	282	214	282
+[DEBUG]     B2:	190	190	226	286	226	286
+[DEBUG]     B3:	190	190	246	314	246	314
+[DEBUG]     B4:	192	208	270	336	270	336
+[DEBUG]     B5:	192	200	270	328	270	328
+[DEBUG]     B6:	192	226	290	354	290	354
+[DEBUG]     B7:	192	236	296	364	296	364
+[DEBUG]  C1
+[DEBUG]     B0:	192	256	316	384	316	384
+[DEBUG]     B1:	190	190	206	266	206	266
+[DEBUG]     B2:	190	190	222	282	222	282
+[DEBUG]     B3:	190	190	240	306	240	306
+[DEBUG]     B4:	190	190	256	316	256	316
+[DEBUG]     B5:	192	196	262	324	262	324
+[DEBUG]     B6:	192	202	272	330	272	330
+[DEBUG]     B7:	192	222	288	350	288	350
+
+[DEBUG]  C0.R1:  LftEdge Width
+[DEBUG]    B0:   204	68
+[DEBUG]    B1:   214	68
+[DEBUG]    B2:   226	60
+[DEBUG]    B3:   246	68
+[DEBUG]    B4:   270	66
+[DEBUG]    B5:   270	58
+[DEBUG]    B6:   290	64
+[DEBUG]    B7:   296	68
+
+[DEBUG]  C1.R1:  LftEdge Width
+[DEBUG]    B0:   316	68
+[DEBUG]    B1:   206	60
+[DEBUG]    B2:   222	60
+[DEBUG]    B3:   240	66
+[DEBUG]    B4:   256	60
+[DEBUG]    B5:   262	62
+[DEBUG]    B6:   272	58
+[DEBUG]    B7:   288	62
+
+
+[DEBUG]  Rank 2
+
+[DEBUG]  	InitSt	InitEn	CurrSt	CurrEn	LargSt	LargEn
+[DEBUG]  C0
+[DEBUG]     B0:	192	256	192	256	192	256
+[DEBUG]     B1:	190	190	212	272	212	272
+[DEBUG]     B2:	190	190	222	288	222	288
+[DEBUG]     B3:	190	190	240	300	240	300
+[DEBUG]     B4:	192	192	264	320	264	320
+[DEBUG]     B5:	192	208	272	336	272	336
+[DEBUG]     B6:	192	214	286	342	286	342
+[DEBUG]     B7:	192	224	288	352	288	352
+[DEBUG]  C1
+[DEBUG]     B0:	190	190	206	274	206	274
+[DEBUG]     B1:	190	190	212	278	212	278
+[DEBUG]     B2:	190	190	222	282	222	282
+[DEBUG]     B3:	190	190	252	312	252	312
+[DEBUG]     B4:	192	206	266	334	266	334
+[DEBUG]     B5:	192	218	280	346	280	346
+[DEBUG]     B6:	192	212	274	340	274	340
+[DEBUG]     B7:	192	210	278	338	278	338
+
+[DEBUG]  C0.R2:  LftEdge Width
+[DEBUG]    B0:   192	64
+[DEBUG]    B1:   212	60
+[DEBUG]    B2:   222	66
+[DEBUG]    B3:   240	60
+[DEBUG]    B4:   264	56
+[DEBUG]    B5:   272	64
+[DEBUG]    B6:   286	56
+[DEBUG]    B7:   288	64
+
+[DEBUG]  C1.R2:  LftEdge Width
+[DEBUG]    B0:   206	68
+[DEBUG]    B1:   212	66
+[DEBUG]    B2:   222	60
+[DEBUG]    B3:   252	60
+[DEBUG]    B4:   266	68
+[DEBUG]    B5:   280	66
+[DEBUG]    B6:   274	66
+[DEBUG]    B7:   278	60
+
+
+[DEBUG]  Rank 3
+
+[DEBUG]  	InitSt	InitEn	CurrSt	CurrEn	LargSt	LargEn
+[DEBUG]  C0
+[DEBUG]     B0:	192	258	192	258	192	258
+[DEBUG]     B1:	190	190	212	276	212	276
+[DEBUG]     B2:	190	190	228	286	228	286
+[DEBUG]     B3:	190	190	240	304	240	304
+[DEBUG]     B4:	190	190	260	318	260	318
+[DEBUG]     B5:	192	206	270	334	270	334
+[DEBUG]     B6:	192	214	282	342	282	342
+[DEBUG]     B7:	192	226	294	354	294	354
+[DEBUG]  C1
+[DEBUG]     B0:	190	190	206	268	206	268
+[DEBUG]     B1:	190	190	216	282	216	282
+[DEBUG]     B2:	190	190	230	298	230	298
+[DEBUG]     B3:	190	190	244	308	244	308
+[DEBUG]     B4:	190	190	258	318	258	318
+[DEBUG]     B5:	192	212	280	340	280	340
+[DEBUG]     B6:	192	218	286	346	286	346
+[DEBUG]     B7:	192	228	290	356	290	356
+
+[DEBUG]  C0.R3:  LftEdge Width
+[DEBUG]    B0:   192	66
+[DEBUG]    B1:   212	64
+[DEBUG]    B2:   228	58
+[DEBUG]    B3:   240	64
+[DEBUG]    B4:   260	58
+[DEBUG]    B5:   270	64
+[DEBUG]    B6:   282	60
+[DEBUG]    B7:   294	60
+
+[DEBUG]  C1.R3:  LftEdge Width
+[DEBUG]    B0:   206	62
+[DEBUG]    B1:   216	66
+[DEBUG]    B2:   230	68
+[DEBUG]    B3:   244	64
+[DEBUG]    B4:   258	60
+[DEBUG]    B5:   280	60
+[DEBUG]    B6:   286	60
+[DEBUG]    B7:   290	66
+
+[DEBUG]  Rank 0
+
+
+[DEBUG]  C0.R0:  Offset	FinalEdge
+[DEBUG]    B0:   0	198
+[DEBUG]    B1:   0	204
+[DEBUG]    B2:   0	220
+[DEBUG]    B3:   0	246
+[DEBUG]    B4:   0	260
+[DEBUG]    B5:   0	276
+[DEBUG]    B6:   0	286
+[DEBUG]    B7:   0	298
+
+[DEBUG]  C1.R0:  Offset	FinalEdge
+[DEBUG]    B0:   -128	188
+[DEBUG]    B1:   0	204
+[DEBUG]    B2:   0	224
+[DEBUG]    B3:   0	240
+[DEBUG]    B4:   0	256
+[DEBUG]    B5:   0	272
+[DEBUG]    B6:   0	270
+[DEBUG]    B7:   0	280
+
+
+[DEBUG]  Rank 1
+
+
+[DEBUG]  C0.R1:  Offset	FinalEdge
+[DEBUG]    B0:   0	204
+[DEBUG]    B1:   0	214
+[DEBUG]    B2:   0	226
+[DEBUG]    B3:   0	246
+[DEBUG]    B4:   0	270
+[DEBUG]    B5:   0	270
+[DEBUG]    B6:   0	290
+[DEBUG]    B7:   0	296
+
+[DEBUG]  C1.R1:  Offset	FinalEdge
+[DEBUG]    B0:   -128	188
+[DEBUG]    B1:   0	206
+[DEBUG]    B2:   0	222
+[DEBUG]    B3:   0	240
+[DEBUG]    B4:   0	256
+[DEBUG]    B5:   0	262
+[DEBUG]    B6:   0	272
+[DEBUG]    B7:   0	288
+
+
+[DEBUG]  Rank 2
+
+
+[DEBUG]  C0.R2:  Offset	FinalEdge
+[DEBUG]    B0:   0	192
+[DEBUG]    B1:   0	212
+[DEBUG]    B2:   0	222
+[DEBUG]    B3:   0	240
+[DEBUG]    B4:   0	264
+[DEBUG]    B5:   0	272
+[DEBUG]    B6:   0	286
+[DEBUG]    B7:   0	288
+
+[DEBUG]  C1.R2:  Offset	FinalEdge
+[DEBUG]    B0:   0	206
+[DEBUG]    B1:   0	212
+[DEBUG]    B2:   0	222
+[DEBUG]    B3:   0	252
+[DEBUG]    B4:   0	266
+[DEBUG]    B5:   0	280
+[DEBUG]    B6:   0	274
+[DEBUG]    B7:   0	278
+
+
+[DEBUG]  Rank 3
+
+
+[DEBUG]  C0.R3:  Offset	FinalEdge
+[DEBUG]    B0:   0	192
+[DEBUG]    B1:   0	212
+[DEBUG]    B2:   0	228
+[DEBUG]    B3:   0	240
+[DEBUG]    B4:   0	260
+[DEBUG]    B5:   0	270
+[DEBUG]    B6:   0	282
+[DEBUG]    B7:   0	294
+
+[DEBUG]  C1.R3:  Offset	FinalEdge
+[DEBUG]    B0:   0	206
+[DEBUG]    B1:   0	216
+[DEBUG]    B2:   0	230
+[DEBUG]    B3:   0	244
+[DEBUG]    B4:   0	258
+[DEBUG]    B5:   0	280
+[DEBUG]    B6:   0	286
+[DEBUG]    B7:   0	290
+
+
+[DEBUG]  Waiting for mc_init_done acknowledgement... DONE!
+[DEBUG]  memcfg DDR3 clock 1333 MHz
+[DEBUG]  memcfg channel assignment: A: 0, B  1, C  2
+[DEBUG]  memcfg channel[0] config (00662020):
+[DEBUG]     ECC inactive
+[DEBUG]     enhanced interleave mode on
+[DEBUG]     rank interleave on
+[DEBUG]     DIMMA 8192 MB width x8 or x32 dual rank, selected
+[DEBUG]     DIMMB 8192 MB width x8 or x32 dual rank
+[DEBUG]  memcfg channel[1] config (00662020):
+[DEBUG]     ECC inactive
+[DEBUG]     enhanced interleave mode on
+[DEBUG]     rank interleave on
+[DEBUG]     DIMMA 8192 MB width x8 or x32 dual rank, selected
+[DEBUG]     DIMMB 8192 MB width x8 or x32 dual rank
+[DEBUG]  ME: Requested 0MB UMA
+[DEBUG]  ME: FW Partition Table      : OK
+[DEBUG]  ME: Bringup Loader Failure  : NO
+[DEBUG]  ME: Firmware Init Complete  : NO
+[DEBUG]  ME: Manufacturing Mode      : YES
+[DEBUG]  ME: Boot Options Present    : NO
+[DEBUG]  ME: Update In Progress      : NO
+[DEBUG]  ME: Current Working State   : Initializing
+[DEBUG]  ME: Current Operation State : Bring up
+[DEBUG]  ME: Current Operation Mode  : Debug
+[DEBUG]  ME: Error Code              : No Error
+[DEBUG]  ME: Progress Phase          : BUP Phase
+[DEBUG]  ME: Power Management Event  : Clean Moff->Mx wake
+[DEBUG]  ME: Progress Phase State    : 0x4d
+[DEBUG]  CBMEM:
+[DEBUG]  IMD: root @ 0x7f7ff000 254 entries.
+[DEBUG]  IMD: root @ 0x7f7fec00 62 entries.
+[DEBUG]  Starting cbfs_boot_device
+[DEBUG]  FMAP: area RW_MRC_CACHE found @ 400000 (65536 bytes)
+[DEBUG]  MRC: Checking cached data update for 'RW_MRC_CACHE'.
+[DEBUG]  flash size 0x2800000 bytes
+[INFO ]  SF: Detected 00 0000 with sector size 0x1000, total 0x2800000
+[ERROR]  SF size 0x2800000 does not correspond to CONFIG_ROM_SIZE 0xc00000!!
+[DEBUG]  MRC: cache data 'RW_MRC_CACHE' needs update.
+[DEBUG]  SF: Successfully written 2 bytes @ 0x40000a
+[DEBUG]  SF: Successfully written 20 bytes @ 0x4040a0
+[DEBUG]  SF: Successfully written 4108 bytes @ 0x4040b4
+[DEBUG]  MRC: updated 'RW_MRC_CACHE'.
+[DEBUG]  SMM Memory Map
+[DEBUG]  SMRAM       : 0x7f800000 0x800000
+[DEBUG]   Subregion 0: 0x7f800000 0x300000
+[DEBUG]   Subregion 1: 0x7fb00000 0x100000
+[DEBUG]   Subregion 2: 0x7fc00000 0x400000
+[DEBUG]  Starting cbfs_boot_device
+[INFO ]  CBFS: Found 'fallback/postcar' @0x4a2c0 size 0x5aa8 in mcache @0xff7e1064
+[DEBUG]  Loading module at 0x7f7ce000 with entry 0x7f7ce031. filesize: 0x5748 memsize: 0xba70
+[DEBUG]  Processing 200 relocs. Offset value of 0x7d7ce000
+[DEBUG]  BS: romstage times (exec / console): total (unknown) / 2722 ms
+
+
+[NOTE ]  coreboot-26.01rev1 Mon Sep 21 21:28:52 UTC 2026 x86_32 bootblock starting (log level: 7)...
+[DEBUG]  Starting cbfs_boot_device
+[INFO ]  CBFS: Found 'fallback/romstage' @0xf980 size 0x19660 in mcache @0xff7e0e8c
+[DEBUG]  BS: bootblock times (exec / console): total (unknown) / 22 ms
+
+

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <title>Dell OptiPlex 9020 SFF не стартует с четырьмя планками памяти 8gb — дэнчик</title>
+    <meta name="description" content="Четыре планки DDR3 по 8 ГБ, стоковый BIOS, Libreboot, serial-лог и падение raminit на одном байте.">
+    <link rel="canonical" href="https://10on.github.io/about-me/articles/optiplex-9020-memory.html">
+    <link rel="alternate" hreflang="ru" href="https://10on.github.io/about-me/articles/optiplex-9020-memory.html">
+    <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/articles/optiplex-9020-memory.html">
+    <link rel="alternate" hreflang="x-default" href="https://10on.github.io/about-me/articles/optiplex-9020-memory.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:site_name" content="дэнчик">
+    <meta property="og:title" content="Dell OptiPlex 9020 SFF не стартует с четырьмя планками памяти 8gb — дэнчик">
+    <meta property="og:description" content="Четыре планки DDR3 по 8 ГБ, стоковый BIOS, Libreboot, serial-лог и падение raminit на одном байте.">
+    <meta property="og:url" content="https://10on.github.io/about-me/articles/optiplex-9020-memory.html">
+    <meta property="og:image" content="https://10on.github.io/about-me/img/persik.jpg">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="882">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://10on.github.io/about-me/img/persik.jpg">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Dell OptiPlex 9020 SFF не стартует с четырьмя планками памяти 8gb",
+  "description": "Четыре планки DDR3 по 8 ГБ, стоковый BIOS, Libreboot, serial-лог и падение raminit на одном байте.",
+  "datePublished": "2026-09-24",
+  "inLanguage": "ru",
+  "url": "https://10on.github.io/about-me/articles/optiplex-9020-memory.html",
+  "image": "https://10on.github.io/about-me/img/persik.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Денис Пушкарёв",
+    "url": "https://10on.github.io/about-me/about.html"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://10on.github.io/about-me/articles/optiplex-9020-memory.html"
+  }
+}
+    </script>
+    <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="../style.css?v=182d526d">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div>
+                <a href="../index.html" class="logo">дэнчик</a>
+                <div class="tagline">лего · ретро · самоделки · разработка</div>
+            </div>
+            <div class="header-actions">
+                <a href="../en/articles/optiplex-9020-memory.html" class="lang-switch" title="English version">EN</a>
+                <button id="theme-toggle" class="theme-toggle" title="тема">☾</button>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="../notes.html">заметки</a>
+            <a href="../articles.html" class="active">статьи</a>
+            <a href="../lego.html">лего</a>
+            <a href="../retro.html">ретро</a>
+            <a href="../diy.html">самоделки</a>
+            <a href="../games.html">игры</a>
+            <a href="../wishlist.html">хотелки</a>
+            <a href="../about.html">обо мне</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container article-container" style="padding-top: 2rem; padding-bottom: 1rem;">
+            <a href="../articles.html" class="back-link">← все статьи</a>
+            <div class="article-header">
+                <span class="article-tag">#железо #mini-pc</span><span>24.09.2026</span><span>· 9 мин</span>
+            </div>
+            <h1 class="article-title">Dell OptiPlex 9020 SFF не стартует с четырьмя планками памяти 8gb</h1>
+            <div class="article-body">
+<p>Собираю я свой <a href="mini-pc-defitsit.html">мини пк для игор</a>.</p>
+<p>Dell OptiPlex 9020 SFF, чипсет Q87, Core i3-4150 (i7-4770k в пути).</p>
+<p>Ну и по плану закупился <a href="https://www.aliexpress.com/item/1005007108545241.html">дешёвой DDR3 на Али</a>, не брендовой: 4×8 ГБ DDR3-1600 dual-rank. На стоковом Dell BIOS с четырьмя планками система либо вешалась в бесконечный чёрный экран, либо издавала протяжный писк и уходила в перезагрузку. Сначала пошли мысли о том, что мне подсунули явное фуфло, в виде битой банки, ну или таки у меня не работает какой-то слот. Но я быстро потасовал места и планки и понял, что система усмпешно стартует с любыми тремя планкми в любых слотах. Стартует максимум на трех планках по 8gb. </p>
+<figure><img src="../img/articles/optiplex-ram-ldyn-vs-hynix.jpg" alt=""></figure>
+<p>Думаю ладно, посмотрим ТТХ планок софтом. Вяснилось, что у всех четырёх одинаковый серийник, так что остальным данным в SPD не то чтобы можно доверять. Но от того интерес разобраться, что именно отваливается и почему был только выше.</p>
+<figure><img src="../img/articles/optiplex-cpuz-spd.png" alt=""><figcaption><a href="../files/articles/optiplex-spd-thaiphoon.txt">Пример чтения SPD в Thaiphoon Burner (txt)</a></figcaption></figure>
+<h2>Кастомный BIOS</h2>
+<p>Сначала я узнал о том, что SPD можно перешить, и например попробовать ограничить частоту или тайминги -- дать системе возможность стартануть в более щадящем режиме. Все-таки для Haswell 32gb это потолок, а у нас тут не оверклокерская доска. Как ни крути вполне себе офисная рабочая станция, еще и проприетарная, что кстати не дает нам возможности просто поменять частоту памяти в BIOS и уж темболее прошить SPD флешку в RAM.</p>
+<figure><img src="../img/articles/optiplex-ram-macro-spd.jpg" alt=""></figure>
+<p>В какой-то момент я подумал о том, что возможно есть какие-то хаки bios, ведь патч для загрузки с NVME дисков есть. Сначала я отбросил мысль. Но когда все-таки поискал, узнал про libreboot. Это опенсорсная замена штатному bios, которая и грузится быстрее, и механизм проверки памяти у нее опенсорсный и еще немного всяких примочек. В том числе отлкючение какой-то проприетарной лабуды от intel. И мой dell в списке поддерживаемых. Собрал прошивку, кинул джампер на включение service mode - прошился. Libreboot 26.01rev1 на базе coreboot с native raminit для Haswell -- если это о чем-то скажет. </p>
+<figure><img src="../img/articles/optiplex-service-mode-jumper.jpg" alt=""></figure>
+<p>Увы другой механизм проверки памяти не дал эффекта. С тремя планками система грузится без проблем. Стоит поставить четвёртую — raminit падает, машина не стартует. То есть проблема не только в стоковом BIOS: coreboot с более подробным логом показал, где именно приходит отвал. И да. Тут есть логи -- их можно читать на встроенном COM порту. Нуженс всего лишь старый советский нульмодемный кабель и второй компьютер с serial портом. Связка USB переходник + mac на m1 вполне подошла. 115200 8N1 -&gt; читаем логи. </p>
+<h2>Что показывает лог</h2>
+<p><code>Cannot fast boot: DIMMs have changed
+raminit failed on step RST_NONT
+...
+C0.R2:  Left  Right  Width  Center
+   B5:  336   368    32     352
+RcvEn: Width of high region (32) too small
+RcvEn problems on channel 0, byte 5
+raminit failed on step RCVET</code></p>
+<p>Первую ошибку, <code>RST_NONT</code>, можно не читать: coreboot заметил, что планки поменялись, и решил настроить всё с нуля. Это штатное поведение.</p>
+<p>А вот <code>RCVET</code> — это и есть поломка.</p>
+<p>Как это работает, на пальцах. При каждом включении контроллер памяти заново учится общаться с планками — это называется memory training. Один из шагов — подобрать момент, когда «слушать» ответ планки. Контроллер двигает этот момент маленькими шагами и смотрит, в каком диапазоне сигнал ловится стабильно. Чем шире диапазон, тем больше запас.</p>
+<p>Данные планка отдаёт восемью параллельными полосками — байтами, и каждый настраивается отдельно. У нормальных байтов стабильная зона — 56 тиков, а у одного — 32. Coreboot требует строго больше 32 (хвала опенсорсу, это видно прямо в коде), а ищет с шагом 8. То есть не хватило ровно одного шага.</p>
+<iframe id="rcven-chart" src="../files/articles/optiplex-9020/rcven-margin-chart.html" title="Запас RcvEn по попыткам загрузки" loading="lazy" style="width:100%;height:560px;border:0;display:block"></iframe>
+<script>(function(){var f=document.getElementById('rcven-chart');function sync(){try{var d=f.contentDocument;if(!d||!d.documentElement)return;d.documentElement.setAttribute('data-theme',document.documentElement.getAttribute('data-theme')==='dark'?'dark':'light');f.style.height=d.documentElement.scrollHeight+'px';}catch(e){}}f.addEventListener('load',sync);window.addEventListener('resize',sync);new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});})();</script>
+
+<table>
+<thead>
+<tr>
+<th>Байт</th>
+<th>Запас (тики)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B0, B1, B2, B4</td>
+<td>56</td>
+<td>нормально</td>
+</tr>
+<tr>
+<td>B3</td>
+<td>48–56</td>
+<td>нормально</td>
+</tr>
+<tr>
+<td><strong>B5</strong></td>
+<td><strong>32</strong></td>
+<td><strong>впритык → отказ</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Лог: <a href="../files/articles/optiplex-9020/9020-4dimm-FAIL-RCVET.txt">9020-4dimm-FAIL-RCVET.txt</a></p>
+<p><code>C0.R2.B5</code> — это адрес: канал 0, ранг 2, байт 5. Ранг — половинка dual-rank планки, для контроллера она выглядит как отдельная маленькая планка. Ранг 2 — это вторая планка в канале 0, та самая четвёртая. В рабочем варианте на трёх планках её слот пустует.</p>
+<p>При этом две планки в одном канале — не проблема сама по себе: в канале 1 они прекрасно уживаются. Не работает именно канал 0 со второй планкой.</p>
+<h2>Эксперименты и воспроизводимость</h2>
+<p>Дальше я переставлял всё подряд: менял планки местами, гонял между слотами 4-гигабайтную single-rank (она попроще для контроллера), перезагружался по многу раз. Результат всегда один:</p>
+<table>
+<thead>
+<tr>
+<th>Что делал</th>
+<th>Запас B5</th>
+<th>Лог</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4 × 8 ГБ</td>
+<td>32</td>
+<td><a href="../files/articles/optiplex-9020/9020-4dimm-FAIL-RCVET.txt">txt</a></td>
+</tr>
+<tr>
+<td>заменил одну 8 ГБ на 4 ГБ в другом канале</td>
+<td>32</td>
+<td><a href="../files/articles/optiplex-9020/9020-4dimm-with4GB-FAIL-RCVET.txt">txt</a></td>
+</tr>
+<tr>
+<td>поставил 4 ГБ в соседний слот того же канала</td>
+<td>32</td>
+<td><a href="../files/articles/optiplex-9020/9020-4dimm-attempt3-4GB-moved-FAIL-RCVET.txt">txt</a></td>
+</tr>
+<tr>
+<td>то же, ещё раз</td>
+<td>32</td>
+<td>там же, вторая загрузка</td>
+</tr>
+</tbody>
+</table>
+<p>Остальные байты от раза к разу гуляют на ±8 тиков. А B5 каждый раз одинаковый, до тика. Слишком стабильно для случайности.</p>
+<figure><img src="../img/articles/optiplex-dimm-slots.jpg" alt=""></figure>
+<p>Значит, дело не в конкретной планке, не в окислившемся слоте и не в перегрузке канала — соседа облегчал, второй канал менял, а B5 всё равно. Остаются подозреваемые:</p>
+<ul>
+<li>контроллер памяти в процессоре (конкретный экземпляр);</li>
+<li>контакт в сокете процессора;</li>
+<li>сама материнская плата.</li>
+</ul>
+<p>Точнее разделить без запасных планок не получилось.</p>
+<p>Железо тут пограничное само по себе — штатный BIOS тоже капризничал. Coreboot просто строже: одна попытка — и сдаётся (в коде прямо написано <code>TODO: Try more than once</code>), а порог в 32 — не более чем эвристика.</p>
+<h2>Подводные камни</h2>
+<p>Одинаковые серийники аукнулись отдельно: fast boot в coreboot сравнивает SPD по слотам, и раз у всех планок SPD совпадает вплоть до серийника, перестановку одинаковых модулей coreboot не замечает и применяет тренировку от другой физической планки. Сбросить кэш можно только сменой набора занятых слотов.</p>
+<p>Похожая история со сменой CPU: у i3-4150 и i7 того же поколения одинаковый CPUID (306C3), а сброс кэша по сигналу ME «CPU replaced» в коде закомментирован. С той же памятью новый процессор загрузится на тренировке от старого. Чтобы форсировать новую тренировку — нужна одна загрузка на двух планках, и только потом вернуть третью.</p>
+<h2>Обходной путь</h2>
+<p>Рабочий вариант на сейчас — просто не занимать проблемный слот: три планки, слот C0S1 пустой. 24 ГБ, из них 16 в dual-channel. Работает стабильно. Но хочется все 32 :) </p>
+<h2>Дальнейшие шаги</h2>
+<ol>
+<li><strong>Заменить CPU</strong> — хоть и контроллер памяти и в i3 и в i7 одинаковый, но разводка внутри корпуса у i7 своя, плюс заново сядет контакт в сокете. Другой экземпляр IMC может иметь больше запаса и пройти training с четырьмя DIMM на DDR3-1600. В теории для лучшей серии процессоров и голый кремний и готовый процессор проходят более строгие тесты. </li>
+<li><strong>Снизить частоту до DDR3-1333</strong>, если замена CPU не поможет. То, что я хотел сделать прошивкой SPD. В Libreboot нет прямой настройки частоты памяти — она берётся по самой медленной планке из SPD, поэтому нужен патч в <code>init_mpll.c</code>, ограничивающий tCK значением <code>TCK_666MHZ</code>, если в каком-то канале две планки. Ну или найти планку с низкой частотой.</li>
+<li><strong>Ослабить порог до <code>width &lt; 32</code></strong> — как крайний диагностический эксперимент. Не решение как таковое: понадобится долгий прогон memtest86+ на прогретой машине, потому что искажённый DQS на non-ECC памяти даёт не отказ загрузки, а тихие битые биты. </li>
+</ol>
+<p>Для более глубокой диагностики стоит собрать прошивку с <code>CONFIG_DEBUG_RAM_SETUP=y</code> — тогда в логе появится декод SPD и посэмпловый график RcvEn по каждому байту. </p>
+<h2>Итог</h2>
+<p>Жду i7. Он уже в стране. Если не поможет — ставлю патч на 1333, а затем при необходимости ослабляю порог и прогоняю memtest. 
+Если будет совсем грустно -- куплю еще один 9020, сниму с него плану 4gb -- чтобы уж двухканал был :D А второй комп кому-нибудь подарю :)</p>
+<h2>UPD:</h2>
+<p>В ожидании процессора я таки решил прошить BIOS прошивкой опускающией частоту памяти на 1333. Собрал, прошил -- получилось завести 28gb, на 32 проходит тренинг, но дальше все равно падает. Пока не знаю, искать пару плашек брендированной памяти, или взять еще 4gb и успокоиться с конфиуграцией 4+4+8+8. Так что и ослабление порога
+теперь тоже не выглядит особо осмысленным: на 1333 MHz полные 32 ГБ уже способны пройти весь memory training, а проблема вылезает дальше по загрузке.</p>
+<h3>Что показали прогоны на DDR3-1333</h3>
+<p>Патч с ограничением частоты сработал как задумано: coreboot выбирает 666 MHz, то есть DDR3-1333, обычно с CL9. Но результат оказался не в духе «снизил частоту — всё починилось». Картина стала сложнее.</p>
+<p>На одной из первых попыток с тремя планками raminit снова упал на Receive Enable Training: тот же byte 5 канала 0 получил окно шириной 32 тика. То есть само по себе снижение частоты не убрало маргинальность. При этом в дальнейших прогонах те же и более тяжёлые конфигурации уже проходили memory training полностью.</p>
+<p>Самое интересное — 32 ГБ. На DDR3-1600 четыре 8-гигабайтные dual-rank планки стабильно умирали прямо в RCVET на <code>C0.R2.B5</code>. На DDR3-1333 все четыре планки уже могут полностью пройти raminit: контроллер видит по 16 ГБ на каждом канале, <code>mc_init_done</code> приходит успешно. Но дальше машина всё равно нестабильна — в одной раскладке перезагружается на переходе из romstage в postcar, в другой доходит заметно дальше и виснет уже при старте дополнительных ядер CPU.</p>
+<p>То есть снижение частоты явно увеличило запас и позволило пройти прежнюю точку отказа, но полностью проблему не решило. Похоже уже не на один конкретный «плохой байт», а на общую пограничную стабильность подсистемы памяти при максимальной нагрузке.</p>
+<table>
+<thead>
+<tr>
+<th>Конфигурация</th>
+<th style="text-align: right;">Объём</th>
+<th style="text-align: right;">Примерное число ranks</th>
+<th>Что получилось на 1333</th>
+<th>Логи</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2×8 ГБ, по одной планке на канал</td>
+<td style="text-align: right;">16 ГБ</td>
+<td style="text-align: right;">4</td>
+<td>Есть полный успешный старт; в другом прогоне memory init прошёл, но позже был крах на <code>clear_memory/init_pae_pagetables</code></td>
+<td><a href="../files/articles/optiplex-9020/02-666mhz-2dimm-8plus8-OK.txt">OK</a>, <a href="../files/articles/optiplex-9020/03-666mhz-2dimm-crash-pae.txt">крах</a></td>
+</tr>
+<tr>
+<td>3×8 ГБ</td>
+<td style="text-align: right;">24 ГБ</td>
+<td style="text-align: right;">6</td>
+<td>Были повторяющиеся поздние перезапуски, но та же конфигурация позже полностью загрузилась до payload</td>
+<td><a href="../files/articles/optiplex-9020/04-666mhz-3dimm-crashloop-x5.txt">перезапуски</a>, <a href="../files/articles/optiplex-9020/05-666mhz-3dimm-24gb-OK.txt">OK</a></td>
+</tr>
+<tr>
+<td>3×8 ГБ + 1×4 ГБ single-rank</td>
+<td style="text-align: right;">28 ГБ</td>
+<td style="text-align: right;">7</td>
+<td>Полный успешный старт дважды, причём в двух разных раскладках слотов</td>
+<td><a href="../files/articles/optiplex-9020/06-666mhz-4dimm-28gb-8-4-8-8-OK.txt">раскладка 1</a>, <a href="../files/articles/optiplex-9020/09-666mhz-4dimm-28gb-diff-slots-OK.txt">раскладка 2</a></td>
+</tr>
+<tr>
+<td>4×8 ГБ dual-rank</td>
+<td style="text-align: right;">32 ГБ</td>
+<td style="text-align: right;">8</td>
+<td>Memory training проходит полностью, но дальше система зависает/перезагружается: либо на postcar, либо при AP init</td>
+<td><a href="../files/articles/optiplex-9020/07-666mhz-4dimm-32gb-8-8-8-8-stuck-postcar.txt">postcar</a>, <a href="../files/articles/optiplex-9020/08-666mhz-4dimm-32gb-slots1and3-stuck-apinit.txt">AP init</a></td>
+</tr>
+</tbody>
+</table>
+<p>Отдельно хорошо видно, как поменялась именно максимальная конфигурация:</p>
+<table>
+<thead>
+<tr>
+<th>4×8 ГБ</th>
+<th>DDR3-1600</th>
+<th>DDR3-1333</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Частота контроллера</td>
+<td>800 MHz</td>
+<td>666 MHz</td>
+</tr>
+<tr>
+<td>Основные тайминги</td>
+<td>CL11, 2T</td>
+<td>CL9, 2T</td>
+</tr>
+<tr>
+<td>Receive Enable Training</td>
+<td>Стабильный fail на <code>C0.R2.B5</code>, width = 32</td>
+<td>Может пройти полностью по всем ranks</td>
+</tr>
+<tr>
+<td>До какой стадии доходит загрузка</td>
+<td>Не выходит из raminit</td>
+<td>Доходит до postcar/ramstage и даже до AP init</td>
+</tr>
+<tr>
+<td>Итог</td>
+<td>Не стартует</td>
+<td>Всё ещё нестабильно, но проходит заметно дальше</td>
+</tr>
+<tr>
+<td>Лог</td>
+<td><a href="../files/articles/optiplex-9020/9020-4dimm-FAIL-RCVET.txt">txt</a></td>
+<td><a href="../files/articles/optiplex-9020/07-666mhz-4dimm-32gb-8-8-8-8-stuck-postcar.txt">postcar</a>, <a href="../files/articles/optiplex-9020/08-666mhz-4dimm-32gb-slots1and3-stuck-apinit.txt">AP init</a></td>
+</tr>
+</tbody>
+</table>
+<p>Есть ещё одна странность: поздние падения встречались и на более лёгких конфигурациях, причём одна и та же раскладка могла несколько раз подряд перезагрузиться, а потом нормально пройти до payload. Поэтому я пока не считаю 28 ГБ каким-то жёстким «лимитом платформы». Скорее видно, что 7 ranks уже работают достаточно надёжно, а 8 ranks делают систему совсем пограничной. Плюс где-то рядом существует ещё одна плавающая проблема — контакт, конкретный IMC, материнская плата или особенности native raminit.</p>
+<p>Практический результат на сейчас такой: 28 ГБ в виде трёх dual-rank 8 ГБ и одной single-rank 4 ГБ — первая конфигурация с четырьмя занятыми слотами, которую удалось дважды полностью загрузить в разных перестановках. Полные 32 ГБ на 1333 уже проходят тренировку памяти, но стабильного старта пока нет.</p>
+            </div>
+            <section id="comments" class="comments-section" data-giscus-term="article:optiplex-9020-memory" hidden>
+                <h2>Комментарии</h2>
+                <div class="giscus"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.youtube.com/@DenchikBricks" target="_blank" rel="noopener">youtube</a>
+            <a href="http://t.me/denchik_bricks" target="_blank" rel="noopener">telegram</a>
+            <a href="https://rebrickable.com/users/10on/lego/" target="_blank" rel="noopener">rebrickable</a>
+            <a href="https://www.linkedin.com/in/d-push/" target="_blank" rel="noopener">linkedin</a>
+            <a href="mailto:igoo10on@gmail.com">почта</a>
+        </div>
+        <div class="footer-meta">дэнчик — <span id="year"></span></div>
+    </footer>
+
+    <div id="img-modal">
+        <div class="modal-backdrop">
+            <img id="img-modal-img" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        var themeBtn = document.getElementById('theme-toggle');
+        function syncThemeLabel() { themeBtn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀︎' : '☾'; }
+        syncThemeLabel();
+        themeBtn.addEventListener('click', function () {
+            var next = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : 'dark';
+            if (next) document.documentElement.setAttribute('data-theme', next); else document.documentElement.removeAttribute('data-theme');
+            syncThemeLabel();
+            try { localStorage.setItem('denchik-theme', next); } catch (e) {}
+        });
+
+        var modal = document.getElementById('img-modal');
+        var modalImg = document.getElementById('img-modal-img');
+        function closeModal() { modal.classList.remove('open'); }
+        modal.addEventListener('click', closeModal);
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+        Array.prototype.forEach.call(document.querySelectorAll('.article-body figure img'), function (img) {
+            img.addEventListener('click', function () {
+                modalImg.src = img.currentSrc || img.src;
+                modalImg.alt = img.alt;
+                modal.classList.add('open');
+            });
+        });
+    </script>
+    <script src="../comments.js"></script>
+</body>
+</html>
