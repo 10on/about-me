@@ -1,5 +1,14 @@
 [
   {
+    "id": "wire-spools",
+    "date": "24.09.2026",
+    "tags": [
+      "самоделки",
+      "3д-печать"
+    ],
+    "text": "<img alt=\"Печать катушек для проводов на 3D-принтере\" src=\"img/notes/wire-spools-printing.webp\" width=\"1400\" height=\"788\" loading=\"lazy\" /><br><br>Фоток процесса почти не осталось, но я собрал провода на печатные катушки. И даже корзинку под них нашёл.<br><br><img alt=\"Катушки с проводами в корзинке\" src=\"img/notes/wire-spools-basket.webp\" width=\"1400\" height=\"1050\" loading=\"lazy\" />"
+  },
+  {
     "id": "hp-t610-mpcie-adapter",
     "date": "23.09.2026",
     "tags": [

@@ -1,5 +1,14 @@
 [
   {
+    "id": "wire-spools",
+    "date": "24.09.2026",
+    "tags": [
+      "diy",
+      "3d-printing"
+    ],
+    "text": "<img alt=\"Printing wire spools on a 3D printer\" src=\"../img/notes/wire-spools-printing.webp\" width=\"1400\" height=\"788\" loading=\"lazy\" /><br><br>Almost no photos of the process survived, but I've wound my wires onto printed spools. I even found a basket for them.<br><br><img alt=\"Spools of wire in a basket\" src=\"../img/notes/wire-spools-basket.webp\" width=\"1400\" height=\"1050\" loading=\"lazy\" />"
+  },
+  {
     "id": "hp-t610-mpcie-adapter",
     "date": "23.09.2026",
     "tags": [
