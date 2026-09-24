@@ -32,6 +32,8 @@ At some point I wondered whether there might be some BIOS hacks — after all, t
 
 Alas, the different memory init made no difference. With three sticks the system boots without problems. Add the fourth — raminit fails and the machine won't start. So the problem isn't just the stock BIOS: coreboot, with its more detailed log, showed exactly where things break. And yes, there are logs — you can read them on the built-in COM port. All you need is a good old null-modem cable and a second computer with a serial port. A USB adapter plus an M1 Mac did the job just fine. 115200 8N1 -> read the logs.
 
+![A null-modem cable in the COM port and a USB-serial adapter](../../img/articles/optiplex-com-port.jpg)
+
 ## What the log shows
 
 ```
