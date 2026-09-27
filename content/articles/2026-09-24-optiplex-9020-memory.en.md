@@ -8,7 +8,7 @@ excerpt: Four 8 GB DDR3 sticks, the stock BIOS, Libreboot, a serial log and rami
 
 I'm building my [mini PC for gaming](mini-pc-defitsit.html).
 
-Dell OptiPlex 9020 SFF, Q87 chipset, Core i3-4150 (an i7-4770k is on its way).
+Dell OptiPlex 9020 SFF, Q87 chipset, Core i3-4150 (an i7-4790K is on its way).
 
 As planned, I bought [cheap no-name DDR3 on AliExpress](https://www.aliexpress.com/item/1005007108545241.html): 4×8 GB DDR3-1600 dual-rank. On the stock Dell BIOS with four sticks the system either hung on an endless black screen or gave a long beep and rebooted. My first thought was that I'd been sold obvious junk — a dead stick — or that one of my slots was dead. But I quickly shuffled sticks and slots around and found that the system boots fine with any three sticks in any slots. Three 8GB sticks is the maximum it boots with.
 
