@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <title>Развлекаюсь со своим «новеньким» i7-4790K. В Linux он завёлся сходу… — дэнчик</title>
+    <meta name="description" content="Развлекаюсь со своим «новеньким» i7-4790K. В Linux он завёлся сходу, а вот установщик Windows 10 с ним дружить не хотел — зависал на логотипе. Дело оказалось в…">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://10on.github.io/about-me/notes/i7-4790k-peregrev.html">
+    <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/notes/i7-4790k-peregrev.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="дэнчик">
+    <meta property="og:title" content="Развлекаюсь со своим «новеньким» i7-4790K. В Linux он завёлся сходу… — дэнчик">
+    <meta property="og:description" content="Развлекаюсь со своим «новеньким» i7-4790K. В Linux он завёлся сходу, а вот установщик Windows 10 с ним дружить не хотел — зависал на логотипе. Дело оказалось в…">
+    <meta property="og:url" content="https://10on.github.io/about-me/notes/i7-4790k-peregrev.html">
+    <meta property="og:image" content="https://10on.github.io/about-me/img/notes/i7-4790k-hwinfo-throttling.webp">
+    <meta property="og:image:width" content="919">
+    <meta property="og:image:height" content="900">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://10on.github.io/about-me/img/notes/i7-4790k-hwinfo-throttling.webp">
+    <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="stylesheet" href="../style.css?v=182d526d">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <a href="../index.html" class="logo">дэнчик</a>
+            <div class="header-actions"><a class="lang-switch" href="../en/notes/i7-4790k-peregrev.html" title="EN">EN</a><button id="theme-toggle" class="theme-toggle" title="тема">☾</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container note-page">
+            <a class="back-link" href="../notes.html#note-i7-4790k-peregrev">← все заметки</a>
+            <div class="note-meta"><span>27.09.2026</span><span class="note-tags">#железо</span></div>
+            <div class="note-text expanded">Развлекаюсь со своим «новеньким» i7-4790K. В Linux он завёлся сходу, а вот установщик Windows 10 с ним дружить не хотел — зависал на логотипе. Дело оказалось в том, как кастомный BIOS (Libreboot) инициализирует всякие продвинутые штуки вроде VT-d: для процессора с его поддержкой в ACPI попадала пустая таблица DMAR, и ядро Windows на ней намертво вешалось. На i3, где VT-d нет, этой проблемы не было. Мне эти функции не нужны, поэтому в очередной раз пересобрал BIOS, чтобы инициализация проходила как на i3.<br><br>Систему завёл, воткнул временной картой GT 730 (64 bit, 2 GB DDR3). Понял, что железка очень плоха даже по меркам средних карт конца нулевых. Но самое главное — понял, что как только процессор начинает долбиться в сотку, даже на простых операциях вроде распаковки архивов, температура моментально улетает к 100 градусам. Мало того что это шум, так ещё и троттлинг. А я хочу выжимать все 4,4 GHz :D<br><br><img alt="HWiNFO под нагрузкой: i7-4790K греется до 98 °C, тепловой троттлинг 83% времени" src="../img/notes/i7-4790k-hwinfo-throttling.webp" width="919" height="900" loading="lazy" /><br><br>Процессор ведёт себя так, будто у него плохой контакт с радиатором. Но прижим максимальный, паста свежая. Скорее всего, проблема в том, что у процессора под крышкой не припой, а термосопли, которые за 10+ лет должны бы уже утратить способность качественно проводить тепло.<br><br>В любом случае для начала я хочу поставить более эффективный кулер — запас по высоте есть, так что дерзаю. Но модели скальпатора для печати я уже нашёл, а жидкий металл положил в корзину.</div>
+            <section id="comments" class="comments-section" data-giscus-term="note:i7-4790k-peregrev" hidden>
+                <h2>Комментарии</h2>
+                <div class="giscus"></div>
+            </section>
+        </div>
+    </main>
+    <footer><div class="footer-meta">дэнчик — <span id="year"></span></div></footer>
+    <div id="img-modal"><div class="modal-backdrop"><img id="img-modal-img" src="" alt=""></div></div>
+    <script src="../main.js?v=d4120cdb"></script>
+    <script src="../comments.js"></script>
+</body>
+</html>

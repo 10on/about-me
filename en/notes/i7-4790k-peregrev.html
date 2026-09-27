@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="icon" href="../../favicon.ico" sizes="any">
+    <title>Having fun with my &quot;new&quot; i7-4790K. Linux booted on it right away, but… — Denchik</title>
+    <meta name="description" content="Having fun with my &quot;new&quot; i7-4790K. Linux booted on it right away, but the Windows 10 installer didn&#x27;t want to be friends with it — it hung at the logo. It…">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://10on.github.io/about-me/en/notes/i7-4790k-peregrev.html">
+    <link rel="alternate" hreflang="ru" href="https://10on.github.io/about-me/notes/i7-4790k-peregrev.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Denchik">
+    <meta property="og:title" content="Having fun with my &quot;new&quot; i7-4790K. Linux booted on it right away, but… — Denchik">
+    <meta property="og:description" content="Having fun with my &quot;new&quot; i7-4790K. Linux booted on it right away, but the Windows 10 installer didn&#x27;t want to be friends with it — it hung at the logo. It…">
+    <meta property="og:url" content="https://10on.github.io/about-me/en/notes/i7-4790k-peregrev.html">
+    <meta property="og:image" content="https://10on.github.io/about-me/img/notes/i7-4790k-hwinfo-throttling.webp">
+    <meta property="og:image:width" content="919">
+    <meta property="og:image:height" content="900">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://10on.github.io/about-me/img/notes/i7-4790k-hwinfo-throttling.webp">
+    <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="stylesheet" href="../../style.css?v=182d526d">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <a href="../../index.html" class="logo">Denchik</a>
+            <div class="header-actions"><a class="lang-switch" href="../../notes/i7-4790k-peregrev.html" title="RU">RU</a><button id="theme-toggle" class="theme-toggle" title="theme">☾</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container note-page">
+            <a class="back-link" href="../notes.html#note-i7-4790k-peregrev">← all notes</a>
+            <div class="note-meta"><span>27.09.2026</span><span class="note-tags">#hardware</span></div>
+            <div class="note-text expanded">Having fun with my "new" i7-4790K. Linux booted on it right away, but the Windows 10 installer didn't want to be friends with it — it hung at the logo. It turned out to be about how the custom BIOS (Libreboot) initializes advanced stuff like VT-d: for a CPU that supports it, an empty DMAR table ended up in ACPI, and the Windows kernel hung dead on it. The i3, which has no VT-d, never had this problem. I don't need those features, so once again I rebuilt the BIOS to make initialization go the same way as on the i3.<br><br>Got the system running and plugged in a GT 730 (64-bit, 2 GB DDR3) as a temporary card. Realized it's really bad even by the standards of mid-range cards from the late 2000s. But most importantly, I realized that as soon as the CPU hits 100% load, even on simple things like unpacking archives, the temperature instantly shoots up to 100 degrees. Not only is that noisy, it also means throttling. And I want to squeeze out all 4.4 GHz :D<br><br><img alt="HWiNFO under load: the i7-4790K heats up to 98 °C, thermal throttling 83% of the time" src="../../img/notes/i7-4790k-hwinfo-throttling.webp" width="919" height="900" loading="lazy" /><br><br>The CPU behaves as if it had poor contact with the heatsink. But the mounting pressure is maxed out and the paste is fresh. Most likely the problem is that under the lid there's no solder, just cheap thermal goo, which after 10+ years has probably lost its ability to conduct heat properly.<br><br>Either way, first I want to install a more efficient cooler — there's enough height clearance, so I'm going for it. But I've already found delidder models to print, and liquid metal is in my cart.</div>
+            <section id="comments" class="comments-section" data-giscus-term="note:i7-4790k-peregrev" hidden>
+                <h2>Comments</h2>
+                <div class="giscus"></div>
+            </section>
+        </div>
+    </main>
+    <footer><div class="footer-meta">Denchik — <span id="year"></span></div></footer>
+    <div id="img-modal"><div class="modal-backdrop"><img id="img-modal-img" src="" alt=""></div></div>
+    <script src="../../main.js?v=d4120cdb"></script>
+    <script src="../../comments.js"></script>
+</body>
+</html>
