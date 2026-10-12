@@ -1,5 +1,14 @@
 [
   {
+    "id": "crucial-32gb",
+    "date": "12.10.2026",
+    "tags": [
+      "hardware",
+      "mini-pc"
+    ],
+    "text": "Last week I got 32gb of non-no-name memory. It worked in the dell right away without any dancing around. So all my <a href=\"articles/optiplex-9020-memory.html\">problems getting the memory to run on the dell 9020</a> were caused solely by the Chinese memory. I got a chance to put the memory into another machine with a 32gb ceiling. It didn't take off there either.<br><br><img alt=\"Four 8 GB Crucial DDR3-1600 sticks\" src=\"../img/notes/crucial-32gb.webp\" width=\"841\" height=\"1000\" loading=\"lazy\" />"
+  },
+  {
     "id": "i7-4790k-peregrev",
     "date": "27.09.2026",
     "tags": [
