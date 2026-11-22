@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="icon" href="../../favicon.ico" sizes="any">
+    <title>I&#x27;ve started asking LLMs to watch videos for me a lot. Usually that… — Denchik</title>
+    <meta name="description" content="I&#x27;ve started asking LLMs to watch videos for me a lot. Usually that meant downloading subtitles through some third-party service and dropping them into a…">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://10on.github.io/about-me/en/notes/yt-llm-helper.html">
+    <link rel="alternate" hreflang="ru" href="https://10on.github.io/about-me/notes/yt-llm-helper.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Denchik">
+    <meta property="og:title" content="I&#x27;ve started asking LLMs to watch videos for me a lot. Usually that… — Denchik">
+    <meta property="og:description" content="I&#x27;ve started asking LLMs to watch videos for me a lot. Usually that meant downloading subtitles through some third-party service and dropping them into a…">
+    <meta property="og:url" content="https://10on.github.io/about-me/en/notes/yt-llm-helper.html">
+    <meta property="og:image" content="https://10on.github.io/about-me/img/notes/yt-helper-summary.webp">
+    <meta property="og:image:width" content="900">
+    <meta property="og:image:height" content="1170">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://10on.github.io/about-me/img/notes/yt-helper-summary.webp">
+    <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="stylesheet" href="../../style.css?v=182d526d">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <a href="../../index.html" class="logo">Denchik</a>
+            <div class="header-actions"><a class="lang-switch" href="../../notes/yt-llm-helper.html" title="RU">RU</a><button id="theme-toggle" class="theme-toggle" title="theme">☾</button></div>
+        </div>
+    </header>
+    <main>
+        <div class="container note-page">
+            <a class="back-link" href="../notes.html#note-yt-llm-helper">← all notes</a>
+            <div class="note-meta"><span>22.11.2026</span><span class="note-tags">#development #ai</span></div>
+            <div class="note-text expanded"><img alt="Chat with Claude: given a YouTube link, the model summarizes the video &quot;Can you game on DDR2 in 2026?&quot; through the Youtube reader connector" src="../../img/notes/yt-helper-summary.webp" width="900" height="1170" loading="lazy" /><br><br>I've started asking LLMs to watch videos for me a lot. Usually that meant downloading subtitles through some third-party service and dropping them into a chatbot. So I vibe-coded myself a helper that lets an AI "watch" YouTube. It's an MCP server running on my home NAS, connected to Claude as a connector. Under the hood: yt-dlp and ffmpeg.<br><br>At first I only taught it to pull subtitles. Then, while I was at it, I threw in video search, channel video lists and comments. After that I wanted the model to see the picture, not just the text. I assumed that would take a complex pipeline with a local recognition model. But it turned out you can build a storyboard from the tiny previews YouTube shows when you scrub, and then ask for a sharp frame at the right moment. The frame is taken straight from the stream, no need to download the whole video.<br><br><img alt="Claude's answer about another video: a timeline (&quot;00:00 intro, 05:17–12:44 teardown…&quot;) worked out from frames of the video" src="../../img/notes/yt-helper-frames.webp" width="900" height="1340" loading="lazy" /><br><br>Long story short, that's basically enough to get a decent amount of information out of a video.</div>
+            <section id="comments" class="comments-section" data-giscus-term="note:yt-llm-helper" hidden>
+                <h2>Comments</h2>
+                <div class="giscus"></div>
+            </section>
+        </div>
+    </main>
+    <footer><div class="footer-meta">Denchik — <span id="year"></span></div></footer>
+    <div id="img-modal"><div class="modal-backdrop"><img id="img-modal-img" src="" alt=""></div></div>
+    <script src="../../main.js?v=d4120cdb"></script>
+    <script src="../../comments.js"></script>
+</body>
+</html>
