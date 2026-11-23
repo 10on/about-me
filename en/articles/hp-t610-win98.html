@@ -103,7 +103,7 @@
 </tr>
 <tr>
 <td>GPU</td>
-<td>integrated Radeon HD 6320 + GeForce GT 730 2 GB DDR3</td>
+<td>integrated Radeon HD 6320 + GeForce GT 730 2 GB DDR3, 64-bit</td>
 </tr>
 <tr>
 <td>RAM</td>
@@ -297,7 +297,7 @@ In txtsetup.oem:  PCI\VEN_1002&amp;DEV_4391&amp;CC_0106
 </code></pre>
 <h3>Drivers</h3>
 <p>In the end everything worked: network, sound, integrated graphics, GT 730. XP drivers for this hardware still exist, you just have to look for them. And some manufacturers stubbornly resist letting you download them: there were plenty of suitable drivers on their sites, but they either ask for a serial number or hide the files somewhere else. I don't know if they're that worried about load on their servers or what.</p>
-<p>A separate note on the GT 730: NVIDIA released cards on different architectures under this name — Fermi (GF108) and Kepler (GK208), and the drivers for them differ. I got the worse version, and the worse of the two drivers with it.</p>
+<p>A separate note on the GT 730: NVIDIA released cards on different architectures under this name — Fermi (GF108) and Kepler (GK208), and the drivers for them differ. I got the worse version — a Kepler GK208 with a 64-bit bus and DDR3 — and the worse of the two drivers with it.</p>
 <p>An interesting quirk: when I installed the X700 driver, the integrated graphics driver broke. Apparently the old ATI driver and the newer AMD one conflict, overlapping somewhere by ID. I haven't dug into it yet: after installing the X700 I haven't tinkered with the machine.</p>
 <figure><img src="../../img/articles/t610-x700-installed.jpg" alt="The t610 with the new card. The fan creaks and is clearly begging for some oil"><figcaption>The t610 with the new card. The fan creaks and is clearly begging for some oil</figcaption></figure>
 <h3>Choosing the OS at boot</h3>
