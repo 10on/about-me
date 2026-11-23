@@ -1,0 +1,947 @@
+﻿[00038824] Loading Device = C:\WINDOWS\SETVER.EXE
+(Logo disabled)
+[00038824] LoadSuccess    = C:\WINDOWS\SETVER.EXE
+[00038824] Loading Device = C:\WINDOWS\COMMAND\DISPLAY.SYS
+[00038824] LoadSuccess    = C:\WINDOWS\COMMAND\DISPLAY.SYS
+[00038825] Loading Device = C:\WINDOWS\HIMEM.SYS
+[00038825] LoadSuccess    = C:\WINDOWS\HIMEM.SYS
+[00038825] Loading Device = C:\WINDOWS\DBLBUFF.SYS
+[00038825] LoadSuccess    = C:\WINDOWS\DBLBUFF.SYS
+[00038825] Loading Device = C:\WINDOWS\IFSHLP.SYS
+[00038826] LoadSuccess    = C:\WINDOWS\IFSHLP.SYS
+[0003882B] C:\WINDOWS\COMMAND\MODE.COM[0003882B]  starting
+[0003882C] C:\WINDOWS\COMMAND\MODE.COM[0003882C]  starting
+[0003882D] C:\WINDOWS\COMMAND\KEYB.COM[0003882D]  starting
+[00038881] Loading Vxd = VMM
+[00038881] LoadSuccess = VMM
+[00038881] Loading Vxd = C:\WINDOWS\SMARTDRV.EXE
+[00038882] LoadSuccess = C:\WINDOWS\SMARTDRV.EXE
+[00038882] Loading Vxd = JAVASUP.VXD
+[00038882] LoadSuccess = JAVASUP.VXD
+[00038882] Loading Vxd = CONFIGMG
+[00038882] LoadSuccess = CONFIGMG
+[00038882] Loading Vxd = NTKERN
+[00038882] LoadSuccess = NTKERN
+[00038882] Loading Vxd = VWIN32
+[00038882] LoadSuccess = VWIN32
+[00038882] Loading Vxd = VFBACKUP
+[00038882] LoadSuccess = VFBACKUP
+[00038882] Loading Vxd = VCOMM
+[00038882] LoadSuccess = VCOMM
+[00038882] Loading Vxd = COMBUFF
+[00038882] LoadSuccess = COMBUFF
+[00038882] Loading Vxd = C:\WINDOWS\system\VMM32\IFSMGR.VXD
+[00038885] LoadSuccess = C:\WINDOWS\system\VMM32\IFSMGR.VXD
+[00038885] Loading Vxd = C:\WINDOWS\system\VMM32\IOS.VXD
+[00038886] LoadSuccess = C:\WINDOWS\system\VMM32\IOS.VXD
+[00038886] Loading Vxd = mtrr
+[00038886] LoadSuccess = mtrr
+[00038886] Loading Vxd = SPOOLER
+[00038886] LoadSuccess = SPOOLER
+[00038886] Loading Vxd = UDF
+[00038887] LoadSuccess = UDF
+[00038887] Loading Vxd = VFAT
+[00038887] LoadSuccess = VFAT
+[00038887] Loading Vxd = VCACHE
+[00038887] LoadSuccess = VCACHE
+[00038887] Loading Vxd = VCOND
+[00038887] LoadSuccess = VCOND
+[00038887] Loading Vxd = VCDFSD
+[00038887] LoadSuccess = VCDFSD
+[00038887] Loading Vxd = VXDLDR
+[00038887] LoadSuccess = VXDLDR
+[00038887] Loading Vxd = VDEF
+[00038887] LoadSuccess = VDEF
+[00038887] Loading Vxd = VPICD
+[00038887] LoadSuccess = VPICD
+[00038887] Loading Vxd = VTD
+[00038887] LoadSuccess = VTD
+[00038887] Loading Vxd = REBOOT
+[00038887] LoadSuccess = REBOOT
+[00038887] Loading Vxd = VDMAD
+[00038887] LoadSuccess = VDMAD
+[00038887] Loading Vxd = VSD
+[00038887] LoadSuccess = VSD
+[00038887] Loading Vxd = V86MMGR
+[00038887] LoadSuccess = V86MMGR
+[00038887] Loading Vxd = PAGESWAP
+[00038887] LoadSuccess = PAGESWAP
+[00038887] Loading Vxd = DOSMGR
+[00038887] LoadSuccess = DOSMGR
+[00038887] Loading Vxd = VMPOLL
+[00038887] LoadSuccess = VMPOLL
+[00038887] Loading Vxd = SHELL
+[00038887] LoadSuccess = SHELL
+[00038887] Loading Vxd = PARITY
+[00038887] LoadSuccess = PARITY
+[00038887] Loading Vxd = BIOSXLAT
+[00038887] LoadSuccess = BIOSXLAT
+[00038887] Loading Vxd = VMCPD
+[00038887] LoadSuccess = VMCPD
+[00038887] Loading Vxd = VTDAPI
+[00038887] LoadSuccess = VTDAPI
+[00038887] Loading Vxd = PERF
+[00038887] LoadSuccess = PERF
+[00038887] Loading Vxd = C:\WINDOWS\SYSTEM\vrtwd.386
+[00038889] LoadSuccess = C:\WINDOWS\SYSTEM\vrtwd.386
+[00038889] Loading Vxd = C:\WINDOWS\SYSTEM\vfixd.vxd
+[00038889] LoadSuccess = C:\WINDOWS\SYSTEM\vfixd.vxd
+[00038889] Loading Vxd = ebios
+[00038889] LoadSuccess = ebios
+[00038889] Loading Vxd = vmouse
+[00038889] LoadSuccess = vmouse
+[00038889] Loading Vxd = msmouse.vxd
+[0003888A] LoadSuccess = msmouse.vxd
+[0003888A] Loading Vxd = dynapage
+[0003888A] LoadSuccess = dynapage
+[0003888A] Loading Vxd = vcd
+[0003888A] LoadSuccess = vcd
+[0003888A] Loading Vxd = vpd
+[0003888A] LoadSuccess = vpd
+[0003888A] Loading Vxd = int13
+[0003888A] LoadSuccess = int13
+[0003888A] Loading Vxd = vkd
+[0003888A] LoadSuccess = vkd
+[0003888A] Loading Vxd = VDD
+[0003888A] LoadSuccess = VDD
+[0003888A] SYSCRITINIT  = VMM     
+[0003888A] SYSCRITINITSUCCESS  = VMM     
+[0003888A] SYSCRITINIT  = MTRR    
+[0003888A] SYSCRITINITSUCCESS  = MTRR    
+[0003888A] SYSCRITINIT  = VCACHE  
+[0003888A] SYSCRITINITSUCCESS  = VCACHE  
+[0003888A] SYSCRITINIT  = PERF    
+[0003888A] SYSCRITINITSUCCESS  = PERF    
+[0003888A] SYSCRITINIT  = VFIXD   
+[0003888A] SYSCRITINITSUCCESS  = VFIXD   
+[0003888A] SYSCRITINIT  = VPICD   
+[0003888A] SYSCRITINITSUCCESS  = VPICD   
+[0003888A] SYSCRITINIT  = VrtwD   
+[0003888A] SYSCRITINITSUCCESS  = VrtwD   
+[0003888A] SYSCRITINIT  = VTD     
+[0003888A] SYSCRITINITSUCCESS  = VTD     
+[0003888A] SYSCRITINIT  = VWIN32  
+[0003888A] SYSCRITINITSUCCESS  = VWIN32  
+[0003888A] SYSCRITINIT  = VXDLDR  
+[0003888A] SYSCRITINITSUCCESS  = VXDLDR  
+[0003888A] SYSCRITINIT  = NTKERN  
+[0003888A] SYSCRITINITSUCCESS  = NTKERN  
+[0003888A] SYSCRITINIT  = CONFIGMG
+[0003888A] SYSCRITINITSUCCESS  = CONFIGMG
+[0003888A] SYSCRITINIT  = VCDFSD  
+[0003888A] SYSCRITINITSUCCESS  = VCDFSD  
+[0003888A] SYSCRITINIT  = IOS     
+[0003888A] SYSCRITINITSUCCESS  = IOS     
+[0003888A] SYSCRITINIT  = PAGEFILE
+[0003888A] SYSCRITINITSUCCESS  = PAGEFILE
+[0003888A] SYSCRITINIT  = PAGESWAP
+[0003888A] SYSCRITINITSUCCESS  = PAGESWAP
+[0003888A] SYSCRITINIT  = PARITY  
+[0003888A] SYSCRITINITSUCCESS  = PARITY  
+[0003888A] SYSCRITINIT  = REBOOT  
+[0003888A] SYSCRITINITSUCCESS  = REBOOT  
+[0003888A] SYSCRITINIT  = EBIOS   
+[0003888A] SYSCRITINITSUCCESS  = EBIOS   
+[0003888A] SYSCRITINIT  = VDD     
+[0003888A] SYSCRITINITSUCCESS  = VDD     
+[0003888A] SYSCRITINIT  = VSD     
+[0003888A] SYSCRITINITSUCCESS  = VSD     
+[0003888A] SYSCRITINIT  = COMBUFF 
+[0003888A] SYSCRITINITSUCCESS  = COMBUFF 
+[0003888A] SYSCRITINIT  = VCD     
+[0003888A] SYSCRITINITSUCCESS  = VCD     
+[0003888A] SYSCRITINIT  = VMOUSE  
+[0003888A] SYSCRITINITSUCCESS  = VMOUSE  
+[0003888A] SYSCRITINIT  = MSMINI  
+[0003888A] SYSCRITINITSUCCESS  = MSMINI  
+[0003888A] SYSCRITINIT  = VKD     
+[0003888A] SYSCRITINITSUCCESS  = VKD     
+[0003888A] SYSCRITINIT  = VPD     
+[0003888A] SYSCRITINITSUCCESS  = VPD     
+[0003888A] SYSCRITINIT  = INT13   
+[0003888A] SYSCRITINITSUCCESS  = INT13   
+[0003888A] SYSCRITINIT  = VMCPD   
+[0003888A] SYSCRITINITSUCCESS  = VMCPD   
+[0003888A] SYSCRITINIT  = BIOSXLAT
+[0003888A] SYSCRITINITSUCCESS  = BIOSXLAT
+[0003888A] SYSCRITINIT  = SDVXD   
+[0003888A] SYSCRITINITSUCCESS  = SDVXD   
+[0003888A] SYSCRITINIT  = DOSMGR  
+[0003888A] SYSCRITINITSUCCESS  = DOSMGR  
+[0003888A] SYSCRITINIT  = VMPOLL  
+[0003888A] SYSCRITINITSUCCESS  = VMPOLL  
+[0003888A] SYSCRITINIT  = JAVASUP 
+[0003888A] SYSCRITINITSUCCESS  = JAVASUP 
+[0003888A] SYSCRITINIT  = VCOMM   
+[0003888A] SYSCRITINITSUCCESS  = VCOMM   
+[0003888A] SYSCRITINIT  = VCOND   
+[0003888A] SYSCRITINITSUCCESS  = VCOND   
+[0003888A] SYSCRITINIT  = VTDAPI  
+[0003888A] SYSCRITINITSUCCESS  = VTDAPI  
+[0003888A] SYSCRITINIT  = VDMAD   
+[0003888A] SYSCRITINITSUCCESS  = VDMAD   
+[0003888A] SYSCRITINIT  = V86MMGR 
+[0003888A] SYSCRITINITSUCCESS  = V86MMGR 
+[0003888A] SYSCRITINIT  = SPOOLER 
+[0003888A] SYSCRITINITSUCCESS  = SPOOLER 
+[0003888A] SYSCRITINIT  = UDF     
+[0003888A] SYSCRITINITSUCCESS  = UDF     
+[0003888A] SYSCRITINIT  = VFAT    
+[0003888A] SYSCRITINITSUCCESS  = VFAT    
+[0003888A] SYSCRITINIT  = VDEF    
+[0003888A] SYSCRITINITSUCCESS  = VDEF    
+[0003888A] SYSCRITINIT  = IFSMGR  
+[0003888A] SYSCRITINITSUCCESS  = IFSMGR  
+[0003888A] SYSCRITINIT  = VFBACKUP
+[0003888A] SYSCRITINITSUCCESS  = VFBACKUP
+[0003888A] SYSCRITINIT  = SHELL   
+[0003888A] SYSCRITINITSUCCESS  = SHELL   
+[0003888B] DEVICEINIT   = VMM     
+[0003888B] DEVICEINITSUCCESS   = VMM     
+[0003888B] DEVICEINIT   = MTRR    
+[0003888C] DEVICEINITSUCCESS   = MTRR    
+[0003888C] DEVICEINIT   = VCACHE  
+[0003888C] DEVICEINITSUCCESS   = VCACHE  
+[0003888C] DEVICEINIT   = PERF    
+[0003888C] DEVICEINITSUCCESS   = PERF    
+[0003888C] DEVICEINIT   = VFIXD   
+[0003888C] DEVICEINITSUCCESS   = VFIXD   
+[0003888C] DEVICEINIT   = VPICD   
+[0003888C] DEVICEINITSUCCESS   = VPICD   
+[0003888C] DEVICEINIT   = VrtwD   
+[0003888C] DEVICEINITSUCCESS   = VrtwD   
+[0003888C] DEVICEINIT   = VTD     
+[0003888C] DEVICEINITSUCCESS   = VTD     
+[0003888C] DEVICEINIT   = VWIN32  
+[0003888C] DEVICEINITSUCCESS   = VWIN32  
+[0003888C] DEVICEINIT   = VXDLDR  
+[0003888C] DEVICEINITSUCCESS   = VXDLDR  
+[0003888C] DEVICEINIT   = NTKERN  
+[0003888C] DEVICEINITSUCCESS   = NTKERN  
+[0003888C] DEVICEINIT   = CONFIGMG
+[0003888C] Starting Unknown (HTREE\ROOT\0)
+[0003888C] Started Unknown (HTREE\ROOT\0)
+[0003888C] Enumerating Unknown (HTREE\ROOT\0)
+[0003888C] Enumerated Unknown (HTREE\ROOT\0)
+[0003888C] Starting Unknown (HTREE\RESERVED\0)
+[0003888C] Started Unknown (HTREE\RESERVED\0)
+[0003888C] Enumerating Unknown (HTREE\RESERVED\0)
+[0003888C] Enumerated Unknown (HTREE\RESERVED\0)
+[0003888C] Loading PNP drivers of Поддержка процессора (ROOT\PROCESSOR_UPDATE\0000)
+[00038890] Loaded PNP drivers of Поддержка процессора (ROOT\PROCESSOR_UPDATE\0000)
+[00038890] Starting Поддержка процессора (ROOT\PROCESSOR_UPDATE\0000)
+[00038890] Started Поддержка процессора (ROOT\PROCESSOR_UPDATE\0000)
+[00038890] Loading PNP drivers of Нумератор программного обеспечения устройств Plug and Play (ROOT\SWENUM\0000)
+[00038892] Loaded PNP drivers of Нумератор программного обеспечения устройств Plug and Play (ROOT\SWENUM\0000)
+[00038892] Starting Нумератор программного обеспечения устройств Plug and Play (ROOT\SWENUM\0000)
+[00038892] Started Нумератор программного обеспечения устройств Plug and Play (ROOT\SWENUM\0000)
+[00038892] Loading PNP drivers of Интерфейс автоматического управления конфигурацией и питанием (ACPI) BIOS (ROOT\*PNP0C08\0000)
+[00038894] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   PCI.VXD
+[00038895] „Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп гбва®©бвў   PCI
+[00038895] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп PCI
+[00038895] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  PCI.VXD
+[00038895] Starting Интерфейс автоматического управления конфигурацией и питанием (ACPI) BIOS (ROOT\*PNP0C08\0000)
+[00038895] Started Интерфейс автоматического управления конфигурацией и питанием (ACPI) BIOS (ROOT\*PNP0C08\0000)
+[00038895] Loaded PNP drivers of Интерфейс автоматического управления конфигурацией и питанием (ACPI) BIOS (ROOT\*PNP0C08\0000)
+[00038895] Enumerating Поддержка процессора (ROOT\PROCESSOR_UPDATE\0000)
+[00038895] Enumerated Поддержка процессора (ROOT\PROCESSOR_UPDATE\0000)
+[00038895] Enumerating Нумератор программного обеспечения устройств Plug and Play (ROOT\SWENUM\0000)
+[00038895] Enumerated Нумератор программного обеспечения устройств Plug and Play (ROOT\SWENUM\0000)
+[00038895] Enumerating Интерфейс автоматического управления конфигурацией и питанием (ACPI) BIOS (ROOT\*PNP0C08\0000)
+[00038895] Starting SCI IRQ для шины ACPI (ACPI\ACPI_INTERRUPT\0)
+[00038896] Started SCI IRQ для шины ACPI (ACPI\ACPI_INTERRUPT\0)
+[00038896] Enumerating SCI IRQ для шины ACPI (ACPI\ACPI_INTERRUPT\0)
+[00038896] Enumerated SCI IRQ для шины ACPI (ACPI\ACPI_INTERRUPT\0)
+[00038896] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   VPOWERD.VXD
+[00038896] „Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп гбва®©бвў   VPOWERD
+[00038896] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп VPOWERD
+[00038896] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  VPOWERD.VXD
+[00038896] Enumerated Интерфейс автоматического управления конфигурацией и питанием (ACPI) BIOS (ROOT\*PNP0C08\0000)
+[00038896] Enumerating SCI IRQ для шины ACPI (ACPI\ACPI_INTERRUPT\0)
+[00038896] Enumerated SCI IRQ для шины ACPI (ACPI\ACPI_INTERRUPT\0)
+[00038896] Loading PNP drivers of Смешанный источник питания (ACPI\COMPBATT\ROOT&*PNP0C08&0000)
+[00038897] Loaded PNP drivers of Смешанный источник питания (ACPI\COMPBATT\ROOT&*PNP0C08&0000)
+[00038897] Starting Смешанный источник питания (ACPI\COMPBATT\ROOT&*PNP0C08&0000)
+[00038897] Started Смешанный источник питания (ACPI\COMPBATT\ROOT&*PNP0C08&0000)
+[00038897] Loading PNP drivers of Системная кнопка ACPI (ACPI\BUTTON\ROOT&*PNP0C08&0000)
+[00038897] Loaded PNP drivers of Системная кнопка ACPI (ACPI\BUTTON\ROOT&*PNP0C08&0000)
+[00038897] Starting Системная кнопка ACPI (ACPI\BUTTON\ROOT&*PNP0C08&0000)
+[00038897] Started Системная кнопка ACPI (ACPI\BUTTON\ROOT&*PNP0C08&0000)
+[00038897] Loading PNP drivers of Шина PCI (ACPI\*PNP0A08\00000000)
+[00038897] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   pci.vxd
+[00038897] „Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп гбва®©бвў   PCI
+[00038897] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп PCI
+[00038897] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  pci.vxd
+[00038897] Starting Шина PCI (ACPI\*PNP0A08\00000000)
+[00038897] Started Шина PCI (ACPI\*PNP0A08\00000000)
+[00038897] Enumerating Шина PCI (ACPI\*PNP0A08\00000000)
+[00038897] Starting Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_4384&SUBSYS_00000000&REV_40\BUS_00&DEV_14&FUNC_04)
+[00038898] Started Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_4384&SUBSYS_00000000&REV_40\BUS_00&DEV_14&FUNC_04)
+[00038898] Enumerating Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_4384&SUBSYS_00000000&REV_40\BUS_00&DEV_14&FUNC_04)
+[00038898] Enumerated Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_4384&SUBSYS_00000000&REV_40\BUS_00&DEV_14&FUNC_04)
+[00038898] Enumerated Шина PCI (ACPI\*PNP0A08\00000000)
+[00038899] Starting Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1510&SUBSYS_17E2103C&REV_00\BUS_00&DEV_00&FUNC_00)
+[00038899] Started Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1510&SUBSYS_17E2103C&REV_00\BUS_00&DEV_00&FUNC_00)
+[00038899] Enumerating Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1510&SUBSYS_17E2103C&REV_00\BUS_00&DEV_00&FUNC_00)
+[00038899] Enumerated Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1510&SUBSYS_17E2103C&REV_00\BUS_00&DEV_00&FUNC_00)
+[00038899] Loading PNP drivers of Стандартный мост PCI - ISA (PCI\VEN_1002&DEV_439D&SUBSYS_17E2103C&REV_40\BUS_00&DEV_14&FUNC_03)
+[00038899] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   isapnp.vxd
+[0003889A] „Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп гбва®©бвў   ISAPNP
+[0003889A] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп ISAPNP
+[0003889A] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  isapnp.vxd
+[0003889A] Starting Стандартный мост PCI - ISA (PCI\VEN_1002&DEV_439D&SUBSYS_17E2103C&REV_40\BUS_00&DEV_14&FUNC_03)
+[0003889A] Started Стандартный мост PCI - ISA (PCI\VEN_1002&DEV_439D&SUBSYS_17E2103C&REV_40\BUS_00&DEV_14&FUNC_03)
+[0003889A] Enumerating Стандартный мост PCI - ISA (PCI\VEN_1002&DEV_439D&SUBSYS_17E2103C&REV_40\BUS_00&DEV_14&FUNC_03)
+[0003889A] Starting Чтение данных из порта для перечислителя ISA Plug and Play (ISAPNP\READDATAPORT\0)
+[0003889A] Started Чтение данных из порта для перечислителя ISA Plug and Play (ISAPNP\READDATAPORT\0)
+[0003889A] Enumerating Чтение данных из порта для перечислителя ISA Plug and Play (ISAPNP\READDATAPORT\0)
+[0003889A] Enumerated Чтение данных из порта для перечислителя ISA Plug and Play (ISAPNP\READDATAPORT\0)
+[0003889A] Enumerated Стандартный мост PCI - ISA (PCI\VEN_1002&DEV_439D&SUBSYS_17E2103C&REV_40\BUS_00&DEV_14&FUNC_03)
+[0003889C] Loaded PNP drivers of Стандартный мост PCI - ISA (PCI\VEN_1002&DEV_439D&SUBSYS_17E2103C&REV_40\BUS_00&DEV_14&FUNC_03)
+[0003889C] Starting Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1700&SUBSYS_00000000&REV_43\BUS_00&DEV_18&FUNC_00)
+[0003889C] Started Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1700&SUBSYS_00000000&REV_43\BUS_00&DEV_18&FUNC_00)
+[0003889C] Enumerating Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1700&SUBSYS_00000000&REV_43\BUS_00&DEV_18&FUNC_00)
+[0003889C] Enumerated Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1700&SUBSYS_00000000&REV_43\BUS_00&DEV_18&FUNC_00)
+[0003889C] Starting Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1701&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_01)
+[0003889C] Started Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1701&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_01)
+[0003889C] Enumerating Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1701&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_01)
+[0003889C] Enumerated Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1701&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_01)
+[0003889C] Starting Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1702&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_02)
+[0003889C] Started Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1702&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_02)
+[0003889C] Enumerating Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1702&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_02)
+[0003889C] Enumerated Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1702&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_02)
+[0003889C] Starting Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1703&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_03)
+[0003889C] Started Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1703&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_03)
+[0003889C] Enumerating Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1703&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_03)
+[0003889C] Enumerated Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1703&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_03)
+[0003889C] Starting Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1704&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_04)
+[0003889C] Started Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1704&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_04)
+[0003889C] Enumerating Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1704&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_04)
+[0003889C] Enumerated Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1704&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_04)
+[0003889C] Starting Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1718&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_05)
+[0003889C] Started Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1718&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_05)
+[0003889C] Enumerating Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1718&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_05)
+[0003889C] Enumerated Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1718&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_05)
+[0003889C] Starting Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1716&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_06)
+[0003889C] Started Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1716&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_06)
+[0003889C] Enumerating Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1716&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_06)
+[0003889C] Enumerated Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1716&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_06)
+[0003889C] Starting Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1719&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_07)
+[0003889C] Started Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1719&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_07)
+[0003889C] Enumerating Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1719&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_07)
+[0003889C] Enumerated Стандартный мост PCI  - процессор главного компьютера (PCI\VEN_1022&DEV_1719&SUBSYS_00000000&REV_00\BUS_00&DEV_18&FUNC_07)
+[0003889C] Loaded PNP drivers of Шина PCI (ACPI\*PNP0A08\00000000)
+[0003889C] Loading PNP drivers of Расширение системной платы для ACPI BIOS (ACPI\*PNP0C01\000000C8)
+[0003889C] Loaded PNP drivers of Расширение системной платы для ACPI BIOS (ACPI\*PNP0C01\000000C8)
+[0003889C] Starting Расширение системной платы для ACPI BIOS (ACPI\*PNP0C01\000000C8)
+[0003889C] Started Расширение системной платы для ACPI BIOS (ACPI\*PNP0C01\000000C8)
+[0003889C] Enumerating Расширение системной платы для ACPI BIOS (ACPI\*PNP0C01\000000C8)
+[0003889C] Enumerated Расширение системной платы для ACPI BIOS (ACPI\*PNP0C01\000000C8)
+[0003889C] Starting Ресурсы системной платы (ACPI\*PNP0C02\00000700)
+[0003889C] Starting Ресурсы системной платы (ACPI\*PNP0C02\00000111)
+[0003889C] Started Ресурсы системной платы (ACPI\*PNP0C02\00000111)
+[0003889C] Enumerating Ресурсы системной платы (ACPI\*PNP0C02\00000111)
+[0003889C] Enumerated Ресурсы системной платы (ACPI\*PNP0C02\00000111)
+[0003889C] Starting Программируемый контроллер прерываний (ACPI\*PNP0000\0)
+[0003889C] Started Программируемый контроллер прерываний (ACPI\*PNP0000\0)
+[0003889C] Enumerating Программируемый контроллер прерываний (ACPI\*PNP0000\0)
+[0003889C] Enumerated Программируемый контроллер прерываний (ACPI\*PNP0000\0)
+[0003889C] Loading PNP drivers of Контроллер прямого доступа к памяти (ACPI\*PNP0200\0)
+[0003889C] Loaded PNP drivers of Контроллер прямого доступа к памяти (ACPI\*PNP0200\0)
+[0003889C] Loading PNP drivers of Системный таймер (ACPI\*PNP0100\0)
+[0003889C] Loaded PNP drivers of Системный таймер (ACPI\*PNP0100\0)
+[0003889C] Starting Системный таймер (ACPI\*PNP0100\0)
+[0003889C] Started Системный таймер (ACPI\*PNP0100\0)
+[0003889C] Enumerating Системный таймер (ACPI\*PNP0100\0)
+[0003889C] Enumerated Системный таймер (ACPI\*PNP0100\0)
+[0003889C] Loading PNP drivers of CMOS и часы (ACPI\*PNP0B00\0)
+[0003889C] Loaded PNP drivers of CMOS и часы (ACPI\*PNP0B00\0)
+[0003889C] Starting CMOS и часы (ACPI\*PNP0B00\0)
+[0003889C] Started CMOS и часы (ACPI\*PNP0B00\0)
+[0003889C] Enumerating CMOS и часы (ACPI\*PNP0B00\0)
+[0003889C] Enumerated CMOS и часы (ACPI\*PNP0B00\0)
+[0003889C] Loading PNP drivers of Системный динамик (ACPI\*PNP0800\0)
+[0003889C] Loaded PNP drivers of Системный динамик (ACPI\*PNP0800\0)
+[0003889C] Starting Системный динамик (ACPI\*PNP0800\0)
+[0003889C] Started Системный динамик (ACPI\*PNP0800\0)
+[0003889C] Enumerating Системный динамик (ACPI\*PNP0800\0)
+[0003889C] Enumerated Системный динамик (ACPI\*PNP0800\0)
+[0003889C] Starting Ресурсы системной платы (ACPI\*PNP0C02\00000010)
+[0003889C] Started Ресурсы системной платы (ACPI\*PNP0C02\00000010)
+[0003889C] Enumerating Ресурсы системной платы (ACPI\*PNP0C02\00000010)
+[0003889C] Enumerated Ресурсы системной платы (ACPI\*PNP0C02\00000010)
+[0003889C] Loading PNP drivers of Сопроцессор (ACPI\*PNP0C04\0)
+[0003889C] Loaded PNP drivers of Сопроцессор (ACPI\*PNP0C04\0)
+[0003889C] Starting Сопроцессор (ACPI\*PNP0C04\0)
+[0003889C] Started Сопроцессор (ACPI\*PNP0C04\0)
+[0003889C] Enumerating Сопроцессор (ACPI\*PNP0C04\0)
+[0003889C] Enumerated Сопроцессор (ACPI\*PNP0C04\0)
+[0003889C] Starting Ресурсы системной платы (ACPI\*PNP0C02\00000099)
+[0003889C] Started Ресурсы системной платы (ACPI\*PNP0C02\00000099)
+[0003889C] Enumerating Ресурсы системной платы (ACPI\*PNP0C02\00000099)
+[0003889C] Enumerated Ресурсы системной платы (ACPI\*PNP0C02\00000099)
+[0003889C] Starting Ресурсы системной платы (ACPI\*PNP0C02\00000014)
+[0003889C] Started Ресурсы системной платы (ACPI\*PNP0C02\00000014)
+[0003889C] Enumerating Ресурсы системной платы (ACPI\*PNP0C02\00000014)
+[0003889C] Enumerated Ресурсы системной платы (ACPI\*PNP0C02\00000014)
+[0003889C] Starting Кнопка питания ACPI (ACPI\*PNP0C0C\000000AA)
+[0003889C] Started Кнопка питания ACPI (ACPI\*PNP0C0C\000000AA)
+[0003889C] Enumerating Кнопка питания ACPI (ACPI\*PNP0C0C\000000AA)
+[0003889C] Enumerated Кнопка питания ACPI (ACPI\*PNP0C0C\000000AA)
+[0003889C] Loading PNP drivers of Расширение системной платы для ACPI BIOS (ACPI\*PNP0C01\00000001)
+[0003889C] Loaded PNP drivers of Расширение системной платы для ACPI BIOS (ACPI\*PNP0C01\00000001)
+[0003889C] Starting Расширение системной платы для ACPI BIOS (ACPI\*PNP0C01\00000001)
+[0003889D] Started Расширение системной платы для ACPI BIOS (ACPI\*PNP0C01\00000001)
+[0003889D] Enumerating Расширение системной платы для ACPI BIOS (ACPI\*PNP0C01\00000001)
+[0003889D] Enumerated Расширение системной платы для ACPI BIOS (ACPI\*PNP0C01\00000001)
+[0003889D] Loading PNP drivers of Сопоставитель Wmi ACPI (ACPI\*PNP0C14\00000000)
+[0003889E] Loaded PNP drivers of Сопоставитель Wmi ACPI (ACPI\*PNP0C14\00000000)
+[0003889E] Starting Сопоставитель Wmi ACPI (ACPI\*PNP0C14\00000000)
+[0003889E] Started Сопоставитель Wmi ACPI (ACPI\*PNP0C14\00000000)
+[0003889E] Enumerating Смешанный источник питания (ACPI\COMPBATT\ROOT&*PNP0C08&0000)
+[0003889E] Enumerated Смешанный источник питания (ACPI\COMPBATT\ROOT&*PNP0C08&0000)
+[0003889E] Enumerating Системная кнопка ACPI (ACPI\BUTTON\ROOT&*PNP0C08&0000)
+[0003889E] Enumerated Системная кнопка ACPI (ACPI\BUTTON\ROOT&*PNP0C08&0000)
+[0003889E] Enumerating Сопоставитель Wmi ACPI (ACPI\*PNP0C14\00000000)
+[0003889E] Enumerated Сопоставитель Wmi ACPI (ACPI\*PNP0C14\00000000)
+[0003889E] DEVICEINITSUCCESS   = CONFIGMG
+[0003889E] Loading PNP drivers of Стандартная клавиатура 101/102 или Microsoft Natural (ACPI\*PNP0303\0)
+[0003889E] Loaded PNP drivers of Стандартная клавиатура 101/102 или Microsoft Natural (ACPI\*PNP0303\0)
+[0003889E] Starting Стандартная клавиатура 101/102 или Microsoft Natural (ACPI\*PNP0303\0)
+[0003889E] Started Стандартная клавиатура 101/102 или Microsoft Natural (ACPI\*PNP0303\0)
+[0003889E] Loading PNP drivers of Мышь Microsoft для порта PS/2 (ACPI\*PNP0F03\0)
+[0003889E] Loading PNP drivers of Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000001)
+[0003889E] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   PCI.VxD
+[0003889F] „Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп гбва®©бвў   PCI
+[0003889F] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп PCI
+[0003889F] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  PCI.VxD
+[0003889F] Loaded PNP drivers of Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000001)
+[0003889F] Starting Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000001)
+[0003889F] Started Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000001)
+[0003889F] Enumerating Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000001)
+[0003889F] Enumerated Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000001)
+[0003889F] Loading PNP drivers of Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000002)
+[0003889F] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   PCI.VxD
+[0003889F] „Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп гбва®©бвў   PCI
+[0003889F] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп PCI
+[0003889F] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  PCI.VxD
+[0003889F] Loaded PNP drivers of Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000002)
+[0003889F] Starting Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000002)
+[0003889F] Started Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000002)
+[0003889F] Enumerating Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000002)
+[0003889F] Enumerated Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000002)
+[0003889F] Loading PNP drivers of Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000003)
+[0003889F] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   PCI.VxD
+[0003889F] „Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп гбва®©бвў   PCI
+[0003889F] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп PCI
+[0003889F] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  PCI.VxD
+[0003889F] Loaded PNP drivers of Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000003)
+[0003889F] Starting Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000003)
+[0003889F] Started Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000003)
+[0003889F] Enumerating Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000003)
+[0003889F] Enumerated Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000003)
+[0003889F] Loading PNP drivers of Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000004)
+[0003889F] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   PCI.VxD
+[0003889F] „Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп гбва®©бвў   PCI
+[0003889F] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп PCI
+[0003889F] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  PCI.VxD
+[0003889F] Loaded PNP drivers of Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000004)
+[0003889F] Starting Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000004)
+[0003889F] Started Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000004)
+[0003889F] Enumerating Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000004)
+[0003889F] Enumerated Владелец ACPI IRQ для управления PCI IRQ (ACPI\*PNP0C0F\00000004)
+[0003889F] Loading PNP drivers of Standard 4-Port PCI AHCI Controller (PCI\VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40\BUS_00&DEV_11&FUNC_00)
+[0003889F] Loaded PNP drivers of Standard 4-Port PCI AHCI Controller (PCI\VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40\BUS_00&DEV_11&FUNC_00)
+[0003889F] Starting Standard 4-Port PCI AHCI Controller (PCI\VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40\BUS_00&DEV_11&FUNC_00)
+[0003889F] Started Standard 4-Port PCI AHCI Controller (PCI\VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40\BUS_00&DEV_11&FUNC_00)
+[0003889F] Enumerating Standard 4-Port PCI AHCI Controller (PCI\VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40\BUS_00&DEV_11&FUNC_00)
+[0003889F] Enumerated Standard 4-Port PCI AHCI Controller (PCI\VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40\BUS_00&DEV_11&FUNC_00)
+[0003889F] Loading PNP drivers of Стандартный хост-контроллер OpenHCI USB (PCI\VEN_1002&DEV_4397&SUBSYS_17E2103C&REV_00\BUS_00&DEV_12&FUNC_00)
+[000388A0] Loaded PNP drivers of Стандартный хост-контроллер OpenHCI USB (PCI\VEN_1002&DEV_4397&SUBSYS_17E2103C&REV_00\BUS_00&DEV_12&FUNC_00)
+[000388A0] Starting Стандартный хост-контроллер OpenHCI USB (PCI\VEN_1002&DEV_4397&SUBSYS_17E2103C&REV_00\BUS_00&DEV_12&FUNC_00)
+[000388A1] Started Стандартный хост-контроллер OpenHCI USB (PCI\VEN_1002&DEV_4397&SUBSYS_17E2103C&REV_00\BUS_00&DEV_12&FUNC_00)
+[000388A1] Starting Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_43A0&SUBSYS_00000000&REV_00\BUS_00&DEV_15&FUNC_00)
+[000388A1] Started Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_43A0&SUBSYS_00000000&REV_00\BUS_00&DEV_15&FUNC_00)
+[000388A1] Enumerating Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_43A0&SUBSYS_00000000&REV_00\BUS_00&DEV_15&FUNC_00)
+[000388A1] Enumerated Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_43A0&SUBSYS_00000000&REV_00\BUS_00&DEV_15&FUNC_00)
+[000388A1] Starting Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_43A2&SUBSYS_00000000&REV_00\BUS_00&DEV_15&FUNC_02)
+[000388A1] Started Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_43A2&SUBSYS_00000000&REV_00\BUS_00&DEV_15&FUNC_02)
+[000388A1] Enumerating Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_43A2&SUBSYS_00000000&REV_00\BUS_00&DEV_15&FUNC_02)
+[000388A1] Enumerated Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_43A2&SUBSYS_00000000&REV_00\BUS_00&DEV_15&FUNC_02)
+[000388A1] Starting Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_43A3&SUBSYS_00000000&REV_00\BUS_00&DEV_15&FUNC_03)
+[000388A1] Started Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_43A3&SUBSYS_00000000&REV_00\BUS_00&DEV_15&FUNC_03)
+[000388A1] Enumerating Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_43A3&SUBSYS_00000000&REV_00\BUS_00&DEV_15&FUNC_03)
+[000388A1] Enumerated Стандартный мост PCI - PCI (PCI\VEN_1002&DEV_43A3&SUBSYS_00000000&REV_00\BUS_00&DEV_15&FUNC_03)
+[000388A1] Loading PNP drivers of AHCI Port 0 (MF\CHILD0000\PCI&VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40&BUS_00&DEV_11&FUNC_00)
+[000388A1] Loading PNP drivers of AHCI Port 1 (MF\CHILD0001\PCI&VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40&BUS_00&DEV_11&FUNC_00)
+[000388A1] Loading PNP drivers of AHCI Port 2 (MF\CHILD0002\PCI&VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40&BUS_00&DEV_11&FUNC_00)
+[000388A1] Loading PNP drivers of AHCI Port 3 (MF\CHILD0003\PCI&VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40&BUS_00&DEV_11&FUNC_00)
+[000388A1] Enumerating Стандартная клавиатура 101/102 или Microsoft Natural (ACPI\*PNP0303\0)
+[000388A1] Enumerated Стандартная клавиатура 101/102 или Microsoft Natural (ACPI\*PNP0303\0)
+[000388A1] Enumerating Стандартный хост-контроллер OpenHCI USB (PCI\VEN_1002&DEV_4397&SUBSYS_17E2103C&REV_00\BUS_00&DEV_12&FUNC_00)
+[000388A1] Enumerated Стандартный хост-контроллер OpenHCI USB (PCI\VEN_1002&DEV_4397&SUBSYS_17E2103C&REV_00\BUS_00&DEV_12&FUNC_00)
+[000388A1] Loading PNP drivers of Корневой разветвитель для USB (USB\ROOT_HUB\PCI&VEN_1002&DEV_4397&SUBSYS_17E2103C&REV_00&BUS_00&DEV_12&FUNC_00)
+[000388A2] Loaded PNP drivers of Корневой разветвитель для USB (USB\ROOT_HUB\PCI&VEN_1002&DEV_4397&SUBSYS_17E2103C&REV_00&BUS_00&DEV_12&FUNC_00)
+[000388A2] Starting Корневой разветвитель для USB (USB\ROOT_HUB\PCI&VEN_1002&DEV_4397&SUBSYS_17E2103C&REV_00&BUS_00&DEV_12&FUNC_00)
+[000388A4] Started Корневой разветвитель для USB (USB\ROOT_HUB\PCI&VEN_1002&DEV_4397&SUBSYS_17E2103C&REV_00&BUS_00&DEV_12&FUNC_00)
+[000388A4] Enumerating Корневой разветвитель для USB (USB\ROOT_HUB\PCI&VEN_1002&DEV_4397&SUBSYS_17E2103C&REV_00&BUS_00&DEV_12&FUNC_00)
+[000388B2] Enumerated Корневой разветвитель для USB (USB\ROOT_HUB\PCI&VEN_1002&DEV_4397&SUBSYS_17E2103C&REV_00&BUS_00&DEV_12&FUNC_00)
+[000388B2] Loading PNP drivers of Комбинированное устройство для USB (USB\VID_0406&PID_2814\INST_0)
+[000388B3] Loaded PNP drivers of Комбинированное устройство для USB (USB\VID_0406&PID_2814\INST_0)
+[000388B3] Starting Комбинированное устройство для USB (USB\VID_0406&PID_2814\INST_0)
+[000388B3] Started Комбинированное устройство для USB (USB\VID_0406&PID_2814\INST_0)
+[000388B3] Enumerating Комбинированное устройство для USB (USB\VID_0406&PID_2814\INST_0)
+[000388B3] Enumerated Комбинированное устройство для USB (USB\VID_0406&PID_2814\INST_0)
+[000388B3] Loading PNP drivers of Устройства ручного ввода для шины USB (USB\VID_0406&PID_2814&MI_01\1USB&VID_0406&PID_2814&INST_0)
+[000388B5] Loaded PNP drivers of Устройства ручного ввода для шины USB (USB\VID_0406&PID_2814&MI_01\1USB&VID_0406&PID_2814&INST_0)
+[000388B5] Starting Устройства ручного ввода для шины USB (USB\VID_0406&PID_2814&MI_01\1USB&VID_0406&PID_2814&INST_0)
+[000388B5] Started Устройства ручного ввода для шины USB (USB\VID_0406&PID_2814&MI_01\1USB&VID_0406&PID_2814&INST_0)
+[000388B5] Loading PNP drivers of Устройства ручного ввода для шины USB (USB\VID_0406&PID_2814&MI_00\0USB&VID_0406&PID_2814&INST_0)
+[000388B5] Loaded PNP drivers of Устройства ручного ввода для шины USB (USB\VID_0406&PID_2814&MI_00\0USB&VID_0406&PID_2814&INST_0)
+[000388B5] Starting Устройства ручного ввода для шины USB (USB\VID_0406&PID_2814&MI_00\0USB&VID_0406&PID_2814&INST_0)
+[000388B5] Started Устройства ручного ввода для шины USB (USB\VID_0406&PID_2814&MI_00\0USB&VID_0406&PID_2814&INST_0)
+[000388B5] Enumerating Устройства ручного ввода для шины USB (USB\VID_0406&PID_2814&MI_01\1USB&VID_0406&PID_2814&INST_0)
+[000388B6] Enumerated Устройства ручного ввода для шины USB (USB\VID_0406&PID_2814&MI_01\1USB&VID_0406&PID_2814&INST_0)
+[000388B6] Loading PNP drivers of HID-совместимая мышь (HID\VID_0406&PID_2814&MI_01\0000USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B6] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   mouhid.vxd
+[000388B6] „Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп гбва®©бвў   MOUHID
+[000388B6] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп MOUHID
+[000388B6] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  mouhid.vxd
+[000388B6] Loaded PNP drivers of HID-совместимая мышь (HID\VID_0406&PID_2814&MI_01\0000USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B6] Starting HID-совместимая мышь (HID\VID_0406&PID_2814&MI_01\0000USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B6] Started HID-совместимая мышь (HID\VID_0406&PID_2814&MI_01\0000USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B7] Starting HID-совместимое устройство управления потребителя (HID\VID_0406&PID_2814&MI_01\0001USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B8] Started HID-совместимое устройство управления потребителя (HID\VID_0406&PID_2814&MI_01\0001USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B8] Loading PNP drivers of HID-совместимое устройство управления системой (HID\VID_0406&PID_2814&MI_01\0002USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B8] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   kbdhid.vxd
+[000388B9] „Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп гбва®©бвў   KBDHID
+[000388B9] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп KBDHID
+[000388B9] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  kbdhid.vxd
+[000388B9] Loaded PNP drivers of HID-совместимое устройство управления системой (HID\VID_0406&PID_2814&MI_01\0002USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B9] Starting HID-совместимое устройство управления системой (HID\VID_0406&PID_2814&MI_01\0002USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B9] Started HID-совместимое устройство управления системой (HID\VID_0406&PID_2814&MI_01\0002USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B9] Enumerating Устройства ручного ввода для шины USB (USB\VID_0406&PID_2814&MI_00\0USB&VID_0406&PID_2814&INST_0)
+[000388B9] Enumerated Устройства ручного ввода для шины USB (USB\VID_0406&PID_2814&MI_00\0USB&VID_0406&PID_2814&INST_0)
+[000388B9] Loading PNP drivers of HID-совместимая клавиатура (HID\VID_0406&PID_2814&MI_00\0000USB&VID_0406&PID_2814&MI_00&0USB&VID_0406&PID_2814&INST_0)
+[000388B9] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   kbdhid.vxd
+[000388B9] „Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп гбва®©бвў   KBDHID
+[000388B9] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п Ё­ЁжЁ «Ё§ жЁп KBDHID
+[000388B9] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  kbdhid.vxd
+[000388B9] Loaded PNP drivers of HID-совместимая клавиатура (HID\VID_0406&PID_2814&MI_00\0000USB&VID_0406&PID_2814&MI_00&0USB&VID_0406&PID_2814&INST_0)
+[000388B9] Starting HID-совместимая клавиатура (HID\VID_0406&PID_2814&MI_00\0000USB&VID_0406&PID_2814&MI_00&0USB&VID_0406&PID_2814&INST_0)
+[000388B9] Started HID-совместимая клавиатура (HID\VID_0406&PID_2814&MI_00\0000USB&VID_0406&PID_2814&MI_00&0USB&VID_0406&PID_2814&INST_0)
+[000388B9] Enumerating HID-совместимая мышь (HID\VID_0406&PID_2814&MI_01\0000USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B9] Enumerated HID-совместимая мышь (HID\VID_0406&PID_2814&MI_01\0000USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B9] Enumerating HID-совместимое устройство управления потребителя (HID\VID_0406&PID_2814&MI_01\0001USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B9] Enumerated HID-совместимое устройство управления потребителя (HID\VID_0406&PID_2814&MI_01\0001USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B9] Enumerating HID-совместимое устройство управления системой (HID\VID_0406&PID_2814&MI_01\0002USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B9] Enumerated HID-совместимое устройство управления системой (HID\VID_0406&PID_2814&MI_01\0002USB&VID_0406&PID_2814&MI_01&1USB&VID_0406&PID_2814&INST_0)
+[000388B9] Enumerating HID-совместимая клавиатура (HID\VID_0406&PID_2814&MI_00\0000USB&VID_0406&PID_2814&MI_00&0USB&VID_0406&PID_2814&INST_0)
+[000388B9] Enumerated HID-совместимая клавиатура (HID\VID_0406&PID_2814&MI_00\0000USB&VID_0406&PID_2814&MI_00&0USB&VID_0406&PID_2814&INST_0)
+[000388B9] DEVICEINIT   = ACPI    
+[000388B9] DEVICEINITSUCCESS   = ACPI    
+[000388B9] DEVICEINIT   = VCDFSD  
+[000388B9] DEVICEINITSUCCESS   = VCDFSD  
+[000388B9] DEVICEINIT   = IOS     
+[000388BB] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   C:\WINDOWS\system\IOSUBSYS\apix.vxd
+[000388BB] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  C:\WINDOWS\system\IOSUBSYS\apix.vxd
+[000388BB] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   C:\WINDOWS\system\IOSUBSYS\atapchng.vxd
+[000388BC] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  C:\WINDOWS\system\IOSUBSYS\atapchng.vxd
+[000388BC] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   C:\WINDOWS\system\IOSUBSYS\cdfs.vxd
+[000388BD] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  C:\WINDOWS\system\IOSUBSYS\cdfs.vxd
+[000388BD] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   C:\WINDOWS\system\IOSUBSYS\cdtsd.vxd
+[000388BD] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  C:\WINDOWS\system\IOSUBSYS\cdtsd.vxd
+[000388BD] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   C:\WINDOWS\system\IOSUBSYS\cdvsd.vxd
+[000388BE] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  C:\WINDOWS\system\IOSUBSYS\cdvsd.vxd
+[000388BE] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   C:\WINDOWS\system\IOSUBSYS\disktsd.vxd
+[000388BE] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  C:\WINDOWS\system\IOSUBSYS\disktsd.vxd
+[000388BE] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   C:\WINDOWS\system\IOSUBSYS\diskvsd.vxd
+[000388BF] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  C:\WINDOWS\system\IOSUBSYS\diskvsd.vxd
+[000388BF] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   C:\WINDOWS\system\IOSUBSYS\necatapi.vxd
+[000388BF] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  C:\WINDOWS\system\IOSUBSYS\necatapi.vxd
+[000388BF] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   C:\WINDOWS\system\IOSUBSYS\scsi1hlp.vxd
+[000388BF] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  C:\WINDOWS\system\IOSUBSYS\scsi1hlp.vxd
+[000388C0] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   C:\WINDOWS\system\IOSUBSYS\torisan3.vxd
+[000388C0] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  C:\WINDOWS\system\IOSUBSYS\torisan3.vxd
+[000388C0] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   C:\WINDOWS\system\IOSUBSYS\voltrack.vxd
+[000388C0] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  C:\WINDOWS\system\IOSUBSYS\voltrack.vxd
+[000388C0] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   C:\WINDOWS\system\IOSUBSYS\rmm.pdr
+[000388C1] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  C:\WINDOWS\system\IOSUBSYS\rmm.pdr
+[000388C1] „Ё­ ¬ЁзҐбЄ п § Јаг§Є  гбва®©бвў   C:\WINDOWS\system\IOSUBSYS\bigmem.drv
+[000388C1] ‚лЇ®«­Ґ­  ¤Ё­ ¬ЁзҐбЄ п § Јаг§Є  C:\WINDOWS\system\IOSUBSYS\bigmem.drv
+[000388C1] DEVICEINITSUCCESS   = IOS     
+[000388C1] DEVICEINIT   = PAGEFILE
+[000388C1] DEVICEINITSUCCESS   = PAGEFILE
+[000388C1] DEVICEINIT   = PAGESWAP
+[000388C1] DEVICEINITSUCCESS   = PAGESWAP
+[000388C1] DEVICEINIT   = PARITY  
+[000388C1] DEVICEINITSUCCESS   = PARITY  
+[000388C1] DEVICEINIT   = REBOOT  
+[000388C1] DEVICEINITSUCCESS   = REBOOT  
+[000388C1] DEVICEINIT   = EBIOS   
+[000388C1] DEVICEINITSUCCESS   = EBIOS   
+[000388C1] DEVICEINIT   = VDD     
+[000388C3] DEVICEINITSUCCESS   = VDD     
+[000388C3] DEVICEINIT   = VSD     
+[000388C3] DEVICEINITSUCCESS   = VSD     
+[000388C3] DEVICEINIT   = COMBUFF 
+[000388C3] DEVICEINITSUCCESS   = COMBUFF 
+[000388C3] DEVICEINIT   = VCD     
+[000388C3] DEVICEINITSUCCESS   = VCD     
+[000388C3] DEVICEINIT   = VMOUSE  
+[000388C3] DEVICEINITSUCCESS   = VMOUSE  
+[000388C3] Loading PNP drivers of Мышь Microsoft для порта PS/2 (ACPI\*PNP0F03\0)
+[000388C3] Loaded PNP drivers of Мышь Microsoft для порта PS/2 (ACPI\*PNP0F03\0)
+[000388C3] Starting Мышь Microsoft для порта PS/2 (ACPI\*PNP0F03\0)
+[000388D4] Started Мышь Microsoft для порта PS/2 (ACPI\*PNP0F03\0)
+[000388D6] Enumerating Мышь Microsoft для порта PS/2 (ACPI\*PNP0F03\0)
+[000388D6] Enumerated Мышь Microsoft для порта PS/2 (ACPI\*PNP0F03\0)
+[000388D7] DEVICEINIT   = MSMINI  
+[000388D7] DEVICEINITSUCCESS   = MSMINI  
+[000388D7] DEVICEINIT   = VKD     
+[000388D7] DEVICEINITSUCCESS   = VKD     
+[000388D7] DEVICEINIT   = VPD     
+[000388D7] DEVICEINITSUCCESS   = VPD     
+[000388D7] DEVICEINIT   = INT13   
+[000388D7] DEVICEINITSUCCESS   = INT13   
+[000388D7] DEVICEINIT   = VMCPD   
+[000388D7] DEVICEINITSUCCESS   = VMCPD   
+[000388D7] DEVICEINIT   = BIOSXLAT
+[000388D7] DEVICEINITSUCCESS   = BIOSXLAT
+[000388D7] DEVICEINIT   = SDVXD   
+[000388D7] DEVICEINITSUCCESS   = SDVXD   
+[000388D7] DEVICEINIT   = DOSMGR  
+[000388D7] DEVICEINITSUCCESS   = DOSMGR  
+[000388D7] DEVICEINIT   = VMPOLL  
+[000388D7] DEVICEINITSUCCESS   = VMPOLL  
+[000388D7] DEVICEINIT   = JAVASUP 
+[000388D7] DEVICEINITSUCCESS   = JAVASUP 
+[000388D7] DEVICEINIT   = VCOMM   
+[000388D7] DEVICEINITSUCCESS   = VCOMM   
+[000388D7] DEVICEINIT   = VCOND   
+[000388D7] DEVICEINITSUCCESS   = VCOND   
+[000388D7] DEVICEINIT   = VTDAPI  
+[000388D7] DEVICEINITSUCCESS   = VTDAPI  
+[000388D7] DEVICEINIT   = VDMAD   
+[000388D7] DEVICEINITSUCCESS   = VDMAD   
+[000388D7] DEVICEINIT   = V86MMGR 
+[000388D7] DEVICEINITSUCCESS   = V86MMGR 
+[000388D7] DEVICEINIT   = SPOOLER 
+[000388D7] DEVICEINITSUCCESS   = SPOOLER 
+[000388D7] DEVICEINIT   = UDF     
+[000388D7] DEVICEINITSUCCESS   = UDF     
+[000388D7] DEVICEINIT   = VFAT    
+[000388D7] DEVICEINITSUCCESS   = VFAT    
+[000388D7] DEVICEINIT   = VDEF    
+[000388D7] DEVICEINITSUCCESS   = VDEF    
+[000388D9] Initing ahci.pdr
+[000388DB] Init Success ahci.pdr
+[000388DC] Initing ahci.pdr
+[000388DC] Init Success ahci.pdr
+[000388DC] Initing ahci.pdr
+[000388DC] Init Failure ahci.pdr
+[000388DC] Initing ahci.pdr
+[000388DC] Init Failure ahci.pdr
+[000388DD] INITCOMPLETE = VMM     
+[000388DD] INITCOMPLETESUCCESS = VMM     
+[000388DD] INITCOMPLETE = MTRR    
+[000388DD] INITCOMPLETESUCCESS = MTRR    
+[000388DD] INITCOMPLETE = VCACHE  
+[000388DD] INITCOMPLETESUCCESS = VCACHE  
+[000388DD] INITCOMPLETE = PERF    
+[000388DD] INITCOMPLETESUCCESS = PERF    
+[000388DD] INITCOMPLETE = VFIXD   
+[000388DD] INITCOMPLETESUCCESS = VFIXD   
+[000388DD] INITCOMPLETE = VPOWERD 
+[000388DD] INITCOMPLETESUCCESS = VPOWERD 
+[000388DD] INITCOMPLETE = VPICD   
+[000388DD] INITCOMPLETESUCCESS = VPICD   
+[000388DD] INITCOMPLETE = VrtwD   
+[000388DD] INITCOMPLETESUCCESS = VrtwD   
+[000388DD] INITCOMPLETE = VTD     
+[000388DD] INITCOMPLETESUCCESS = VTD     
+[000388DD] INITCOMPLETE = VWIN32  
+[000388DD] INITCOMPLETESUCCESS = VWIN32  
+[000388DD] INITCOMPLETE = VXDLDR  
+[000388DD] INITCOMPLETESUCCESS = VXDLDR  
+[000388DD] INITCOMPLETE = NTKERN  
+[000388DD] INITCOMPLETESUCCESS = NTKERN  
+[000388DD] INITCOMPLETE = CONFIGMG
+[000388DD] INITCOMPLETESUCCESS = CONFIGMG
+[000388DD] INITCOMPLETE = PCI     
+[000388DD] INITCOMPLETESUCCESS = PCI     
+[000388DD] INITCOMPLETE = ISAPNP  
+[000388DD] INITCOMPLETESUCCESS = ISAPNP  
+[000388DD] INITCOMPLETE = ACPI    
+[000388DD] INITCOMPLETESUCCESS = ACPI    
+[000388DD] INITCOMPLETE = VCDFSD  
+[000388DD] INITCOMPLETESUCCESS = VCDFSD  
+[000388DD] INITCOMPLETE = IOS     
+[000388E2] INITCOMPLETESUCCESS = IOS     
+[000388E2] INITCOMPLETE = PAGEFILE
+[000388E2] INITCOMPLETESUCCESS = PAGEFILE
+[000388E2] INITCOMPLETE = PAGESWAP
+[000388E2] INITCOMPLETESUCCESS = PAGESWAP
+[000388E2] INITCOMPLETE = PARITY  
+[000388E2] INITCOMPLETESUCCESS = PARITY  
+[000388E2] INITCOMPLETE = REBOOT  
+[000388E2] INITCOMPLETESUCCESS = REBOOT  
+[000388E2] INITCOMPLETE = EBIOS   
+[000388E2] INITCOMPLETESUCCESS = EBIOS   
+[000388E2] INITCOMPLETE = VDD     
+[000388E2] INITCOMPLETESUCCESS = VDD     
+[000388E2] INITCOMPLETE = VSD     
+[000388E2] INITCOMPLETESUCCESS = VSD     
+[000388E2] INITCOMPLETE = COMBUFF 
+[000388E2] INITCOMPLETESUCCESS = COMBUFF 
+[000388E2] INITCOMPLETE = VCD     
+[000388E2] INITCOMPLETESUCCESS = VCD     
+[000388E2] INITCOMPLETE = VMOUSE  
+[000388E2] INITCOMPLETESUCCESS = VMOUSE  
+[000388E2] INITCOMPLETE = MSMINI  
+[000388E2] INITCOMPLETESUCCESS = MSMINI  
+[000388E2] INITCOMPLETE = VKD     
+[000388E2] INITCOMPLETESUCCESS = VKD     
+[000388E2] INITCOMPLETE = VPD     
+[000388E2] INITCOMPLETESUCCESS = VPD     
+[000388E2] INITCOMPLETE = INT13   
+[000388E2] INITCOMPLETESUCCESS = INT13   
+[000388E2] INITCOMPLETE = VMCPD   
+[000388E2] INITCOMPLETESUCCESS = VMCPD   
+[000388E2] INITCOMPLETE = BIOSXLAT
+[000388E2] INITCOMPLETESUCCESS = BIOSXLAT
+[000388E2] INITCOMPLETE = SDVXD   
+[000388E2] INITCOMPLETEFAILED  = SDVXD   
+[000388E2] INITCOMPLETE = DOSMGR  
+[000388E2] INITCOMPLETESUCCESS = DOSMGR  
+[000388E2] INITCOMPLETE = VMPOLL  
+[000388E2] INITCOMPLETESUCCESS = VMPOLL  
+[000388E2] INITCOMPLETE = JAVASUP 
+[000388E2] INITCOMPLETESUCCESS = JAVASUP 
+[000388E2] INITCOMPLETE = VCOMM   
+[000388E2] INITCOMPLETESUCCESS = VCOMM   
+[000388E2] INITCOMPLETE = VCOND   
+[000388E2] INITCOMPLETESUCCESS = VCOND   
+[000388E2] INITCOMPLETE = VTDAPI  
+[000388E2] INITCOMPLETESUCCESS = VTDAPI  
+[000388E2] INITCOMPLETE = MOUHID  
+[000388E2] INITCOMPLETESUCCESS = MOUHID  
+[000388E2] INITCOMPLETE = KBDHID  
+[000388E2] INITCOMPLETESUCCESS = KBDHID  
+[000388E2] INITCOMPLETE = DiskTSD 
+[000388E2] INITCOMPLETESUCCESS = DiskTSD 
+[000388E2] INITCOMPLETE = voltrack
+[000388E2] INITCOMPLETESUCCESS = voltrack
+[000388E2] INITCOMPLETE = RMM     
+[000388E2] INITCOMPLETESUCCESS = RMM     
+[000388E2] INITCOMPLETE = BIGMEM  
+[000388E2] INITCOMPLETESUCCESS = BIGMEM  
+[000388E2] INITCOMPLETE = AHCI    
+[000388E2] INITCOMPLETESUCCESS = AHCI    
+[000388E2] INITCOMPLETE = VDMAD   
+[000388E2] INITCOMPLETESUCCESS = VDMAD   
+[000388E2] INITCOMPLETE = V86MMGR 
+[000388E2] INITCOMPLETESUCCESS = V86MMGR 
+[000388E2] INITCOMPLETE = SPOOLER 
+[000388E2] INITCOMPLETESUCCESS = SPOOLER 
+[000388E2] INITCOMPLETE = UDF     
+[000388E2] INITCOMPLETESUCCESS = UDF     
+[000388E2] INITCOMPLETE = VFAT    
+[000388E2] INITCOMPLETESUCCESS = VFAT    
+[000388E2] INITCOMPLETE = VDEF    
+[000388E2] INITCOMPLETESUCCESS = VDEF    
+[000388E2] INITCOMPLETE = IFSMGR  
+[000388E2] INITCOMPLETESUCCESS = IFSMGR  
+[000388E2] INITCOMPLETE = VFBACKUP
+[000388E2] INITCOMPLETESUCCESS = VFBACKUP
+[000388E2] INITCOMPLETE = SHELL   
+[000388E2] INITCOMPLETESUCCESS = SHELL   
+Initializing KERNEL
+LoadStart = system.drv
+LoadSuccess = system.drv
+LoadStart = keyboard.drv
+LoadSuccess = keyboard.drv
+LoadStart = mouse.drv
+LoadSuccess = mouse.drv
+LoadStart = vga.drv
+LoadSuccess = vga.drv
+LoadStart = mmsound.drv
+LoadSuccess = mmsound.drv
+LoadStart = comm.drv
+LoadSuccess = comm.drv
+LoadStart = gdi.exe
+LoadStart = C:\WINDOWS\SYSTEM\GDI32.DLL
+LoadStart = GDI.EXE
+LoadSuccess = GDI.EXE
+LoadStart = GDI.EXE
+LoadSuccess = GDI.EXE
+LoadStart = GDI.EXE
+LoadSuccess = GDI.EXE
+LoadStart = GDI.EXE
+LoadSuccess = GDI.EXE
+LoadSuccess = C:\WINDOWS\SYSTEM\GDI32.DLL
+LoadStart = C:\WINDOWS\fonts\vgasys.fon
+LoadSuccess = C:\WINDOWS\fonts\vgasys.fon
+LoadStart = C:\WINDOWS\fonts\vgafix.fon
+LoadSuccess = C:\WINDOWS\fonts\vgafix.fon
+LoadStart = C:\WINDOWS\fonts\vgaoem.fon
+LoadSuccess = C:\WINDOWS\fonts\vgaoem.fon
+LoadSuccess = gdi.exe
+LoadStart = user.exe
+LoadStart = DDEML.DLL
+LoadSuccess = DDEML.DLL
+LoadStart = C:\WINDOWS\SYSTEM\USER32.DLL
+LoadStart = USER.EXE
+LoadSuccess = USER.EXE
+LoadStart = USER.EXE
+LoadSuccess = USER.EXE
+LoadStart = USER.EXE
+LoadSuccess = USER.EXE
+LoadStart = USER.EXE
+LoadSuccess = USER.EXE
+LoadStart = USER.EXE
+LoadSuccess = USER.EXE
+LoadSuccess = C:\WINDOWS\SYSTEM\USER32.DLL
+LoadStart = COOL.DLL
+LoadSuccess = COOL.DLL
+Init = KEYBOARD
+InitDone = KEYBOARD
+Init = Mouse
+Status = Mouse driver installed
+InitDone = Mouse
+Init = 
+LoadStart = DISPLAY.drv
+LoadSuccess = DISPLAY.drv
+InitDone = DISPLAY
+Init = Display Resources
+InitDone = Display Resources
+LoadStart = C:\WINDOWS\fonts\MARLETT.TTF
+LoadFail = C:\WINDOWS\fonts\MARLETT.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\serife.fon
+LoadSuccess = C:\WINDOWS\fonts\serife.fon
+LoadStart = C:\WINDOWS\fonts\sserife.fon
+LoadSuccess = C:\WINDOWS\fonts\sserife.fon
+LoadStart = C:\WINDOWS\fonts\coure.fon
+LoadSuccess = C:\WINDOWS\fonts\coure.fon
+LoadStart = C:\WINDOWS\fonts\symbole.fon
+LoadSuccess = C:\WINDOWS\fonts\symbole.fon
+LoadStart = C:\WINDOWS\fonts\smalle.fon
+LoadSuccess = C:\WINDOWS\fonts\smalle.fon
+LoadStart = C:\WINDOWS\fonts\LUCON.TTF
+LoadFail = C:\WINDOWS\fonts\LUCON.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\TAHOMA.TTF
+LoadFail = C:\WINDOWS\fonts\TAHOMA.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\TAHOMABD.TTF
+LoadFail = C:\WINDOWS\fonts\TAHOMABD.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\ARIAL.TTF
+LoadFail = C:\WINDOWS\fonts\ARIAL.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\ARIALBD.TTF
+LoadFail = C:\WINDOWS\fonts\ARIALBD.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\ARIALBI.TTF
+LoadFail = C:\WINDOWS\fonts\ARIALBI.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\ARIALI.TTF
+LoadFail = C:\WINDOWS\fonts\ARIALI.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\COUR.TTF
+LoadFail = C:\WINDOWS\fonts\COUR.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\COURBD.TTF
+LoadFail = C:\WINDOWS\fonts\COURBD.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\COURBI.TTF
+LoadFail = C:\WINDOWS\fonts\COURBI.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\COURI.TTF
+LoadFail = C:\WINDOWS\fonts\COURI.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\TIMES.TTF
+LoadFail = C:\WINDOWS\fonts\TIMES.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\TIMESBD.TTF
+LoadFail = C:\WINDOWS\fonts\TIMESBD.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\TIMESBI.TTF
+LoadFail = C:\WINDOWS\fonts\TIMESBI.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\TIMESI.TTF
+LoadFail = C:\WINDOWS\fonts\TIMESI.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\WINGDING.TTF
+LoadFail = C:\WINDOWS\fonts\WINGDING.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\SYMBOL.TTF
+LoadFail = C:\WINDOWS\fonts\SYMBOL.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\ARIBLK.TTF
+LoadFail = C:\WINDOWS\fonts\ARIBLK.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\COMIC.TTF
+LoadFail = C:\WINDOWS\fonts\COMIC.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\COMICBD.TTF
+LoadFail = C:\WINDOWS\fonts\COMICBD.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\IMPACT.TTF
+LoadFail = C:\WINDOWS\fonts\IMPACT.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\VERDANA.TTF
+LoadFail = C:\WINDOWS\fonts\VERDANA.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\VERDANAB.TTF
+LoadFail = C:\WINDOWS\fonts\VERDANAB.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\VERDANAI.TTF
+LoadFail = C:\WINDOWS\fonts\VERDANAI.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\VERDANAZ.TTF
+LoadFail = C:\WINDOWS\fonts\VERDANAZ.TTF Failure code is 0016
+
+LoadStart = C:\WINDOWS\fonts\WEBDINGS.TTF
+LoadFail = C:\WINDOWS\fonts\WEBDINGS.TTF Failure code is 0016
+
+LoadSuccess = user.exe
+LoadStart = MSGSRV32.EXE
+LoadSuccess = MSGSRV32.EXE
+Init = Final USER
+InitDone = Final USER
+Init = Installable Drivers
+InitDone = Installable Drivers
+Init = TSRQuery
+InitDone = TSRQuery
+[0003894E] Starting 2GB ATA Flash Disk       (ESDI\2GB_ATA_FLASH_DISK______A\MF&CHILD0000&PCI&VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40&BUS_00&DEV_11&FUNC_0000)
+[00038950] Started 2GB ATA Flash Disk       (ESDI\2GB_ATA_FLASH_DISK______A\MF&CHILD0000&PCI&VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40&BUS_00&DEV_11&FUNC_0000)
+[00038951] Enumerating 2GB ATA Flash Disk       (ESDI\2GB_ATA_FLASH_DISK______A\MF&CHILD0000&PCI&VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40&BUS_00&DEV_11&FUNC_0000)
+[00038951] Enumerated 2GB ATA Flash Disk       (ESDI\2GB_ATA_FLASH_DISK______A\MF&CHILD0000&PCI&VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40&BUS_00&DEV_11&FUNC_0000)
+[00038958] Starting 16GB SAT A Flash Drive    (ESDI\16GB_SATA_FLASH_DRIVE___S\MF&CHILD0001&PCI&VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40&BUS_00&DEV_11&FUNC_0000)
+[00038959] Started 16GB SAT A Flash Drive    (ESDI\16GB_SATA_FLASH_DRIVE___S\MF&CHILD0001&PCI&VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40&BUS_00&DEV_11&FUNC_0000)
+[00038959] Enumerating 16GB SAT A Flash Drive    (ESDI\16GB_SATA_FLASH_DRIVE___S\MF&CHILD0001&PCI&VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40&BUS_00&DEV_11&FUNC_0000)
+[00038959] Enumerated 16GB SAT A Flash Drive    (ESDI\16GB_SATA_FLASH_DRIVE___S\MF&CHILD0001&PCI&VEN_1002&DEV_4391&SUBSYS_17E2103C&REV_40&BUS_00&DEV_11&FUNC_0000)
+[00038971] Loading PNP drivers of Последовательный порт (ACPI\*PNP0501\00000001)
+[00038971] Loaded PNP drivers of Последовательный порт (ACPI\*PNP0501\00000001)
+[00038971] Starting Последовательный порт (ACPI\*PNP0501\00000001)
+[00038972] Started Последовательный порт (COM1) (ACPI\*PNP0501\00000001)
+[00038972] Enumerating Последовательный порт (COM1) (ACPI\*PNP0501\00000001)
+[00038977] Enumerated Последовательный порт (COM1) (ACPI\*PNP0501\00000001)
+[0003897D] Loading PNP drivers of Последовательный порт (ACPI\*PNP0501\00000002)
+[0003897D] Loaded PNP drivers of Последовательный порт (ACPI\*PNP0501\00000002)
+[00038981] Starting Последовательный порт (ACPI\*PNP0501\00000002)
+[00038982] Started Последовательный порт (COM2) (ACPI\*PNP0501\00000002)
+[00038982] Enumerating Последовательный порт (COM2) (ACPI\*PNP0501\00000002)
+[00038987] Enumerated Последовательный порт (COM2) (ACPI\*PNP0501\00000002)
+[0003898D] Loading PNP drivers of Порт принтера ECP (ACPI\*PNP0401\0)
+[0003898D] Loaded PNP drivers of Порт принтера ECP (ACPI\*PNP0401\0)
+[00038994] Starting Порт принтера ECP (ACPI\*PNP0401\0)
+[00038994] Started Порт принтера ECP (LPT1) (ACPI\*PNP0401\0)
+[00038995] Enumerating Порт принтера ECP (LPT1) (ACPI\*PNP0401\0)
+[00038995] Enumerated Порт принтера ECP (LPT1) (ACPI\*PNP0401\0)
+[0003899D] Loading PNP drivers of Стандартный видеоадаптер PCI (VGA) (PCI\VEN_1002&DEV_9806&SUBSYS_17E2103C&REV_00\BUS_00&DEV_01&FUNC_00)
+[0003899D] Loaded PNP drivers of Стандартный видеоадаптер PCI (VGA) (PCI\VEN_1002&DEV_9806&SUBSYS_17E2103C&REV_00\BUS_00&DEV_01&FUNC_00)
+[000389A1] Starting Стандартный видеоадаптер PCI (VGA) (PCI\VEN_1002&DEV_9806&SUBSYS_17E2103C&REV_00\BUS_00&DEV_01&FUNC_00)
+[000389A1] VDD: [000389A1] Cant start theVGA, after init complete.[000389A1] 

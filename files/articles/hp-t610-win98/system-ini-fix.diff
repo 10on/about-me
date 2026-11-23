@@ -1,0 +1,13 @@
+17c17
+< display.drv=pnpdrvr.drv
+---
+> display.drv=vga.drv
+41c41
+< display=*vdd,*vflatd
+---
+> display=*vdd
+49a50,51
+> VIDC.IV50=ir50_32.dll
+> msacm.iac2=C:\WINDOWS\SYSTEM\IAC25_32.AX
+69a72
+> MPEGVideo=mciqtz.drv

@@ -1,0 +1,134 @@
+﻿;
+; MSBATCH.INF  -  HP t610 / Win98 SE  unattended answer file
+; build: ~/win98-build-t610   (docs/BUILD-MASTER.md)
+; base : tools/SYSREC/MSBATCH.INF  from  WIN98SE.RU(RETAIL).ISO
+;
+; DECISIONS (BUILD-MASTER 0.2). Confirm on machine: TimeZone name, RU layout id.
+;
+[BatchSetup]
+Version=3.0 (32-bit)
+SaveDate=08.09.26
+
+[Version]
+Signature = "$CHICAGO$"
+LayoutFile=layout.inf
+
+[Setup]
+Express=1
+InstallType=1
+InstallDir="c:\windows"
+ProductKey="XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
+EBD=0
+ShowEula=0
+ChangeDir=0
+NoDirWarn=1
+NoPrompt2Boot=1
+PenWinWarning=0
+Uninstall=0
+CCP=0
+CleanBoot=0
+Display=0
+DevicePath=0
+System=0
+Network=0
+OptionalComponents=1
+VRC=0
+TimeZone="Central Europe"
+
+[NameAndOrg]
+Name="Denis"
+Org=""
+Display=0
+
+[System]
+Locale=L0409
+SelectedKeyboard=KEYBOARD_00000409
+
+[OptionalComponents]
+"Настройки"=0
+"Средства"=0
+"Портфель"=0
+"Калькулятор"=0
+"Фоновые рисунки"=0
+"Шаблоны документов"=0
+"Игры"=0
+"Imaging"=0
+"Указатели мыши"=0
+"Paint"=0
+"Быстрый просмотр"=0
+"Сервер сценариев"=0
+"WordPad"=0
+"Удаленный доступ к сети"=0
+"Сервер удаленного доступа"=0
+"Прямое кабельное соединение"=0
+"HyperTerminal"=0
+"Microsoft Chat 2.1"=0
+"Microsoft NetMeeting"=0
+"Телефон"=0
+"Виртуальная частная сеть"=0
+"Бейсбол"=0
+"Опасные твари"=0
+"Внутри компьютера"=0
+"Джунгли"=0
+"Леонардо да Винчи"=0
+"Снова Windows"=0
+"Детектив"=0
+"Природа"=0
+"Наука"=0
+"Космос"=0
+"Спорт"=0
+"60-е годы в США"=0
+"Золотой век"=0
+"Путешествия"=0
+"Под водой"=0
+"Windows 98"=0
+"Microsoft FrontPage Express"=0
+"Просмотр Microsoft VRML 2.0"=0
+"Бумажник Microsoft"=0
+"Personal Web Server"=0
+"Проигрыватель Real Audio версия 4.0"=0
+"Издатель Web"=0
+"Управление на основе Web"=0
+"Microsoft Outlook Express"=0
+"Балтийские языки"=0
+"Языки центральной Европы"=0
+"Кириллица"=0
+"Греческий язык"=0
+"Турецкий язык"=0
+"Сжатие аудиозаписей"=0
+"Лазерный проигрыватель"=0
+"Macromedia Shockwave Director"=0
+"Macromedia Shockwave Flash"=0
+"Универсальный проигрыватель"=0
+"Microsoft NetShow Player 2.0"=0
+"Звуковые схемы мультимедиа"=0
+"Образцы звуков"=0
+"Звукозапись"=0
+"Сжатие видеозаписей"=0
+"Регулятор громкости"=0
+"Дополнительные заставки"=0
+"В мире Windows"=0
+"Экранные заставки OpenGL"=0
+"Архивация данных"=0
+"Таблица символов"=0
+"Буфер обмена"=0
+"Программы сжатия дисков"=0
+"Преобразование диска в FAT32"=0
+"Политики групп"=0
+"Инспектор сети"=0
+"Системный монитор"=0
+"Индикатор системных ресурсов"=0
+
+[Printers]
+
+[InstallLocationsMRU]
+
+[Install]
+AddReg=t610.AddReg
+
+[t610.AddReg]
+; secondary keyboard layout: Russian (00000419), switch = Alt+Shift.
+; HKCU here = the Default User hive during Setup. Verify after first logon.
+HKCU,"Keyboard Layout\Preload","1",,"00000409"
+HKCU,"Keyboard Layout\Preload","2",,"00000419"
+HKCU,"Keyboard Layout\Toggle","Hotkey",,"1"

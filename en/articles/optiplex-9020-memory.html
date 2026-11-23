@@ -51,7 +51,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="../../style.css?v=182d526d">
+    <link rel="stylesheet" href="../../style.css?v=6510d3d9">
 </head>
 <body>
     <header>
@@ -101,14 +101,15 @@
 <p>Alas, the different memory init made no difference. With three sticks the system boots without problems. Add the fourth — raminit fails and the machine won't start. So the problem isn't just the stock BIOS: coreboot, with its more detailed log, showed exactly where things break. And yes, there are logs — you can read them on the built-in COM port. All you need is a good old null-modem cable and a second computer with a serial port. A USB adapter plus an M1 Mac did the job just fine. 115200 8N1 -&gt; read the logs.</p>
 <figure><img src="../../img/articles/optiplex-com-port.jpg" alt="A null-modem cable in the COM port and a USB-serial adapter"><figcaption>A null-modem cable in the COM port and a USB-serial adapter</figcaption></figure>
 <h2>What the log shows</h2>
-<p><code>Cannot fast boot: DIMMs have changed
+<pre><code>Cannot fast boot: DIMMs have changed
 raminit failed on step RST_NONT
 ...
 C0.R2:  Left  Right  Width  Center
    B5:  336   368    32     352
 RcvEn: Width of high region (32) too small
 RcvEn problems on channel 0, byte 5
-raminit failed on step RCVET</code></p>
+raminit failed on step RCVET
+</code></pre>
 <p>The first error, <code>RST_NONT</code>, can be ignored: coreboot noticed the sticks had changed and decided to set everything up from scratch. That's normal behavior.</p>
 <p><code>RCVET</code>, on the other hand, is the actual failure.</p>
 <p>Here's how it works, in plain terms. Every time the machine powers on, the memory controller re-learns how to talk to the sticks — this is called memory training. One of the steps is picking the moment to "listen" for the stick's reply. The controller moves that moment in small steps and checks over what range the signal is caught reliably. The wider the range, the more margin there is.</p>

@@ -1,0 +1,58 @@
+﻿# ============================================================================
+#  GRUB4DOS menu.lst  —  Windows XP Pro SP3 x86 (RU VL) install on HP T610
+#  ISO booted to RAM + FiraDisk (auto-detects the GRUB4DOS --mem drives) + AMD AHCI F6
+#  USB root: grldr  menu.lst  XP.iso  firadisk.IMA
+#  Every install entry re-maps XP.iso + firadisk.IMA so the CD/floppy survive
+#  each reboot; FiraDisk latches onto them (no [FiraDisk] section in winnt.sif).
+# ============================================================================
+
+color black/cyan yellow/cyan
+timeout 30
+default 0
+
+# ---------------------------------------------------------------------------
+# 1  —  TEXT phase.  Use for the very first boot.
+# ---------------------------------------------------------------------------
+title 1. Windows XP  --  Setup: TEXT phase  (FIRST boot)
+map --mem /firadisk.IMA (fd0)
+map --mem /firadisk.IMA (fd1)
+map --mem /XP.iso (0xff)
+map (hd0) (hd1)
+map (hd1) (hd0)
+map --hook
+chainloader (0xff)
+
+# ---------------------------------------------------------------------------
+# 2  —  GUI phase.  Use after EVERY restart until the desktop appears.
+#       Re-maps the RAM CD + floppy, then boots the half-installed Windows
+#       from the internal SATA disk; FiraDisk re-attaches the CD.
+# ---------------------------------------------------------------------------
+title 2. Windows XP  --  Setup: GUI phase  (after EACH restart)
+map --mem /firadisk.IMA (fd0)
+map --mem /firadisk.IMA (fd1)
+map --mem /XP.iso (0xff)
+map (hd0) (hd1)
+map (hd1) (hd0)
+map --hook
+rootnoverify (hd0)
+chainloader (hd0)+1
+
+# ---------------------------------------------------------------------------
+# 3  —  Boot the finished Windows XP from the internal disk (stick still in).
+# ---------------------------------------------------------------------------
+title 3. Boot installed Windows XP  (internal SATA disk)
+map (hd0) (hd1)
+map (hd1) (hd0)
+map --hook
+rootnoverify (hd0)
+chainloader (hd0)+1
+
+# ---------------------------------------------------------------------------
+title 4. Boot first internal disk  (no remap)
+rootnoverify (hd0)
+chainloader (hd0)+1
+
+title 5. Reboot
+reboot
+title 6. Halt
+halt

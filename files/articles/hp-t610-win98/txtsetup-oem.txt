@@ -1,0 +1,31 @@
+[Disks]
+d1 = "XP RAM-boot combined driver disk (FiraDisk + AMD AHCI)", \firadisk.sys, \
+
+[Defaults]
+scsi = firadisk32
+
+[scsi]
+firadisk32 = "FiraDisk Virtual Disk Driver x86", firadisk
+ahcix86    = "AMD AHCI Compatible RAID Controller-x86 platform", ahcix86
+
+[Files.scsi.firadisk32]
+driver = d1, firadisk.sys, firadisk
+inf    = d1, firadisk.inf
+
+[Files.scsi.ahcix86]
+driver  = d1, ahcix86.sys, ahcix86
+inf     = d1, ahcix86.inf
+catalog = d1, ahcix86.cat
+
+[Config.ahcix86]
+value = "", Tag, REG_DWORD, 1
+
+[HardwareIds.scsi.ahcix86]
+id = "PCI\VEN_1002&DEV_4391&CC_0106", "ahcix86"
+id = "PCI\VEN_1002&DEV_4392&CC_0104", "ahcix86"
+id = "PCI\VEN_1002&DEV_4393&CC_0104", "ahcix86"
+id = "PCI\VEN_1002&DEV_4394&CC_0106", "ahcix86"
+id = "PCI\VEN_1022&DEV_7801&CC_0106", "ahcix86"
+id = "PCI\VEN_1022&DEV_7802&CC_0104", "ahcix86"
+id = "PCI\VEN_1022&DEV_7803&CC_0104", "ahcix86"
+id = "PCI\VEN_1022&DEV_7804&CC_0106", "ahcix86"

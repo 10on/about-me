@@ -744,7 +744,7 @@ def generate_llms_full_txt(articles, notes):
 
 
 def main():
-    md = markdown.Markdown(extensions=['tables'])
+    md = markdown.Markdown(extensions=['tables', 'fenced_code'])
     articles_by_lang = {}
     notes_by_lang = {}
 

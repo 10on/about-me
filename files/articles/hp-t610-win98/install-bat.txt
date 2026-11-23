@@ -1,0 +1,71 @@
+@echo off
+echo.
+echo ============  HP t610  -  Windows 98 SE install  ============
+echo.
+
+rem --- locate source (this DOM: has \WIN98\SETUP.EXE) ---
+set SRC=
+for %%D in (C D E F G H I) do if exist %%D:\WIN98\SETUP.EXE set SRC=%%D:
+if "%SRC%"=="" goto nosrc
+
+rem --- target is drive C: and must not be the source ---
+if not exist C:\NUL goto notgt
+if "%SRC%"=="C:" goto srcIsC
+
+rem --- source must be fully prepared ---
+if not exist %SRC%\WIN98\VMM32.VXD goto nopatch
+if not exist %SRC%\WIN98\MSBATCH.INF goto nobatch
+
+echo  Source : %SRC%\WIN98    (patched: VMM32/VCACHE/NDIS/WIN.CNF + MSBATCH.INF)
+vol %SRC%
+echo.
+echo  Target : C:
+vol C:
+echo.
+echo  1  ERASE C: first, then install     (runs CLEANIDE)
+echo  2  install onto C: as it is now
+echo  3  quit
+echo.
+choice /c:123 /n  Choose 1, 2 or 3 :
+if errorlevel 3 goto quit
+if errorlevel 2 goto go
+call %SRC%\CLEANIDE.BAT
+
+:go
+echo.
+echo  Make sure SMARTDRV is loaded (boot disk does this).
+echo.
+echo  Starting Setup:
+echo      SETUP MSBATCH.INF /IS /IE /IM /IT /NR /P g=3;l=3
+echo.
+echo  Unattended - it should not ask questions.  Do NOT leave
+echo  the machine: if Setup reboots on its own, let it; if it
+echo  hangs > 5 min with no disk light, hard-reset and it resumes.
+echo.
+pause
+%SRC%
+cd \WIN98
+setup msbatch.inf /is /ie /im /it /nr /p g=3;l=3
+goto end
+
+:srcIsC
+echo  *** Source resolved to C: - the IDE DOM (target) is not
+echo  *** enumerating separately. Check cabling / BIOS. ABORTED.
+goto end
+:nosrc
+echo  *** \WIN98\SETUP.EXE not found on any drive. ABORTED.
+goto end
+:notgt
+echo  *** No drive C: - target disk not visible. ABORTED.
+goto end
+:nopatch
+echo  *** %SRC%\WIN98\VMM32.VXD missing - source is NOT patched.
+echo  *** Run:  A:\PATCH9X.EXE -auto -m %SRC%\WIN98   then retry.
+goto end
+:nobatch
+echo  *** %SRC%\WIN98\MSBATCH.INF missing. ABORTED.
+goto end
+:quit
+echo  Quit - nothing done.
+:end
+echo.

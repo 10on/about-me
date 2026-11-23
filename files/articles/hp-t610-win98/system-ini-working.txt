@@ -1,0 +1,75 @@
+[boot]
+oemfonts.fon=vgaoem.fon
+shell=Explorer.exe
+system.drv=system.drv
+drivers=mmsystem.dll power.drv
+user.exe=user.exe
+gdi.exe=gdi.exe
+sound.drv=mmsound.drv
+dibeng.drv=dibeng.dll
+comm.drv=comm.drv
+mouse.drv=mouse.drv
+keyboard.drv=keyboard.drv
+*DisplayFallback=0
+fonts.fon=vgasys.fon
+fixedfon.fon=vgafix.fon
+386Grabber=vgafull.3gr
+display.drv=vga.drv
+
+[keyboard]
+keyboard.dll=
+subtype=
+type=4
+oemansi.bin=xlat866.bin
+
+[boot.description]
+system.drv=Стандартный компьютер
+keyboard.typ=Стандартная клавиатура 101/102 или Microsoft Natural
+mouse.drv=Мышь Microsoft
+aspect=100,96,96
+display.drv=Стандартный видеоадаптер PCI (VGA)
+
+[386Enh]
+ebios=*ebios
+woafont=dosapp.fon
+mouse=*vmouse, msmouse.vxd
+device=*dynapage
+device=*vcd
+device=*vpd
+device=*int13
+keyboard=*vkd
+display=*vdd
+
+[drivers32]
+msacm.lhacm=lhacm.acm
+VIDC.VDOM=vdowave.drv
+msacm.msg723=msg723.acm
+msacm.msg711=msg711.acm
+vidc.M263=msh263.drv
+vidc.M261=msh261.drv
+VIDC.IV50=ir50_32.dll
+msacm.iac2=C:\WINDOWS\SYSTEM\IAC25_32.AX
+
+[NonWindowsApp]
+TTInitialSizes=4 5 6 7 8 9 10 11 12 13 14 15 16 18 20 22
+
+[power.drv]
+
+[drivers]
+wavemapper=*.drv
+
+[iccvid.drv]
+
+[mciseq.drv]
+
+[mci]
+cdaudio=mcicda.drv
+sequencer=mciseq.drv
+waveaudio=mciwave.drv
+avivideo=mciavi.drv
+videodisc=mcipionr.drv
+vcr=mcivisca.drv
+MPEGVideo=mciqtz.drv
+
+[vcache]
+

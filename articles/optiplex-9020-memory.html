@@ -51,7 +51,7 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="../style.css?v=182d526d">
+    <link rel="stylesheet" href="../style.css?v=6510d3d9">
 </head>
 <body>
     <header>
@@ -101,14 +101,15 @@
 <p>Увы другой механизм проверки памяти не дал эффекта. С тремя планками система грузится без проблем. Стоит поставить четвёртую — raminit падает, машина не стартует. То есть проблема не только в стоковом BIOS: coreboot с более подробным логом показал, где именно приходит отвал. И да. Тут есть логи — их можно читать на встроенном COM порту. Нуженс всего лишь старый советский нульмодемный кабель и второй компьютер с serial портом. Связка USB переходник + mac на m1 вполне подошла. 115200 8N1 -&gt; читаем логи. </p>
 <figure><img src="../img/articles/optiplex-com-port.jpg" alt="Нуль-модемный кабель в COM-порту и USB-переходник"><figcaption>Нуль-модемный кабель в COM-порту и USB-переходник</figcaption></figure>
 <h2>Что показывает лог</h2>
-<p><code>Cannot fast boot: DIMMs have changed
+<pre><code>Cannot fast boot: DIMMs have changed
 raminit failed on step RST_NONT
 ...
 C0.R2:  Left  Right  Width  Center
    B5:  336   368    32     352
 RcvEn: Width of high region (32) too small
 RcvEn problems on channel 0, byte 5
-raminit failed on step RCVET</code></p>
+raminit failed on step RCVET
+</code></pre>
 <p>Первую ошибку, <code>RST_NONT</code>, можно не читать: coreboot заметил, что планки поменялись, и решил настроить всё с нуля. Это штатное поведение.</p>
 <p>А вот <code>RCVET</code> — это и есть поломка.</p>
 <p>Как это работает, на пальцах. При каждом включении контроллер памяти заново учится общаться с планками — это называется memory training. Один из шагов — подобрать момент, когда «слушать» ответ планки. Контроллер двигает этот момент маленькими шагами и смотрит, в каком диапазоне сигнал ловится стабильно. Чем шире диапазон, тем больше запас.</p>

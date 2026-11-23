@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <title>Windows 98 и XP на HP t610: быстренько попердолиться — дэнчик</title>
+    <meta name="description" content="Тонкий клиент HP t610, 8 ГБ памяти, IDE DOM, который на самом деле SATA, PATCHMEM, AHCI.PDR, VDD: Cant start theVGA и капризная мышь. А потом XP с флешки через GRUB4DOS и виртуальную дискету. Что пошло не так и что в итоге помогло.">
+    <link rel="canonical" href="https://10on.github.io/about-me/articles/hp-t610-win98.html">
+    <link rel="alternate" hreflang="ru" href="https://10on.github.io/about-me/articles/hp-t610-win98.html">
+    <link rel="alternate" hreflang="en" href="https://10on.github.io/about-me/en/articles/hp-t610-win98.html">
+    <link rel="alternate" hreflang="x-default" href="https://10on.github.io/about-me/articles/hp-t610-win98.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:site_name" content="дэнчик">
+    <meta property="og:title" content="Windows 98 и XP на HP t610: быстренько попердолиться — дэнчик">
+    <meta property="og:description" content="Тонкий клиент HP t610, 8 ГБ памяти, IDE DOM, который на самом деле SATA, PATCHMEM, AHCI.PDR, VDD: Cant start theVGA и капризная мышь. А потом XP с флешки через GRUB4DOS и виртуальную дискету. Что пошло не так и что в итоге помогло.">
+    <meta property="og:url" content="https://10on.github.io/about-me/articles/hp-t610-win98.html">
+    <meta property="og:image" content="https://10on.github.io/about-me/img/persik.jpg">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="882">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://10on.github.io/about-me/img/persik.jpg">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Windows 98 и XP на HP t610: быстренько попердолиться",
+  "description": "Тонкий клиент HP t610, 8 ГБ памяти, IDE DOM, который на самом деле SATA, PATCHMEM, AHCI.PDR, VDD: Cant start theVGA и капризная мышь. А потом XP с флешки через GRUB4DOS и виртуальную дискету. Что пошло не так и что в итоге помогло.",
+  "datePublished": "2026-11-23",
+  "inLanguage": "ru",
+  "url": "https://10on.github.io/about-me/articles/hp-t610-win98.html",
+  "image": "https://10on.github.io/about-me/img/persik.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Денис Пушкарёв",
+    "url": "https://10on.github.io/about-me/about.html"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://10on.github.io/about-me/articles/hp-t610-win98.html"
+  }
+}
+    </script>
+    <script>try{var t=localStorage.getItem('denchik-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="../style.css?v=6510d3d9">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div>
+                <a href="../index.html" class="logo">дэнчик</a>
+                <div class="tagline">лего · ретро · самоделки · разработка</div>
+            </div>
+            <div class="header-actions">
+                <a href="../en/articles/hp-t610-win98.html" class="lang-switch" title="English version">EN</a>
+                <button id="theme-toggle" class="theme-toggle" title="тема">☾</button>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="../notes.html">заметки</a>
+            <a href="../articles.html" class="active">статьи</a>
+            <a href="../lego.html">лего</a>
+            <a href="../retro.html">ретро</a>
+            <a href="../diy.html">самоделки</a>
+            <a href="../games.html">игры</a>
+            <a href="../wishlist.html">хотелки</a>
+            <a href="../about.html">обо мне</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container article-container" style="padding-top: 2rem; padding-bottom: 1rem;">
+            <a href="../articles.html" class="back-link">← все статьи</a>
+            <div class="article-header">
+                <span class="article-tag">#ретро #железо #mini-pc</span><span>23.11.2026</span><span>· 16 мин</span>
+            </div>
+            <h1 class="article-title">Windows 98 и XP на HP t610: быстренько попердолиться</h1>
+            <div class="article-body">
+<p>Давно у меня валялась машинка — тонкий клиент HP t610 Plus. Брал я её вообще как идею для подарка другу, но то не хватало комплектующих, то я материнскую плату угробил. Потом проект долго пылился — и в какой-то момент она мне самому понравилась. Так что осталась у меня как ретро-машинка.</p>
+<figure><img src="../img/articles/t610-win98-inside.jpg" alt="Так выглядела конфигурация на момент установки"><figcaption>Так выглядела конфигурация на момент установки</figcaption></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>HP t610 Plus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>AMD G-T56N — 2 ядра, Bobcat, 1.65 ГГц</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>встроенная Radeon HD 6320 + GeForce GT 730 2 ГБ DDR3</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>8 ГБ DDR3</td>
+</tr>
+<tr>
+<td>накопители</td>
+<td>IDE DOM 2 ГБ, SATA DOM 16 ГБ, SSHD 500 ГБ</td>
+</tr>
+<tr>
+<td>слот</td>
+<td>1× PCIe x16, полноразмерный, но карта только однослотовая</td>
+</tr>
+<tr>
+<td>порты</td>
+<td>COM, LPT, DVI (VGA получается пассивным переходником), PS/2, <del>IDE в мобильном исполнении</del></td>
+</tr>
+</tbody>
+</table>
+<p>Чем она хороша для ретро: настоящий PCIe-слот, COM и LPT, PS/2 для мыши и клавиатуры, корпус компактный и приятный. Мощнее всех моих остальных ретро-машин, хотя сама по себе не очень мощная: процессор вроде двухъядерный, но такой себе. Да и ретро-машиной её назвать сложно: по сути это небольшой мини-ПК начала 2010-х — t610 вышел в 2011 году. Важное дополнение — дискретная видеокарта. Пусть GT 730 весьма посредственная, но это отдельная карта, и под XP и 7 у неё есть официальные драйверы. Задумка — Windows 98, XP и 7 на одной коробке, чтобы запускать игрушки и программки, которые на современном железе нормально не работают.</p>
+<p>И вот каким-то вечером в сентябре мне захотелось с чем-нибудь попердолиться. План был простой: спокойно ставлю 98-ю на 2-гиговый DOM, потом так же спокойно XP на HDD. Как я ошибался.</p>
+<figure><img src="../img/articles/t610-win98-cd.jpg" alt="У меня даже был внешний CD-ROM и «лицензионный» диск"><figcaption>У меня даже был внешний CD-ROM и «лицензионный» диск</figcaption></figure>
+<h2>IDE DOM, который не хотел грузиться</h2>
+<p>Начал с того, что отформатировал 2-гигабайтный DOM в FAT32 прямо на Mac. Результат:</p>
+<pre><code>Error loading operating system
+</code></pre>
+<p>Что не помогло:</p>
+<pre><code>FDISK /MBR
+SYS C:
+FORMAT C: /S
+BIOS: трансляция Auto / LBA Assisted
+</code></pre>
+<p>Отключение всех остальных дисков тоже. Пробовал и маленький раздел в начале диска — дело было не в размере.</p>
+<p>Сработало только FAT16 + MS-DOS 6.22 — тогда DOM загрузился сразу.</p>
+<p>Кстати, эту ошибку пишет ещё не DOS, а загрузочный код MBR: раздел он нашёл, а прочитать его первый сектор через BIOS не смог.</p>
+<h3>IDE-разъём, который на самом деле не IDE</h3>
+<p>Ещё одна важная штука, которую я понял по ходу дела: 44-пиновый «IDE»-разъём на t610, скорее всего, вовсе не IDE, а SATA-порт с мостом SATA↔PATA. Прямого подтверждения этому, например конкретную микросхему моста, я не нашёл, но всё сходится:</p>
+<ul>
+<li>в BIOS DOM обозначен как SATA0;</li>
+<li>в системе вообще один контроллер дисков — SATA (<a href="https://www.parkytowers.me.uk/thin/hp/t610/">lspci на parkytowers</a>);</li>
+<li>в рабочей Windows 98 нет ни одного IDE-контроллера, а «IDE» DOM с системой обслуживает SATA AHCI-драйвер (об этом ниже);</li>
+<li>DOS-утилита <code>IDEINFO</code> диск на IDE-портах не видит, хотя компьютер с подачи BIOS успешно с него загружается.</li>
+</ul>
+<p>Отсюда и все странности в DOS.</p>
+<h3>Немного матчасти: как DOS работает с диском</h3>
+<p>Своих драйверов диска у DOS нет. Всё чтение и запись она отдаёт BIOS через прерывание <code>INT 13h</code>: «дай мне сектор такой-то», а как общаться с контроллером, знает уже BIOS. Сектор при этом адресуется по CHS — цилиндр, головка, сектор, — и BIOS пересчитывает это в реальный адрес на диске. Если BIOS придумал диску одну геометрию, а загрузчик рассчитывает на другую, читается не тот сектор — отсюда и «Error loading operating system».</p>
+<p>Медленно это потому, что каждый маленький кусок данных — это отдельный вызов, а процессор сидит и ждёт ответа. В нормальной ситуации Windows 98 после загрузки так не делает: она подгружает свой 32-битный драйвер (для IDE это <code>esdi_506.pdr</code>, у меня в итоге <code>AHCI.PDR</code>) и работает с контроллером напрямую. Если драйвер не встал, 98-я откатывается в режим совместимости с MS-DOS и снова ходит через BIOS — медленно и печально.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Zo9ZfnYCDAo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:auto;aspect-ratio:16/9"></iframe>
+
+<h2>DOS-грабли</h2>
+<p>Сначала работать с DOM я решил с Mac через USB-переходник. Думал, быстренько прогоню установку или хотя бы её часть в виртуалке, а потом уже завершу всё настройкой на реальной машине. В очередной раз ошибался.</p>
+<figure><img src="../img/articles/t610-win98-ide-dom.jpg" alt=""></figure>
+<p>И сразу наступил на первые грабли: подключил DOM в QEMU как есть, чтобы разметить его и начать установку, — и QEMU испортил на нём таблицу разделов. После этого работал только с образом: снимаю копию DOM в файл, запускаю QEMU с ней, а потом записываю обратно на DOM.</p>
+<pre><code class="language-bash">diskutil list                      # номер диска каждый раз проверять заново
+diskutil unmountDisk /dev/diskN
+sudo dd if=/dev/rdiskN of=dom-backup.img bs=4m
+shasum -a 256 dom-backup.img
+</code></pre>
+<p>Дальше:</p>
+<ul>
+<li>С загрузочной дискеты из комплекта 98-й установка не шла. Системные файлы с неё (включая подозрительно маленький <code>MSDOS.SYS</code>) не грузились даже в QEMU, а <code>sys</code> и <code>xcopy</code> на ней просто не было. Тогда я сначала проверил установку DOS с дискет MS-DOS 6.22 — там всё прошло успешно. В итоге собрал свою загрузочную дискету — на DOS от полноценной Windows 98 SE (MS-DOS 7.1), с нужными утилитами: <code>FDISK</code>, <code>FORMAT</code>, <code>SYS</code>, <code>XCOPY</code>, <code>SMARTDRV</code>, <code>SCANDISK</code>, <code>PATCH9X</code>, <code>AHCILDR</code> и прочими. Она сама находит дистрибутив на дисках и запускает установку.</li>
+</ul>
+<figure><img src="../img/articles/t610-win98-bad-command.jpg" alt=""></figure>
+<ul>
+<li><strong>USB-привод отваливался.</strong> В итоге дистрибутив я положил на второй диск — SATA DOM с FAT16-разделом WIN98XFER — и ставил оттуда. А обычный <code>copy</code> вместо <code>xcopy</code> упирался в:</li>
+</ul>
+<pre><code>CDR101: Not ready reading drive D
+</code></pre>
+<figure><img src="../img/articles/t610-win98-cdr101.jpg" alt=""></figure>
+<ul>
+<li><strong>FDISK не на том диске.</strong> Пока было подключено несколько накопителей, нумерация в <code>FDISK</code> гуляла, и однажды я долго и вдумчиво размечал 18-гигабайтный диск вместо DOM. Скорее всего, это был SSHD на 500 ГБ, который <code>FDISK</code> увидел как 18 ГБ. Вывод: при разметке — только один диск.</li>
+<li><strong><code>FDISK</code> проверял диск больше часа. Дважды.</strong> <code>Verifying drive integrity</code> шёл со скоростью около 0,4 МБ/с: за час — 77%. DOM тут не виноват, это DOS читает его через BIOS мелкими кусками. А потом <code>FDISK</code> спросил «весь объём под основной раздел и сделать активным?», я сказал «да» — и он пошёл проверять заново. Ещё час.</li>
+</ul>
+<figure><img src="../img/articles/t610-win98-fdisk.jpg" alt=""></figure>
+<ul>
+<li><strong>Фиксы наугад.</strong> Батники и советы от LLM, случайные фиксы из интернета — временами всё это приводило вот к такой картине:</li>
+</ul>
+<figure><img src="../img/articles/t610-win98-codepage.jpg" alt=""></figure>
+<p>А на последнем этапе установки текст в окне превратился в кракозябры — русский CP1251 рисовался восточноевропейским шрифтом CP1250, «Программы» выглядели как Ďđîăđáěěű. На установку не повлияло. В нормальном виде этот экран такой:</p>
+<figure><img src="../img/articles/t610-win98-setup-final.jpg" alt=""></figure>
+<ul>
+<li><strong>Ключ продукта</strong> при вводе внезапно печатался в русской раскладке. Я долго думал, как с этим быть, и не понимал, как его вообще правильно вводить. Вроде бы раскладку переключают <kbd>Ctrl+Alt+F1</kbd> — US, <kbd>Ctrl+Alt+F2</kbd> — RU, но у меня это почему-то не работало. Скорее всего, дело в моих специфичных клавиатурах, на которых такие сочетания отрабатывают не совсем корректно. В итоге ключ я просто прописал в файл ответов.</li>
+</ul>
+<p>Вообще, чтобы упростить и ускорить установку, я собрал под t610 свой комплект: файл ответов для Setup (<code>MSBATCH.INF</code> — с ним Setup идёт без вопросов) и набор заготовленных конфигов, а запускалось всё одним <code>INSTALL.BAT</code>. Оба файла выложил: <a href="../files/articles/hp-t610-win98/install-bat.txt">INSTALL.BAT</a>, <a href="../files/articles/hp-t610-win98/msbatch-inf.txt">MSBATCH.INF</a> (ключ продукта заменён).</p>
+<h2>8 ГБ памяти</h2>
+<p>Файлы скопировались, DOS работает, а графика не стартует: «Недостаточно памяти для инициализации Windows» или вот так:</p>
+<figure><img src="../img/articles/t610-win98-protection-error.jpg" alt=""></figure>
+<p>Windows 98 не рассчитана на 8 ГБ. Вынимать планки я не хотел, да и смысла в этом нет: планок DDR3 подходящего для 98-й объёма просто нет.</p>
+<p>Для масштаба: по минимальным требованиям Windows 98 хватало 16 МБ памяти. В то время компьютер с 16 МБ памяти, а то и меньше, был вполне себе нормой. Новые в 1998–1999 годах продавали уже с 32–64 МБ, игровые — с 64–128 МБ, а к началу нового тысячелетия нормой для нового компьютера стали 128–256 МБ. Сама 98-я спокойно работает примерно до 512 МБ. Дальше начинает чудить кэш диска, а после ~1 ГБ система может вообще не стартовать — Microsoft это даже признавала официально. Теоретический предел для 32-битной системы — 4 ГБ адресного пространства, но 98-я упирается в проблемы гораздо раньше. А тут 8 ГБ — в 500 раз больше минимальных требований.</p>
+<p>Что пробовал:</p>
+<ul>
+<li><code>MaxPhysPage=20000</code> и <code>MaxFileCache=65536</code> в <code>SYSTEM.INI</code> — частичный прогресс, но не решение;</li>
+<li><code>HIMEM.SYS /MAX=</code> — неверный совет, у MS-DOS-ного <code>HIMEM</code> такого ключа просто нет;</li>
+<li><code>HIMEMX</code> с <code>/MAX=</code> — DOS доволен, Windows всё равно висит. Ограничить память для DOS — не то же самое, что починить менеджер памяти Windows.</li>
+</ul>
+<p>Помог <strong>PATCHMEM 7.2 от R. Loew</strong> (<a href="https://github.com/JHRobotics/patcher9x/blob/main/doc/patchmem-manual.txt">документация</a>). Он патчит <code>VMM.VXD</code> и <code>VCACHE.VXD</code>. Проверил, что патч реально встал: внутри <code>VMM.VXD</code> появилась строка:</p>
+<pre><code>Windows 9X RAM Limitation Patch 7.2
+</code></pre>
+<p>После этого память перестала быть проблемой — и загрузка упала на следующем шаге.</p>
+<h2>Диск в защищённом режиме: esdi_506 и AHCI</h2>
+<p>Следующая остановка — <code>BOOTLOG.TXT</code> раз за разом заканчивался одной строкой:</p>
+<pre><code class="language-text">Initing esdi_506.pdr
+</code></pre>
+<p>Это штатный драйвер IDE в Windows 98, и на t610 он вешает систему. Ещё раньше на поиске оборудования был зависон на USB-контроллере, второй проход его миновал.</p>
+<figure><img src="../img/articles/t610-win98-pnp.jpg" alt=""></figure>
+<p>Решение — <strong>AHCI-драйвер от того же R. Loew</strong>. Режим SATA в BIOS — AHCI, и в логе наконец:</p>
+<pre><code class="language-text">Initing ahci.pdr
+Init Success ahci.pdr
+INITCOMPLETESUCCESS = AHCI
+</code></pre>
+<p>Драйвер я подкинул уже в установленную Windows: положил файлы на DOM в <code>C:\DRV\AHCI</code> и поставил оттуда через INF.</p>
+<h3>Какой драйвер искать</h3>
+<p>Выложить драйвер не могу — лицензия прямо запрещает распространение. Но вот всё, чтобы найти именно его:</p>
+<ul>
+<li><strong>Windows 95/98/98SE/ME AHCI Driver 3.0</strong>, Rudolph R. Loew (RLoew), 27.07.2019. Ищется на форуме MSFN по <code>rloew AHCI driver</code>, <code>AHCI.PDR</code>.</li>
+<li>Драйвер цепляется к классу AHCI-контроллеров, так что подойдёт не только к t610.</li>
+<li>Ставил <code>AHCI4.INF</code> — для 4 портов.</li>
+<li>Встал правильно, если в Диспетчере устройств есть <code>Standard 4-Port PCI AHCI Controller</code> и под ним <code>AHCI Port 0…3</code>.</li>
+</ul>
+<pre><code>Контроллер t610:  PCI\VEN_1002&amp;DEV_4391&amp;SUBSYS_17E2103C&amp;REV_40
+Класс в INF:      PCI\CC_0106
+
+AHCI.ZIP:  AHCI.PDR, AHCI4.INF, AHCI6.INF, AHCILDR.COM, AHCIMAP.COM
+
+AHCI.ZIP  MD5 0340dcbe415e97e28aa1b090c50463bc
+AHCI.PDR  24 912 байт, MD5 0f7ff4b3aeff131ff3e292184a68fca7
+</code></pre>
+<p>Лог с удачной загрузкой: <a href="../files/articles/hp-t610-win98/bootlog-ahci-ok.txt">bootlog-ahci-ok.txt</a></p>
+<h2>Видео</h2>
+<p>Следующий барьер:</p>
+<pre><code class="language-text">Starting Стандартный видеоадаптер PCI (VGA) (PCI\VEN_1002&amp;DEV_9806...)
+VDD: Cant start theVGA, after init complete.
+</code></pre>
+<p>Дальше Windows не шла, жил только безопасный режим в 640×480 и 16 цветах.</p>
+<figure><img src="../img/articles/t610-win98-safemode-vga.jpg" alt=""></figure>
+<p>По дороге ещё словил синий экран с неустранимой ошибкой 06:</p>
+<figure><img src="../img/articles/t610-win98-bsod-06.jpg" alt=""></figure>
+<p>А лечилось всё одной строкой в <code>C:\WINDOWS\SYSTEM.INI</code>:</p>
+<pre><code class="language-ini">; было
+display.drv=pnpdrvr.drv
+; стало
+display.drv=vga.drv
+</code></pre>
+<p>Бэкап DOM после первой удачной загрузки отличается от неудачного ровно этой строкой. Лог: <a href="../files/articles/hp-t610-win98/bootlog-vdd-cant-start-vga.txt">bootlog-vdd-cant-start-vga.txt</a>, рабочий <a href="../files/articles/hp-t610-win98/system-ini-working.txt">SYSTEM.INI</a>.</p>
+<p>Для встроенной Radeon HD 6320 драйвера под 98 нет. И не может быть: последние драйверы Radeon с поддержкой Windows 98 выходили ещё в те времена, когда Radeon делала ATI, а не AMD. Высокие разрешения и цвет дал универсальный <strong><a href="https://bearwindows.zcm.com.au/vbe9x.htm">VBEMP</a></strong> через VESA — вариант «VBE Miniport (ATI/AMD)». Аппаратного ускорения с ним нет.</p>
+<p>VBEMP — универсальный видеодрайвер для Windows 9x. Про конкретную видеокарту он ничего не знает и работает через VESA BIOS Extensions — стандартный интерфейс видео-BIOS, который есть почти у любой карты. Драйвер просит видео-BIOS включить нужный режим, а дальше просто рисует в кадровый буфер: разрешение и цвет есть, ускорения нет. Для железа, под которое родных драйверов под 98 не существует, это часто единственный вариант.</p>
+<h3>GT 730 и X700</h3>
+<p>GT 730 я ставил в надежде на меньшее количество проблем: всё-таки полноценная внешняя видеокарта, без приколов с чипсетом и процессором. Сначала картинка всё равно шла со встроенной Radeon, а на выходах GT 730 было пусто — переключателя основной видеокарты в BIOS я не нашёл. Изображение на GT 730 появилось <strong>только после установки VBEMP</strong>, и только на <strong>DVI</strong>: POST и BIOS на ней по-прежнему не видно, а на HDMI так ничего и не появилось. Нативного драйвера под 98 у GT 730 нет.</p>
+<p>Логичный ход — взять карту той эпохи с родным драйвером под 98. Я купил <strong><a href="https://www.ebay.com/itm/188346376334">ATI Radeon X700 PRO</a></strong> на 256 МБ GDDR3: драйвер встал и работает, но глубоко её пока не гонял — игры и 3D ещё впереди.</p>
+<figure><img src="../img/articles/t610-win98-x700-ebay.jpg" alt="Лот на eBay: Radeon X700 PRO 256 МБ за 29 евро. Да, карточка дороже самого мини-ПК :)"><figcaption>Лот на eBay: Radeon X700 PRO 256 МБ за 29 евро. Да, карточка дороже самого мини-ПК :)</figcaption></figure>
+<h2>Казус с мышью</h2>
+<p>В какой-то момент после установки мышь стала работать отвратительно: курсор то дёргался, то прыгал, прицелиться во что-то точно было невозможно. Перепробовал всё, что было под рукой:</p>
+<figure><img src="../img/articles/t610-win98-mice.jpg" alt="Разные мыши: с разными интерфейсами подключения и разными механизмами позиционирования. Ничего не помогало"><figcaption>Разные мыши: с разными интерфейсами подключения и разными механизмами позиционирования. Ничего не помогало</figcaption></figure>
+<p>В итоге всё нормально заработало после того, как компьютер постоял ночь. Причину так и не нашёл.</p>
+<h2>Что так и не завелось в 98-й</h2>
+<ul>
+<li><strong>Звук.</strong> Встроенный HD Audio в 98 не поддерживается. SBEMU даёт звук только в чистом DOS. Пробовал и Covox — это простейший ЦАП из горстки резисторов, родом из конца 80-х. У меня он самопаяный и целиком помещается в разъёме для LPT-порта. Звук включения Windows 98 через него на колонках проиграл, но дальше заставить его работать для мультимедиа мне не удалось: Media Player пишет «не найдено подходящего устройства».</li>
+<li><strong>Сеть.</strong> Сначала решил, что карта Realtek, и запустил DOS-драйвер <code>RTLPKT</code> — получил MAC из нулей. По PCI ID она оказалась Broadcom BCM57781 (<code>14E4:16B1</code>). Вывод: сначала ID, потом драйвер.</li>
+<li><strong>Wi-Fi.</strong> USB-свисток MT7601U (<code>148F:7601</code>) 98-я видит, но драйвера под неё нет.</li>
+</ul>
+<figure><div class="video-round" onclick="var v=this.firstChild;v.paused?v.play():v.pause()"><video src="../files/articles/hp-t610-win98/covox.mp4#t=0.1" playsinline preload="metadata" onplay="this.parentNode.classList.add('playing')" onpause="this.parentNode.classList.remove('playing')"></video></div><figcaption>Covox на LPT: звук включения Windows 98</figcaption></figure>
+
+<h2>Windows XP</h2>
+<p>После 98-й XP — почти отдых. Тоже не всё просто, но гораздо проще и спокойнее.</p>
+<h3>Диск в AHCI и F6, на которую никто не реагирует</h3>
+<p>Проблема та же, что у 98-й: SATA-контроллер работает в режиме AHCI, а в XP своего драйвера AHCI нет, и установщик диск просто не видит. Драйвер надо подсунуть.</p>
+<p>Классический способ — нажать <kbd>F6</kbd> в начале установки и дать драйвер с дискеты. Моя XP на <kbd>F6</kbd> не реагировала. Зато когда установщик говорил, что дисков не найдено, можно было указать драйвер вручную: выбрать дискету, выбрать драйвер — и диск появлялся. Делалось это в менюшках, которые я, кажется, первый раз в жизни видел, но сфоткать их не догадался.</p>
+<p>Ставил с внешнего USB-флоппи, и это были те ещё танцы: дискету иногда приходилось вынимать и вставлять заново, пока установщик её не подхватывал. А драйвер установщик спрашивал дважды: после разметки и копирования файлов он зачем-то просил его снова, и в этот момент USB-флоппи уже не видел.</p>
+<p>Правильное решение — интегрировать драйвер в дистрибутив, например через nLite, и нарезать новый диск. Внешний USB-CD-ROM, кстати, установщик видит, если воткнуть его в порт USB 2.0. Но перенарезать болванку не хотелось, да и компьютера с Windows, на котором можно было бы спокойно запустить nLite, под рукой не было. Наверняка это можно сделать и консольными инструментами под Linux или Mac, но пердолинга мне хватило и с 98-й.</p>
+<h3>GRUB4DOS и XP из оперативной памяти</h3>
+<p>Вместо этого я вспомнил старый трюк. В начале 2010-х я понемногу чинил компьютеры знакомым знакомых. Тогда уже набирала популярность Windows 7, но на слабые машины, а иногда просто по желанию, ставили XP. Таскать с собой диски не хотелось, да и CD-ROM был уже не везде. Поэтому у меня была универсальная флешка, и XP с неё я ставил через <a href="https://github.com/chenall/grub4dos">GRUB4DOS</a>.</p>
+<p><strong>GRUB4DOS</strong> — загрузчик, выросший из старого GRUB. Главное его умение — эмулировать диски: он может взять файл-образ дискеты или ISO, загрузить его целиком в оперативную память и подсунуть BIOS как настоящий дисковод или CD-ROM. Всё, что загружается дальше и читает диск через BIOS, разницы не замечает.</p>
+<p>Но тут есть подвох, знакомый по главе про DOS: XP через BIOS работает только в самом начале установки. Как только загружается её собственное ядро со своими драйверами дисков, BIOS-эмуляция для неё пропадает — и виртуальный CD вместе с ней. Для этого нужен <strong>FiraDisk</strong> — драйвер виртуальных дисков для Windows 2000/XP/2003. Он находит в памяти образы, которые оставил GRUB4DOS, и показывает их Windows как обычные диски, уже без BIOS.</p>
+<p>Суть способа: GRUB4DOS загружает ISO с XP в оперативную память и подключает рядом виртуальную дискету с драйвером FiraDisk. Установщик XP грузится из виртуального CD, ставит с дискеты FiraDisk и дальше уже не теряет образ, в том числе после перезагрузок. Ни CD-ROM, ни nLite не нужны.</p>
+<p>Здесь я просто положил драйвер AHCI на ту же виртуальную дискету. Она делает сразу две вещи: держит XP в памяти и работает как F6-дискета, которая никуда не пропадает между перезагрузками. И, в отличие от USB-флоппи, она точно не отвалится.</p>
+<p>На флешке четыре файла: <code>grldr</code>, <code>menu.lst</code>, <code>XP.iso</code> и <code>firadisk.IMA</code>. Порядок такой:</p>
+<ol>
+<li>Первая загрузка — пункт меню с текстовой фазой установки: разметка, форматирование, копирование файлов.</li>
+<li>После каждой перезагрузки, пока не появится рабочий стол, — пункт с графической фазой. Он заново подключает ISO и дискету и грузит недоустановленную XP с диска.</li>
+<li>Дальше — обычная загрузка с диска.</li>
+</ol>
+<p>Мои файлы: <a href="../files/articles/hp-t610-win98/menu-lst.txt">menu.lst</a>, <a href="../files/articles/hp-t610-win98/txtsetup-oem.txt">txtsetup.oem</a> — описание драйверов на дискете для установщика.</p>
+<figure><img src="../img/articles/t610-xp-boot.jpg" alt="XP грузится на t610"><figcaption>XP грузится на t610</figcaption></figure>
+<h3>Какой драйвер AHCI искать</h3>
+<ul>
+<li><strong>AMD AHCI Compatible RAID Controller</strong>, файлы <code>ahcix86.sys</code>, <code>ahcix86.inf</code>, <code>ahcix86.cat</code>, версия 3.3.0250.41 от 27.12.2012.</li>
+<li>Лежит в пакете драйверов чипсета AMD <code>AllIn1 8.86RC2</code> (папка <code>Packages\Drivers\SBDrv\hseries\RAID\XP</code>). Ищется по имени файла <code>ahcix86.sys</code> и по ID контроллера.</li>
+</ul>
+<pre><code>Контроллер t610:  PCI\VEN_1002&amp;DEV_4391&amp;SUBSYS_17E2103C&amp;REV_40
+В txtsetup.oem:   PCI\VEN_1002&amp;DEV_4391&amp;CC_0106
+</code></pre>
+<h3>Драйверы</h3>
+<p>Заработало в итоге всё: сеть, звук, встроенная видеокарта, GT 730. Под XP драйверы на это железо ещё существуют, их только нужно поискать. И некоторые производители упорно сопротивляются тому, чтобы их скачали: подходящих драйверов на сайтах было много, но там то просят ввести серийный номер, то прячут файлы ещё куда-нибудь. Не знаю, за нагрузку на свои серверы они так переживают или за что.</p>
+<p>Отдельно про GT 730: под этим названием NVIDIA выпускала карты на разных архитектурах — Fermi (GF108) и Kepler (GK208), и драйверы под них разные. Мне досталась худшая версия, и драйвер под неё тоже худший из двух.</p>
+<p>Интересный нюанс: когда я поставил драйвер для X700, отвалился драйвер встроенной видеокарты. Видимо, старый драйвер ATI и более новый AMD конфликтуют, где-то пересекаясь по ID. Подробно пока не разбирался: после установки X700 в машине не ковырялся.</p>
+<figure><img src="../img/articles/t610-x700-installed.jpg" alt="t610 с новой карточкой. Вентилятор кряхтит и явно просит смазки"><figcaption>t610 с новой карточкой. Вентилятор кряхтит и явно просит смазки</figcaption></figure>
+<h3>Выбор системы при загрузке</h3>
+<p>А вот загрузку 98 + XP я так и не починил. Каждая система стоит на своём диске, и нужный диск я каждый раз выбираю в BIOS. Я ожидал, что XP сама подтянет 98-ю в своё меню загрузки, но нет — видимо, как раз потому, что та на другом диске. В планах — нормальное меню выбора системы.</p>
+<h2>Итог</h2>
+<figure><img src="../img/notes/t610-win98-monitor.webp" alt=""></figure>
+<p>Windows 98 на t610 работает: FAT16 на DOM, PATCHMEM для 8 ГБ, <code>AHCI.PDR</code> вместо <code>esdi_506</code>, <code>vga.drv</code> → VBEMP, и X700 в слоте. Без звука и без сети, зато USB в 98 SE работает прекрасно. XP рядом работает полностью, со всеми драйверами.</p>
+<p>Что вынес:</p>
+<ol>
+<li>Win98 на t610 — это борьба с железом. Если нужны просто игры 1998–2006, проще XP. 98-я тут ради процесса.</li>
+<li>Проблемы идут цепочкой: загрузка → память → диск → видео → мышь. Починил одну — упёрся в следующую. <code>BOOTLOG.TXT</code> показывает, где ты сейчас.</li>
+<li>С дисками — только через образы и с контрольной суммой.</li>
+<li>При разметке подключен один диск.</li>
+<li>Сначала PCI ID, потом драйвер.</li>
+<li>Под 98 лучше брать видеокарту той эпохи, чем мучить современную через VESA.</li>
+<li>Старые трюки не пропадают: флешка с GRUB4DOS из начала 2010-х выручила и сейчас.</li>
+</ol>
+<h2>Полезные ссылки</h2>
+<ul>
+<li><a href="https://www.parkytowers.me.uk/thin/projects/win98.shtml">Windows 98 на тонких клиентах — parkytowers</a></li>
+<li><a href="https://www.parkytowers.me.uk/thin/hp/t610/">HP t610 — parkytowers</a></li>
+<li><a href="https://github.com/JHRobotics/patcher9x">PATCHMEM / patcher9x</a></li>
+<li><a href="https://bearwindows.zcm.com.au/vbe9x.htm">VBEMP — универсальный VESA-драйвер для Windows 9x</a></li>
+<li><a href="https://github.com/oerg866/win98-mousefix">win98-mousefix</a></li>
+<li><a href="https://github.com/chenall/grub4dos">GRUB4DOS</a></li>
+<li><a href="https://www.vogons.org/viewtopic.php?t=44407">VOGONS: PCIe под Win98</a></li>
+</ul>
+            </div>
+            <section id="comments" class="comments-section" data-giscus-term="article:hp-t610-win98" hidden>
+                <h2>Комментарии</h2>
+                <div class="giscus"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.youtube.com/@DenchikBricks" target="_blank" rel="noopener">youtube</a>
+            <a href="http://t.me/denchik_bricks" target="_blank" rel="noopener">telegram</a>
+            <a href="https://rebrickable.com/users/10on/lego/" target="_blank" rel="noopener">rebrickable</a>
+            <a href="https://www.linkedin.com/in/d-push/" target="_blank" rel="noopener">linkedin</a>
+            <a href="mailto:igoo10on@gmail.com">почта</a>
+        </div>
+        <div class="footer-meta">дэнчик — <span id="year"></span></div>
+    </footer>
+
+    <div id="img-modal">
+        <div class="modal-backdrop">
+            <img id="img-modal-img" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        var themeBtn = document.getElementById('theme-toggle');
+        function syncThemeLabel() { themeBtn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀︎' : '☾'; }
+        syncThemeLabel();
+        themeBtn.addEventListener('click', function () {
+            var next = document.documentElement.getAttribute('data-theme') === 'dark' ? '' : 'dark';
+            if (next) document.documentElement.setAttribute('data-theme', next); else document.documentElement.removeAttribute('data-theme');
+            syncThemeLabel();
+            try { localStorage.setItem('denchik-theme', next); } catch (e) {}
+        });
+
+        var modal = document.getElementById('img-modal');
+        var modalImg = document.getElementById('img-modal-img');
+        function closeModal() { modal.classList.remove('open'); }
+        modal.addEventListener('click', closeModal);
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+        Array.prototype.forEach.call(document.querySelectorAll('.article-body figure img'), function (img) {
+            img.addEventListener('click', function () {
+                modalImg.src = img.currentSrc || img.src;
+                modalImg.alt = img.alt;
+                modal.classList.add('open');
+            });
+        });
+    </script>
+    <script src="../comments.js"></script>
+</body>
+</html>
